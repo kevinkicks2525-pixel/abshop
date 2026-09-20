@@ -17,11 +17,12 @@
       <!-- HERO SECTION -->
       <section class="hero-section">
         <h1 class="hero-title">
-          عطرك المفضل <span class="highlight">ديما معاك</span><br>
-          وين ما تروح! <span class="subtitle-bold">ميني فلوكون.</span>
+          عطرك المفضل <span class="highlight">ديما معاك</span>
+          وين ما تروح
+          <span class="subtitle-bold">MINI FLACON</span>
         </h1>
         <p class="hero-subtitle">
-          خفيف ويدخل في الجيب ولا مع المفاتيح.<br>
+          خفيف ويدخل في الجيب ولا مع المفاتيح.
           ديما بريحتك الشابة وبلا ما تكسر راسك.
         </p>
 
@@ -30,13 +31,18 @@
         </div>
       </section>
 
-      <!-- DECORATIVE WAVE SVG -->
-      <div class="wave-divider">
-        <svg viewBox="0 0 500 60" preserveAspectRatio="none">
-          <path d="M0,0 C150,50 350,-20 500,30 L500,60 L0,60 Z" fill="#f0f7fc" opacity="0.6"></path>
-          <path d="M0,20 C180,60 320,10 500,45 L500,60 L0,60 Z" fill="#ffffff"></path>
-        </svg>
+      <!-- SCROLL HINT -->
+      <div class="scroll-hint">
+        <span class="scroll-hint-text">اكتشف المزيد</span>
+        <div class="scroll-hint-arrow">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
       </div>
+
+      <!-- DIVIDER -->
+      <div class="section-divider"></div>
 
       <!-- FEATURES SECTION (REFILL) -->
       <section class="features-section">
@@ -99,38 +105,22 @@
 
       <!-- SELECTION SECTION (OFFRE & COULEUR) -->
       <section class="selection-section">
-        <!-- Choix de l'offre -->
+        <!-- Choix de l'offre (Dropdown) -->
         <div class="selector-card">
           <div class="selector-title">اختر العرض:</div>
-          <div class="selector-grid">
-            <label class="selector-btn active" id="btn-offer-5">
-              <input type="radio" name="offer_select" value="5" checked>
-              <span class="btn-title">5 قطع</span>
-              <span class="btn-price">2850 دج</span>
-            </label>
-            <label class="selector-btn" id="btn-offer-10">
-              <input type="radio" name="offer_select" value="10">
-              <span class="btn-title">10 قطع</span>
-              <span class="btn-price">5000 دج</span>
-            </label>
-          </div>
+          <select class="selector-dropdown" id="offer-select">
+            <option value="5" selected>5 قطع — 2850 دج</option>
+            <option value="10">10 قطع — 5000 دج</option>
+          </select>
         </div>
 
-        <!-- Choix de la finition (Matte vs Brillant) -->
+        <!-- Choix de la finition (Dropdown) -->
         <div class="selector-card">
           <div class="selector-title">اختر نوع المظهر:</div>
-          <div class="selector-grid">
-            <label class="selector-btn active" id="btn-finish-matte">
-              <input type="radio" name="finish_select" value="matte" checked>
-              <span class="btn-title">ماط</span>
-              <span class="btn-sub">Matte</span>
-            </label>
-            <label class="selector-btn" id="btn-finish-glossy">
-              <input type="radio" name="finish_select" value="glossy">
-              <span class="btn-title">لامع</span>
-              <span class="btn-sub">Brillant</span>
-            </label>
-          </div>
+          <select class="selector-dropdown" id="finish-select">
+            <option value="matte" selected>ماط (Matte)</option>
+            <option value="glossy">لامع (Brillant)</option>
+          </select>
         </div>
       </section>
 
@@ -308,50 +298,36 @@
     const hiddenDeliveryType = document.getElementById('hidden-delivery-type');
     const hiddenLocation = document.getElementById('hidden-location');
 
-    // Offer Selection Buttons
-    const btnOffer5 = document.getElementById('btn-offer-5');
-    const btnOffer10 = document.getElementById('btn-offer-10');
-
-    btnOffer5.addEventListener('click', () => {
-      selectedOffer = 5;
-      selectedOfferPrice = 2850;
-      btnOffer5.classList.add('active');
-      btnOffer10.classList.remove('active');
-      summaryProductLabel.textContent = 'سعر المنتج (5 قطع):';
-      summaryProductPrice.textContent = '2850 دج';
-      hiddenOffer.value = '5 قطع (2850 دج)';
-      hiddenProductPrice.value = '2850 دج';
+    // Offer Selection Dropdown
+    const offerSelect = document.getElementById('offer-select');
+    offerSelect.addEventListener('change', (e) => {
+      const val = e.target.value;
+      if (val === '5') {
+        selectedOffer = 5;
+        selectedOfferPrice = 2850;
+        summaryProductLabel.textContent = 'سعر المنتج (5 قطع):';
+        summaryProductPrice.textContent = '2850 دج';
+        hiddenOffer.value = '5 قطع (2850 دج)';
+        hiddenProductPrice.value = '2850 دج';
+      } else {
+        selectedOffer = 10;
+        selectedOfferPrice = 5000;
+        summaryProductLabel.textContent = 'سعر المنتج (10 قطع):';
+        summaryProductPrice.textContent = '5000 دج';
+        hiddenOffer.value = '10 قطع (5000 دج)';
+        hiddenProductPrice.value = '5000 دج';
+      }
       updatePrices();
     });
 
-    btnOffer10.addEventListener('click', () => {
-      selectedOffer = 10;
-      selectedOfferPrice = 5000;
-      btnOffer10.classList.add('active');
-      btnOffer5.classList.remove('active');
-      summaryProductLabel.textContent = 'سعر المنتج (10 قطع):';
-      summaryProductPrice.textContent = '5000 دج';
-      hiddenOffer.value = '10 قطع (5000 دج)';
-      hiddenProductPrice.value = '5000 دج';
-      updatePrices();
-    });
-
-    // Finish Selection Buttons
-    const btnFinishMatte = document.getElementById('btn-finish-matte');
-    const btnFinishGlossy = document.getElementById('btn-finish-glossy');
-
-    btnFinishMatte.addEventListener('click', () => {
-      selectedFinish = 'ماط (Matte)';
-      btnFinishMatte.classList.add('active');
-      btnFinishGlossy.classList.remove('active');
-      summaryFinish.textContent = selectedFinish;
-      hiddenFinish.value = selectedFinish;
-    });
-
-    btnFinishGlossy.addEventListener('click', () => {
-      selectedFinish = 'لامع (Brillant)';
-      btnFinishGlossy.classList.add('active');
-      btnFinishMatte.classList.remove('active');
+    // Finish Selection Dropdown
+    const finishSelect = document.getElementById('finish-select');
+    finishSelect.addEventListener('change', (e) => {
+      if (e.target.value === 'matte') {
+        selectedFinish = 'ماط (Matte)';
+      } else {
+        selectedFinish = 'لامع (Brillant)';
+      }
       summaryFinish.textContent = selectedFinish;
       hiddenFinish.value = selectedFinish;
     });
