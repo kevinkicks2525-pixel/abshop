@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ميني فلوكون عطر قابل لإعادة التعبئة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Container -->
+    <main class="lp-container">
+
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <h1 class="hero-title">
+          عطرك المفضل <span class="highlight">ديما معاك</span><br>
+          وين ما تروح! <span class="subtitle-bold">ميني فلوكون.</span>
+        </h1>
+        <p class="hero-subtitle">
+          خفيف ويدخل في الجيب ولا مع المفاتيح.<br>
+          ديما بريحتك الشابة وبلا ما تكسر راسك.
+        </p>
+
+        <div class="hero-image-wrapper">
+          <img src="hero_pants.jpg" alt="Mini Flacon de Parfum avec clés" class="hero-img">
+        </div>
+      </section>
+
+      <!-- DECORATIVE WAVE SVG -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 500 60" preserveAspectRatio="none">
+          <path d="M0,0 C150,50 350,-20 500,30 L500,60 L0,60 Z" fill="#f0f7fc" opacity="0.6"></path>
+          <path d="M0,20 C180,60 320,10 500,45 L500,60 L0,60 Z" fill="#ffffff"></path>
+        </svg>
+      </div>
+
+      <!-- FEATURES SECTION (REFILL) -->
+      <section class="features-section">
+        <h2 class="section-title">
+          تتعمر في <span class="highlight-blue">ثواني</span> ومن التحت!
+        </h2>
+        
+        <div class="refill-grid">
+          <!-- Capsule Image Preview without flag -->
+          <div class="refill-capsule-container">
+            <div class="capsule-frame">
+              <img src="refill_action.jpg" alt="طريقة التعبئة من الأسفل" class="capsule-img">
+            </div>
+          </div>
+
+          <!-- Benefits List (2 lines, each on single line) -->
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <div class="check-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="benefit-text-single">
+                بلا ما ترفد القرعة الكبيرة وبلا ضياع.
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="check-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="benefit-text-single">
+                تصميم عملي وأنيق متوفر بعدة ألوان.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACK SECTION -->
+      <section class="variants-section">
+        <div class="pack-showcase-card">
+          <h3 class="pack-title">
+            باك 5 قارورات
+          </h3>
+
+          <div class="pack-img-box">
+            <img src="pack_5_bottles.jpg" alt="باك 5 قارورات" class="pack-img">
+          </div>
+
+          <!-- SIMPLE PRICE TEXT (NO BOX, NO SHADOW) -->
+          <div class="simple-price-clean">
+            5 قطع بـ 2850 دج
+          </div>
+        </div>
+      </section>
+
+      <!-- SELECTION SECTION (OFFRE & COULEUR) -->
+      <section class="selection-section">
+        <!-- Choix de l'offre -->
+        <div class="selector-card">
+          <div class="selector-title">اختر العرض:</div>
+          <div class="selector-grid">
+            <label class="selector-btn active" id="btn-offer-5">
+              <input type="radio" name="offer_select" value="5" checked>
+              <span class="btn-title">5 قطع</span>
+              <span class="btn-price">2850 دج</span>
+            </label>
+            <label class="selector-btn" id="btn-offer-10">
+              <input type="radio" name="offer_select" value="10">
+              <span class="btn-title">10 قطع</span>
+              <span class="btn-price">5000 دج</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Choix de la finition (Matte vs Brillant) -->
+        <div class="selector-card">
+          <div class="selector-title">اختر نوع المظهر:</div>
+          <div class="selector-grid">
+            <label class="selector-btn active" id="btn-finish-matte">
+              <input type="radio" name="finish_select" value="matte" checked>
+              <span class="btn-title">ماط</span>
+              <span class="btn-sub">Matte</span>
+            </label>
+            <label class="selector-btn" id="btn-finish-glossy">
+              <input type="radio" name="finish_select" value="glossy">
+              <span class="btn-title">لامع</span>
+              <span class="btn-sub">Brillant</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORDER FORM SECTION (NETLIFY READY) -->
+      <section class="order-section" id="order-form">
+        <div class="form-header">
+          <h3>استمارة الطلب</h3>
+          <p>يرجى إدخال معلومات التوصيل وسنتصل بكم لتأكيد الطلب</p>
+        </div>
+
+        <form name="order-form" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field" class="cod-form" id="checkout-form">
+          <!-- Mandatory for Netlify form detection -->
+          <input type="hidden" name="form-name" value="order-form">
+
+          <!-- Honeypot field for bot spam protection -->
+          <p style="display:none;">
+            <label>Don't fill: <input name="bot-field"></label>
+          </p>
+
+          <!-- Hidden inputs capturing dynamic data for Netlify & Telegram -->
+          <input type="hidden" id="hidden-offer" name="Offre" value="5 قطع">
+          <input type="hidden" id="hidden-finish" name="Finition" value="ماط (Matte)">
+          <input type="hidden" id="hidden-product-price" name="Prix_Produit" value="2850 DA">
+          <input type="hidden" id="hidden-delivery-cost" name="Frais_Livraison" value="0 DA">
+          <input type="hidden" id="hidden-total" name="Total_a_payer" value="2850 DA">
+          <input type="hidden" id="hidden-wilaya-name" name="Wilaya_Nom" value="">
+          <input type="hidden" id="hidden-delivery-type" name="Type_Livraison" value="À Domicile">
+          <input type="hidden" id="hidden-location" name="Lieu_Livraison" value="">
+
+          <!-- Nom et Prénom -->
+          <div class="form-group">
+            <label for="name">الاسم واللقب:</label>
+            <input type="text" id="name" name="Nom_Complet" placeholder="الاسم واللقب" required>
+          </div>
+
+          <!-- Téléphone -->
+          <div class="form-group">
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" name="Telephone" placeholder="05 / 06 / 07 XX XX XX XX" dir="ltr" style="text-align: right;" required>
+          </div>
+
+          <!-- Wilaya -->
+          <div class="form-group">
+            <label for="wilaya-select">الولاية:</label>
+            <select name="Wilaya" id="wilaya-select" required>
+              <option value="">اختر الولاية</option>
+            </select>
+          </div>
+
+          <!-- Mode de livraison -->
+          <div class="form-group">
+            <label>طريقة التوصيل:</label>
+            <div class="delivery-type-grid">
+              <label class="delivery-type-label active" id="label-home">
+                <input type="radio" name="Type_de_livraison" value="home" checked>
+                <span class="delivery-main-text">توصيل للمنزل</span>
+                <span class="delivery-sub-text">À Domicile</span>
+              </label>
+              <label class="delivery-type-label" id="label-office">
+                <input type="radio" name="Type_de_livraison" value="office">
+                <span class="delivery-main-text">استلام من المكتب</span>
+                <span class="delivery-sub-text">Stop Desk</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Commune (Visible ONLY if Home) -->
+          <div class="form-group" id="commune-group">
+            <label for="commune-select">البلدية:</label>
+            <select name="Commune" id="commune-select" required disabled>
+              <option value="">اختر الولاية أولاً</option>
+            </select>
+          </div>
+
+          <!-- Bureau Stop Desk (Visible ONLY if Office) -->
+          <div class="form-group" id="bureau-group" style="display: none;">
+            <label for="bureau-select">مكتب الاستلام (Stop Desk):</label>
+            <select name="Bureau" id="bureau-select" disabled>
+              <option value="">اختر الولاية أولاً</option>
+            </select>
+          </div>
+
+          <!-- Adresse détaillée (Visible ONLY if Home) -->
+          <div class="form-group" id="address-group">
+            <label for="address-input">العنوان بالتفصيل:</label>
+            <input type="text" id="address-input" name="Adresse" placeholder="الحي، رقم المنزل أو الشارع" required>
+          </div>
+
+          <!-- Summary Box -->
+          <div class="order-summary-box">
+            <div class="summary-line">
+              <span id="summary-product-label">سعر المنتج (5 قطع):</span>
+              <strong id="summary-product-price">2850 دج</strong>
+            </div>
+            <div class="summary-line">
+              <span>نوع المظهر:</span>
+              <strong id="summary-finish">ماط (Matte)</strong>
+            </div>
+            <div class="summary-line">
+              <span>تكلفة التوصيل:</span>
+              <strong id="delivery-cost">اختر الولاية</strong>
+            </div>
+            <div class="summary-line highlight-line">
+              <span>المبلغ الإجمالي:</span>
+              <strong class="total-price" id="total-cost">2850 دج</strong>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn-clean" id="submit-btn">
+            تأكيد الطلب
+          </button>
+        </form>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="lp-footer">
+        <p>جميع الحقوق محفوظة</p>
+        <p class="footer-sub">الدفع عند الاستلام بعد معاينة السلعة</p>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Delivery Data Script from hm tech dz / Pochette -->
+  <script src="./delivery-data.js"></script>
+  <script>
+    // CONFIGURATION
+    const TELEGRAM_BOT_TOKEN = '8857057256:AAGNk-1KOaDZQLcKOQPL0lObS7uMUBItOnk';
+    const TELEGRAM_CHAT_ID = '8716946287';
+
+    let selectedOffer = 5;
+    let selectedOfferPrice = 2850;
+    let selectedFinish = 'ماط (Matte)';
+    let currentDeliveryType = 'home';
+    let currentWilayaCode = '';
+    let currentDeliveryPrice = 0;
+
+    const wilayas = window.DeliveryData ? window.DeliveryData.wilayas : [];
+    const deliveryPrices = window.DeliveryData ? window.DeliveryData.deliveryPrices : {};
+    const communesData = window.DeliveryData ? window.DeliveryData.communes : {};
+    const bureauxData = window.DeliveryData ? window.DeliveryData.bureaux : {};
+
+    // DOM Elements
+    const form = document.getElementById('checkout-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const wilayaSelect = document.getElementById('wilaya-select');
+    const communeSelect = document.getElementById('commune-select');
+    const bureauSelect = document.getElementById('bureau-select');
+    const communeGroup = document.getElementById('commune-group');
+    const bureauGroup = document.getElementById('bureau-group');
+    const addressGroup = document.getElementById('address-group');
+    const addressInput = document.getElementById('address-input');
+    const phoneInput = document.getElementById('phone');
+    const nameInput = document.getElementById('name');
+
+    const radioHome = document.querySelector('input[value="home"]');
+    const radioOffice = document.querySelector('input[value="office"]');
+    const labelHome = document.getElementById('label-home');
+    const labelOffice = document.getElementById('label-office');
+
+    const deliveryCostDisplay = document.getElementById('delivery-cost');
+    const totalCostDisplay = document.getElementById('total-cost');
+    const summaryProductLabel = document.getElementById('summary-product-label');
+    const summaryProductPrice = document.getElementById('summary-product-price');
+    const summaryFinish = document.getElementById('summary-finish');
+
+    // Hidden inputs
+    const hiddenOffer = document.getElementById('hidden-offer');
+    const hiddenFinish = document.getElementById('hidden-finish');
+    const hiddenProductPrice = document.getElementById('hidden-product-price');
+    const hiddenDeliveryCost = document.getElementById('hidden-delivery-cost');
+    const hiddenTotal = document.getElementById('hidden-total');
+    const hiddenWilayaName = document.getElementById('hidden-wilaya-name');
+    const hiddenDeliveryType = document.getElementById('hidden-delivery-type');
+    const hiddenLocation = document.getElementById('hidden-location');
+
+    // Offer Selection Buttons
+    const btnOffer5 = document.getElementById('btn-offer-5');
+    const btnOffer10 = document.getElementById('btn-offer-10');
+
+    btnOffer5.addEventListener('click', () => {
+      selectedOffer = 5;
+      selectedOfferPrice = 2850;
+      btnOffer5.classList.add('active');
+      btnOffer10.classList.remove('active');
+      summaryProductLabel.textContent = 'سعر المنتج (5 قطع):';
+      summaryProductPrice.textContent = '2850 دج';
+      hiddenOffer.value = '5 قطع (2850 دج)';
+      hiddenProductPrice.value = '2850 دج';
+      updatePrices();
+    });
+
+    btnOffer10.addEventListener('click', () => {
+      selectedOffer = 10;
+      selectedOfferPrice = 5000;
+      btnOffer10.classList.add('active');
+      btnOffer5.classList.remove('active');
+      summaryProductLabel.textContent = 'سعر المنتج (10 قطع):';
+      summaryProductPrice.textContent = '5000 دج';
+      hiddenOffer.value = '10 قطع (5000 دج)';
+      hiddenProductPrice.value = '5000 دج';
+      updatePrices();
+    });
+
+    // Finish Selection Buttons
+    const btnFinishMatte = document.getElementById('btn-finish-matte');
+    const btnFinishGlossy = document.getElementById('btn-finish-glossy');
+
+    btnFinishMatte.addEventListener('click', () => {
+      selectedFinish = 'ماط (Matte)';
+      btnFinishMatte.classList.add('active');
+      btnFinishGlossy.classList.remove('active');
+      summaryFinish.textContent = selectedFinish;
+      hiddenFinish.value = selectedFinish;
+    });
+
+    btnFinishGlossy.addEventListener('click', () => {
+      selectedFinish = 'لامع (Brillant)';
+      btnFinishGlossy.classList.add('active');
+      btnFinishMatte.classList.remove('active');
+      summaryFinish.textContent = selectedFinish;
+      hiddenFinish.value = selectedFinish;
+    });
+
+    // Populate Wilayas
+    if (wilayas && wilayas.length > 0) {
+      wilayas.forEach(w => {
+        const option = document.createElement('option');
+        option.value = w.code;
+        option.textContent = `${w.code} - ${w.nameAr || w.nameFr}`;
+        wilayaSelect.appendChild(option);
+      });
+    }
+
+    function updatePrices() {
+      currentDeliveryPrice = 0;
+      if (currentWilayaCode && deliveryPrices[currentWilayaCode]) {
+        currentDeliveryPrice = deliveryPrices[currentWilayaCode][currentDeliveryType] || 0;
+      }
+
+      const total = selectedOfferPrice + currentDeliveryPrice;
+
+      deliveryCostDisplay.textContent = currentDeliveryPrice > 0 ? `${currentDeliveryPrice} دج` : 'اختر الولاية';
+      totalCostDisplay.textContent = `${total} دج`;
+
+      hiddenDeliveryCost.value = `${currentDeliveryPrice} دج`;
+      hiddenTotal.value = `${total} دج`;
+    }
+
+    function populateLocations() {
+      if (!currentWilayaCode) {
+        communeSelect.disabled = true;
+        communeSelect.innerHTML = '<option value="">اختر الولاية أولاً</option>';
+        bureauSelect.disabled = true;
+        bureauSelect.innerHTML = '<option value="">اختر الولاية أولاً</option>';
+        return;
+      }
+
+      // Populate Communes
+      communeSelect.disabled = false;
+      communeSelect.innerHTML = '<option value="">اختر البلدية</option>';
+      const communes = communesData[currentWilayaCode] || [];
+      communes.forEach(c => {
+        const option = document.createElement('option');
+        option.value = c.name;
+        option.textContent = c.name;
+        communeSelect.appendChild(option);
+      });
+
+      // Populate Bureaux Stop Desk
+      bureauSelect.disabled = false;
+      bureauSelect.innerHTML = '<option value="">اختر مكتب الاستلام</option>';
+      const bureaux = bureauxData[currentWilayaCode] || [];
+      if (bureaux.length === 0) {
+        const option = document.createElement('option');
+        option.value = `المكتب الرئيسي - ولاية ${currentWilayaCode}`;
+        option.textContent = `المكتب الرئيسي - ولاية ${currentWilayaCode}`;
+        bureauSelect.appendChild(option);
+      } else {
+        bureaux.forEach(b => {
+          const option = document.createElement('option');
+          const bName = b.name || b;
+          const bAddress = b.address ? ` - ${b.address}` : '';
+          option.value = typeof b === 'object' ? (b.address || b.name) : b;
+          option.textContent = `${bName}${bAddress}`;
+          bureauSelect.appendChild(option);
+        });
+      }
+    }
+
+    function onDeliveryTypeChange(type) {
+      currentDeliveryType = type;
+      hiddenDeliveryType.value = type === 'home' ? 'توصيل للمنزل (À Domicile)' : 'استلام من المكتب (Stop Desk)';
+
+      if (type === 'home') {
+        labelHome.classList.add('active');
+        labelOffice.classList.remove('active');
+
+        communeGroup.style.display = 'flex';
+        communeSelect.required = true;
+        communeSelect.disabled = !currentWilayaCode;
+
+        addressGroup.style.display = 'flex';
+        addressInput.required = true;
+
+        bureauGroup.style.display = 'none';
+        bureauSelect.required = false;
+        bureauSelect.disabled = true;
+      } else {
+        labelOffice.classList.add('active');
+        labelHome.classList.remove('active');
+
+        communeGroup.style.display = 'none';
+        communeSelect.required = false;
+        communeSelect.disabled = true;
+
+        addressGroup.style.display = 'none';
+        addressInput.required = false;
+
+        bureauGroup.style.display = 'flex';
+        bureauSelect.required = true;
+        bureauSelect.disabled = !currentWilayaCode;
+      }
+      updatePrices();
+    }
+
+    wilayaSelect.addEventListener('change', (e) => {
+      currentWilayaCode = e.target.value;
+      const selectedOption = wilayaSelect.options[wilayaSelect.selectedIndex];
+      hiddenWilayaName.value = selectedOption ? selectedOption.textContent : '';
+      populateLocations();
+      updatePrices();
+    });
+
+    radioHome.addEventListener('change', () => onDeliveryTypeChange('home'));
+    radioOffice.addEventListener('change', () => onDeliveryTypeChange('office'));
+
+    updatePrices();
+
+    // SECURE FORM SUBMISSION (NETLIFY + TELEGRAM + AD CAMPAIGN VALIDATION)
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name = nameInput.value.trim();
+      let phone = phoneInput.value.trim().replace(/\s+/g, '');
+      const wilayaText = hiddenWilayaName.value || wilayaSelect.value;
+      const deliveryMode = currentDeliveryType === 'home' ? 'توصيل للمنزل (À Domicile)' : 'استلام من المكتب (Stop Desk)';
+      
+      let locationDetail = '';
+      if (currentDeliveryType === 'home') {
+        const commune = communeSelect.value;
+        const address = addressInput.value.trim();
+        locationDetail = `البلدية: ${commune}\nالعنوان: ${address}`;
+        hiddenLocation.value = `${commune} - ${address}`;
+      } else {
+        const bureau = bureauSelect.value;
+        locationDetail = `المكتب: ${bureau}`;
+        hiddenLocation.value = bureau;
+      }
+
+      // 1. Validation de sécurité numéro de téléphone algérien (05/06/07 + 10 chiffres)
+      const phoneRegex = /^(05|06|07)[0-9]{8}$/;
+      if (!phoneRegex.test(phone)) {
+        alert('يرجى إدخال رقم هاتف جزائري صحيح مكون من 10 أرقام ويبدأ بـ 05 أو 06 أو 07');
+        phoneInput.focus();
+        return;
+      }
+
+      // 2. Anti-double clic / Désactivation du bouton pendant l'envoi
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'جاري تأكيد الطلب...';
+      submitBtn.style.opacity = '0.7';
+
+      // 3. Préparation du message Telegram
+      const totalToPay = selectedOfferPrice + currentDeliveryPrice;
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('fr-DZ') + ' ' + now.toLocaleTimeString('fr-DZ', { hour: '2-digit', minute: '2-digit' });
+
+      const telegramMessage = 
+`🔔 <b>طلب جديد (Nouvelle Commande)</b>
+━━━━━━━━━━━━━━━━━━
+👤 <b>الاسم:</b> ${name}
+📞 <b>الهاتف:</b> <code>${phone}</code>
+📍 <b>الولاية:</b> ${wilayaText}
+🚚 <b>نوع التوصيل:</b> ${deliveryMode}
+🏢 <b>التفاصيل:</b> ${locationDetail}
+━━━━━━━━━━━━━━━━━━
+🎁 <b>العرض:</b> ${selectedOffer} قطع (${selectedOfferPrice} دج)
+✨ <b>المظهر:</b> ${selectedFinish}
+📦 <b>سعر التوصيل:</b> ${currentDeliveryPrice} دج
+💰 <b>المبلغ الإجمالي:</b> <b>${totalToPay} دج</b>
+━━━━━━━━━━━━━━━━━━
+📅 <b>التاريخ:</b> ${dateStr}`;
+
+      // 4. Envoi Telegram avec timeout de protection (ne bloque jamais le client)
+      try {
+        const telegramPromise = fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: telegramMessage,
+            parse_mode: 'HTML'
+          })
+        });
+
+        // Timeout après 3.5 secondes max pour éviter tout blocage réseau
+        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3500));
+        await Promise.race([telegramPromise, timeoutPromise]);
+      } catch (err) {
+        console.warn('Telegram send notice:', err);
+      }
+
+      // 5. Envoi Netlify Form & Redirection vers merci.html
+      try {
+        const formData = new FormData(form);
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+      } catch (err) {
+        console.warn('Netlify form post notice:', err);
+      }
+
+      // Redirection finale vers la page de remerciement (essentielle pour le tracking pixel d'achat)
+      window.location.href = 'merci.html';
+    });
+  </script>
+</body>
+</html>

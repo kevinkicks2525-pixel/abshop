@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تم تأكيد طلبك بنجاح | شكراً لثقتكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .thank-you-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f8fafc;
+      padding: 20px 16px;
+    }
+    .thank-you-card {
+      background: #ffffff;
+      max-width: 460px;
+      width: 100%;
+      border-radius: 24px;
+      padding: 36px 22px;
+      text-align: center;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .success-icon-wrap {
+      width: 76px;
+      height: 76px;
+      background: #dcfce7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .success-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .success-desc {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .order-note-box {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 26px;
+      text-align: right;
+    }
+    .order-note-item {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .order-note-item:last-child {
+      margin-bottom: 0;
+    }
+    .back-btn {
+      display: block;
+      width: 100%;
+      background: var(--primary-blue);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: #0369a1;
+    }
+  </style>
+
+  <!-- INSERT YOUR PIXEL HERE (Meta Pixel / TikTok Pixel) -->
+  <!--
+  <script>
+    // Example: fbq('track', 'Purchase', { currency: 'DZD', value: 2850 });
+    // Example: ttq.track('CompletePayment', { content_name: 'Mini Flacon', value: 2850, currency: 'DZD' });
+  </script>
+  -->
+</head>
+<body>
+  <div class="thank-you-page">
+    <div class="thank-you-card">
+      <div class="success-icon-wrap">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h1 class="success-title">تم استلام طلبك بنجاح!</h1>
+      <p class="success-desc">
+        شكراً لثقتكم بنا.<br>
+        سيتصل بكم فريق خدمة العملاء في أقرب وقت لتأكيد تفاصيل الطلب وتوجيهه للتوصيل.
+      </p>
+
+      <div class="order-note-box">
+        <div class="order-note-item">
+          <span>•</span>
+          <span>يرجى إبقاء الهاتف مشغّلاً لتأكيد التوصيل مع الموزع.</span>
+        </div>
+        <div class="order-note-item">
+          <span>•</span>
+          <span>الدفع يتم عند الاستلام بعد معاينة السلعة والتأكد منها.</span>
+        </div>
+        <div class="order-note-item">
+          <span>•</span>
+          <span>الضمان والاستبدال متوفر في حال وجود أي مشكلة.</span>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-btn">العودة إلى الصفحة الرئيسية</a>
+    </div>
+  </div>
+</body>
+</html>
