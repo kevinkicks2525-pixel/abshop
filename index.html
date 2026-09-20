@@ -254,7 +254,7 @@
   <script>
     // CONFIGURATION
     const TELEGRAM_BOT_TOKEN = '8857057256:AAGNk-1KOaDZQLcKOQPL0lObS7uMUBItOnk';
-    const TELEGRAM_CHAT_ID = '8716946287';
+    const TELEGRAM_CHAT_IDS = ['8716946287', '6419829363'];
 
     let selectedOffer = 5;
     let selectedOfferPrice = 2850;
@@ -508,19 +508,21 @@
 
       // 4. Envoi Telegram avec timeout de protection (ne bloque jamais le client)
       try {
-        const telegramPromise = fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: TELEGRAM_CHAT_ID,
-            text: telegramMessage,
-            parse_mode: 'HTML'
+        const telegramPromises = TELEGRAM_CHAT_IDS.map(chatId =>
+          fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: telegramMessage,
+              parse_mode: 'HTML'
+            })
           })
-        });
+        );
 
         // Timeout après 3.5 secondes max pour éviter tout blocage réseau
         const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3500));
-        await Promise.race([telegramPromise, timeoutPromise]);
+        await Promise.race([Promise.all(telegramPromises), timeoutPromise]);
       } catch (err) {
         console.warn('Telegram send notice:', err);
       }
