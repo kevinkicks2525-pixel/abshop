@@ -87,6 +87,8 @@
     }
   </style>
 
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧴</text></svg>" type="image/svg+xml">
+
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -99,7 +101,18 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1256832322054459');
   fbq('track', 'PageView');
-  fbq('track', 'Purchase', { currency: 'DZD', value: 0 });
+
+  // Read real order value from localStorage (set by the order form)
+  var orderValue = 0;
+  try {
+    orderValue = parseInt(localStorage.getItem('orderValue')) || 2850;
+    // Clean up after reading
+    localStorage.removeItem('orderValue');
+    localStorage.removeItem('orderOffer');
+  } catch(e) {
+    orderValue = 2850; // fallback to minimum offer
+  }
+  fbq('track', 'Purchase', { currency: 'DZD', value: orderValue });
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1256832322054459&ev=PageView&noscript=1"

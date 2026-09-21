@@ -538,3 +538,43 @@ body {
   color: #94a3b8;
   margin-top: 3px;
 }
+
+/* INLINE PHONE ERROR */
+.phone-error-msg {
+  display: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-top: 4px;
+  text-align: right;
+  animation: shakeError 0.4s ease;
+}
+
+.phone-error-msg.visible {
+  display: block;
+}
+
+@keyframes shakeError {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+
+.form-group input.input-error {
+  border-color: #dc2626;
+  background: #fef2f2;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+/* DISABLED SUBMIT */
+.submit-btn-clean:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧴</text></svg>" type="image/svg+xml">
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -181,6 +182,7 @@
           <div class="form-group">
             <label for="phone">رقم الهاتف:</label>
             <input type="tel" id="phone" name="Telephone" placeholder="05 / 06 / 07 XX XX XX XX" dir="ltr" style="text-align: right;" required>
+            <div class="phone-error-msg" id="phone-error">يرجى إدخال رقم هاتف جزائري صحيح (10 أرقام يبدأ بـ 05 أو 06 أو 07)</div>
           </div>
 
           <!-- Wilaya -->
@@ -468,12 +470,45 @@
 
     updatePrices();
 
+    // INITIATE CHECKOUT PIXEL — fires once when form scrolls into view
+    const formSection = document.getElementById('order-form');
+    let checkoutFired = false;
+    const formObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !checkoutFired) {
+          checkoutFired = true;
+          if (typeof fbq !== 'undefined') {
+            fbq('track', 'InitiateCheckout', {
+              currency: 'DZD',
+              value: selectedOfferPrice
+            });
+          }
+          formObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    if (formSection) formObserver.observe(formSection);
+
+    // Phone error helper
+    const phoneError = document.getElementById('phone-error');
+    function showPhoneError() {
+      phoneError.classList.add('visible');
+      phoneInput.classList.add('input-error');
+    }
+    function hidePhoneError() {
+      phoneError.classList.remove('visible');
+      phoneInput.classList.remove('input-error');
+    }
+    phoneInput.addEventListener('input', hidePhoneError);
+
     // SECURE FORM SUBMISSION (NETLIFY + TELEGRAM + AD CAMPAIGN VALIDATION)
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const name = nameInput.value.trim();
-      let phone = phoneInput.value.trim().replace(/\s+/g, '');
+      // Strip ALL formatting: spaces, dashes, dots, country code prefix
+      let phone = phoneInput.value.trim().replace(/[\s\-\.\(\)]/g, '');
+      phone = phone.replace(/^(\+213|00213)/, '0');
       const wilayaText = hiddenWilayaName.value || wilayaSelect.value;
       const deliveryMode = currentDeliveryType === 'home' ? 'توصيل للمنزل (À Domicile)' : 'استلام من المكتب (Stop Desk)';
       
@@ -489,13 +524,14 @@
         hiddenLocation.value = bureau;
       }
 
-      // 1. Validation de sécurité numéro de téléphone algérien (05/06/07 + 10 chiffres)
+      // 1. Validation — accepts formatted input, cleans before checking
       const phoneRegex = /^(05|06|07)[0-9]{8}$/;
       if (!phoneRegex.test(phone)) {
-        alert('يرجى إدخال رقم هاتف جزائري صحيح مكون من 10 أرقام ويبدأ بـ 05 أو 06 أو 07');
+        showPhoneError();
         phoneInput.focus();
         return;
       }
+      hidePhoneError();
 
       // 2. Anti-double clic / Désactivation du bouton pendant l'envoi
       submitBtn.disabled = true;
@@ -555,6 +591,13 @@
       } catch (err) {
         console.warn('Netlify form post notice:', err);
       }
+
+      // Store order value for the Purchase pixel on merci.html
+      const totalToPay_final = selectedOfferPrice + currentDeliveryPrice;
+      try {
+        localStorage.setItem('orderValue', totalToPay_final.toString());
+        localStorage.setItem('orderOffer', selectedOffer.toString());
+      } catch(e) {}
 
       // Redirection finale vers la page de remerciement (essentielle pour le tracking pixel d'achat)
       window.location.href = 'merci.html';
