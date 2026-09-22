@@ -47,81 +47,9 @@
           <img src="hero_pants.jpg" alt="Mini Flacon de Parfum avec clés" class="hero-img">
         </div>
 
-        <!-- SCROLL HINT -->
-        <div class="scroll-hint">
-          <span class="scroll-hint-text">اكتشف المزيد</span>
-          <div class="scroll-hint-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      <!-- DECORATIVE WAVE SVG -->
-      <div class="wave-divider">
-        <svg viewBox="0 0 500 60" preserveAspectRatio="none">
-          <path d="M0,0 C150,50 350,-20 500,30 L500,60 L0,60 Z" fill="#f0f7fc" opacity="0.6"></path>
-          <path d="M0,20 C180,60 320,10 500,45 L500,60 L0,60 Z" fill="#ffffff"></path>
-        </svg>
-      </div>
-
-      <!-- FEATURES SECTION (REFILL) -->
-      <section class="features-section">
-        <h2 class="section-title">
-          تتعمر في <span class="highlight-blue">ثواني</span> ومن التحت!
-        </h2>
-        
-        <div class="refill-grid">
-          <!-- Capsule Image Preview without flag -->
-          <div class="refill-capsule-container">
-            <div class="capsule-frame">
-              <img src="refill_action.jpg" alt="طريقة التعبئة من الأسفل" class="capsule-img">
-            </div>
-          </div>
-
-          <!-- Benefits List (2 lines, each on single line) -->
-          <div class="benefits-list">
-            <div class="benefit-item">
-              <div class="check-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <div class="benefit-text-single">
-                بلا ما ترفد القرعة الكبيرة وبلا ضياع.
-              </div>
-            </div>
-
-            <div class="benefit-item">
-              <div class="check-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </div>
-              <div class="benefit-text-single">
-                تصميم عملي وأنيق متوفر بعدة ألوان.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PACK SECTION -->
-      <section class="variants-section">
-        <div class="pack-showcase-card">
-          <h3 class="pack-title">
-            باك 3 قارورات
-          </h3>
-
-          <div class="pack-img-box">
-            <img src="pack_5_bottles.jpg" alt="باك 3 قارورات" class="pack-img">
-          </div>
-
-          <!-- SIMPLE PRICE TEXT (NO BOX, NO SHADOW) -->
-          <div class="simple-price-clean">
-            3 قطع بـ 1900 دج
-          </div>
+        <!-- PRIX DE L'OFFRE 3 A 1900 DA DIRECTEMENT SOUS LA PHOTO -->
+        <div class="simple-price-clean" style="margin-top: 6px; font-size: 1.8rem;">
+          3 قطع بـ <span style="color: var(--primary-blue);">1900 دج</span>
         </div>
       </section>
 
@@ -146,7 +74,7 @@
         </div>
       </section>
 
-      <!-- ORDER FORM SECTION (NETLIFY READY) -->
+      <!-- ORDER FORM SECTION (FORMULAIRE COMPLET) -->
       <section class="order-section" id="order-form">
         <div class="form-header">
           <h3>استمارة الطلب</h3>
@@ -257,6 +185,73 @@
             تأكيد الطلب
           </button>
         </form>
+      </section>
+
+      <!-- DECORATIVE WAVE SVG -->
+      <div class="wave-divider">
+        <svg viewBox="0 0 500 60" preserveAspectRatio="none">
+          <path d="M0,0 C150,50 350,-20 500,30 L500,60 L0,60 Z" fill="#f0f7fc" opacity="0.6"></path>
+          <path d="M0,20 C180,60 320,10 500,45 L500,60 L0,60 Z" fill="#ffffff"></path>
+        </svg>
+      </div>
+
+      <!-- FEATURES SECTION (REFILL — EN DESSOUS DU FORMULAIRE) -->
+      <section class="features-section">
+        <h2 class="section-title">
+          تتعمر في <span class="highlight-blue">ثواني</span> ومن التحت!
+        </h2>
+        
+        <div class="refill-grid">
+          <!-- Capsule Image Preview without flag -->
+          <div class="refill-capsule-container">
+            <div class="capsule-frame">
+              <img src="refill_action.jpg" alt="طريقة التعبئة من الأسفل" class="capsule-img">
+            </div>
+          </div>
+
+          <!-- Benefits List (2 lines, each on single line) -->
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <div class="check-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="benefit-text-single">
+                بلا ما ترفد القرعة الكبيرة وبلا ضياع.
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <div class="check-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="benefit-text-single">
+                تصميم عملي وأنيق متوفر بعدة ألوان.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PACK SHOWCASE SECTION (EN DESSOUS DU FORMULAIRE) -->
+      <section class="variants-section">
+        <div class="pack-showcase-card">
+          <h3 class="pack-title">
+            متوفر بعدة ألوان مميزة
+          </h3>
+
+          <div class="pack-img-box">
+            <img src="pack_5_bottles.jpg" alt="تشكيلة ألوان القارورات" class="pack-img">
+          </div>
+
+          <!-- SIMPLE PRICE TEXT -->
+          <div class="simple-price-clean">
+            3 قطع بـ 1900 دج | 5 قطع بـ 2850 دج
+          </div>
+        </div>
       </section>
 
       <!-- FOOTER -->
