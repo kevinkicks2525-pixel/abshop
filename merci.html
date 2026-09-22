@@ -99,23 +99,23 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1256832322054459');
+  fbq('init', '1588086298856630');
   fbq('track', 'PageView');
 
   // Read real order value from localStorage (set by the order form)
   var orderValue = 0;
   try {
-    orderValue = parseInt(localStorage.getItem('orderValue')) || 2850;
+    orderValue = parseInt(localStorage.getItem('orderValue')) || 1900;
     // Clean up after reading
     localStorage.removeItem('orderValue');
     localStorage.removeItem('orderOffer');
   } catch(e) {
-    orderValue = 2850; // fallback to minimum offer
+    orderValue = 1900; // fallback to minimum offer
   }
   fbq('track', 'Purchase', { currency: 'DZD', value: orderValue });
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1256832322054459&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=1588086298856630&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
 </head>

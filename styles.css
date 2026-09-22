@@ -106,7 +106,7 @@ body {
 .hero-img {
   width: 100%;
   height: auto;
-  max-height: 330px;
+  max-height: 390px;
   display: block;
   object-fit: cover;
 }

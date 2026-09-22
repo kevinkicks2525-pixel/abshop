@@ -19,11 +19,11 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1256832322054459');
+  fbq('init', '1588086298856630');
   fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1256832322054459&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=1588086298856630&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
 </head>
@@ -111,16 +111,16 @@
       <section class="variants-section">
         <div class="pack-showcase-card">
           <h3 class="pack-title">
-            باك 5 قارورات
+            باك 3 قارورات
           </h3>
 
           <div class="pack-img-box">
-            <img src="pack_5_bottles.jpg" alt="باك 5 قارورات" class="pack-img">
+            <img src="pack_5_bottles.jpg" alt="باك 3 قارورات" class="pack-img">
           </div>
 
           <!-- SIMPLE PRICE TEXT (NO BOX, NO SHADOW) -->
           <div class="simple-price-clean">
-            5 قطع بـ 2850 دج
+            3 قطع بـ 1900 دج
           </div>
         </div>
       </section>
@@ -131,8 +131,8 @@
         <div class="selector-card">
           <div class="selector-title">اختر العرض:</div>
           <select class="selector-dropdown" id="offer-select">
-            <option value="5" selected>5 قطع — 2850 دج</option>
-            <option value="10">10 قطع — 5000 دج</option>
+            <option value="3" selected>3 قطع — 1900 دج</option>
+            <option value="5">5 قطع — 2850 دج</option>
           </select>
         </div>
 
@@ -163,11 +163,11 @@
           </p>
 
           <!-- Hidden inputs capturing dynamic data for Netlify & Telegram -->
-          <input type="hidden" id="hidden-offer" name="Offre" value="5 قطع">
+          <input type="hidden" id="hidden-offer" name="Offre" value="3 قطع (1900 دج)">
           <input type="hidden" id="hidden-finish" name="Finition" value="ماط (Matte)">
-          <input type="hidden" id="hidden-product-price" name="Prix_Produit" value="2850 DA">
+          <input type="hidden" id="hidden-product-price" name="Prix_Produit" value="1900 DA">
           <input type="hidden" id="hidden-delivery-cost" name="Frais_Livraison" value="0 DA">
-          <input type="hidden" id="hidden-total" name="Total_a_payer" value="2850 DA">
+          <input type="hidden" id="hidden-total" name="Total_a_payer" value="1900 DA">
           <input type="hidden" id="hidden-wilaya-name" name="Wilaya_Nom" value="">
           <input type="hidden" id="hidden-delivery-type" name="Type_Livraison" value="À Domicile">
           <input type="hidden" id="hidden-location" name="Lieu_Livraison" value="">
@@ -235,8 +235,8 @@
           <!-- Summary Box -->
           <div class="order-summary-box">
             <div class="summary-line">
-              <span id="summary-product-label">سعر المنتج (5 قطع):</span>
-              <strong id="summary-product-price">2850 دج</strong>
+              <span id="summary-product-label">سعر المنتج (3 قطع):</span>
+              <strong id="summary-product-price">1900 دج</strong>
             </div>
             <div class="summary-line">
               <span>نوع المظهر:</span>
@@ -248,7 +248,7 @@
             </div>
             <div class="summary-line highlight-line">
               <span>المبلغ الإجمالي:</span>
-              <strong class="total-price" id="total-cost">2850 دج</strong>
+              <strong class="total-price" id="total-cost">1900 دج</strong>
             </div>
           </div>
 
@@ -275,8 +275,8 @@
     const TELEGRAM_BOT_TOKEN = '8857057256:AAGNk-1KOaDZQLcKOQPL0lObS7uMUBItOnk';
     const TELEGRAM_CHAT_IDS = ['8716946287', '6419829363'];
 
-    let selectedOffer = 5;
-    let selectedOfferPrice = 2850;
+    let selectedOffer = 3;
+    let selectedOfferPrice = 1900;
     let selectedFinish = 'ماط (Matte)';
     let currentDeliveryType = 'home';
     let currentWilayaCode = '';
@@ -325,20 +325,20 @@
     const offerSelect = document.getElementById('offer-select');
     offerSelect.addEventListener('change', (e) => {
       const val = e.target.value;
-      if (val === '5') {
+      if (val === '3') {
+        selectedOffer = 3;
+        selectedOfferPrice = 1900;
+        summaryProductLabel.textContent = 'سعر المنتج (3 قطع):';
+        summaryProductPrice.textContent = '1900 دج';
+        hiddenOffer.value = '3 قطع (1900 دج)';
+        hiddenProductPrice.value = '1900 دج';
+      } else if (val === '5') {
         selectedOffer = 5;
         selectedOfferPrice = 2850;
         summaryProductLabel.textContent = 'سعر المنتج (5 قطع):';
         summaryProductPrice.textContent = '2850 دج';
         hiddenOffer.value = '5 قطع (2850 دج)';
         hiddenProductPrice.value = '2850 دج';
-      } else {
-        selectedOffer = 10;
-        selectedOfferPrice = 5000;
-        summaryProductLabel.textContent = 'سعر المنتج (10 قطع):';
-        summaryProductPrice.textContent = '5000 دج';
-        hiddenOffer.value = '10 قطع (5000 دج)';
-        hiddenProductPrice.value = '5000 دج';
       }
       updatePrices();
     });
