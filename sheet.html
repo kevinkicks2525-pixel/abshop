@@ -191,6 +191,23 @@
     .kpi-box.red { --kpi-color: #ef4444; }
     .kpi-box.purple { --kpi-color: #a855f7; }
 
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+
+    .kpi-icon-svg {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
     .kpi-title {
       font-size: 0.75rem;
       font-weight: 700;
@@ -231,6 +248,9 @@
     }
 
     .filter-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 6px 12px;
       border-radius: 6px;
       font-size: 0.8rem;
@@ -241,6 +261,10 @@
       color: var(--text-muted);
       white-space: nowrap;
       transition: all 0.15s;
+    }
+
+    .filter-tab svg {
+      flex-shrink: 0;
     }
 
     .filter-tab:hover {
@@ -277,8 +301,11 @@
       left: 10px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--text-muted);
+      pointer-events: none;
     }
 
     /* THE SPREADSHEET TABLE */
@@ -936,17 +963,35 @@
   <!-- GOOGLE SHEETS / ECOM PRO TOPBAR -->
   <header class="sheet-topbar">
     <div class="brand-section">
-      <div class="sheet-icon">📗</div>
+      <div class="sheet-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="8" y1="13" x2="16" y2="13"></line>
+          <line x1="8" y1="17" x2="16" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+      </div>
       <div class="sheet-titles">
         <h1>Sheet Ecom Pro <span class="sheet-status-pill"><span class="pulse-dot"></span> Live Sync</span></h1>
       </div>
     </div>
     <div class="topbar-actions">
       <button class="btn btn-outline" id="refresh-btn" onclick="fetchOrders()">
-        🔄 <span id="sync-counter">Actualiser</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+        <span id="sync-counter">Actualiser</span>
       </button>
       <a class="btn btn-green" href="/api/export-csv" download="Sheet_Ecom_TR_Delivery.csv">
-        📥 Exporter Excel (CSV)
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Exporter Excel (CSV)</span>
       </a>
     </div>
   </header>
@@ -956,27 +1001,52 @@
     <!-- KPI STATS RIBBON -->
     <section class="kpi-ribbon">
       <div class="kpi-box">
-        <div class="kpi-title">Total Commandes</div>
+        <div class="kpi-header">
+          <div class="kpi-title">Total Commandes</div>
+          <div class="kpi-icon-svg" style="color: #60a5fa;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          </div>
+        </div>
         <div class="kpi-num" id="kpi-total">0</div>
         <div class="kpi-subtext"><span id="kpi-nouveaux">0</span> à appeler</div>
       </div>
       <div class="kpi-box green">
-        <div class="kpi-title">Confirmées</div>
+        <div class="kpi-header">
+          <div class="kpi-title">Confirmées</div>
+          <div class="kpi-icon-svg" style="color: #34d399;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+        </div>
         <div class="kpi-num" id="kpi-confirmes">0</div>
         <div class="kpi-subtext">Taux : <b id="kpi-tx-conf">0%</b></div>
       </div>
       <div class="kpi-box amber">
-        <div class="kpi-title">NRP (Rappels)</div>
+        <div class="kpi-header">
+          <div class="kpi-title">NRP (Rappels)</div>
+          <div class="kpi-icon-svg" style="color: #fbbf24;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 7 23 1 17 1"></polyline><line x1="16" y1="8" x2="23" y2="1"></line><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+        </div>
         <div class="kpi-num" id="kpi-nrp">0</div>
         <div class="kpi-subtext">Taux : <b id="kpi-tx-nrp">0%</b></div>
       </div>
       <div class="kpi-box red">
-        <div class="kpi-title">Annulées</div>
+        <div class="kpi-header">
+          <div class="kpi-title">Annulées</div>
+          <div class="kpi-icon-svg" style="color: #f87171;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          </div>
+        </div>
         <div class="kpi-num" id="kpi-annules">0</div>
         <div class="kpi-subtext">Taux : <b id="kpi-tx-ann">0%</b></div>
       </div>
       <div class="kpi-box purple">
-        <div class="kpi-title">CA Confirmé</div>
+        <div class="kpi-header">
+          <div class="kpi-title">CA Confirmé</div>
+          <div class="kpi-icon-svg" style="color: #c084fc;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+        </div>
         <div class="kpi-num" id="kpi-ca">0 DA</div>
         <div class="kpi-subtext">Sur un total de <span id="kpi-ca-total">0 DA</span></div>
       </div>
@@ -985,16 +1055,39 @@
     <!-- SEARCH & STATUS TABS -->
     <section class="controls-bar">
       <div class="filter-tabs" id="status-tabs">
-        <button class="filter-tab active" data-filter="ALL">📋 Tout (<span id="count-all">0</span>)</button>
-        <button class="filter-tab" data-filter="NOUVEAU">🆕 À Traiter (<span id="count-nouveau">0</span>)</button>
-        <button class="filter-tab" data-filter="NRP">📞 NRP Rappels (<span id="count-nrp">0</span>)</button>
-        <button class="filter-tab" data-filter="CONFIRME">🟢 Confirmées (<span id="count-confirme">0</span>)</button>
-        <button class="filter-tab" data-filter="EXPEDIE">🚚 Expédiées (<span id="count-expedie">0</span>)</button>
-        <button class="filter-tab" data-filter="ANNULE">🔴 Annulées (<span id="count-annule">0</span>)</button>
+        <button class="filter-tab active" data-filter="ALL">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Tout (<span id="count-all">0</span>)</span>
+        </button>
+        <button class="filter-tab" data-filter="NOUVEAU">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <span>À Traiter (<span id="count-nouveau">0</span>)</span>
+        </button>
+        <button class="filter-tab" data-filter="NRP">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>NRP Rappels (<span id="count-nrp">0</span>)</span>
+        </button>
+        <button class="filter-tab" data-filter="CONFIRME">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Confirmées (<span id="count-confirme">0</span>)</span>
+        </button>
+        <button class="filter-tab" data-filter="EXPEDIE">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span>Expédiées (<span id="count-expedie">0</span>)</span>
+        </button>
+        <button class="filter-tab" data-filter="ANNULE">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <span>Annulées (<span id="count-annule">0</span>)</span>
+        </button>
       </div>
 
       <div class="search-box">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
         <input type="text" id="search-input" placeholder="Rechercher client, tel, wilaya, #CMD...">
       </div>
     </section>
@@ -1076,14 +1169,24 @@
     let countdown = 5;
 
     const STATUS_MAP = {
-      NOUVEAU: { label: '🆕 Nouveau', class: 'st-NOUVEAU' },
-      NRP_1: { label: '🟡 NRP 1 (1er Appel)', class: 'st-NRP_1' },
-      NRP_2: { label: '🟠 NRP 2 (2ème Jour)', class: 'st-NRP_2' },
-      NRP_3: { label: '🟤 NRP 3 (Dernier)', class: 'st-NRP_3' },
-      CONFIRME: { label: '🟢 Confirmé', class: 'st-CONFIRME' },
-      REPORTE: { label: '⏰ Reporté', class: 'st-REPORTE' },
-      ANNULE: { label: '🔴 Annulé', class: 'st-ANNULE' },
-      EXPEDIE: { label: '🚚 Expédié', class: 'st-EXPEDIE' }
+      NOUVEAU: { label: 'Nouveau', class: 'st-NOUVEAU' },
+      NRP_1: { label: 'NRP 1 (1er Appel)', class: 'st-NRP_1' },
+      NRP_2: { label: 'NRP 2 (2ème Jour)', class: 'st-NRP_2' },
+      NRP_3: { label: 'NRP 3 (Dernier)', class: 'st-NRP_3' },
+      CONFIRME: { label: 'Confirmé', class: 'st-CONFIRME' },
+      REPORTE: { label: 'Reporté', class: 'st-REPORTE' },
+      ANNULE: { label: 'Annulé', class: 'st-ANNULE' },
+      EXPEDIE: { label: 'Expédié', class: 'st-EXPEDIE' }
+    };
+
+    const ICONS = {
+      phone: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>`,
+      whatsapp: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>`,
+      history: `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
+      printer: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>`,
+      filePlus: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
+      home: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`,
+      desk: `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 7v14M21 7v14M6 7V3h12v4M9 11h2M9 15h2M13 11h2M13 15h2"></path></svg>`
     };
 
     async function fetchOrders() {
@@ -1164,10 +1267,10 @@
         });
         const data = await res.json();
         if (data.success) {
-          alert('✅ Bordereau créé avec succès !\nTracking: ' + data.tracking);
+          alert('Bordereau créé avec succès !\nTracking: ' + data.tracking);
           await fetchOrders();
         } else {
-          alert('❌ Erreur: ' + data.message);
+          alert('Erreur: ' + data.message);
         }
       } catch (e) {
         alert('Erreur: ' + e.message);
@@ -1254,7 +1357,7 @@
           <td style="color: var(--text-muted); font-size: 0.8rem; font-family: monospace;">${o.dateStr || ''}</td>
           <td class="client-cell">
             <span class="client-name">${o.nom_client || 'Client'}</span>
-            <a href="tel:${o.telephone}" class="client-phone">📞 ${o.telephone || ''}</a>
+            <a href="tel:${o.telephone}" class="client-phone">${ICONS.phone} <span>${o.telephone || ''}</span></a>
           </td>
           <td class="location-cell">
             <span class="wilaya-badge">${o.wilaya_name || o.code_wilaya || '—'}</span>
@@ -1262,21 +1365,21 @@
           </td>
           <td>
             <span class="mode-tag ${o.stop_desk ? 'desk' : 'home'}">
-              ${o.stop_desk ? '🏢 Stop Desk' : '🏠 Domicile'}
+              ${o.stop_desk ? ICONS.desk + ' <span>Stop Desk</span>' : ICONS.home + ' <span>Domicile</span>'}
             </span>
           </td>
           <td class="product-cell">${o.produit || 'ميني فلوكون عطر'}</td>
           <td><span class="price-tag">${(o.montant || 0).toLocaleString()} DA</span></td>
           <td>
             <select class="status-select ${sInfo.class}" onchange="onStatusChange('${o.id}', this.value)">
-              <option value="NOUVEAU" ${o.statut === 'NOUVEAU' ? 'selected' : ''}>🆕 Nouveau</option>
-              <option value="CONFIRME" ${o.statut === 'CONFIRME' ? 'selected' : ''}>🟢 Confirmé</option>
-              <option value="NRP_1" ${o.statut === 'NRP_1' ? 'selected' : ''}>🟡 NRP 1 (1er Appel)</option>
-              <option value="NRP_2" ${o.statut === 'NRP_2' ? 'selected' : ''}>🟠 NRP 2 (2ème Jour)</option>
-              <option value="NRP_3" ${o.statut === 'NRP_3' ? 'selected' : ''}>🟤 NRP 3 (Dernier)</option>
-              <option value="REPORTE" ${o.statut === 'REPORTE' ? 'selected' : ''}>⏰ Reporté</option>
-              <option value="ANNULE" ${o.statut === 'ANNULE' ? 'selected' : ''}>🔴 Annulé</option>
-              <option value="EXPEDIE" ${o.statut === 'EXPEDIE' ? 'selected' : ''}>🚚 Expédié</option>
+              <option value="NOUVEAU" ${o.statut === 'NOUVEAU' ? 'selected' : ''}>Nouveau</option>
+              <option value="CONFIRME" ${o.statut === 'CONFIRME' ? 'selected' : ''}>Confirmé</option>
+              <option value="NRP_1" ${o.statut === 'NRP_1' ? 'selected' : ''}>NRP 1 (1er Appel)</option>
+              <option value="NRP_2" ${o.statut === 'NRP_2' ? 'selected' : ''}>NRP 2 (2ème Jour)</option>
+              <option value="NRP_3" ${o.statut === 'NRP_3' ? 'selected' : ''}>NRP 3 (Dernier)</option>
+              <option value="REPORTE" ${o.statut === 'REPORTE' ? 'selected' : ''}>Reporté</option>
+              <option value="ANNULE" ${o.statut === 'ANNULE' ? 'selected' : ''}>Annulé</option>
+              <option value="EXPEDIE" ${o.statut === 'EXPEDIE' ? 'selected' : ''}>Expédié</option>
             </select>
           </td>
           <td>
@@ -1287,18 +1390,18 @@
           <td style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1;">${o.confirmateur || '—'}</td>
           <td>
             ${o.tracking ?
-              `<a href="${o.pdf_url || '#'}" target="_blank" class="tracking-link" title="Imprimer le PDF">🖨️ ${o.tracking}</a>` :
+              `<a href="${o.pdf_url || '#'}" target="_blank" class="tracking-link" title="Imprimer le PDF">${ICONS.printer} <span>${o.tracking}</span></a>` :
               (o.statut === 'CONFIRME' ?
-                `<button class="btn-create-bd" onclick="onCreateBordereau('${o.id}')">📄 Créer Bordereau</button>` :
+                `<button class="btn-create-bd" onclick="onCreateBordereau('${o.id}')">${ICONS.filePlus} <span>Bordereau</span></button>` :
                 `<span style="color: var(--text-muted); font-size: 0.76rem;">Non généré</span>`
               )
             }
           </td>
           <td>
             <div class="actions-group">
-              <a href="tel:${o.telephone}" class="btn-action-icon" title="Appeler le client">📞</a>
-              <a href="https://wa.me/${dzPhone}?text=${waMsg}" target="_blank" class="btn-action-icon wa" title="WhatsApp Direct">💬</a>
-              <button class="btn-action-icon" onclick="showOrderHistory('${o.id}')" title="Historique complet">📜</button>
+              <a href="tel:${o.telephone}" class="btn-action-icon" title="Appeler le client">${ICONS.phone}</a>
+              <a href="https://wa.me/${dzPhone}?text=${waMsg}" target="_blank" class="btn-action-icon wa" title="WhatsApp Direct">${ICONS.whatsapp}</a>
+              <button class="btn-action-icon" onclick="showOrderHistory('${o.id}')" title="Historique complet">${ICONS.history}</button>
             </div>
           </td>
         `;

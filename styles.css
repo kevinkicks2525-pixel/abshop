@@ -470,7 +470,7 @@ body {
   background: #ffffff;
 }
 
-/* FINISH TOGGLE (Compact visual picker) */
+/* FINISH TOGGLE (Compact segmented buttons) */
 .finish-toggle {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -481,42 +481,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 7px 10px;
+  padding: 8px 12px;
   border: 1.5px solid #cbd5e1;
   border-radius: 10px;
   cursor: pointer;
   background: #f8fafc;
   transition: all 0.2s ease;
   min-height: 38px;
+  text-align: center;
 }
 
 .finish-option input {
   display: none;
 }
 
-.finish-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
 .finish-name {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #334155;
   white-space: nowrap;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .finish-sub {
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   color: #64748b;
   font-weight: 600;
-  margin-right: 3px;
 }
 
 .finish-option.active {
