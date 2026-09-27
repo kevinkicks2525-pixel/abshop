@@ -56,64 +56,16 @@
         </div>
 
         <!-- PRIX DE L'OFFRE 3 A 1900 DA DIRECTEMENT SOUS LA PHOTO -->
-        <div class="simple-price-clean" style="margin-top: 6px; font-size: 1.8rem;">
+        <div class="simple-price-clean" id="hero-price-badge" style="margin-top: 4px; font-size: 1.6rem;">
           3 قطع بـ <span style="color: var(--primary-blue);">1900 دج</span>
         </div>
       </section>
 
-      <!-- SELECTION SECTION (OFFRE & COULEUR) — PREMIUM CARD STYLE -->
-      <section class="selection-section">
-        <!-- Choix de l'offre (Cards radio-style) -->
-        <div class="selector-card">
-          <div class="selector-title">🎁 اختر العرض:</div>
-          <div class="offer-cards" id="offer-cards">
-            <label class="offer-card active" data-value="3">
-              <input type="radio" name="offer-radio" value="3" checked>
-              <div class="offer-card-inner">
-                <span class="offer-qty">3</span>
-                <span class="offer-label">قطع</span>
-              </div>
-              <div class="offer-price">1900 <small>دج</small></div>
-              <div class="offer-unit">633 دج / قطعة</div>
-              <div class="offer-check">✓</div>
-            </label>
-            <label class="offer-card" data-value="5">
-              <input type="radio" name="offer-radio" value="5">
-              <div class="offer-card-inner">
-                <span class="offer-qty">5</span>
-                <span class="offer-label">قطع</span>
-              </div>
-              <div class="offer-price">2850 <small>دج</small></div>
-              <div class="offer-unit">570 دج / قطعة</div>
-              <div class="offer-badge">الأكثر طلباً 🔥</div>
-              <div class="offer-check">✓</div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Choix de la finition (Visual toggle) -->
-        <div class="selector-card">
-          <div class="selector-title">🎨 اختر نوع المظهر:</div>
-          <div class="finish-toggle" id="finish-toggle">
-            <label class="finish-option active" data-value="matte">
-              <input type="radio" name="finish-radio" value="matte" checked>
-              <span class="finish-dot" style="background: linear-gradient(135deg, #374151, #1f2937);"></span>
-              <span class="finish-name">ماط (Matte)</span>
-            </label>
-            <label class="finish-option" data-value="glossy">
-              <input type="radio" name="finish-radio" value="glossy">
-              <span class="finish-dot" style="background: linear-gradient(135deg, #e2e8f0, #f8fafc); border: 1px solid #cbd5e1;"></span>
-              <span class="finish-name">لامع (Brillant)</span>
-            </label>
-          </div>
-        </div>
-      </section>
-
-      <!-- ORDER FORM SECTION (FORMULAIRE COMPLET) -->
+      <!-- ORDER FORM SECTION (FORMULAIRE COMPLET UNIFIE) -->
       <section class="order-section" id="order-form">
         <div class="form-header">
           <h3>استمارة الطلب</h3>
-          <p>يرجى إدخال معلومات التوصيل وسنتصل بكم لتأكيد الطلب</p>
+          <p>يرجى اختيار العرض ومعلومات التوصيل لتأكيد الطلب</p>
         </div>
 
         <form name="order-form" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field"
@@ -135,6 +87,53 @@
           <input type="hidden" id="hidden-wilaya-name" name="Wilaya_Nom" value="">
           <input type="hidden" id="hidden-delivery-type" name="Type_Livraison" value="À Domicile">
           <input type="hidden" id="hidden-location" name="Lieu_Livraison" value="">
+
+          <!-- 1. CHOIX DE L'OFFRE (Cartes compactes équilibrées) -->
+          <div class="form-step">
+            <div class="form-step-title">🎁 اختر العرض:</div>
+            <div class="offer-cards" id="offer-cards">
+              <label class="offer-card active" data-value="3">
+                <input type="radio" name="offer-radio" value="3" checked>
+                <div class="offer-check">✓</div>
+                <div class="offer-card-inner">
+                  <span class="offer-qty">3</span>
+                  <span class="offer-label">قطع</span>
+                </div>
+                <div class="offer-price">1900 <small>دج</small></div>
+                <div class="offer-unit">633 دج / قطعة</div>
+              </label>
+              <label class="offer-card has-badge" data-value="5">
+                <input type="radio" name="offer-radio" value="5">
+                <div class="offer-badge">الأكثر طلباً 🔥</div>
+                <div class="offer-check">✓</div>
+                <div class="offer-card-inner">
+                  <span class="offer-qty">5</span>
+                  <span class="offer-label">قطع</span>
+                </div>
+                <div class="offer-price">2850 <small>دج</small></div>
+                <div class="offer-unit">570 دج / قطعة</div>
+              </label>
+            </div>
+          </div>
+
+          <!-- 2. CHOIX DU FINI (Sélecteur compact) -->
+          <div class="form-step">
+            <div class="form-step-title">🎨 اختر نوع المظهر:</div>
+            <div class="finish-toggle" id="finish-toggle">
+              <label class="finish-option active" data-value="matte">
+                <input type="radio" name="finish-radio" value="matte" checked>
+                <span class="finish-dot" style="background: linear-gradient(135deg, #374151, #1f2937);"></span>
+                <span class="finish-name">ماط <span dir="ltr" class="finish-sub">(Matte)</span></span>
+              </label>
+              <label class="finish-option" data-value="glossy">
+                <input type="radio" name="finish-radio" value="glossy">
+                <span class="finish-dot" style="background: linear-gradient(135deg, #e2e8f0, #f8fafc); border: 1px solid #cbd5e1;"></span>
+                <span class="finish-name">لامع <span dir="ltr" class="finish-sub">(Brillant)</span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-step-divider"></div>
 
           <!-- Nom et Prénom -->
           <div class="form-group">
@@ -362,6 +361,7 @@
         card.classList.add('active');
         card.querySelector('input').checked = true;
         const val = card.getAttribute('data-value');
+        const heroPriceBadge = document.getElementById('hero-price-badge');
         if (val === '3') {
           selectedOffer = 3;
           selectedOfferPrice = 1900;
@@ -369,6 +369,7 @@
           summaryProductPrice.textContent = '1900 دج';
           hiddenOffer.value = '3 قطع (1900 دج)';
           hiddenProductPrice.value = '1900 دج';
+          if (heroPriceBadge) heroPriceBadge.innerHTML = '3 قطع بـ <span style="color: var(--primary-blue);">1900 دج</span>';
         } else if (val === '5') {
           selectedOffer = 5;
           selectedOfferPrice = 2850;
@@ -376,6 +377,7 @@
           summaryProductPrice.textContent = '2850 دج';
           hiddenOffer.value = '5 قطع (2850 دج)';
           hiddenProductPrice.value = '2850 دج';
+          if (heroPriceBadge) heroPriceBadge.innerHTML = '5 قطع بـ <span style="color: var(--primary-blue);">2850 دج</span>';
         }
         updatePrices();
       });

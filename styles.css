@@ -36,10 +36,10 @@ body {
 }
 
 .lp-container {
-  padding: 16px 18px 30px;
+  padding: 12px 14px 24px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 14px;
 }
 
 /* HERO SECTION */
@@ -303,34 +303,56 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* SELECTION SECTION (OFFER & FINISH — PREMIUM CARD STYLE) */
-.selection-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.selector-card {
+/* ORDER FORM SECTION (UNIFIED & COMPACT) */
+.order-section {
   background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 14px 16px;
   border: 1.5px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
-.selector-title {
-  font-size: 1rem;
-  font-weight: 800;
-  color: #0f172a;
+.form-header {
+  text-align: center;
   margin-bottom: 12px;
+}
+
+.form-header h3 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.form-header p {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.form-step {
+  margin-bottom: 10px;
+}
+
+.form-step-title {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 6px;
   text-align: right;
 }
 
-/* OFFER CARDS (Radio-card style) */
+.form-step-divider {
+  height: 1px;
+  background: #f1f5f9;
+  margin: 6px 0 8px;
+}
+
+/* OFFER CARDS (Compact radio-style) */
 .offer-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
+  margin-top: 14px; /* Room for floating pill */
 }
 
 .offer-card {
@@ -339,15 +361,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 14px 10px 12px;
-  border: 2px solid #e2e8f0;
-  border-radius: 16px;
+  padding: 15px 6px 9px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
   cursor: pointer;
-  background: #fafbfc;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #f8fafc;
+  transition: all 0.2s ease;
   text-align: center;
-  gap: 4px;
-  overflow: hidden;
+  gap: 2px;
+  min-height: 74px;
 }
 
 .offer-card input {
@@ -357,74 +379,82 @@ body {
 .offer-card-inner {
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  justify-content: center;
+  gap: 3px;
+  line-height: 1.1;
 }
 
 .offer-qty {
-  font-size: 2rem;
+  font-size: 1.35rem;
   font-weight: 900;
   color: #0f172a;
   line-height: 1;
 }
 
 .offer-label {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #64748b;
 }
 
 .offer-price {
-  font-size: 1.15rem;
-  font-weight: 900;
+  font-size: 1rem;
+  font-weight: 800;
   color: var(--primary-blue);
+  line-height: 1.2;
 }
 
 .offer-price small {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 700;
 }
 
 .offer-unit {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 600;
   color: #94a3b8;
+  line-height: 1.1;
 }
 
+/* Floating badge for 5-pack - Clean spacing, NEVER touches number 5 or cadre */
 .offer-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
   background: linear-gradient(135deg, #f97316, #ef4444);
-  color: #fff;
-  font-size: 0.68rem;
+  color: #ffffff;
+  font-size: 0.64rem;
   font-weight: 800;
-  padding: 3px 0;
-  text-align: center;
+  padding: 2px 9px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.35);
+  white-space: nowrap;
+  z-index: 2;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
 }
 
 .offer-check {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  width: 22px;
-  height: 22px;
+  top: 5px;
+  left: 5px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: var(--primary-blue);
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 900;
   display: none;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
 }
 
 .offer-card.active {
   border-color: var(--primary-blue);
   background: #f0f9ff;
-  box-shadow: 0 0 0 1px var(--primary-blue), 0 4px 12px rgba(2, 132, 199, 0.12);
-  transform: scale(1.02);
+  box-shadow: 0 0 0 1px var(--primary-blue), 0 2px 8px rgba(2, 132, 199, 0.12);
 }
 
 .offer-card.active .offer-check {
@@ -437,27 +467,28 @@ body {
 
 .offer-card:not(.active):hover {
   border-color: #94a3b8;
-  background: #f8fafc;
+  background: #ffffff;
 }
 
-/* FINISH TOGGLE (Visual dot picker) */
+/* FINISH TOGGLE (Compact visual picker) */
 .finish-toggle {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 
 .finish-option {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 12px 10px;
-  border: 2px solid #e2e8f0;
-  border-radius: 14px;
+  gap: 8px;
+  padding: 7px 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
   cursor: pointer;
-  background: #fafbfc;
-  transition: all 0.2s;
+  background: #f8fafc;
+  transition: all 0.2s ease;
+  min-height: 38px;
 }
 
 .finish-option input {
@@ -465,18 +496,27 @@ body {
 }
 
 .finish-dot {
-  width: 28px;
-  height: 28px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .finish-name {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #334155;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.finish-sub {
+  font-size: 0.74rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-right: 3px;
 }
 
 .finish-option.active {
@@ -487,53 +527,34 @@ body {
 
 .finish-option.active .finish-name {
   color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.finish-option.active .finish-sub {
+  color: #0369a1;
 }
 
 .finish-option:not(.active):hover {
   border-color: #94a3b8;
-}
-
-/* ORDER FORM SECTION */
-.order-section {
   background: #ffffff;
-  border-radius: 22px;
-  padding: 18px 16px;
-  border: 1.5px solid #e2e8f0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-.form-header {
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.form-header h3 {
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: #0f172a;
-}
-
-.form-header p {
-  font-size: 0.85rem;
-  color: #64748b;
-  margin-top: 3px;
-}
-
+/* COD FORM FIELDS */
 .cod-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 9px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
   text-align: right;
 }
 
 .form-group label {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 700;
   color: #1e293b;
 }
@@ -541,14 +562,14 @@ body {
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 9px 12px;
+  border-radius: 10px;
   border: 1.5px solid #cbd5e1;
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: #0f172a;
   outline: none;
-  background: #f8fafc;
+  background: #ffffff;
   transition: all 0.2s;
 }
 
@@ -559,12 +580,12 @@ body {
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
 
-/* DELIVERY TYPE SELECTOR (STOP DESK ON SEPARATE LINE) */
+/* DELIVERY TYPE SELECTOR */
 .delivery-type-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 2px;
+  gap: 8px;
+  margin-top: 1px;
 }
 
 .delivery-type-label {
@@ -572,14 +593,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 12px 6px;
+  padding: 7px 6px;
   border: 1.5px solid #cbd5e1;
-  border-radius: 14px;
+  border-radius: 10px;
   cursor: pointer;
   background: #f8fafc;
   transition: all 0.2s;
   text-align: center;
-  gap: 3px;
+  gap: 1px;
 }
 
 .delivery-type-label input {
@@ -587,15 +608,15 @@ body {
 }
 
 .delivery-main-text {
-  font-size: 0.92rem;
-  font-weight: 800;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: #1e293b;
   white-space: nowrap;
 }
 
 .delivery-sub-text {
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.68rem;
+  font-weight: 600;
   color: #64748b;
   white-space: nowrap;
 }
@@ -614,23 +635,23 @@ body {
   color: #0369a1;
 }
 
-/* SUMMARY BOX */
+/* ORDER SUMMARY BOX */
 .order-summary-box {
   background: linear-gradient(135deg, #f8fafc, #f0f9ff);
   border: 1.5px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 14px 16px;
-  margin: 8px 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin: 4px 0 6px;
 }
 
 .summary-line {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   font-weight: 600;
   color: #475569;
-  padding: 5px 0;
+  padding: 3px 0;
 }
 
 .summary-line strong {
@@ -639,10 +660,10 @@ body {
 }
 
 .summary-line.highlight-line {
-  margin-top: 8px;
-  padding-top: 10px;
-  border-top: 2px dashed #cbd5e1;
-  font-size: 1.1rem;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1.5px dashed #cbd5e1;
+  font-size: 0.98rem;
   font-weight: 800;
   color: #0f172a;
 }
@@ -650,7 +671,7 @@ body {
 .total-price {
   color: #0284c7;
   font-weight: 900;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
 }
 
 /* CLEAN SUBMIT BUTTON */
@@ -658,14 +679,14 @@ body {
   width: 100%;
   background: linear-gradient(135deg, #16a34a, #15803d);
   color: #ffffff;
-  padding: 16px;
+  padding: 12px 18px;
   border: none;
-  border-radius: 16px;
+  border-radius: 12px;
   font-family: inherit;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.3);
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
   transition: all 0.2s;
   position: relative;
   overflow: hidden;
@@ -688,13 +709,13 @@ body {
 
 .submit-btn-clean:hover {
   background: linear-gradient(135deg, #15803d, #166534);
-  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.4);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.38);
   transform: translateY(-1px);
 }
 
 .submit-btn-clean:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 10px rgba(22, 163, 74, 0.25);
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
 }
 
 /* FOOTER */
