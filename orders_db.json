@@ -279,6 +279,45 @@
         }
       ],
       "last_updated": "2026-09-27T14:53:21.562Z"
+    },
+    "CMD_MUKEE545": {
+      "id": "CMD_MUKEE545",
+      "date": "2026-09-27T22:36:24.905Z",
+      "dateStr": "27/09/2026 11:36 PM",
+      "nom_client": "Test test",
+      "telephone": "0662312424",
+      "code_wilaya": 5,
+      "wilaya_name": "05 - Batna",
+      "commune": "Barika",
+      "adresse": "Bureau Stop Desk Barika",
+      "stop_desk": 1,
+      "mode": "استلام من المكتب (Stop Desk)",
+      "produit": "3 قطع (1900 دج) - ماط (Matte)",
+      "montant": 2300,
+      "statut": "NRP_1",
+      "confirmateur": "James Kick",
+      "notes": "",
+      "tracking": null,
+      "pdf_url": null,
+      "telegram_message_id": 115,
+      "telegram_chat_id": 8716946287,
+      "history": [
+        {
+          "action": "CREATION",
+          "time": "2026-09-27T22:36:24.905Z",
+          "dateStr": "27/09/2026 11:36 PM",
+          "user": "Site Web",
+          "text": "Commande enregistrée depuis le site"
+        },
+        {
+          "action": "NRP_1",
+          "time": "2026-09-27T22:36:24.975Z",
+          "dateStr": "27/09/2026 11:36 PM",
+          "user": "James Kick",
+          "text": "Passé en 🟡 NRP 1 (Appel 1)"
+        }
+      ],
+      "last_updated": "2026-09-27T22:36:24.975Z"
     }
   },
   "counter": 1

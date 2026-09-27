@@ -294,10 +294,13 @@
     }
 
     .table-container {
-      overflow-x: auto;
+      overflow: auto;
       max-height: calc(100vh - 350px);
       min-height: 380px;
       position: relative;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
 
     table.ecom-sheet {
@@ -320,9 +323,27 @@
       border-right: 1px solid var(--border-light);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 12;
       white-space: nowrap;
       user-select: none;
+    }
+
+    /* First column frozen (row number) */
+    th:first-child,
+    td:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 11;
+      background: #0f172a;
+    }
+    th:first-child {
+      z-index: 15;
+    }
+    td:first-child {
+      background: #111827;
+    }
+    tr:hover td:first-child {
+      background: #1a2744;
     }
 
     td {
@@ -691,20 +712,221 @@
     }
 
     @media (max-width: 768px) {
-      .sheet-topbar {
-        padding: 10px 14px;
+      body {
+        overflow: hidden;
+        height: 100vh;
+        height: 100dvh;
       }
+
+      .sheet-topbar {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+      .sheet-titles h1 {
+        font-size: 0.95rem;
+      }
+      .sheet-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+        border-radius: 8px;
+      }
+      .topbar-actions {
+        gap: 6px;
+      }
+      .btn {
+        padding: 6px 10px;
+        font-size: 0.76rem;
+      }
+
       .sheet-wrapper {
+        padding: 8px 8px;
+        gap: 8px;
+        overflow: hidden;
+        flex: 1;
+      }
+
+      /* Compact KPIs - horizontal scroll on mobile */
+      .kpi-ribbon {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 4px;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+      .kpi-ribbon::-webkit-scrollbar {
+        display: none;
+      }
+      .kpi-box {
+        min-width: 130px;
+        max-width: 160px;
+        flex-shrink: 0;
+        scroll-snap-align: start;
         padding: 10px 12px;
+        border-radius: 10px;
+      }
+      .kpi-num {
+        font-size: 1.25rem;
+      }
+      .kpi-title {
+        font-size: 0.68rem;
+      }
+      .kpi-subtext {
+        font-size: 0.72rem;
+      }
+
+      /* Controls bar mobile */
+      .controls-bar {
+        padding: 8px 10px;
+        gap: 8px;
+        border-radius: 10px;
+      }
+      .filter-tabs {
+        gap: 4px;
+        width: 100%;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 2px;
+      }
+      .filter-tabs::-webkit-scrollbar {
+        display: none;
+      }
+      .filter-tab {
+        padding: 5px 9px;
+        font-size: 0.72rem;
+        border-radius: 6px;
       }
       .search-box {
         min-width: 100%;
       }
-      .kpi-ribbon {
-        grid-template-columns: repeat(2, 1fr);
+      .search-box input {
+        font-size: 0.82rem;
+        padding: 7px 10px 7px 30px;
+      }
+
+      /* TABLE - take remaining space */
+      .sheet-table-card {
+        border-radius: 8px;
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
       }
       .table-container {
-        max-height: 60vh;
+        max-height: none;
+        min-height: 0;
+        flex: 1;
+        overscroll-behavior: contain;
+      }
+
+      table.ecom-sheet {
+        font-size: 0.76rem;
+      }
+      th {
+        padding: 8px 10px;
+        font-size: 0.66rem;
+      }
+      td {
+        padding: 8px 10px;
+        font-size: 0.78rem;
+      }
+
+      /* Smaller components */
+      .status-select {
+        font-size: 0.72rem;
+        padding: 5px 6px;
+        min-width: 110px;
+      }
+      .note-input {
+        width: 100px;
+        font-size: 0.74rem;
+        padding: 3px 6px;
+      }
+      .note-input:focus {
+        width: 120px;
+      }
+      .btn-create-bd {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+      }
+      .tracking-link {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+      }
+      .btn-action-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+      }
+      .actions-group {
+        gap: 4px;
+      }
+      .price-tag {
+        font-size: 0.85rem;
+      }
+      .order-id-badge {
+        font-size: 0.72rem;
+        padding: 2px 6px;
+      }
+      .client-cell {
+        max-width: 160px;
+      }
+      .client-name {
+        font-size: 0.78rem;
+      }
+      .client-phone {
+        font-size: 0.72rem;
+      }
+      .location-cell {
+        max-width: 140px;
+      }
+      .product-cell {
+        max-width: 150px;
+        font-size: 0.72rem;
+      }
+      .mode-tag {
+        font-size: 0.68rem;
+        padding: 2px 6px;
+      }
+
+      /* Footer */
+      .sheet-statusbar {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+      }
+
+      /* Modal */
+      .modal-card {
+        max-width: 95vw;
+        border-radius: 12px;
+      }
+      .modal-header {
+        padding: 12px 14px;
+      }
+      .modal-header h3 {
+        font-size: 0.95rem;
+      }
+      .modal-body {
+        padding: 14px;
+      }
+    }
+
+    /* Extra small screens (iPhone SE etc) */
+    @media (max-width: 380px) {
+      .kpi-box {
+        min-width: 110px;
+        padding: 8px 10px;
+      }
+      .kpi-num {
+        font-size: 1.1rem;
+      }
+      .sheet-topbar {
+        padding: 6px 10px;
+      }
+      .sheet-titles h1 {
+        font-size: 0.85rem;
       }
     }
   </style>

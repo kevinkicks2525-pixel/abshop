@@ -61,24 +61,51 @@
         </div>
       </section>
 
-      <!-- SELECTION SECTION (OFFRE & COULEUR) -->
+      <!-- SELECTION SECTION (OFFRE & COULEUR) — PREMIUM CARD STYLE -->
       <section class="selection-section">
-        <!-- Choix de l'offre (Dropdown) -->
+        <!-- Choix de l'offre (Cards radio-style) -->
         <div class="selector-card">
-          <div class="selector-title">اختر العرض:</div>
-          <select class="selector-dropdown" id="offer-select">
-            <option value="3" selected>3 قطع — 1900 دج</option>
-            <option value="5">5 قطع — 2850 دج</option>
-          </select>
+          <div class="selector-title">🎁 اختر العرض:</div>
+          <div class="offer-cards" id="offer-cards">
+            <label class="offer-card active" data-value="3">
+              <input type="radio" name="offer-radio" value="3" checked>
+              <div class="offer-card-inner">
+                <span class="offer-qty">3</span>
+                <span class="offer-label">قطع</span>
+              </div>
+              <div class="offer-price">1900 <small>دج</small></div>
+              <div class="offer-unit">633 دج / قطعة</div>
+              <div class="offer-check">✓</div>
+            </label>
+            <label class="offer-card" data-value="5">
+              <input type="radio" name="offer-radio" value="5">
+              <div class="offer-card-inner">
+                <span class="offer-qty">5</span>
+                <span class="offer-label">قطع</span>
+              </div>
+              <div class="offer-price">2850 <small>دج</small></div>
+              <div class="offer-unit">570 دج / قطعة</div>
+              <div class="offer-badge">الأكثر طلباً 🔥</div>
+              <div class="offer-check">✓</div>
+            </label>
+          </div>
         </div>
 
-        <!-- Choix de la finition (Dropdown) -->
+        <!-- Choix de la finition (Visual toggle) -->
         <div class="selector-card">
-          <div class="selector-title">اختر نوع المظهر:</div>
-          <select class="selector-dropdown" id="finish-select">
-            <option value="matte" selected>ماط (Matte)</option>
-            <option value="glossy">لامع (Brillant)</option>
-          </select>
+          <div class="selector-title">🎨 اختر نوع المظهر:</div>
+          <div class="finish-toggle" id="finish-toggle">
+            <label class="finish-option active" data-value="matte">
+              <input type="radio" name="finish-radio" value="matte" checked>
+              <span class="finish-dot" style="background: linear-gradient(135deg, #374151, #1f2937);"></span>
+              <span class="finish-name">ماط (Matte)</span>
+            </label>
+            <label class="finish-option" data-value="glossy">
+              <input type="radio" name="finish-radio" value="glossy">
+              <span class="finish-dot" style="background: linear-gradient(135deg, #e2e8f0, #f8fafc); border: 1px solid #cbd5e1;"></span>
+              <span class="finish-name">لامع (Brillant)</span>
+            </label>
+          </div>
         </div>
       </section>
 
@@ -327,38 +354,49 @@
     const hiddenDeliveryType = document.getElementById('hidden-delivery-type');
     const hiddenLocation = document.getElementById('hidden-location');
 
-    // Offer Selection Dropdown
-    const offerSelect = document.getElementById('offer-select');
-    offerSelect.addEventListener('change', (e) => {
-      const val = e.target.value;
-      if (val === '3') {
-        selectedOffer = 3;
-        selectedOfferPrice = 1900;
-        summaryProductLabel.textContent = 'سعر المنتج (3 قطع):';
-        summaryProductPrice.textContent = '1900 دج';
-        hiddenOffer.value = '3 قطع (1900 دج)';
-        hiddenProductPrice.value = '1900 دج';
-      } else if (val === '5') {
-        selectedOffer = 5;
-        selectedOfferPrice = 2850;
-        summaryProductLabel.textContent = 'سعر المنتج (5 قطع):';
-        summaryProductPrice.textContent = '2850 دج';
-        hiddenOffer.value = '5 قطع (2850 دج)';
-        hiddenProductPrice.value = '2850 دج';
-      }
-      updatePrices();
+    // Offer Selection Cards (Radio-style)
+    const offerCards = document.querySelectorAll('.offer-card');
+    offerCards.forEach(card => {
+      card.addEventListener('click', () => {
+        offerCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        card.querySelector('input').checked = true;
+        const val = card.getAttribute('data-value');
+        if (val === '3') {
+          selectedOffer = 3;
+          selectedOfferPrice = 1900;
+          summaryProductLabel.textContent = 'سعر المنتج (3 قطع):';
+          summaryProductPrice.textContent = '1900 دج';
+          hiddenOffer.value = '3 قطع (1900 دج)';
+          hiddenProductPrice.value = '1900 دج';
+        } else if (val === '5') {
+          selectedOffer = 5;
+          selectedOfferPrice = 2850;
+          summaryProductLabel.textContent = 'سعر المنتج (5 قطع):';
+          summaryProductPrice.textContent = '2850 دج';
+          hiddenOffer.value = '5 قطع (2850 دج)';
+          hiddenProductPrice.value = '2850 دج';
+        }
+        updatePrices();
+      });
     });
 
-    // Finish Selection Dropdown
-    const finishSelect = document.getElementById('finish-select');
-    finishSelect.addEventListener('change', (e) => {
-      if (e.target.value === 'matte') {
-        selectedFinish = 'ماط (Matte)';
-      } else {
-        selectedFinish = 'لامع (Brillant)';
-      }
-      summaryFinish.textContent = selectedFinish;
-      hiddenFinish.value = selectedFinish;
+    // Finish Selection Toggle (Visual dot picker)
+    const finishOptions = document.querySelectorAll('.finish-option');
+    finishOptions.forEach(opt => {
+      opt.addEventListener('click', () => {
+        finishOptions.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+        opt.querySelector('input').checked = true;
+        const val = opt.getAttribute('data-value');
+        if (val === 'matte') {
+          selectedFinish = 'ماط (Matte)';
+        } else {
+          selectedFinish = 'لامع (Brillant)';
+        }
+        summaryFinish.textContent = selectedFinish;
+        hiddenFinish.value = selectedFinish;
+      });
     });
 
     // Populate Wilayas
