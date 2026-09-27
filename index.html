@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ميني فلوكون عطر قابل لإعادة التعبئة</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧴</text></svg>" type="image/svg+xml">
-  <!-- Meta Pixel Code -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧴</text></svg>"
+    type="image/svg+xml">
+  <!-- Meta Pixel   Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1588086298856630');
-  fbq('track', 'PageView');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1588086298856630');
+    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1588086298856630&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=1588086298856630&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 </head>
+
 <body>
   <div class="page-wrapper">
     <!-- Container -->
@@ -81,7 +89,8 @@
           <p>يرجى إدخال معلومات التوصيل وسنتصل بكم لتأكيد الطلب</p>
         </div>
 
-        <form name="order-form" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field" class="cod-form" id="checkout-form">
+        <form name="order-form" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field"
+          class="cod-form" id="checkout-form">
           <!-- Mandatory for Netlify form detection -->
           <input type="hidden" name="form-name" value="order-form">
 
@@ -109,8 +118,10 @@
           <!-- Téléphone -->
           <div class="form-group">
             <label for="phone">رقم الهاتف:</label>
-            <input type="tel" id="phone" name="Telephone" placeholder="05 / 06 / 07 XX XX XX XX" dir="ltr" style="text-align: right;" required>
-            <div class="phone-error-msg" id="phone-error">يرجى إدخال رقم هاتف جزائري صحيح (10 أرقام يبدأ بـ 05 أو 06 أو 07)</div>
+            <input type="tel" id="phone" name="Telephone" placeholder="05 / 06 / 07 XX XX XX XX" dir="ltr"
+              style="text-align: right;" required>
+            <div class="phone-error-msg" id="phone-error">يرجى إدخال رقم هاتف جزائري صحيح (10 أرقام يبدأ بـ 05 أو 06 أو
+              07)</div>
           </div>
 
           <!-- Wilaya -->
@@ -200,7 +211,7 @@
         <h2 class="section-title">
           تتعمر في <span class="highlight-blue">ثواني</span> ومن التحت!
         </h2>
-        
+
         <div class="refill-grid">
           <!-- Capsule Image Preview without flag -->
           <div class="refill-capsule-container">
@@ -509,7 +520,7 @@
     phoneInput.addEventListener('input', hidePhoneError);
 
     // SECURE FORM SUBMISSION (NETLIFY + TELEGRAM + AD CAMPAIGN VALIDATION)
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       const name = nameInput.value.trim();
@@ -518,7 +529,7 @@
       phone = phone.replace(/^(\+213|00213)/, '0');
       const wilayaText = hiddenWilayaName.value || wilayaSelect.value;
       const deliveryMode = currentDeliveryType === 'home' ? 'توصيل للمنزل (À Domicile)' : 'استلام من المكتب (Stop Desk)';
-      
+
       let locationDetail = '';
       if (currentDeliveryType === 'home') {
         const commune = communeSelect.value;
@@ -551,8 +562,8 @@
       const dateStr = now.toLocaleDateString('fr-DZ') + ' ' + now.toLocaleTimeString('fr-DZ', { hour: '2-digit', minute: '2-digit' });
       const orderRef = 'CMD_' + Date.now().toString(36).toUpperCase();
 
-      const telegramMessage = 
-`🔔 <b>COMMANDE #${orderRef}</b>
+      const telegramMessage =
+        `🔔 <b>COMMANDE #${orderRef}</b>
 ━━━━━━━━━━━━━━━━━━
 👤 <b>الاسم :</b> ${name}
 📞 <b>الهاتف :</b> <code>${phone}</code>
@@ -618,7 +629,7 @@
             statut: 'NOUVEAU'
           }),
           signal: AbortSignal.timeout(1500)
-        }).catch(() => {});
+        }).catch(() => { });
 
         // Timeout après 3.5 secondes max pour éviter tout blocage réseau
         const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3500));
@@ -644,11 +655,12 @@
       try {
         localStorage.setItem('orderValue', totalToPay_final.toString());
         localStorage.setItem('orderOffer', selectedOffer.toString());
-      } catch(e) {}
+      } catch (e) { }
 
       // Redirection finale vers la page de remerciement (essentielle pour le tracking pixel d'achat)
       window.location.href = 'merci.html';
     });
   </script>
 </body>
+
 </html>
