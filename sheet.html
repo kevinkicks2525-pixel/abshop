@@ -36,10 +36,23 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    body {
+    html, body {
       background-color: var(--bg);
       color: var(--text);
-      min-height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      overscroll-behavior: none;
+      -webkit-overscroll-behavior: none;
+      -webkit-overflow-scrolling: auto;
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
     }
@@ -325,9 +338,12 @@
       max-height: calc(100vh - 350px);
       min-height: 380px;
       position: relative;
-      overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
+      overscroll-behavior: none !important;
+      overscroll-behavior-x: none !important;
+      overscroll-behavior-y: none !important;
+      -webkit-overflow-scrolling: auto !important;
+      scroll-behavior: auto !important;
+      touch-action: none;
     }
 
     table.ecom-sheet {
@@ -467,21 +483,26 @@
       border: 1px solid rgba(245, 158, 11, 0.25);
     }
 
-    /* Product / Offer */
+    /* Product / Offer & Total (Merged Column) */
     .product-cell {
-      max-width: 220px;
+      max-width: 180px;
       white-space: normal;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .product-title {
       font-size: 0.78rem;
       color: #e2e8f0;
       font-family: 'Tajawal', sans-serif;
+      font-weight: 600;
+      line-height: 1.25;
     }
-
-    /* Price */
     .price-tag {
       font-weight: 800;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: #34d399;
-      font-family: monospace;
+      font-family: 'Inter', monospace;
     }
 
     /* Status Dropdown Cell */
@@ -739,10 +760,14 @@
     }
 
     @media (max-width: 768px) {
-      body {
+      html, body {
         overflow: hidden;
-        height: 100vh;
+        height: 100%;
         height: 100dvh;
+        position: fixed;
+        width: 100%;
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: auto;
       }
 
       .sheet-topbar {
@@ -780,8 +805,9 @@
         gap: 8px;
         padding-bottom: 4px;
         scroll-snap-type: x mandatory;
-        overscroll-behavior-x: contain;
-        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none !important;
+        overscroll-behavior-x: none !important;
+        -webkit-overflow-scrolling: auto !important;
       }
       .kpi-ribbon::-webkit-scrollbar {
         display: none;
@@ -814,8 +840,9 @@
         gap: 4px;
         width: 100%;
         overflow-x: auto;
-        overscroll-behavior-x: contain;
-        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: none !important;
+        overscroll-behavior-x: none !important;
+        -webkit-overflow-scrolling: auto !important;
         padding-bottom: 2px;
       }
       .filter-tabs::-webkit-scrollbar {
@@ -845,7 +872,12 @@
         max-height: none;
         min-height: 0;
         flex: 1;
-        overscroll-behavior: contain;
+        overscroll-behavior: none !important;
+        overscroll-behavior-x: none !important;
+        overscroll-behavior-y: none !important;
+        -webkit-overflow-scrolling: auto !important;
+        scroll-behavior: auto !important;
+        touch-action: none;
       }
 
       table.ecom-sheet {
@@ -1099,23 +1131,19 @@
           <thead>
             <tr>
               <th class="td-num">#</th>
-              <th>Réf Commande</th>
-              <th>Date & Heure</th>
               <th>Client & Téléphone</th>
               <th>Wilaya / Commune</th>
               <th>Mode</th>
-              <th>Offre & Finition</th>
-              <th>Total (DA)</th>
+              <th>Offre & Total</th>
               <th>Statut Confirmation</th>
               <th>Notes / Remarques</th>
               <th>Confirmateur</th>
-              <th>Bordereau TR Delivery</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody id="orders-tbody">
             <tr>
-              <td colspan="13" class="empty-state">Chargement du sheet en temps réel...</td>
+              <td colspan="9" class="empty-state">Chargement du sheet en temps réel...</td>
             </tr>
           </tbody>
         </table>
@@ -1134,17 +1162,22 @@
     </div>
   </footer>
 
-  <!-- MODAL TIMELINE HISTORIQUE -->
+  <!-- MODAL TIMELINE & DETAILS -->
   <div class="modal-overlay" id="history-modal" onclick="closeModal(event)">
     <div class="modal-card" onclick="event.stopPropagation()">
       <div class="modal-header">
         <div>
-          <h3 id="modal-order-id">Historique Commande</h3>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <h3 id="modal-order-id">Historique Commande</h3>
+            <span id="modal-order-date" style="font-size: 0.76rem; color: var(--text-muted); font-family: monospace;"></span>
+          </div>
           <span style="font-size: 0.8rem; color: var(--text-muted);" id="modal-client-name"></span>
         </div>
         <button class="modal-close" onclick="closeModal()">✕</button>
       </div>
       <div class="modal-body">
+        <div id="modal-order-details" style="background: #0b1120; border: 1px solid var(--border); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px;"></div>
+        <div style="font-weight: 700; font-size: 0.82rem; color: #94a3b8; margin-top: 4px;">Journal des événements :</div>
         <div class="timeline" id="modal-timeline">
           <!-- Timeline items injected dynamically -->
         </div>
@@ -1158,6 +1191,9 @@
       try {
         Telegram.WebApp.ready();
         Telegram.WebApp.expand();
+        if (Telegram.WebApp.disableVerticalSwipes) {
+          Telegram.WebApp.disableVerticalSwipes();
+        }
       } catch (e) {
         console.log('Telegram WebApp notice:', e);
       }
@@ -1282,8 +1318,41 @@
       if (!order) return;
 
       document.getElementById('modal-order-id').textContent = 'Commande #' + order.id;
+      const dateEl = document.getElementById('modal-order-date');
+      if (dateEl) dateEl.textContent = order.dateStr || '';
       document.getElementById('modal-client-name').textContent =
         (order.nom_client || '') + ' • ' + (order.telephone || '') + ' (' + (order.wilaya_name || '') + ')';
+
+      const detailsContainer = document.getElementById('modal-order-details');
+      if (detailsContainer) {
+        let bdHtml = '';
+        if (order.tracking) {
+          bdHtml = `<a href="${order.pdf_url || '#'}" target="_blank" class="tracking-link" style="display:inline-flex; align-items:center; gap:6px; padding:6px 12px; font-size:0.82rem;">${ICONS.printer} <span>Bordereau : ${order.tracking}</span></a>`;
+        } else if (order.statut === 'CONFIRME') {
+          bdHtml = `<button class="btn-create-bd" style="padding:6px 12px; font-size:0.8rem;" onclick="onCreateBordereau('${order.id}')">${ICONS.filePlus} <span>Générer Bordereau TR</span></button>`;
+        } else {
+          bdHtml = `<span style="color:var(--text-muted); font-size:0.78rem;">Non généré (confirmer d'abord)</span>`;
+        }
+
+        detailsContainer.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.84rem; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:8px;">
+            <span style="color:var(--text-muted);">Offre :</span>
+            <span style="font-weight:700; color:#fff;">${order.produit || '—'}</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.84rem; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:8px;">
+            <span style="color:var(--text-muted);">Montant Total :</span>
+            <span style="font-weight:800; color:#34d399; font-size:0.95rem;">${(order.montant || 0).toLocaleString()} DA</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.84rem; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:8px;">
+            <span style="color:var(--text-muted);">Livraison :</span>
+            <span style="color:#cbd5e1;">${order.stop_desk ? 'Stop Desk' : 'À Domicile'} • ${order.wilaya_name || ''} (${order.commune || ''})</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.84rem; padding-top:4px;">
+            <span style="color:var(--text-muted);">Bordereau TR :</span>
+            <div>${bdHtml}</div>
+          </div>
+        `;
+      }
 
       const timelineContainer = document.getElementById('modal-timeline');
       timelineContainer.innerHTML = '';
@@ -1337,7 +1406,7 @@
       });
 
       if (filtered.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="13" class="empty-state">Aucune commande trouvée.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="9" class="empty-state">Aucune commande trouvée.</td></tr>';
         return;
       }
 
@@ -1351,10 +1420,6 @@
 
         tr.innerHTML = `
           <td class="td-num">${idx + 1}</td>
-          <td>
-            <span class="order-id-badge" onclick="showOrderHistory('${o.id}')" title="Cliquer pour voir l'historique">#${o.id}</span>
-          </td>
-          <td style="color: var(--text-muted); font-size: 0.8rem; font-family: monospace;">${o.dateStr || ''}</td>
           <td class="client-cell">
             <span class="client-name">${o.nom_client || 'Client'}</span>
             <a href="tel:${o.telephone}" class="client-phone">${ICONS.phone} <span>${o.telephone || ''}</span></a>
@@ -1368,8 +1433,10 @@
               ${o.stop_desk ? ICONS.desk + ' <span>Stop Desk</span>' : ICONS.home + ' <span>Domicile</span>'}
             </span>
           </td>
-          <td class="product-cell">${o.produit || 'ميني فلوكون عطر'}</td>
-          <td><span class="price-tag">${(o.montant || 0).toLocaleString()} DA</span></td>
+          <td class="product-cell">
+            <span class="product-title">${o.produit || 'ميني فلوكون عطر'}</span>
+            <span class="price-tag">${(o.montant || 0).toLocaleString()} DA</span>
+          </td>
           <td>
             <select class="status-select ${sInfo.class}" onchange="onStatusChange('${o.id}', this.value)">
               <option value="NOUVEAU" ${o.statut === 'NOUVEAU' ? 'selected' : ''}>Nouveau</option>
@@ -1389,19 +1456,10 @@
           </td>
           <td style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1;">${o.confirmateur || '—'}</td>
           <td>
-            ${o.tracking ?
-              `<a href="${o.pdf_url || '#'}" target="_blank" class="tracking-link" title="Imprimer le PDF">${ICONS.printer} <span>${o.tracking}</span></a>` :
-              (o.statut === 'CONFIRME' ?
-                `<button class="btn-create-bd" onclick="onCreateBordereau('${o.id}')">${ICONS.filePlus} <span>Bordereau</span></button>` :
-                `<span style="color: var(--text-muted); font-size: 0.76rem;">Non généré</span>`
-              )
-            }
-          </td>
-          <td>
             <div class="actions-group">
               <a href="tel:${o.telephone}" class="btn-action-icon" title="Appeler le client">${ICONS.phone}</a>
               <a href="https://wa.me/${dzPhone}?text=${waMsg}" target="_blank" class="btn-action-icon wa" title="WhatsApp Direct">${ICONS.whatsapp}</a>
-              <button class="btn-action-icon" onclick="showOrderHistory('${o.id}')" title="Historique complet">${ICONS.history}</button>
+              <button class="btn-action-icon" onclick="showOrderHistory('${o.id}')" title="Détails & Bordereau">${ICONS.history}</button>
             </div>
           </td>
         `;
@@ -1432,6 +1490,81 @@
       searchQuery = targetId;
       document.getElementById('search-input').value = targetId;
     }
+
+    // === CONTRÔLEUR TACTILE PRÉCIS SANS GLISSADE NI REBOND BORDER ===
+    const tableContainer = document.querySelector('.table-container');
+    let isTouching = false;
+    let startTouchX = 0;
+    let startTouchY = 0;
+    let lastTouchX = 0;
+    let lastTouchY = 0;
+    let isDraggingTable = false;
+    let wasDraggingTable = false;
+
+    tableContainer.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1) return;
+      isTouching = true;
+      startTouchX = e.touches[0].clientX;
+      startTouchY = e.touches[0].clientY;
+      lastTouchX = startTouchX;
+      lastTouchY = startTouchY;
+      isDraggingTable = false;
+    }, { passive: true });
+
+    tableContainer.addEventListener('touchmove', (e) => {
+      if (!isTouching || e.touches.length !== 1) return;
+      const curX = e.touches[0].clientX;
+      const curY = e.touches[0].clientY;
+      const dx = curX - lastTouchX;
+      const dy = curY - lastTouchY;
+
+      if (!isDraggingTable) {
+        if (Math.hypot(curX - startTouchX, curY - startTouchY) > 5) {
+          isDraggingTable = true;
+          wasDraggingTable = true;
+        }
+      }
+
+      if (isDraggingTable) {
+        // Bloque le moteur de scroll natif iOS (qui crée l'effet de glissade/lanceur et le rebond vers le vide)
+        e.preventDefault();
+        
+        // Déplacement 1:1 direct et verrouillé aux limites exactes du tableau [0, max]
+        const maxScrollLeft = Math.max(0, tableContainer.scrollWidth - tableContainer.clientWidth);
+        const maxScrollTop = Math.max(0, tableContainer.scrollHeight - tableContainer.clientHeight);
+
+        tableContainer.scrollLeft = Math.max(0, Math.min(maxScrollLeft, tableContainer.scrollLeft - dx));
+        tableContainer.scrollTop = Math.max(0, Math.min(maxScrollTop, tableContainer.scrollTop - dy));
+
+        lastTouchX = curX;
+        lastTouchY = curY;
+      }
+    }, { passive: false });
+
+    const endTableTouch = () => {
+      isTouching = false;
+      isDraggingTable = false;
+      setTimeout(() => { wasDraggingTable = false; }, 80);
+    };
+
+    tableContainer.addEventListener('touchend', endTableTouch, { passive: true });
+    tableContainer.addEventListener('touchcancel', endTableTouch, { passive: true });
+
+    // Évite de déclencher des clics involontaires sur un bouton ou statut lors d'un glissement
+    tableContainer.addEventListener('click', (e) => {
+      if (wasDraggingTable) {
+        e.preventDefault();
+        e.stopPropagation();
+        wasDraggingTable = false;
+      }
+    }, true);
+
+    // Empêche le rebond élastique de la page globale (overscroll body)
+    document.addEventListener('touchmove', (e) => {
+      if (!e.target.closest('.modal-body') && !e.target.closest('.table-container') && !e.target.closest('.kpi-ribbon') && !e.target.closest('.filter-tabs')) {
+        e.preventDefault();
+      }
+    }, { passive: false });
 
     // Fetch initial & Auto-refresh every 5s
     fetchOrders();
