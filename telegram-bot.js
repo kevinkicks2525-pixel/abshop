@@ -96,6 +96,7 @@ function normalizeCommune(rawCommune, wilayaId, isStopDesk) {
 function parseOrderMessage(text) {
   if (!text) return null;
   const clean = text.replace(/<[^>]+>/g, '');
+  const cleanEmoji = str => String(str || '').replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
 
   const idMatch = clean.match(/(?:COMMANDE|ORDRE|CMD)\s*#?([A-Za-z0-9_]+)/i);
   const nameMatch = clean.match(/(?:الاسم|Nom)\s*:\s*([^\n\r]+)/i);
@@ -151,20 +152,22 @@ function parseOrderMessage(text) {
     else rawCommune = det;
   }
 
+  rawCommune = cleanEmoji(rawCommune);
   const exactCommune = normalizeCommune(rawCommune, wilayaId, isStopDesk);
 
   let adresse = '';
   if (isStopDesk) {
-    adresse = bureauMatch ? `Bureau Stop Desk ${bureauMatch[1].trim()}` : `Bureau Stop Desk ${exactCommune}`;
+    adresse = bureauMatch ? `Bureau Stop Desk ${cleanEmoji(bureauMatch[1])}` : `Bureau Stop Desk ${exactCommune}`;
   } else {
-    adresse = addressMatch ? addressMatch[1].trim() : (detailsMatch ? detailsMatch[1].trim() : exactCommune);
+    adresse = addressMatch ? cleanEmoji(addressMatch[1]) : (detailsMatch ? cleanEmoji(detailsMatch[1]) : exactCommune);
   }
 
-  const produit = offerMatch ? `${offerMatch[1].trim()} ${finishMatch ? finishMatch[1].trim() : ''}`.trim() : 'ميني فلوكون عطر';
+  const rawProd = offerMatch ? `${offerMatch[1].trim()} ${finishMatch ? finishMatch[1].trim() : ''}`.trim() : 'ميني فلوكون عطر';
+  const produit = cleanEmoji(rawProd);
 
   return {
     id: idMatch ? idMatch[1].trim() : null,
-    nom_client: nameMatch ? nameMatch[1].trim() : 'Client',
+    nom_client: cleanEmoji(nameMatch ? nameMatch[1].trim() : 'Client'),
     telephone: phone,
     code_wilaya: wilayaId,
     wilaya_name: wilayaName,
@@ -284,16 +287,20 @@ async function answerCallbackQuery(callbackQueryId, text, showAlert = false) {
  * Récupère ou reconstitue la commande depuis la base ou depuis le message Telegram
  */
 function getOrReconstituteOrder(orderId, msg) {
-  let order = ordersManager.findOrder(orderId);
+  if (!orderId) return null;
+  const db = ordersManager.loadDatabase();
+  const cleanId = String(orderId).trim();
+  let order = db.orders[cleanId] || db.orders[cleanId.toUpperCase()];
+
   if (!order && msg && (msg.text || msg.caption)) {
     const rawText = msg.text || msg.caption;
     const parsed = parseOrderMessage(rawText);
     if (parsed) {
-      parsed.id = orderId;
+      parsed.id = cleanId;
       parsed.telegram_chat_id = msg.chat ? msg.chat.id : null;
       parsed.telegram_message_id = msg.message_id;
       order = ordersManager.upsertOrder(parsed);
-      console.log(`[Auto-Recover] Commande #${orderId} (${parsed.nom_client}) enregistrée depuis le message Telegram !`);
+      console.log(`[Auto-Recover] Commande #${cleanId} (${parsed.nom_client}) enregistrée depuis le message Telegram !`);
     }
   }
   return order;
@@ -415,6 +422,11 @@ async function handleStatusCallback(cq, statusCode, orderId) {
 
   order = ordersManager.updateOrderStatus(orderId, statusCode, user);
 
+  if (!order) {
+    await answerCallbackQuery(cq.id, '❌ Erreur mise à jour statut', true);
+    return;
+  }
+
   const statusInfo = ordersManager.STATUTS[statusCode] || {};
   await answerCallbackQuery(cq.id, `✅ Statut mis à jour : ${statusInfo.labelFr} par ${user}`);
 
@@ -433,39 +445,35 @@ async function handleStatusCallback(cq, statusCode, orderId) {
   }
 }
 
+const CF_PATH = 'C:\\Program Files (x86)\\cloudflared\\cloudflared.exe';
+
 /**
- * Tunnel SSH auto-reconnectant pour un accès HTTPS public permanent
+ * Tunnel Cloudflare officiel haute performance & permanent
  */
 function startTunnel() {
-  console.log('🌐 [Tunnel] Démarrage du tunnel SSH avec reconnexion automatique...');
+  console.log('🌐 [Cloudflare] Démarrage du Tunnel Cloudflare officiel...');
   try {
-    const proc = spawn('ssh', [
-      '-R', `80:localhost:${HTTP_PORT}`,
-      '-o', 'StrictHostKeyChecking=no',
-      '-o', 'ServerAliveInterval=15',
-      '-o', 'ServerAliveCountMax=4',
-      'nokey@localhost.run'
-    ]);
+    const proc = spawn(CF_PATH, ['tunnel', '--url', `http://localhost:${HTTP_PORT}`]);
 
-    proc.stdout.on('data', data => {
+    const handleOutput = data => {
       const text = data.toString();
-      const match = text.match(/https:\/\/[a-z0-9\-\.]+\.lhr\.life/);
+      const match = text.match(/https:\/\/[a-z0-9\-]+\.trycloudflare\.com/);
       if (match) {
         PUBLIC_URL = match[0];
         process.env.PUBLIC_URL = PUBLIC_URL;
-        console.log(`🚀 [Tunnel Actif] Sheet Ecom Pro disponible sur : ${PUBLIC_URL}/sheet`);
+        console.log(`🚀 [Cloudflare Actif] Sheet Ecom Pro : ${PUBLIC_URL}/sheet`);
       }
-    });
+    };
 
-    proc.stderr.on('data', () => {});
+    proc.stdout.on('data', handleOutput);
+    proc.stderr.on('data', handleOutput);
 
     proc.on('close', code => {
-      console.log(`⚠️ [Tunnel] Déconnecté (code ${code}). Reconnexion automatique dans 3s...`);
+      console.log(`⚠️ [Cloudflare Tunnel] Relance dans 3s (code ${code})...`);
       setTimeout(startTunnel, 3000);
     });
   } catch (err) {
-    console.error('❌ [Tunnel Error]:', err.message);
-    setTimeout(startTunnel, 5000);
+    console.error('❌ [Cloudflare Error]:', err.message);
   }
 }
 
@@ -669,17 +677,6 @@ async function startBot() {
               if (cqData.startsWith('create_bd_')) {
                 const orderId = cqData.replace('create_bd_', '');
                 await answerCallbackQuery(cq.id, '⏳ Création du bordereau en cours...');
-
-                // S'assurer que la commande est enregistrée dans orders_db
-                let order = ordersManager.findOrder(orderId);
-                if (!order && msg && msg.text) {
-                  const parsed = parseOrderMessage(msg.text);
-                  parsed.id = orderId;
-                  parsed.telegram_chat_id = chatId;
-                  parsed.telegram_message_id = msg.message_id;
-                  order = ordersManager.upsertOrder(parsed);
-                }
-
                 await handleCreateBordereau(orderId, chatId, msg ? msg.message_id : null, cq.from.first_name, msg);
               }
 

@@ -141,8 +141,8 @@
       "statut": "EXPEDIE",
       "confirmateur": "Ayoub",
       "notes": "",
-      "tracking": "EC3FVS26092728059",
-      "pdf_url": null,
+      "tracking": "EC3FVS26092728153",
+      "pdf_url": "https://storage.ecotrack.dz/trdelivery/ETIQ2609271532zkjEb0.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=HPUAYY1XS2AST4ZFY2SY%2F20260927%2Ftr-west-1%2Fs3%2Faws4_request&X-Amz-Date=20260927T140032Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Signature=5ed4046605ccbd577fc4b5b9ba49e5e6ecd018fda3fce06368ec48800963a2ec",
       "telegram_message_id": null,
       "telegram_chat_id": null,
       "history": [
@@ -152,8 +152,16 @@
           "dateStr": "27/09/2026 01:38 PM",
           "user": "Site Web",
           "text": "Commande enregistrée depuis le site"
+        },
+        {
+          "action": "EXPEDIE",
+          "time": "2026-09-27T14:00:32.750Z",
+          "dateStr": "27/09/2026 03:00 PM",
+          "user": "Ayoub",
+          "text": "Bordereau créé sur TR Delivery (Tracking: EC3FVS26092728153)"
         }
-      ]
+      ],
+      "last_updated": "2026-09-27T14:00:32.750Z"
     },
     "CMD_0006": {
       "id": "CMD_0006",
@@ -169,8 +177,8 @@
       "mode": "توصيل للمنزل (À Domicile)",
       "produit": "3 قطع (1900 دج) - ماط (Matte)",
       "montant": 2300,
-      "statut": "NOUVEAU",
-      "confirmateur": null,
+      "statut": "CONFIRME",
+      "confirmateur": "Dashboard Web",
       "notes": "",
       "tracking": null,
       "pdf_url": null,
@@ -183,8 +191,16 @@
           "dateStr": "27/09/2026 01:42 PM",
           "user": "Site Web",
           "text": "Commande enregistrée depuis le site"
+        },
+        {
+          "action": "CONFIRME",
+          "time": "2026-09-27T13:34:23.613Z",
+          "dateStr": "27/09/2026 02:34 PM",
+          "user": "Dashboard Web",
+          "text": "Passé en 🟢 CONFIRMÉ"
         }
-      ]
+      ],
+      "last_updated": "2026-09-27T13:34:23.613Z"
     }
   },
   "counter": 1

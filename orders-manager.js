@@ -258,18 +258,41 @@ function updateOrderNote(id, note, user = 'Confirmateur') {
  * Récupère une commande par ID ou par recherche (téléphone, tracking, nom)
  */
 function findOrder(query) {
+  if (!query) return null;
   const db = loadDatabase();
-  if (db.orders[query]) return db.orders[query];
 
-  const q = String(query).trim().toLowerCase();
-  const qPhone = q.replace(/[^0-9]/g, '');
+  const cleanId = String(query).trim();
+  if (db.orders[cleanId]) return db.orders[cleanId];
+  if (db.orders[cleanId.toUpperCase()]) return db.orders[cleanId.toUpperCase()];
 
+  const q = cleanId.toLowerCase();
+
+  // 1. Recherche par ID insensible à la casse
   for (const order of Object.values(db.orders)) {
-    if (order.id.toLowerCase() === q) return order;
-    if (order.tracking && order.tracking.toLowerCase() === q) return order;
-    if (qPhone && order.telephone && order.telephone.includes(qPhone)) return order;
-    if (order.nom_client && order.nom_client.toLowerCase().includes(q)) return order;
+    if (order.id && order.id.toLowerCase() === q) return order;
   }
+
+  // 2. Recherche par numéro de tracking EcoTrack
+  for (const order of Object.values(db.orders)) {
+    if (order.tracking && order.tracking.toLowerCase() === q) return order;
+  }
+
+  // 3. Recherche par téléphone (UNIQUEMENT si au moins 8 chiffres)
+  const qPhone = q.replace(/[^0-9]/g, '');
+  if (qPhone.length >= 8) {
+    for (const order of Object.values(db.orders)) {
+      const orderPhone = (order.telephone || '').replace(/[^0-9]/g, '');
+      if (orderPhone && (orderPhone.includes(qPhone) || qPhone.includes(orderPhone))) return order;
+    }
+  }
+
+  // 4. Recherche par nom du client (si plus de 3 lettres et pas un ID)
+  if (q.length >= 3 && !q.startsWith('cmd_')) {
+    for (const order of Object.values(db.orders)) {
+      if (order.nom_client && order.nom_client.toLowerCase().includes(q)) return order;
+    }
+  }
+
   return null;
 }
 
