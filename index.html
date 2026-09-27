@@ -397,20 +397,32 @@
 
       // Populate Bureaux Stop Desk
       bureauSelect.disabled = false;
-      bureauSelect.innerHTML = '<option value="">اختر مكتب الاستلام</option>';
+      bureauSelect.innerHTML = '<option value="">اختر مكتب الاستلام (Stop Desk)</option>';
       const bureaux = bureauxData[currentWilayaCode] || [];
-      if (bureaux.length === 0) {
-        const option = document.createElement('option');
-        option.value = `المكتب الرئيسي - ولاية ${currentWilayaCode}`;
-        option.textContent = `المكتب الرئيسي - ولاية ${currentWilayaCode}`;
-        bureauSelect.appendChild(option);
+      const officePrice = (deliveryPrices[currentWilayaCode] && deliveryPrices[currentWilayaCode].office) || 0;
+
+      if (bureaux.length === 0 || officePrice === 0) {
+        labelOffice.classList.add('disabled');
+        labelOffice.style.opacity = '0.5';
+        labelOffice.style.pointerEvents = 'none';
+        labelOffice.title = 'التوصيل للمكتب غير متوفر في هذه الولاية';
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = 'المكتب غير متوفر في هذه الولاية';
+        bureauSelect.appendChild(opt);
+        if (currentDeliveryType === 'office') {
+          onDeliveryTypeChange('home');
+        }
       } else {
+        labelOffice.classList.remove('disabled');
+        labelOffice.style.opacity = '1';
+        labelOffice.style.pointerEvents = 'auto';
+        labelOffice.title = '';
         bureaux.forEach(b => {
           const option = document.createElement('option');
-          const bName = b.name || b;
-          const bAddress = b.address ? ` - ${b.address}` : '';
-          option.value = typeof b === 'object' ? (b.address || b.name) : b;
-          option.textContent = `${bName}${bAddress}`;
+          const bName = typeof b === 'object' ? b.name : b;
+          option.value = bName;
+          option.textContent = `مكتب ${bName} (Stop Desk)`;
           bureauSelect.appendChild(option);
         });
       }
@@ -554,8 +566,9 @@
 ━━━━━━━━━━━━━━━━━━
 📅 <b>التاريخ:</b> ${dateStr}`;
 
-      // 4. Envoi Telegram avec timeout de protection (ne bloque jamais le client)
+      // 4. Envoi Telegram avec bouton interactif pour créer le bordereau
       try {
+        const orderRef = 'CMD_' + Date.now().toString(36).toUpperCase();
         const telegramPromises = TELEGRAM_CHAT_IDS.map(chatId =>
           fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: 'POST',
@@ -563,7 +576,17 @@
             body: JSON.stringify({
               chat_id: chatId,
               text: telegramMessage,
-              parse_mode: 'HTML'
+              parse_mode: 'HTML',
+              reply_markup: {
+                inline_keyboard: [
+                  [
+                    {
+                      text: '📄 Créer le Bordereau TR Delivery',
+                      callback_data: `create_bd_${orderRef}`
+                    }
+                  ]
+                ]
+              }
             })
           })
         );

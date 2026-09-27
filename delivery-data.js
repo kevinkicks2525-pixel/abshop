@@ -1,7 +1,10602 @@
+/**
+ * Donnees officielles TR Delivery / EcoTrack
+ * Plateforme: https://trdelivery.ecotrack.dz
+ * Genere automatiquement le: 2026-09-27T10:30:59.688Z
+ */
 
 window.DeliveryData = {
-  wilayas: [{"code":"01","nameFr":"Adrar","nameAr":"أدرار"},{"code":"02","nameFr":"Chlef","nameAr":"الشلف"},{"code":"03","nameFr":"Laghouat","nameAr":"الأغواط"},{"code":"04","nameFr":"Oum El Bouaghi","nameAr":"أم البواقي"},{"code":"05","nameFr":"Batna","nameAr":"باتنة"},{"code":"06","nameFr":"Bejaia","nameAr":"بجاية"},{"code":"07","nameFr":"Biskra","nameAr":"بسكرة"},{"code":"08","nameFr":"Bechar","nameAr":"بشار"},{"code":"09","nameFr":"Blida","nameAr":"البليدة"},{"code":"10","nameFr":"Bouira","nameAr":"البويرة"},{"code":"11","nameFr":"Tamanrasset","nameAr":"تمنراست"},{"code":"12","nameFr":"Tebessa","nameAr":"تبسة"},{"code":"13","nameFr":"Tlemcen","nameAr":"تلمسان"},{"code":"14","nameFr":"Tiaret","nameAr":"تيارت"},{"code":"15","nameFr":"Tizi Ouzou","nameAr":"تيزي وزو"},{"code":"16","nameFr":"Alger","nameAr":"الجزائر"},{"code":"17","nameFr":"Djelfa","nameAr":"الجلفة"},{"code":"18","nameFr":"Jijel","nameAr":"جيجل"},{"code":"19","nameFr":"Setif","nameAr":"سطيف"},{"code":"20","nameFr":"Saida","nameAr":"سعيدة"},{"code":"21","nameFr":"Skikda","nameAr":"سكيكدة"},{"code":"22","nameFr":"Sidi Bel Abbes","nameAr":"سيدي بلعباس"},{"code":"23","nameFr":"Annaba","nameAr":"عنابة"},{"code":"24","nameFr":"Guelma","nameAr":"قالمة"},{"code":"25","nameFr":"Constantine","nameAr":"قسنطينة"},{"code":"26","nameFr":"Medea","nameAr":"المدية"},{"code":"27","nameFr":"Mostaganem","nameAr":"مستغانم"},{"code":"28","nameFr":"M'Sila","nameAr":"المسيلة"},{"code":"29","nameFr":"Mascara","nameAr":"معسكر"},{"code":"30","nameFr":"Ouargla","nameAr":"ورقلة"},{"code":"31","nameFr":"Oran","nameAr":"وهران"},{"code":"32","nameFr":"El Bayadh","nameAr":"البيض"},{"code":"33","nameFr":"Illizi","nameAr":"إليزي"},{"code":"34","nameFr":"Bordj Bou Arreridj","nameAr":"برج بوعريريج"},{"code":"35","nameFr":"Boumerdes","nameAr":"بومرداس"},{"code":"36","nameFr":"El Tarf","nameAr":"الطارف"},{"code":"37","nameFr":"Tindouf","nameAr":"تندوف"},{"code":"38","nameFr":"Tissemsilt","nameAr":"تيسمسيلت"},{"code":"39","nameFr":"El Oued","nameAr":"الوادي"},{"code":"40","nameFr":"Khenchela","nameAr":"خنشلة"},{"code":"41","nameFr":"Souk Ahras","nameAr":"سوق أهراس"},{"code":"42","nameFr":"Tipaza","nameAr":"تيبازة"},{"code":"43","nameFr":"Mila","nameAr":"ميلة"},{"code":"44","nameFr":"Ain Defla","nameAr":"عين الدفلى"},{"code":"45","nameFr":"Naama","nameAr":"النعامة"},{"code":"46","nameFr":"Ain Temouchent","nameAr":"عين تموشنت"},{"code":"47","nameFr":"Ghardaia","nameAr":"غرداية"},{"code":"48","nameFr":"Relizane","nameAr":"غليزان"},{"code":"49","nameFr":"Timimoun","nameAr":"تيميمون"},{"code":"50","nameFr":"Bordj Badji Mokhtar","nameAr":"برج باجي مختار"},{"code":"51","nameFr":"Ouled Djellal","nameAr":"أولاد جلال"},{"code":"52","nameFr":"Beni Abbes","nameAr":"بني عباس"},{"code":"53","nameFr":"In Salah","nameAr":"عين صالح"},{"code":"54","nameFr":"In Guezzam","nameAr":"عين قزام"},{"code":"55","nameFr":"Touggourt","nameAr":"توقرت"},{"code":"56","nameFr":"Djanet","nameAr":"جانت"},{"code":"57","nameFr":"El M'Ghair","nameAr":"المغير"},{"code":"58","nameFr":"El Meniaa","nameAr":"المنيعة"}],
-  deliveryPrices: {"10":{"office":400,"home":600},"11":{"office":1050,"home":1500},"12":{"office":450,"home":720},"13":{"office":400,"home":700},"14":{"office":400,"home":700},"15":{"office":400,"home":600},"16":{"office":300,"home":500},"17":{"office":500,"home":800},"18":{"office":400,"home":700},"19":{"office":400,"home":680},"20":{"office":450,"home":730},"21":{"office":400,"home":700},"22":{"office":400,"home":700},"23":{"office":450,"home":700},"24":{"office":400,"home":700},"25":{"office":400,"home":680},"26":{"office":400,"home":600},"27":{"office":400,"home":700},"28":{"office":400,"home":700},"29":{"office":400,"home":700},"30":{"office":550,"home":900},"31":{"office":400,"home":580},"32":{"office":700,"home":970},"33":{"office":1050,"home":1500},"34":{"office":400,"home":680},"35":{"office":350,"home":530},"36":{"office":450,"home":730},"37":{"office":750,"home":1100},"38":{"office":400,"home":700},"39":{"office":550,"home":900},"40":{"office":400,"home":700},"41":{"office":450,"home":730},"42":{"office":350,"home":530},"43":{"office":400,"home":700},"44":{"office":400,"home":700},"45":{"office":550,"home":930},"46":{"office":400,"home":700},"47":{"office":500,"home":850},"48":{"office":400,"home":700},"49":{"office":750,"home":1100},"50":{"office":1500,"home":2100},"51":{"office":500,"home":800},"52":{"office":750,"home":1000},"53":{"office":950,"home":1400},"54":{"office":1500,"home":2100},"55":{"office":550,"home":930},"56":{"office":1500,"home":2100},"57":{"office":550,"home":930},"58":{"office":500,"home":850},"01":{"office":750,"home":1100},"02":{"office":400,"home":680},"03":{"office":500,"home":800},"04":{"office":400,"home":680},"05":{"office":400,"home":700},"06":{"office":400,"home":700},"07":{"office":500,"home":800},"08":{"office":700,"home":1000},"09":{"office":350,"home":500}},
-  communes: {"10":[{"name":"Aghbalou","postalCode":"10027","active":true},{"name":"Ahl El Ksar","postalCode":"10022","active":true},{"name":"Ain Bessam","postalCode":"10035","active":true},{"name":"Ain El Hadjar","postalCode":"10025","active":true},{"name":"Ain Laloui","postalCode":"10041","active":true},{"name":"Ain Turk","postalCode":"10029","active":true},{"name":"Ait Laaziz","postalCode":"10008","active":true},{"name":"Aomar","postalCode":"10016","active":true},{"name":"Ath Mansour","postalCode":"10043","active":true},{"name":"Bechloul","postalCode":"10033","active":true},{"name":"Bir Ghbalou","postalCode":"10036","active":true},{"name":"Bordj Oukhriss","postalCode":"10018","active":true},{"name":"Bouderbala","postalCode":"10023","active":true},{"name":"Bouira","postalCode":"10001","active":true},{"name":"Boukram","postalCode":"10034","active":true},{"name":"Chorfa","postalCode":"10017","active":true},{"name":"Dechmia","postalCode":"10031","active":true},{"name":"Dirah","postalCode":"10007","active":true},{"name":"Djebahia","postalCode":"10026","active":true},{"name":"El Adjiba","postalCode":"10019","active":true},{"name":"El Asnam","postalCode":"10002","active":true},{"name":"El Hachimia","postalCode":"10015","active":true},{"name":"El Hakimia","postalCode":"10020","active":true},{"name":"El Khebouzia","postalCode":"10021","active":true},{"name":"El Mokrani","postalCode":"10044","active":true},{"name":"Guerrouma","postalCode":"10003","active":true},{"name":"Hadjera Zerga","postalCode":"10042","active":true},{"name":"Haizer","postalCode":"10012","active":true},{"name":"Hanif","postalCode":"10006","active":true},{"name":"Kadiria","postalCode":"10005","active":true},{"name":"Lakhdaria","postalCode":"10013","active":true},{"name":"Maala","postalCode":"10014","active":true},{"name":"Maamora","postalCode":"10039","active":true},{"name":"Mchedallah","postalCode":"10037","active":true},{"name":"Mezdour","postalCode":"10011","active":true},{"name":"Oued El Berdi","postalCode":"10045","active":true},{"name":"Ouled Rached","postalCode":"10040","active":true},{"name":"Raouraoua","postalCode":"10010","active":true},{"name":"Ridane","postalCode":"10032","active":true},{"name":"Saharidj","postalCode":"10030","active":true},{"name":"Souk El Khemis","postalCode":"10004","active":true},{"name":"Sour El Ghozlane","postalCode":"10038","active":true},{"name":"Taghzout","postalCode":"10009","active":true},{"name":"Taguedit","postalCode":"10028","active":true},{"name":"Zbarbar","postalCode":"10024","active":true}],"11":[{"name":"Abalessa","postalCode":"11002","active":false},{"name":"Idles","postalCode":"11005","active":false},{"name":"In Amguel","postalCode":"11009","active":false},{"name":"Tamanghasset","postalCode":"11001","active":true},{"name":"Tazouk","postalCode":"11006","active":false}],"12":[{"name":"Ain Zerga","postalCode":"12023","active":true},{"name":"Bedjene","postalCode":"12026","active":true},{"name":"Bekkaria","postalCode":"12017","active":true},{"name":"Bir Dheheb","postalCode":"12014","active":true},{"name":"Bir El Ater","postalCode":"12002","active":true},{"name":"Bir El Mokadem","postalCode":"12010","active":true},{"name":"Boukhadra","postalCode":"12018","active":true},{"name":"Boulhaf Dyr","postalCode":"12025","active":true},{"name":"Cheria","postalCode":"12003","active":true},{"name":"El Aouinet","postalCode":"12005","active":true},{"name":"El Kouif","postalCode":"12011","active":true},{"name":"El Ma El Biodh","postalCode":"12020","active":true},{"name":"El Mazeraa","postalCode":"12027","active":true},{"name":"El Meridj","postalCode":"12024","active":true},{"name":"El Ogla","postalCode":"12013","active":true},{"name":"El Ogla El Malha","postalCode":"12015","active":true},{"name":"Ferkane","postalCode":"12028","active":false},{"name":"Gorriguer","postalCode":"12016","active":true},{"name":"Hammamet","postalCode":"12008","active":true},{"name":"Lahouidjbet","postalCode":"12006","active":true},{"name":"Morsott","postalCode":"12012","active":true},{"name":"Negrine","postalCode":"12009","active":false},{"name":"Ouenza","postalCode":"12019","active":true},{"name":"Oum Ali","postalCode":"12021","active":true},{"name":"Safsaf El Ouesra","postalCode":"12007","active":true},{"name":"Stah Guentis","postalCode":"12004","active":true},{"name":"Tebessa","postalCode":"12001","active":true},{"name":"Thlidjene","postalCode":"12022","active":true}],"13":[{"name":"Ain Fetah","postalCode":"13031","active":true},{"name":"Ain Fezza","postalCode":"13012","active":true},{"name":"Ain Ghoraba","postalCode":"13049","active":true},{"name":"Ain Kebira","postalCode":"13053","active":true},{"name":"Ain Nehala","postalCode":"13025","active":true},{"name":"Ain Tallout","postalCode":"13003","active":true},{"name":"Ain Youcef","postalCode":"13015","active":true},{"name":"Amieur","postalCode":"13014","active":true},{"name":"Azails","postalCode":"13021","active":true},{"name":"Bab El Assa","postalCode":"13018","active":true},{"name":"Beni Bahdel","postalCode":"13042","active":true},{"name":"Beni Boussaid","postalCode":"13038","active":true},{"name":"Beni Mester","postalCode":"13002","active":true},{"name":"Beni Ouarsous","postalCode":"13036","active":true},{"name":"Beni Semiel","postalCode":"13052","active":true},{"name":"Beni Snous","postalCode":"13017","active":true},{"name":"Bensekrane","postalCode":"13024","active":true},{"name":"Bouhlou","postalCode":"13047","active":true},{"name":"Chetouane","postalCode":"13050","active":true},{"name":"Dar Yaghmouracene","postalCode":"13019","active":true},{"name":"Djebala","postalCode":"13009","active":true},{"name":"El Aricha","postalCode":"13032","active":true},{"name":"El Bouihi","postalCode":"13043","active":true},{"name":"El Fehoul","postalCode":"13005","active":true},{"name":"El Gor","postalCode":"13010","active":true},{"name":"Fellaoucene","postalCode":"13020","active":true},{"name":"Ghazaouet","postalCode":"13007","active":true},{"name":"Hammam Boughrara","postalCode":"13028","active":true},{"name":"Hennaya","postalCode":"13026","active":true},{"name":"Honaine","postalCode":"13044","active":true},{"name":"Maghnia","postalCode":"13027","active":true},{"name":"Mansourah","postalCode":"13051","active":true},{"name":"Marsa Ben Mhidi","postalCode":"13039","active":true},{"name":"Msirda Fouaga","postalCode":"13030","active":true},{"name":"Nedroma","postalCode":"13040","active":true},{"name":"Oued Chouly","postalCode":"13011","active":true},{"name":"Ouled Mimoun","postalCode":"13013","active":true},{"name":"Ouled Riyah","postalCode":"13046","active":true},{"name":"Remchi","postalCode":"13004","active":true},{"name":"Sabra","postalCode":"13006","active":true},{"name":"Sebbaa Chioukh","postalCode":"13022","active":true},{"name":"Sebdou","postalCode":"13035","active":true},{"name":"Sidi Abdelli","postalCode":"13034","active":true},{"name":"Sidi Djillali","postalCode":"13041","active":true},{"name":"Sidi Medjahed","postalCode":"13037","active":true},{"name":"Souahlia","postalCode":"13029","active":true},{"name":"Souani","postalCode":"13008","active":true},{"name":"Souk El Khemis","postalCode":"13048","active":true},{"name":"Souk Thlata","postalCode":"13033","active":true},{"name":"Terni Beni Hediel","postalCode":"13023","active":true},{"name":"Tianet","postalCode":"13045","active":true},{"name":"Tlemcen","postalCode":"13001","active":true},{"name":"Zenata","postalCode":"13016","active":true}],"14":[{"name":"Ain Bouchekif","postalCode":"14003","active":true},{"name":"Ain Deheb","postalCode":"14006","active":true},{"name":"Ain El Hadid","postalCode":"14018","active":true},{"name":"Ain Kermes","postalCode":"14028","active":true},{"name":"Ain Zarit","postalCode":"14005","active":true},{"name":"Bougara","postalCode":"14040","active":true},{"name":"Chehaima","postalCode":"14036","active":true},{"name":"Dahmouni","postalCode":"14013","active":true},{"name":"Djillali Ben Amar","postalCode":"14024","active":true},{"name":"Faidja","postalCode":"14041","active":true},{"name":"Frenda","postalCode":"14027","active":true},{"name":"Guertoufa","postalCode":"14022","active":true},{"name":"Hamadia","postalCode":"14035","active":true},{"name":"Ksar Chellala","postalCode":"14029","active":true},{"name":"Madna","postalCode":"14010","active":true},{"name":"Mahdia","postalCode":"14015","active":true},{"name":"Mechraa Safa","postalCode":"14034","active":true},{"name":"Medrissa","postalCode":"14008","active":true},{"name":"Medroussa","postalCode":"14002","active":true},{"name":"Meghila","postalCode":"14021","active":true},{"name":"Mellakou","postalCode":"14012","active":true},{"name":"Nadorah","postalCode":"14031","active":true},{"name":"Naima","postalCode":"14020","active":true},{"name":"Oued Lilli","postalCode":"14033","active":true},{"name":"Ouled Djerad","postalCode":"14019","active":true},{"name":"Rahouia","postalCode":"14014","active":true},{"name":"Rechaiga","postalCode":"14030","active":true},{"name":"Sebaine","postalCode":"14025","active":true},{"name":"Sebt","postalCode":"14011","active":true},{"name":"Serghine","postalCode":"14039","active":true},{"name":"Sidi Abdelghani","postalCode":"14017","active":true},{"name":"Sidi Abderrahmane","postalCode":"14038","active":true},{"name":"Sidi Ali Mellal","postalCode":"14004","active":true},{"name":"Sidi Bakhti","postalCode":"14007","active":true},{"name":"Sidi Hosni","postalCode":"14023","active":true},{"name":"Sougueur","postalCode":"14016","active":true},{"name":"Tagdemt","postalCode":"14032","active":true},{"name":"Takhemaret","postalCode":"14037","active":true},{"name":"Tiaret","postalCode":"14001","active":true},{"name":"Tidda","postalCode":"14042","active":true},{"name":"Tousnina","postalCode":"14026","active":true},{"name":"Zmalet El Emir Aek","postalCode":"14009","active":true}],"15":[{"name":"Abi Youcef","postalCode":"15031","active":true},{"name":"Aghni Goughran","postalCode":"15061","active":true},{"name":"Aghrib","postalCode":"15053","active":true},{"name":"Ain El Hammam","postalCode":"15002","active":true},{"name":"Ain Zaouia","postalCode":"15025","active":true},{"name":"Ait Aggouacha","postalCode":"15035","active":true},{"name":"Ait Aissa Mimoun","postalCode":"15039","active":true},{"name":"Ait Bouadou","postalCode":"15065","active":true},{"name":"Ait Boumehdi","postalCode":"15030","active":true},{"name":"Ait Chaffaa","postalCode":"15013","active":true},{"name":"Ait Khelil","postalCode":"15058","active":true},{"name":"Ait Mahmoud","postalCode":"15028","active":true},{"name":"Ait Oumalou","postalCode":"15042","active":true},{"name":"Ait Toudert","postalCode":"15067","active":true},{"name":"Ait Yahia","postalCode":"15027","active":true},{"name":"Ait Yahia Moussa","postalCode":"15056","active":true},{"name":"Akbil","postalCode":"15003","active":true},{"name":"Akerrou","postalCode":"15044","active":true},{"name":"Assi Youcef","postalCode":"15066","active":true},{"name":"Azazga","postalCode":"15018","active":true},{"name":"Azzefoun","postalCode":"15037","active":true},{"name":"Beni Aissi","postalCode":"15015","active":true},{"name":"Beni Douala","postalCode":"15032","active":true},{"name":"Beni Yenni","postalCode":"15052","active":true},{"name":"Beni Ziki","postalCode":"15046","active":true},{"name":"Beni Zmenzer","postalCode":"15016","active":true},{"name":"Boghni","postalCode":"15040","active":true},{"name":"Boudjima","postalCode":"15055","active":true},{"name":"Bounouh","postalCode":"15012","active":true},{"name":"Bouzguen","postalCode":"15034","active":true},{"name":"Draa Ben Khedda","postalCode":"15047","active":true},{"name":"Draa El Mizan","postalCode":"15010","active":true},{"name":"Freha","postalCode":"15004","active":true},{"name":"Frikat","postalCode":"15014","active":true},{"name":"Iboudraren","postalCode":"15060","active":true},{"name":"Idjeur","postalCode":"15049","active":true},{"name":"Iferhounene","postalCode":"15017","active":true},{"name":"Ifigha","postalCode":"15041","active":true},{"name":"Iflissen","postalCode":"15054","active":true},{"name":"Illilten","postalCode":"15033","active":true},{"name":"Iloula Oumalou","postalCode":"15019","active":true},{"name":"Imsouhal","postalCode":"15063","active":true},{"name":"Irdjen","postalCode":"15007","active":true},{"name":"Larba Nait Irathen","postalCode":"15021","active":true},{"name":"Maatka","postalCode":"15029","active":true},{"name":"Makouda","postalCode":"15009","active":true},{"name":"Mechtrass","postalCode":"15006","active":true},{"name":"Mekla","postalCode":"15050","active":true},{"name":"Mizrana","postalCode":"15062","active":true},{"name":"Mkira","postalCode":"15026","active":true},{"name":"Ouacif","postalCode":"15048","active":true},{"name":"Ouadhia","postalCode":"15036","active":true},{"name":"Ouaguenoun","postalCode":"15024","active":true},{"name":"Sidi Naamane","postalCode":"15059","active":true},{"name":"Souamaa","postalCode":"15005","active":true},{"name":"Souk El Thenine","postalCode":"15057","active":true},{"name":"Tadmait","postalCode":"15064","active":true},{"name":"Tigzirt","postalCode":"15038","active":true},{"name":"Timizart","postalCode":"15008","active":true},{"name":"Tirmitine","postalCode":"15043","active":true},{"name":"Tizi Ghenif","postalCode":"15011","active":true},{"name":"Tizi Nthlata","postalCode":"15051","active":true},{"name":"Tizi Ouzou","postalCode":"15001","active":true},{"name":"Tizi Rached","postalCode":"15022","active":true},{"name":"Yakouren","postalCode":"15020","active":true},{"name":"Yatafen","postalCode":"15045","active":true},{"name":"Zekri","postalCode":"15023","active":true}],"16":[{"name":"Ain Benian","postalCode":"16044","active":true},{"name":"Ain Taya","postalCode":"16038","active":true},{"name":"Alger Centre","postalCode":"16001","active":true},{"name":"Bab Azzouar","postalCode":"16021","active":true},{"name":"Bab El Oued","postalCode":"16005","active":true},{"name":"Baba Hassen","postalCode":"16055","active":true},{"name":"Bachedjerah","postalCode":"16019","active":true},{"name":"Bains Romains","postalCode":"16024","active":true},{"name":"Baraki","postalCode":"16014","active":true},{"name":"Ben Aknoun","postalCode":"16022","active":true},{"name":"Beni Messous","postalCode":"16032","active":true},{"name":"Bir Mourad Rais","postalCode":"16009","active":true},{"name":"Birkhadem","postalCode":"16012","active":true},{"name":"Birtouta","postalCode":"16034","active":true},{"name":"Bologhine Ibn Ziri","postalCode":"16006","active":true},{"name":"Bordj El Bahri","postalCode":"16039","active":true},{"name":"Bordj El Kiffan","postalCode":"16030","active":true},{"name":"Bourouba","postalCode":"16016","active":true},{"name":"Bouzareah","postalCode":"16011","active":true},{"name":"Casbah","postalCode":"16007","active":true},{"name":"Cheraga","postalCode":"16050","active":true},{"name":"Dar El Beida","postalCode":"16020","active":true},{"name":"Dely Ibrahim","postalCode":"16023","active":true},{"name":"Djasr Kasentina","postalCode":"16026","active":true},{"name":"Douera","postalCode":"16054","active":true},{"name":"Draria","postalCode":"16053","active":true},{"name":"El Achour","postalCode":"16052","active":true},{"name":"El Biar","postalCode":"16010","active":true},{"name":"El Harrach","postalCode":"16013","active":true},{"name":"El Madania","postalCode":"16003","active":true},{"name":"El Magharia","postalCode":"16031","active":true},{"name":"El Mouradia","postalCode":"16027","active":true},{"name":"Hamma Anassers","postalCode":"16004","active":true},{"name":"Haraoua","postalCode":"16041","active":true},{"name":"Hussein Dey","postalCode":"16017","active":true},{"name":"Hydra","postalCode":"16028","active":true},{"name":"Khracia","postalCode":"16056","active":true},{"name":"Kouba","postalCode":"16018","active":true},{"name":"Les Eucalyptus","postalCode":"16033","active":true},{"name":"Mahelma","postalCode":"16047","active":true},{"name":"Marsa","postalCode":"16040","active":true},{"name":"Mohammadia","postalCode":"16029","active":true},{"name":"Oued Koriche","postalCode":"16008","active":true},{"name":"Oued Smar","postalCode":"16015","active":true},{"name":"Ouled Chebel","postalCode":"16036","active":true},{"name":"Ouled Fayet","postalCode":"16051","active":true},{"name":"Rahmania","postalCode":"16048","active":true},{"name":"Rais Hamidou","postalCode":"16025","active":true},{"name":"Reghaia","postalCode":"16043","active":true},{"name":"Rouiba","postalCode":"16042","active":true},{"name":"Saoula","postalCode":"16057","active":true},{"name":"Sidi Mhamed","postalCode":"16002","active":true},{"name":"Sidi Moussa","postalCode":"16037","active":true},{"name":"Souidania","postalCode":"16049","active":true},{"name":"Staoueli","postalCode":"16045","active":true},{"name":"Tassala El Merdja","postalCode":"16035","active":true},{"name":"Zeralda","postalCode":"16046","active":true}],"17":[{"name":"Ain Chouhada","postalCode":"17023","active":true},{"name":"Ain El Ibel","postalCode":"17030","active":true},{"name":"Ain Fekka","postalCode":"17035","active":true},{"name":"Ain Maabed","postalCode":"17005","active":true},{"name":"Ain Oussera","postalCode":"17031","active":true},{"name":"Amourah","postalCode":"17034","active":false},{"name":"Benhar","postalCode":"17032","active":true},{"name":"Beni Yacoub","postalCode":"17027","active":true},{"name":"Birine","postalCode":"17008","active":true},{"name":"Bouira Lahdeb","postalCode":"17009","active":true},{"name":"Charef","postalCode":"17026","active":true},{"name":"Dar Chouikh","postalCode":"17025","active":true},{"name":"Deldoul","postalCode":"17029","active":true},{"name":"Djelfa","postalCode":"17001","active":true},{"name":"Douis","postalCode":"17015","active":true},{"name":"El Guedid","postalCode":"17003","active":true},{"name":"El Idrissia","postalCode":"17014","active":true},{"name":"El Khemis","postalCode":"17011","active":true},{"name":"Feidh El Botma","postalCode":"17007","active":true},{"name":"Guernini","postalCode":"17021","active":true},{"name":"Guettara","postalCode":"17018","active":false},{"name":"Had Sahary","postalCode":"17020","active":true},{"name":"Hassi Bahbah","postalCode":"17004","active":true},{"name":"Hassi El Euch","postalCode":"17016","active":true},{"name":"Hassi Fedoul","postalCode":"17033","active":true},{"name":"Messaad","postalCode":"17017","active":true},{"name":"Mliliha","postalCode":"17013","active":true},{"name":"Moudjebara","postalCode":"17002","active":true},{"name":"Oum Laadham","postalCode":"17024","active":false},{"name":"Sed Rahal","postalCode":"17006","active":true},{"name":"Selmana","postalCode":"17022","active":true},{"name":"Sidi Baizid","postalCode":"17012","active":true},{"name":"Sidi Ladjel","postalCode":"17019","active":true},{"name":"Tadmit","postalCode":"17036","active":true},{"name":"Zaafrane","postalCode":"17028","active":true},{"name":"Zaccar","postalCode":"17010","active":true}],"18":[{"name":"Bordj Taher","postalCode":"18026","active":false},{"name":"Boudria Beni Yadjis","postalCode":"18022","active":false},{"name":"Bouraoui Belhadef","postalCode":"18016","active":false},{"name":"Boussif Ouled Askeur","postalCode":"18019","active":false},{"name":"Chahna","postalCode":"18008","active":false},{"name":"Chekfa","postalCode":"18007","active":true},{"name":"Djemaa Beni Habibi","postalCode":"18025","active":true},{"name":"Djmila","postalCode":"18017","active":true},{"name":"El Ancer","postalCode":"18012","active":true},{"name":"El Aouana","postalCode":"18003","active":true},{"name":"El Kennar Nouchfi","postalCode":"18020","active":true},{"name":"El Milia","postalCode":"18009","active":true},{"name":"Emir Abdelkader","postalCode":"18006","active":true},{"name":"Erraguene","postalCode":"18002","active":false},{"name":"Ghebala","postalCode":"18015","active":false},{"name":"Jijel","postalCode":"18001","active":true},{"name":"Kaous","postalCode":"18014","active":true},{"name":"Kemir Oued Adjoul","postalCode":"18023","active":true},{"name":"Ouadjana","postalCode":"18028","active":false},{"name":"Ouled Rabah","postalCode":"18027","active":false},{"name":"Ouled Yahia Khadrouch","postalCode":"18021","active":false},{"name":"Selma Benziada","postalCode":"18018","active":false},{"name":"Settara","postalCode":"18011","active":true},{"name":"Sidi Abdelaziz","postalCode":"18013","active":true},{"name":"Sidi Maarouf","postalCode":"18010","active":true},{"name":"Taher","postalCode":"18005","active":true},{"name":"Texena","postalCode":"18024","active":true},{"name":"Ziamma Mansouriah","postalCode":"18004","active":true}],"19":[{"name":"Ain Abessa","postalCode":"19014","active":true},{"name":"Ain Arnat","postalCode":"19026","active":true},{"name":"Ain Azal","postalCode":"19040","active":true},{"name":"Ain El Kebira","postalCode":"19002","active":true},{"name":"Ain Lahdjar","postalCode":"19018","active":true},{"name":"Ain Legraj","postalCode":"19013","active":true},{"name":"Ain Oulmane","postalCode":"19028","active":true},{"name":"Ain Roua","postalCode":"19006","active":true},{"name":"Ain Sebt","postalCode":"19049","active":true},{"name":"Ait Naoual Mezada","postalCode":"19051","active":true},{"name":"Ait Tizi","postalCode":"19054","active":true},{"name":"Amoucha","postalCode":"19027","active":true},{"name":"Babor","postalCode":"19016","active":true},{"name":"Bazer Sakhra","postalCode":"19031","active":true},{"name":"Beidha Bordj","postalCode":"19029","active":true},{"name":"Belaa","postalCode":"19025","active":true},{"name":"Beni Aziz","postalCode":"19003","active":true},{"name":"Beni Chebana","postalCode":"19009","active":true},{"name":"Beni Fouda","postalCode":"19044","active":true},{"name":"Beni Hocine","postalCode":"19053","active":true},{"name":"Beni Mouhli","postalCode":"19046","active":true},{"name":"Beni Ouartilane","postalCode":"19022","active":true},{"name":"Bir El Arch","postalCode":"19008","active":true},{"name":"Bir Haddada","postalCode":"19034","active":true},{"name":"Bouandas","postalCode":"19030","active":true},{"name":"Bougaa","postalCode":"19043","active":true},{"name":"Bousselam","postalCode":"19019","active":true},{"name":"Boutaleb","postalCode":"19005","active":true},{"name":"Dehamcha","postalCode":"19015","active":true},{"name":"Djemila","postalCode":"19021","active":true},{"name":"Draa Kebila","postalCode":"19007","active":true},{"name":"El Eulma","postalCode":"19020","active":true},{"name":"El Ouldja","postalCode":"19059","active":true},{"name":"El Ouricia","postalCode":"19037","active":true},{"name":"Guellal","postalCode":"19048","active":true},{"name":"Guelta Zerka","postalCode":"19056","active":true},{"name":"Guenzet","postalCode":"19041","active":true},{"name":"Guidjel","postalCode":"19017","active":true},{"name":"Hamma","postalCode":"19011","active":true},{"name":"Hammam Essokhna","postalCode":"19032","active":true},{"name":"Hammam Guergour","postalCode":"19050","active":true},{"name":"Harbil","postalCode":"19036","active":true},{"name":"Ksar El Abtal","postalCode":"19052","active":true},{"name":"Maaouia","postalCode":"19012","active":true},{"name":"Maouklane","postalCode":"19055","active":true},{"name":"Mezloug","postalCode":"19033","active":true},{"name":"Oued El Barad","postalCode":"19057","active":true},{"name":"Ouled Addouane","postalCode":"19024","active":true},{"name":"Ouled Sabor","postalCode":"19047","active":true},{"name":"Ouled Sidi Ahmed","postalCode":"19004","active":true},{"name":"Ouled Tebben","postalCode":"19010","active":true},{"name":"Rosfa","postalCode":"19023","active":true},{"name":"Salah Bey","postalCode":"19039","active":true},{"name":"Serdj El Ghoul","postalCode":"19035","active":true},{"name":"Setif","postalCode":"19001","active":true},{"name":"Tachouda","postalCode":"19045","active":true},{"name":"Talaifacene","postalCode":"19042","active":true},{"name":"Taya","postalCode":"19058","active":true},{"name":"Tella","postalCode":"19060","active":true},{"name":"Tizi Nbechar","postalCode":"19038","active":true}],"20":[{"name":"Ain El Hadjar","postalCode":"20003","active":true},{"name":"Ain Sekhouna","postalCode":"20013","active":true},{"name":"Ain Soltane","postalCode":"20016","active":true},{"name":"Doui Thabet","postalCode":"20002","active":true},{"name":"El Hassasna","postalCode":"20010","active":true},{"name":"Hounet","postalCode":"20007","active":true},{"name":"Maamora","postalCode":"20011","active":true},{"name":"Moulay Larbi","postalCode":"20005","active":true},{"name":"Ouled Brahim","postalCode":"20014","active":true},{"name":"Ouled Khaled","postalCode":"20004","active":true},{"name":"Saida","postalCode":"20001","active":true},{"name":"Sidi Ahmed","postalCode":"20012","active":false},{"name":"Sidi Amar","postalCode":"20008","active":true},{"name":"Sidi Boubekeur","postalCode":"20009","active":true},{"name":"Tircine","postalCode":"20015","active":true},{"name":"Youb","postalCode":"20006","active":true}],"21":[{"name":"Ain Bouziane","postalCode":"21022","active":true},{"name":"Ain Cherchar","postalCode":"21006","active":true},{"name":"Ain Kechra","postalCode":"21027","active":true},{"name":"Ain Zouit","postalCode":"21002","active":false},{"name":"Azzaba","postalCode":"21004","active":true},{"name":"Bein El Ouiden","postalCode":"21029","active":true},{"name":"Bekkouche Lakhdar","postalCode":"21007","active":true},{"name":"Benazouz","postalCode":"21008","active":true},{"name":"Beni Bachir","postalCode":"21024","active":true},{"name":"Beni Oulbane","postalCode":"21021","active":true},{"name":"Beni Zid","postalCode":"21011","active":false},{"name":"Bouchtata","postalCode":"21034","active":true},{"name":"Cheraia","postalCode":"21031","active":true},{"name":"Collo","postalCode":"21010","active":true},{"name":"Djendel Saadi Mohamed","postalCode":"21005","active":true},{"name":"El Ghedir","postalCode":"21033","active":true},{"name":"El Hadaik","postalCode":"21003","active":true},{"name":"El Harrouch","postalCode":"21016","active":true},{"name":"El Marsa","postalCode":"21038","active":true},{"name":"Emdjez Edchich","postalCode":"21020","active":true},{"name":"Es Sebt","postalCode":"21009","active":true},{"name":"Fil Fila","postalCode":"21030","active":true},{"name":"Hamadi Krouma","postalCode":"21037","active":true},{"name":"Kanoua","postalCode":"21032","active":false},{"name":"Kerkera","postalCode":"21012","active":true},{"name":"Kheneg Mayoum","postalCode":"21036","active":false},{"name":"Oued Zehour","postalCode":"21014","active":false},{"name":"Ouldja Boulbalout","postalCode":"21035","active":false},{"name":"Ouled Attia","postalCode":"21013","active":false},{"name":"Ouled Hebaba","postalCode":"21018","active":true},{"name":"Oum Toub","postalCode":"21028","active":true},{"name":"Ramdane Djamel","postalCode":"21023","active":true},{"name":"Salah Bouchaour","postalCode":"21025","active":true},{"name":"Sidi Mezghiche","postalCode":"21019","active":true},{"name":"Skikda","postalCode":"21001","active":true},{"name":"Tamalous","postalCode":"21026","active":true},{"name":"Zerdazas","postalCode":"21017","active":true},{"name":"Zitouna","postalCode":"21015","active":false}],"22":[{"name":"Ain Adden","postalCode":"22030","active":true},{"name":"Ain El Berd","postalCode":"22028","active":true},{"name":"Ain Kada","postalCode":"22025","active":true},{"name":"Ain Thrid","postalCode":"22015","active":true},{"name":"Ain Tindamine","postalCode":"22024","active":true},{"name":"Amarnas","postalCode":"22012","active":true},{"name":"Badredine El Mokrani","postalCode":"22009","active":true},{"name":"Belarbi","postalCode":"22042","active":true},{"name":"Ben Badis","postalCode":"22045","active":true},{"name":"Benachiba Chelia","postalCode":"22051","active":true},{"name":"Bir El Hammam","postalCode":"22048","active":true},{"name":"Boudjebaa El Bordj","postalCode":"22038","active":true},{"name":"Boukhanafis","postalCode":"22007","active":true},{"name":"Chetouane Belaila","postalCode":"22047","active":true},{"name":"Dhaya","postalCode":"22032","active":true},{"name":"El Hacaiba","postalCode":"22019","active":true},{"name":"Hassi Dahou","postalCode":"22052","active":true},{"name":"Hassi Zehana","postalCode":"22020","active":true},{"name":"Lamtar","postalCode":"22034","active":true},{"name":"Makedra","postalCode":"22016","active":true},{"name":"Marhoum","postalCode":"22010","active":false},{"name":"Mcid","postalCode":"22026","active":true},{"name":"Merine","postalCode":"22022","active":true},{"name":"Mezaourou","postalCode":"22006","active":true},{"name":"Mostefa Ben Brahim","postalCode":"22004","active":true},{"name":"Moulay Slissen","postalCode":"22018","active":true},{"name":"Oued Sbaa","postalCode":"22037","active":true},{"name":"Oued Sefioun","postalCode":"22043","active":true},{"name":"Oued Taourira","postalCode":"22031","active":true},{"name":"Ras El Ma","postalCode":"22023","active":true},{"name":"Redjem Demouche","postalCode":"22050","active":true},{"name":"Sehala Thaoura","postalCode":"22039","active":true},{"name":"Sfissef","postalCode":"22029","active":true},{"name":"Sidi Ali Benyoub","postalCode":"22046","active":true},{"name":"Sidi Ali Boussidi","postalCode":"22008","active":true},{"name":"Sidi Bel Abbes","postalCode":"22001","active":true},{"name":"Sidi Brahim","postalCode":"22003","active":true},{"name":"Sidi Chaib","postalCode":"22035","active":true},{"name":"Sidi Dahou Dezairs","postalCode":"22036","active":true},{"name":"Sidi Hamadouche","postalCode":"22041","active":true},{"name":"Sidi Khaled","postalCode":"22027","active":true},{"name":"Sidi Lahcene","postalCode":"22014","active":true},{"name":"Sidi Yacoub","postalCode":"22040","active":true},{"name":"Tabia","postalCode":"22021","active":true},{"name":"Tafissour","postalCode":"22011","active":false},{"name":"Taoudmout","postalCode":"22049","active":true},{"name":"Teghalimet","postalCode":"22044","active":true},{"name":"Telagh","postalCode":"22005","active":true},{"name":"Tenira","postalCode":"22017","active":true},{"name":"Tessala","postalCode":"22002","active":true},{"name":"Tilmouni","postalCode":"22013","active":true},{"name":"Zerouala","postalCode":"22033","active":true}],"23":[{"name":"Ain Berda","postalCode":"23009","active":true},{"name":"Annaba","postalCode":"23001","active":true},{"name":"Berrahel","postalCode":"23002","active":true},{"name":"Chetaibi","postalCode":"23010","active":true},{"name":"Cheurfa","postalCode":"23007","active":true},{"name":"El Bouni","postalCode":"23005","active":true},{"name":"El Hadjar","postalCode":"23003","active":true},{"name":"Eulma","postalCode":"23004","active":true},{"name":"Oued El Aneb","postalCode":"23006","active":true},{"name":"Seraidi","postalCode":"23008","active":true},{"name":"Sidi Amer","postalCode":"23011","active":true},{"name":"Treat","postalCode":"23012","active":true}],"24":[{"name":"Ain Ben Beida","postalCode":"24014","active":true},{"name":"Ain Hessania","postalCode":"24027","active":true},{"name":"Ain Larbi","postalCode":"24023","active":false},{"name":"Ain Makhlouf","postalCode":"24013","active":true},{"name":"Ain Reggada","postalCode":"24032","active":true},{"name":"Ain Sandel","postalCode":"24007","active":true},{"name":"Belkhir","postalCode":"24010","active":true},{"name":"Ben Djarah","postalCode":"24011","active":true},{"name":"Beni Mezline","postalCode":"24016","active":true},{"name":"Bordj Sabat","postalCode":"24021","active":true},{"name":"Bou Hachana","postalCode":"24017","active":true},{"name":"Bou Hamdane","postalCode":"24012","active":true},{"name":"Bouati Mahmoud","postalCode":"24003","active":true},{"name":"Bouchegouf","postalCode":"24025","active":true},{"name":"Boumahra Ahmed","postalCode":"24031","active":true},{"name":"Dahouara","postalCode":"24009","active":true},{"name":"Djeballah Khemissi","postalCode":"24034","active":true},{"name":"El Fedjoudj","postalCode":"24020","active":true},{"name":"Guelaat Bou Sbaa","postalCode":"24018","active":true},{"name":"Guelma","postalCode":"24001","active":true},{"name":"Hammam Maskhoutine","postalCode":"24019","active":true},{"name":"Hamman Nbail","postalCode":"24022","active":true},{"name":"Heliopolis","postalCode":"24026","active":true},{"name":"Khezara","postalCode":"24015","active":true},{"name":"Medjez Amar","postalCode":"24024","active":true},{"name":"Medjez Sfa","postalCode":"24030","active":true},{"name":"Nechmaya","postalCode":"24002","active":true},{"name":"Oued Cheham","postalCode":"24033","active":true},{"name":"Oued Fragha","postalCode":"24006","active":true},{"name":"Oued Zenati","postalCode":"24004","active":true},{"name":"Ras El Agba","postalCode":"24008","active":true},{"name":"Roknia","postalCode":"24028","active":true},{"name":"Salaoua Announa","postalCode":"24029","active":true},{"name":"Tamlouka","postalCode":"24005","active":true}],"25":[{"name":"Ain Abid","postalCode":"25007","active":true},{"name":"Ain Smara","postalCode":"25010","active":true},{"name":"Beni Hamiden","postalCode":"25008","active":true},{"name":"Constantine","postalCode":"25001","active":true},{"name":"Didouche Mourad","postalCode":"25005","active":true},{"name":"El Haria","postalCode":"25003","active":true},{"name":"El Khroub","postalCode":"25006","active":true},{"name":"Hamma Bouziane","postalCode":"25002","active":true},{"name":"Ibn Ziad","postalCode":"25012","active":true},{"name":"Mesaoud Boudjeriou","postalCode":"25011","active":true},{"name":"Ouled Rahmoune","postalCode":"25009","active":true},{"name":"Zighoud Youcef","postalCode":"25004","active":true}],"26":[{"name":"Ain Boucif","postalCode":"26004","active":true},{"name":"Ain Ouksir","postalCode":"26041","active":true},{"name":"Aissaouia","postalCode":"26005","active":true},{"name":"Aziz","postalCode":"26032","active":true},{"name":"Baata","postalCode":"26024","active":true},{"name":"Benchicao","postalCode":"26030","active":true},{"name":"Beni Slimane","postalCode":"26046","active":true},{"name":"Berrouaghia","postalCode":"26047","active":true},{"name":"Bir Ben Laabed","postalCode":"26056","active":true},{"name":"Boghar","postalCode":"26025","active":true},{"name":"Bouaiche","postalCode":"26010","active":true},{"name":"Bouaichoune","postalCode":"26059","active":true},{"name":"Bouchrahil","postalCode":"26021","active":true},{"name":"Boughezoul","postalCode":"26051","active":true},{"name":"Bouskene","postalCode":"26019","active":true},{"name":"Chahbounia","postalCode":"26038","active":true},{"name":"Chelalet El Adhaoura","postalCode":"26018","active":true},{"name":"Cheniguel","postalCode":"26040","active":true},{"name":"Damiat","postalCode":"26013","active":true},{"name":"Derrag","postalCode":"26008","active":true},{"name":"Deux Bassins","postalCode":"26053","active":true},{"name":"Djouab","postalCode":"26037","active":true},{"name":"Draa Essamar","postalCode":"26054","active":true},{"name":"El Azizia","postalCode":"26036","active":true},{"name":"El Guelbelkebir","postalCode":"26009","active":true},{"name":"El Hamdania","postalCode":"26016","active":true},{"name":"El Omaria","postalCode":"26007","active":true},{"name":"El Ouinet","postalCode":"26057","active":true},{"name":"Hannacha","postalCode":"26060","active":true},{"name":"Kef Lakhdar","postalCode":"26017","active":true},{"name":"Khams Djouamaa","postalCode":"26063","active":true},{"name":"Ksar El Boukhari","postalCode":"26035","active":true},{"name":"Medea","postalCode":"26001","active":true},{"name":"Medjebar","postalCode":"26062","active":true},{"name":"Meftaha","postalCode":"26049","active":true},{"name":"Meghraoua","postalCode":"26039","active":true},{"name":"Mezerena","postalCode":"26011","active":true},{"name":"Mihoub","postalCode":"26050","active":true},{"name":"Ouamri","postalCode":"26043","active":true},{"name":"Oued Harbil","postalCode":"26029","active":true},{"name":"Ouled Antar","postalCode":"26058","active":true},{"name":"Ouled Bouachra","postalCode":"26027","active":true},{"name":"Ouled Brahim","postalCode":"26012","active":true},{"name":"Ouled Deide","postalCode":"26006","active":true},{"name":"Ouled Hellal","postalCode":"26022","active":true},{"name":"Ouled Maaref","postalCode":"26003","active":true},{"name":"Oum El Djalil","postalCode":"26042","active":true},{"name":"Ouzera","postalCode":"26002","active":true},{"name":"Rebaia","postalCode":"26020","active":true},{"name":"Saneg","postalCode":"26064","active":true},{"name":"Sedraia","postalCode":"26061","active":true},{"name":"Seghouane","postalCode":"26048","active":true},{"name":"Si Mahdjoub","postalCode":"26044","active":true},{"name":"Sidi Damed","postalCode":"26031","active":true},{"name":"Sidi Errabia","postalCode":"26055","active":true},{"name":"Sidi Naamane","postalCode":"26026","active":true},{"name":"Sidi Zahar","postalCode":"26028","active":true},{"name":"Sidi Ziane","postalCode":"26014","active":true},{"name":"Souagui","postalCode":"26033","active":true},{"name":"Tablat","postalCode":"26052","active":true},{"name":"Tafraout","postalCode":"26023","active":true},{"name":"Tamesguida","postalCode":"26015","active":true},{"name":"Tlatet Eddoair","postalCode":"26045","active":true},{"name":"Zoubiria","postalCode":"26034","active":true}],"27":[{"name":"Abdelmalek Ramdane","postalCode":"27013","active":true},{"name":"Achaacha","postalCode":"27017","active":true},{"name":"Ain Boudinar","postalCode":"27028","active":true},{"name":"Ain Nouissy","postalCode":"27005","active":true},{"name":"Ain Sidi Cherif","postalCode":"27021","active":true},{"name":"Ain Tadles","postalCode":"27007","active":true},{"name":"Bouguirat","postalCode":"27019","active":true},{"name":"El Hassiane","postalCode":"27032","active":true},{"name":"Fornaka","postalCode":"27003","active":true},{"name":"Hadjadj","postalCode":"27014","active":true},{"name":"Hassi Maameche","postalCode":"27006","active":true},{"name":"Khadra","postalCode":"27018","active":true},{"name":"Kheiredine","postalCode":"27011","active":true},{"name":"Mansourah","postalCode":"27023","active":true},{"name":"Mesra","postalCode":"27022","active":true},{"name":"Mezghrane","postalCode":"27027","active":true},{"name":"Mostaganem","postalCode":"27001","active":true},{"name":"Nekmaria","postalCode":"27015","active":true},{"name":"Oued El Kheir","postalCode":"27009","active":true},{"name":"Ouled Boughalem","postalCode":"27025","active":true},{"name":"Ouled Maallah","postalCode":"27026","active":true},{"name":"Safsaf","postalCode":"27030","active":true},{"name":"Sayada","postalCode":"27002","active":true},{"name":"Sidi Ali","postalCode":"27012","active":true},{"name":"Sidi Bellater","postalCode":"27010","active":true},{"name":"Sidi Lakhdar","postalCode":"27016","active":true},{"name":"Sirat","postalCode":"27020","active":true},{"name":"Souaflia","postalCode":"27024","active":true},{"name":"Sour","postalCode":"27008","active":true},{"name":"Stidia","postalCode":"27004","active":true},{"name":"Tazgait","postalCode":"27029","active":true},{"name":"Touahria","postalCode":"27031","active":true}],"28":[{"name":"Ain El Hadjel","postalCode":"28017","active":true},{"name":"Ain El Melh","postalCode":"28041","active":true},{"name":"Ain Errich","postalCode":"28044","active":true},{"name":"Ain Fares","postalCode":"28037","active":false},{"name":"Ain Khadra","postalCode":"28013","active":true},{"name":"Belaiba","postalCode":"28015","active":true},{"name":"Ben Srour","postalCode":"28024","active":true},{"name":"Beni Ilmane","postalCode":"28045","active":true},{"name":"Benzouh","postalCode":"28035","active":true},{"name":"Berhoum","postalCode":"28012","active":true},{"name":"Bir Foda","postalCode":"28036","active":true},{"name":"Bou Saada","postalCode":"28020","active":true},{"name":"Bouti Sayah","postalCode":"28031","active":true},{"name":"Chellal","postalCode":"28009","active":true},{"name":"Dehahna","postalCode":"28030","active":true},{"name":"Djebel Messaad","postalCode":"28047","active":true},{"name":"El Hamel","postalCode":"28027","active":true},{"name":"El Houamed","postalCode":"28026","active":true},{"name":"Hammam Dhalaa","postalCode":"28003","active":true},{"name":"Khettouti Sed Djir","postalCode":"28032","active":true},{"name":"Khoubana","postalCode":"28007","active":true},{"name":"Maadid","postalCode":"28002","active":true},{"name":"Maarif","postalCode":"28029","active":true},{"name":"Magra","postalCode":"28011","active":true},{"name":"Mcif","postalCode":"28008","active":true},{"name":"Medjedel","postalCode":"28042","active":true},{"name":"Msila","postalCode":"28001","active":true},{"name":"Mtarfa","postalCode":"28006","active":true},{"name":"Ouanougha","postalCode":"28019","active":true},{"name":"Oued Chair","postalCode":"28034","active":true},{"name":"Ouled Addi Guebala","postalCode":"28014","active":true},{"name":"Ouled Atia","postalCode":"28039","active":true},{"name":"Ouled Derradj","postalCode":"28004","active":true},{"name":"Ouled Madhi","postalCode":"28010","active":true},{"name":"Ouled Mansour","postalCode":"28028","active":true},{"name":"Ouled Sidi Brahim","postalCode":"28021","active":true},{"name":"Ouled Slimane","postalCode":"28025","active":true},{"name":"Oultene","postalCode":"28046","active":true},{"name":"Sidi Aissa","postalCode":"28016","active":true},{"name":"Sidi Ameur","postalCode":"28022","active":true},{"name":"Sidi Hadjeres","postalCode":"28018","active":true},{"name":"Sidi Mhamed","postalCode":"28038","active":true},{"name":"Slim","postalCode":"28043","active":true},{"name":"Souamaa","postalCode":"28040","active":true},{"name":"Tamsa","postalCode":"28023","active":true},{"name":"Tarmount","postalCode":"28005","active":true},{"name":"Zarzour","postalCode":"28033","active":true}],"29":[{"name":"Ain Fares","postalCode":"29024","active":true},{"name":"Ain Fekan","postalCode":"29018","active":true},{"name":"Ain Ferah","postalCode":"29011","active":true},{"name":"Ain Frass","postalCode":"29025","active":true},{"name":"Alaimia","postalCode":"29028","active":true},{"name":"Aouf","postalCode":"29023","active":true},{"name":"Benian","postalCode":"29019","active":true},{"name":"Bou Hanifia","postalCode":"29002","active":true},{"name":"Bou Henni","postalCode":"29037","active":true},{"name":"Chorfa","postalCode":"29043","active":true},{"name":"El Bordj","postalCode":"29017","active":true},{"name":"El Gaada","postalCode":"29029","active":false},{"name":"El Ghomri","postalCode":"29034","active":true},{"name":"El Hachem","postalCode":"29007","active":true},{"name":"El Keurt","postalCode":"29040","active":true},{"name":"El Mamounia","postalCode":"29039","active":true},{"name":"El Menaouer","postalCode":"29021","active":true},{"name":"Ferraguig","postalCode":"29033","active":true},{"name":"Froha","postalCode":"29013","active":true},{"name":"Gharrous","postalCode":"29041","active":true},{"name":"Gherdjoum","postalCode":"29042","active":true},{"name":"Ghriss","postalCode":"29012","active":true},{"name":"Guettena","postalCode":"29038","active":true},{"name":"Hacine","postalCode":"29004","active":true},{"name":"Khalouia","postalCode":"29020","active":true},{"name":"Makdha","postalCode":"29015","active":true},{"name":"Maoussa","postalCode":"29005","active":true},{"name":"Mascara","postalCode":"29001","active":true},{"name":"Matemore","postalCode":"29014","active":true},{"name":"Moctadouz","postalCode":"29036","active":true},{"name":"Mohammadia","postalCode":"29031","active":true},{"name":"Nesmot","postalCode":"29045","active":true},{"name":"Oggaz","postalCode":"29027","active":true},{"name":"Oued El Abtal","postalCode":"29010","active":true},{"name":"Oued Taria","postalCode":"29022","active":true},{"name":"Ras Ain Amirouche","postalCode":"29044","active":true},{"name":"Sedjerara","postalCode":"29035","active":true},{"name":"Sehailia","postalCode":"29047","active":true},{"name":"Sidi Abdeldjebar","postalCode":"29046","active":true},{"name":"Sidi Abdelmoumene","postalCode":"29032","active":true},{"name":"Sidi Boussaid","postalCode":"29016","active":true},{"name":"Sidi Kada","postalCode":"29008","active":true},{"name":"Sig","postalCode":"29026","active":true},{"name":"Teghennif","postalCode":"29006","active":true},{"name":"Tizi","postalCode":"29003","active":true},{"name":"Zahana","postalCode":"29030","active":true},{"name":"Zelmata","postalCode":"29009","active":true}],"30":[{"name":"Ain Beida","postalCode":"30002","active":true},{"name":"El Borma","postalCode":"30021","active":false},{"name":"Hassi Ben Abdellah","postalCode":"30012","active":true},{"name":"Hassi Messaoud","postalCode":"30004","active":true},{"name":"Ngoussa","postalCode":"30003","active":true},{"name":"Ouargla","postalCode":"30001","active":true},{"name":"Rouissat","postalCode":"30005","active":true},{"name":"Sidi Khouiled","postalCode":"30011","active":true}],"31":[{"name":"Ain Biya","postalCode":"31026","active":true},{"name":"Ain Kerma","postalCode":"31025","active":true},{"name":"Ain Turk","postalCode":"31009","active":true},{"name":"Arzew","postalCode":"31006","active":true},{"name":"Ben Freha","postalCode":"31020","active":true},{"name":"Bethioua","postalCode":"31007","active":true},{"name":"Bir El Djir","postalCode":"31003","active":true},{"name":"Boufatis","postalCode":"31014","active":true},{"name":"Bousfer","postalCode":"31016","active":true},{"name":"Boutlelis","postalCode":"31024","active":true},{"name":"El Ancar","postalCode":"31010","active":true},{"name":"El Braya","postalCode":"31018","active":true},{"name":"El Karma","postalCode":"31017","active":true},{"name":"Es Senia","postalCode":"31005","active":true},{"name":"Gdyel","postalCode":"31002","active":true},{"name":"Hassi Ben Okba","postalCode":"31019","active":true},{"name":"Hassi Bounif","postalCode":"31004","active":true},{"name":"Hassi Mefsoukh","postalCode":"31021","active":true},{"name":"Marsat El Hadjadj","postalCode":"31008","active":true},{"name":"Mers El Kebir","postalCode":"31015","active":true},{"name":"Messerghin","postalCode":"31023","active":true},{"name":"Oran","postalCode":"31001","active":true},{"name":"Oued Tlelat","postalCode":"31011","active":true},{"name":"Sidi Ben Yabka","postalCode":"31022","active":true},{"name":"Sidi Chami","postalCode":"31013","active":true},{"name":"Tafraoui","postalCode":"31012","active":true}],"32":[{"name":"Ain El Orak","postalCode":"32008","active":true},{"name":"Arbaouat","postalCode":"32009","active":true},{"name":"Boualem","postalCode":"32006","active":true},{"name":"Bougtoub","postalCode":"32010","active":true},{"name":"Boussemghoun","postalCode":"32013","active":true},{"name":"Brezina","postalCode":"32004","active":true},{"name":"Cheguig","postalCode":"32017","active":true},{"name":"Chellala","postalCode":"32014","active":true},{"name":"El Abiodh Sidi Cheikh","postalCode":"32007","active":true},{"name":"El Bayadh","postalCode":"32001","active":true},{"name":"El Bnoud","postalCode":"32016","active":true},{"name":"El Kheither","postalCode":"32011","active":true},{"name":"El Mehara","postalCode":"32019","active":true},{"name":"Ghassoul","postalCode":"32005","active":true},{"name":"Kef El Ahmar","postalCode":"32012","active":true},{"name":"Krakda","postalCode":"32015","active":true},{"name":"Rogassa","postalCode":"32002","active":true},{"name":"Sidi Ameur","postalCode":"32018","active":true},{"name":"Sidi Slimane","postalCode":"32021","active":true},{"name":"Sidi Tifour","postalCode":"32022","active":true},{"name":"Stitten","postalCode":"32003","active":true},{"name":"Tousmouline","postalCode":"32020","active":true}],"33":[{"name":"Bordj Omar Driss","postalCode":"33004","active":false},{"name":"Debdeb","postalCode":"33003","active":false},{"name":"Illizi","postalCode":"33001","active":true},{"name":"In Amenas","postalCode":"33006","active":false}],"34":[{"name":"Ain Taghrout","postalCode":"34008","active":true},{"name":"Ain Tesra","postalCode":"34030","active":true},{"name":"Belimour","postalCode":"34012","active":true},{"name":"Ben Daoud","postalCode":"34006","active":true},{"name":"Bir Kasdali","postalCode":"34031","active":true},{"name":"Bordj Bou Arreridj","postalCode":"34001","active":true},{"name":"Bordj Ghdir","postalCode":"34009","active":true},{"name":"Bordj Zemoura","postalCode":"34003","active":true},{"name":"Colla","postalCode":"34025","active":false},{"name":"Djaafra","postalCode":"34015","active":false},{"name":"El Ach","postalCode":"34027","active":true},{"name":"El Achir","postalCode":"34007","active":true},{"name":"El Anseur","postalCode":"34028","active":true},{"name":"El Hamadia","postalCode":"34011","active":true},{"name":"El Main","postalCode":"34016","active":false},{"name":"El Mhir","postalCode":"34005","active":true},{"name":"Ghilassa","postalCode":"34032","active":true},{"name":"Haraza","postalCode":"34034","active":true},{"name":"Hasnaoua","postalCode":"34019","active":true},{"name":"Khelil","postalCode":"34020","active":true},{"name":"Ksour","postalCode":"34022","active":true},{"name":"Mansoura","postalCode":"34004","active":true},{"name":"Medjana","postalCode":"34013","active":true},{"name":"Ouled Brahem","postalCode":"34017","active":true},{"name":"Ouled Dahmane","postalCode":"34018","active":true},{"name":"Ouled Sidi Brahim","postalCode":"34023","active":true},{"name":"Rabta","postalCode":"34033","active":true},{"name":"Ras El Oued","postalCode":"34002","active":true},{"name":"Sidi Embarek","postalCode":"34010","active":true},{"name":"Tafreg","postalCode":"34024","active":false},{"name":"Taglait","postalCode":"34021","active":true},{"name":"Teniet En Nasr","postalCode":"34014","active":true},{"name":"Tesmart","postalCode":"34029","active":true},{"name":"Tixter","postalCode":"34026","active":true}],"35":[{"name":"Afir","postalCode":"35004","active":true},{"name":"Ammal","postalCode":"35029","active":true},{"name":"Baghlia","postalCode":"35006","active":true},{"name":"Ben Choud","postalCode":"35027","active":true},{"name":"Beni Amrane","postalCode":"35030","active":true},{"name":"Bordj Menaiel","postalCode":"35005","active":true},{"name":"Boudouaou","postalCode":"35002","active":true},{"name":"Boudouaou El Bahri","postalCode":"35032","active":true},{"name":"Boumerdes","postalCode":"35001","active":true},{"name":"Bouzegza Keddara","postalCode":"35022","active":true},{"name":"Chabet El Ameur","postalCode":"35014","active":true},{"name":"Corso","postalCode":"35019","active":true},{"name":"Dellys","postalCode":"35028","active":true},{"name":"Djinet","postalCode":"35009","active":true},{"name":"El Kharrouba","postalCode":"35038","active":true},{"name":"Hammedi","postalCode":"35036","active":true},{"name":"Isser","postalCode":"35010","active":true},{"name":"Khemis El Khechna","postalCode":"35037","active":true},{"name":"Laghata","postalCode":"35035","active":true},{"name":"Larbatache","postalCode":"35021","active":true},{"name":"Naciria","postalCode":"35008","active":true},{"name":"Ouled Aissa","postalCode":"35026","active":false},{"name":"Ouled Hedadj","postalCode":"35033","active":true},{"name":"Ouled Moussa","postalCode":"35020","active":true},{"name":"Si Mustapha","postalCode":"35012","active":true},{"name":"Sidi Daoud","postalCode":"35007","active":true},{"name":"Souk El Had","postalCode":"35031","active":true},{"name":"Taourga","postalCode":"35025","active":true},{"name":"Thenia","postalCode":"35015","active":true},{"name":"Tidjelabine","postalCode":"35013","active":true},{"name":"Timezrit","postalCode":"35018","active":true},{"name":"Zemmouri","postalCode":"35011","active":true}],"36":[{"name":"Ain El Assel","postalCode":"36006","active":true},{"name":"Ain Kerma","postalCode":"36021","active":true},{"name":"Asfour","postalCode":"36017","active":true},{"name":"Ben Mhidi","postalCode":"36003","active":true},{"name":"Berrihane","postalCode":"36010","active":true},{"name":"Bougous","postalCode":"36004","active":true},{"name":"Bouhadjar","postalCode":"36002","active":true},{"name":"Bouteldja","postalCode":"36008","active":true},{"name":"Chebaita Mokhtar","postalCode":"36015","active":true},{"name":"Chefia","postalCode":"36012","active":true},{"name":"Chihani","postalCode":"36014","active":true},{"name":"Drean","postalCode":"36013","active":true},{"name":"Echatt","postalCode":"36018","active":true},{"name":"El Aioun","postalCode":"36007","active":true},{"name":"El Kala","postalCode":"36005","active":true},{"name":"El Tarf","postalCode":"36001","active":true},{"name":"Hammam Beni Salah","postalCode":"36023","active":true},{"name":"Lac Des Oiseaux","postalCode":"36011","active":true},{"name":"Oued Zitoun","postalCode":"36022","active":true},{"name":"Raml Souk","postalCode":"36024","active":true},{"name":"Souarekh","postalCode":"36009","active":false},{"name":"Zerizer","postalCode":"36019","active":true},{"name":"Zitouna","postalCode":"36020","active":true}],"37":[{"name":"Oum El Assel","postalCode":"37002","active":true},{"name":"Tindouf","postalCode":"37001","active":true}],"38":[{"name":"Ammari","postalCode":"38013","active":true},{"name":"Beni Chaib","postalCode":"38005","active":true},{"name":"Beni Lahcene","postalCode":"38022","active":true},{"name":"Bordj Bou Naama","postalCode":"38002","active":true},{"name":"Bordj El Emir Abdelkader","postalCode":"38009","active":true},{"name":"Boucaid","postalCode":"38021","active":true},{"name":"Khemisti","postalCode":"38011","active":true},{"name":"Larbaa","postalCode":"38016","active":true},{"name":"Lardjem","postalCode":"38006","active":true},{"name":"Layoune","postalCode":"38010","active":true},{"name":"Lazharia","postalCode":"38004","active":true},{"name":"Maasem","postalCode":"38017","active":true},{"name":"Melaab","postalCode":"38007","active":true},{"name":"Ouled Bessem","postalCode":"38012","active":true},{"name":"Sidi Abed","postalCode":"38018","active":true},{"name":"Sidi Boutouchent","postalCode":"38015","active":true},{"name":"Sidi Lantri","postalCode":"38008","active":true},{"name":"Sidi Slimane","postalCode":"38020","active":true},{"name":"Tamalaht","postalCode":"38019","active":true},{"name":"Theniet El Had","postalCode":"38003","active":true},{"name":"Tissemsilt","postalCode":"38001","active":true},{"name":"Youssoufia","postalCode":"38014","active":true}],"39":[{"name":"Bayadha","postalCode":"39004","active":true},{"name":"Beni Guecha","postalCode":"39019","active":true},{"name":"Debila","postalCode":"39011","active":true},{"name":"Douar El Ma","postalCode":"39015","active":true},{"name":"El Ogla","postalCode":"39025","active":true},{"name":"El Oued","postalCode":"39001","active":true},{"name":"Guemar","postalCode":"39006","active":true},{"name":"Hamraia","postalCode":"39009","active":true},{"name":"Hassani Abdelkrim","postalCode":"39012","active":true},{"name":"Hassi Khelifa","postalCode":"39013","active":true},{"name":"Kouinine","postalCode":"39007","active":true},{"name":"Magrane","postalCode":"39018","active":true},{"name":"Mih Ouansa","postalCode":"39026","active":true},{"name":"Nakhla","postalCode":"39005","active":true},{"name":"Oued El Alenda","postalCode":"39003","active":true},{"name":"Ourmas","postalCode":"39020","active":true},{"name":"Reguiba","postalCode":"39008","active":true},{"name":"Robbah","postalCode":"39002","active":true},{"name":"Sidi Aoun","postalCode":"39016","active":true},{"name":"Taghzout","postalCode":"39010","active":true},{"name":"Taleb Larbi","postalCode":"39014","active":true},{"name":"Trifaoui","postalCode":"39017","active":true}],"40":[{"name":"Ain Touila","postalCode":"40006","active":true},{"name":"Babar","postalCode":"40013","active":true},{"name":"Baghai","postalCode":"40004","active":true},{"name":"Bouhmama","postalCode":"40008","active":true},{"name":"Chelia","postalCode":"40021","active":true},{"name":"Cherchar","postalCode":"40011","active":true},{"name":"Djellal","postalCode":"40012","active":false},{"name":"El Hamma","postalCode":"40005","active":true},{"name":"El Mahmal","postalCode":"40017","active":true},{"name":"El Oueldja","postalCode":"40009","active":false},{"name":"Ensigha","postalCode":"40015","active":true},{"name":"Kais","postalCode":"40003","active":true},{"name":"Khenchela","postalCode":"40001","active":true},{"name":"Khirane","postalCode":"40020","active":false},{"name":"Msara","postalCode":"40018","active":false},{"name":"Mtoussa","postalCode":"40002","active":true},{"name":"Ouled Rechache","postalCode":"40016","active":true},{"name":"Remila","postalCode":"40010","active":true},{"name":"Tamza","postalCode":"40014","active":false},{"name":"Taouzianat","postalCode":"40007","active":true},{"name":"Yabous","postalCode":"40019","active":true}],"41":[{"name":"Ain Soltane","postalCode":"41018","active":true},{"name":"Ain Zana","postalCode":"41017","active":true},{"name":"Bir Bouhouche","postalCode":"41014","active":true},{"name":"Drea","postalCode":"41009","active":true},{"name":"Haddada","postalCode":"41010","active":true},{"name":"Hanancha","postalCode":"41003","active":true},{"name":"Khedara","postalCode":"41011","active":true},{"name":"Khemissa","postalCode":"41023","active":true},{"name":"Mdaourouche","postalCode":"41015","active":true},{"name":"Mechroha","postalCode":"41004","active":true},{"name":"Merahna","postalCode":"41012","active":true},{"name":"Oued Keberit","postalCode":"41024","active":true},{"name":"Ouled Driss","postalCode":"41005","active":true},{"name":"Ouled Moumen","postalCode":"41013","active":true},{"name":"Oum El Adhaim","postalCode":"41016","active":true},{"name":"Quillen","postalCode":"41019","active":true},{"name":"Ragouba","postalCode":"41022","active":true},{"name":"Safel El Ouiden","postalCode":"41021","active":true},{"name":"Sedrata","postalCode":"41002","active":true},{"name":"Sidi Fredj","postalCode":"41020","active":true},{"name":"Souk Ahras","postalCode":"41001","active":true},{"name":"Taoura","postalCode":"41008","active":true},{"name":"Terraguelt","postalCode":"41025","active":true},{"name":"Tiffech","postalCode":"41006","active":true},{"name":"Zaarouria","postalCode":"41007","active":true},{"name":"Zouabi","postalCode":"41026","active":true}],"42":[{"name":"Aghabal","postalCode":"42010","active":true},{"name":"Ahmer El Ain","postalCode":"42027","active":true},{"name":"Ain Tagourait","postalCode":"42017","active":true},{"name":"Attatba","postalCode":"42036","active":true},{"name":"Beni Milleuk","postalCode":"42041","active":true},{"name":"Bou Haroun","postalCode":"42030","active":true},{"name":"Bou Ismail","postalCode":"42026","active":true},{"name":"Bourkika","postalCode":"42005","active":true},{"name":"Chaiba","postalCode":"42016","active":true},{"name":"Cherchel","postalCode":"42022","active":true},{"name":"Damous","postalCode":"42023","active":true},{"name":"Douaouda","postalCode":"42004","active":true},{"name":"Fouka","postalCode":"42025","active":true},{"name":"Gouraya","postalCode":"42014","active":true},{"name":"Hadjerat Ennous","postalCode":"42042","active":true},{"name":"Hadjout","postalCode":"42012","active":true},{"name":"Khemisti","postalCode":"42006","active":true},{"name":"Kolea","postalCode":"42035","active":true},{"name":"Larhat","postalCode":"42003","active":true},{"name":"Menaceur","postalCode":"42002","active":true},{"name":"Messelmoun","postalCode":"42033","active":true},{"name":"Meurad","postalCode":"42024","active":true},{"name":"Nodor","postalCode":"42015","active":true},{"name":"Sidi Amar","postalCode":"42013","active":true},{"name":"Sidi Ghiles","postalCode":"42032","active":true},{"name":"Sidi Rached","postalCode":"42034","active":true},{"name":"Sidi Semiane","postalCode":"42040","active":true},{"name":"Tipaza","postalCode":"42001","active":true}],"43":[{"name":"Ahmed Rachedi","postalCode":"43011","active":true},{"name":"Ain Beida Harriche","postalCode":"43030","active":true},{"name":"Ain Mellouk","postalCode":"43005","active":true},{"name":"Ain Tine","postalCode":"43025","active":true},{"name":"Amira Arras","postalCode":"43022","active":true},{"name":"Benyahia Abderrahmane","postalCode":"43009","active":true},{"name":"Bouhatem","postalCode":"43014","active":true},{"name":"Chelghoum Laid","postalCode":"43003","active":true},{"name":"Chigara","postalCode":"43032","active":true},{"name":"Derradji Bousselah","postalCode":"43020","active":true},{"name":"El Mechira","postalCode":"43026","active":true},{"name":"Elayadi Barbes","postalCode":"43029","active":true},{"name":"Ferdjioua","postalCode":"43002","active":true},{"name":"Grarem Gouga","postalCode":"43017","active":true},{"name":"Hamala","postalCode":"43024","active":true},{"name":"Mila","postalCode":"43001","active":true},{"name":"Minar Zarza","postalCode":"43021","active":true},{"name":"Oued Athmenia","postalCode":"43004","active":true},{"name":"Oued Endja","postalCode":"43010","active":true},{"name":"Oued Seguen","postalCode":"43007","active":true},{"name":"Ouled Khalouf","postalCode":"43012","active":true},{"name":"Rouached","postalCode":"43015","active":true},{"name":"Sidi Khelifa","postalCode":"43027","active":true},{"name":"Sidi Merouane","postalCode":"43018","active":true},{"name":"Tadjenanet","postalCode":"43008","active":true},{"name":"Tassadane Haddada","postalCode":"43019","active":true},{"name":"Telerghma","postalCode":"43006","active":true},{"name":"Terrai Bainen","postalCode":"43023","active":true},{"name":"Tessala Lamatai","postalCode":"43016","active":false},{"name":"Tiberguent","postalCode":"43013","active":true},{"name":"Yahia Beniguecha","postalCode":"43031","active":true},{"name":"Zeghaia","postalCode":"43028","active":true}],"44":[{"name":"Ain Benian","postalCode":"44026","active":true},{"name":"Ain Bouyahia","postalCode":"44033","active":true},{"name":"Ain Defla","postalCode":"44001","active":true},{"name":"Ain Lechiakh","postalCode":"44014","active":true},{"name":"Ain Soltane","postalCode":"44020","active":true},{"name":"Ain Torki","postalCode":"44023","active":true},{"name":"Arib","postalCode":"44006","active":true},{"name":"Barbouche","postalCode":"44028","active":true},{"name":"Bathia","postalCode":"44031","active":true},{"name":"Belaas","postalCode":"44036","active":true},{"name":"Ben Allal","postalCode":"44025","active":true},{"name":"Bir Ouled Khelifa","postalCode":"44019","active":true},{"name":"Bordj Emir Khaled","postalCode":"44022","active":true},{"name":"Boumedfaa","postalCode":"44003","active":true},{"name":"Bourached","postalCode":"44009","active":true},{"name":"Djelida","postalCode":"44007","active":true},{"name":"Djemaa Ouled Chikh","postalCode":"44029","active":true},{"name":"Djendel","postalCode":"44012","active":true},{"name":"El Abadia","postalCode":"44011","active":true},{"name":"El Amra","postalCode":"44008","active":true},{"name":"El Attaf","postalCode":"44010","active":true},{"name":"El Hassania","postalCode":"44018","active":true},{"name":"El Maine","postalCode":"44034","active":true},{"name":"Hammam Righa","postalCode":"44005","active":true},{"name":"Hoceinia","postalCode":"44027","active":true},{"name":"Khemis Miliana","postalCode":"44004","active":true},{"name":"Mekhatria","postalCode":"44030","active":true},{"name":"Miliana","postalCode":"44002","active":true},{"name":"Oued Chorfa","postalCode":"44013","active":true},{"name":"Oued Djemaa","postalCode":"44015","active":true},{"name":"Rouina","postalCode":"44016","active":true},{"name":"Sidi Lakhdar","postalCode":"44024","active":true},{"name":"Tachta Zegagha","postalCode":"44032","active":true},{"name":"Tarik Ibn Ziad","postalCode":"44021","active":true},{"name":"Tiberkanine","postalCode":"44035","active":true},{"name":"Zeddine","postalCode":"44017","active":true}],"45":[{"name":"Ain Ben Khelil","postalCode":"45009","active":true},{"name":"Ain Sefra","postalCode":"45003","active":true},{"name":"Assela","postalCode":"45007","active":true},{"name":"Djeniane Bourzeg","postalCode":"45008","active":true},{"name":"El Biod","postalCode":"45012","active":true},{"name":"Kasdir","postalCode":"45011","active":true},{"name":"Makman Ben Amer","postalCode":"45010","active":true},{"name":"Mechria","postalCode":"45002","active":true},{"name":"Moghrar","postalCode":"45006","active":true},{"name":"Naama","postalCode":"45001","active":true},{"name":"Sfissifa","postalCode":"45005","active":true},{"name":"Tiout","postalCode":"45004","active":true}],"46":[{"name":"Aghlal","postalCode":"46007","active":true},{"name":"Ain El Arbaa","postalCode":"46009","active":true},{"name":"Ain Kihal","postalCode":"46003","active":true},{"name":"Ain Temouchent","postalCode":"46001","active":true},{"name":"Ain Tolba","postalCode":"46018","active":true},{"name":"Aoubellil","postalCode":"46013","active":true},{"name":"Beni Saf","postalCode":"46023","active":true},{"name":"Bou Zedjar","postalCode":"46005","active":true},{"name":"Chaabet El Ham","postalCode":"46002","active":true},{"name":"Chentouf","postalCode":"46011","active":true},{"name":"El Amria","postalCode":"46019","active":true},{"name":"El Emir Abdelkader","postalCode":"46027","active":true},{"name":"El Malah","postalCode":"46014","active":true},{"name":"El Messaid","postalCode":"46028","active":true},{"name":"Hammam Bouhadjar","postalCode":"46004","active":true},{"name":"Hassasna","postalCode":"46021","active":true},{"name":"Hassi El Ghella","postalCode":"46020","active":true},{"name":"Oued Berkeche","postalCode":"46006","active":true},{"name":"Oued Sabah","postalCode":"46016","active":true},{"name":"Ouled Boudjemaa","postalCode":"46017","active":true},{"name":"Ouled Kihal","postalCode":"46022","active":true},{"name":"Oulhaca El Gheraba","postalCode":"46025","active":true},{"name":"Sidi Ben Adda","postalCode":"46012","active":true},{"name":"Sidi Boumediene","postalCode":"46015","active":true},{"name":"Sidi Safi","postalCode":"46024","active":true},{"name":"Tadmaya","postalCode":"46026","active":true},{"name":"Tamzoura","postalCode":"46010","active":true},{"name":"Terga","postalCode":"46008","active":true}],"47":[{"name":"Berriane","postalCode":"47004","active":true},{"name":"Bounoura","postalCode":"47010","active":true},{"name":"Dhayet Bendhahoua","postalCode":"47003","active":true},{"name":"El Atteuf","postalCode":"47007","active":true},{"name":"El Guerrara","postalCode":"47006","active":true},{"name":"Ghardaia","postalCode":"47001","active":true},{"name":"Mansoura","postalCode":"47013","active":true},{"name":"Metlili","postalCode":"47005","active":true},{"name":"Sebseb","postalCode":"47009","active":false},{"name":"Zelfana","postalCode":"47008","active":true}],"48":[{"name":"Ain Rahma","postalCode":"48024","active":true},{"name":"Ain Tarek","postalCode":"48019","active":true},{"name":"Ammi Moussa","postalCode":"48011","active":true},{"name":"Belaassel Bouzegza","postalCode":"48003","active":true},{"name":"Bendaoud","postalCode":"48035","active":true},{"name":"Beni Dergoun","postalCode":"48013","active":true},{"name":"Beni Zentis","postalCode":"48030","active":true},{"name":"Dar Ben Abdellah","postalCode":"48032","active":true},{"name":"Djidiouia","postalCode":"48014","active":true},{"name":"El Guettar","postalCode":"48015","active":true},{"name":"El Hamadna","postalCode":"48007","active":true},{"name":"El Hassi","postalCode":"48033","active":true},{"name":"El Matmar","postalCode":"48017","active":true},{"name":"El Ouldja","postalCode":"48036","active":true},{"name":"Had Echkalla","postalCode":"48034","active":true},{"name":"Hamri","postalCode":"48016","active":true},{"name":"Kalaa","postalCode":"48023","active":true},{"name":"Lahlef","postalCode":"48029","active":true},{"name":"Mazouna","postalCode":"48022","active":true},{"name":"Mediouna","postalCode":"48009","active":true},{"name":"Mendes","postalCode":"48028","active":true},{"name":"Merdja Sidi Abed","postalCode":"48037","active":true},{"name":"Ouarizane","postalCode":"48021","active":true},{"name":"Oued El Djemaa","postalCode":"48026","active":true},{"name":"Oued Essalem","postalCode":"48020","active":true},{"name":"Oued Rhiou","postalCode":"48002","active":true},{"name":"Ouled Aiche","postalCode":"48005","active":true},{"name":"Ouled Sidi Mihoub","postalCode":"48038","active":true},{"name":"Ramka","postalCode":"48027","active":true},{"name":"Relizane","postalCode":"48001","active":true},{"name":"Sidi Khettab","postalCode":"48010","active":true},{"name":"Sidi Lazreg","postalCode":"48006","active":true},{"name":"Sidi Mhamed Ben Ali","postalCode":"48008","active":true},{"name":"Sidi Mhamed Ben Aouda","postalCode":"48018","active":true},{"name":"Sidi Saada","postalCode":"48004","active":true},{"name":"Souk El Haad","postalCode":"48031","active":true},{"name":"Yellel","postalCode":"48025","active":true},{"name":"Zemmoura","postalCode":"48012","active":true}],"49":[{"name":"Aougrout","postalCode":"49009","active":true},{"name":"Charouine","postalCode":"49004","active":true},{"name":"Deldoul","postalCode":"49007","active":true},{"name":"Ksar Kaddour","postalCode":"49005","active":true},{"name":"Metarfa","postalCode":"49008","active":false},{"name":"Ouled Aissa","postalCode":"49001","active":false},{"name":"Ouled Said","postalCode":"49003","active":true},{"name":"Talmine","postalCode":"49002","active":false},{"name":"Timimoun","postalCode":"49000","active":true},{"name":"Tinerkouk","postalCode":"49006","active":true}],"50":[{"name":"Bordj Badji Mokhtar","postalCode":"50000","active":false},{"name":"Timiaouine","postalCode":"50001","active":false}],"51":[{"name":"Besbes","postalCode":"51003","active":true},{"name":"Chaiba","postalCode":"51001","active":true},{"name":"Doucen","postalCode":"51002","active":true},{"name":"Ouled Djellal","postalCode":"51000","active":true},{"name":"Ras El Miad","postalCode":"51004","active":true},{"name":"Sidi Khaled","postalCode":"51005","active":true}],"52":[{"name":"Beni Abbes","postalCode":"52000","active":true},{"name":"Beni-Ikhlef","postalCode":"52006","active":true},{"name":"El Ouata","postalCode":"52005","active":true},{"name":"Igli","postalCode":"52004","active":true},{"name":"Kerzaz","postalCode":"52007","active":true},{"name":"Ksabi","postalCode":"52001","active":true},{"name":"Ouled-Khodeir","postalCode":"52002","active":true},{"name":"Tamtert","postalCode":"52003","active":true},{"name":"Timoudi","postalCode":"52008","active":true}],"53":[{"name":"Ain Salah","postalCode":"53000","active":true},{"name":"Foggaret Ezzoua","postalCode":"53002","active":true},{"name":"Inghar","postalCode":"53001","active":true}],"54":[{"name":"Ain Guezzam","postalCode":"54000","active":false},{"name":"Tin Zouatine","postalCode":"54001","active":false}],"55":[{"name":"Benaceur","postalCode":"55006","active":true},{"name":"Blidet Amor","postalCode":"55009","active":true},{"name":"El Alia","postalCode":"55004","active":true},{"name":"El-Hadjira","postalCode":"55005","active":true},{"name":"M'naguer","postalCode":"55007","active":true},{"name":"Megarine","postalCode":"55011","active":true},{"name":"Nezla","postalCode":"55001","active":true},{"name":"Sidi Slimane","postalCode":"55012","active":true},{"name":"Taibet","postalCode":"55008","active":true},{"name":"Tebesbest","postalCode":"55002","active":true},{"name":"Temacine","postalCode":"55010","active":true},{"name":"Touggourt","postalCode":"55000","active":true},{"name":"Zaouia El Abidia","postalCode":"55003","active":true}],"56":[{"name":"Bordj El Haouass","postalCode":"56001","active":false},{"name":"Djanet","postalCode":"56000","active":true}],"57":[{"name":"Djamaa","postalCode":"57004","active":true},{"name":"El M'Ghair","postalCode":"57000","active":true},{"name":"M'rara","postalCode":"57005","active":true},{"name":"Oum Touyour","postalCode":"57001","active":true},{"name":"Sidi Amrane","postalCode":"57006","active":true},{"name":"Sidi Khelil","postalCode":"57002","active":true},{"name":"Still","postalCode":"57003","active":true},{"name":"Tenedla","postalCode":"57007","active":true}],"58":[{"name":"El Meniaa","postalCode":"58000","active":true},{"name":"Hassi Fehal","postalCode":"58002","active":true},{"name":"Hassi Gara","postalCode":"58001","active":true}],"01":[{"name":"Adrar","postalCode":"1001","active":true},{"name":"Akabli","postalCode":"1019","active":true},{"name":"Aoulef","postalCode":"1012","active":true},{"name":"Bouda","postalCode":"1022","active":false},{"name":"Fenoughil","postalCode":"1015","active":true},{"name":"Inozghmir","postalCode":"1005","active":true},{"name":"O Ahmed Timmi","postalCode":"1021","active":true},{"name":"Reggane","postalCode":"1004","active":true},{"name":"Sali","postalCode":"1018","active":true},{"name":"Sbaa","postalCode":"1026","active":true},{"name":"Tamentit","postalCode":"1014","active":true},{"name":"Tamest","postalCode":"1002","active":true},{"name":"Timokten","postalCode":"1013","active":true},{"name":"Tit","postalCode":"1006","active":false},{"name":"Tsabit","postalCode":"1008","active":true},{"name":"Zaouiet Kounta","postalCode":"1011","active":true}],"02":[{"name":"Abou El Hassen","postalCode":"2022","active":true},{"name":"Ain Merane","postalCode":"2032","active":true},{"name":"Ben Boutaleb","postalCode":"2035","active":false},{"name":"Benairia","postalCode":"2003","active":true},{"name":"Beni Haoua","postalCode":"2007","active":true},{"name":"Beni Rached","postalCode":"2013","active":true},{"name":"Boukadir","postalCode":"2012","active":true},{"name":"Bouzghaia","postalCode":"2031","active":true},{"name":"Breira","postalCode":"2034","active":true},{"name":"Chettia","postalCode":"2024","active":true},{"name":"Chlef","postalCode":"2001","active":true},{"name":"Dahra","postalCode":"2017","active":true},{"name":"El Hadjadj","postalCode":"2027","active":false},{"name":"El Karimia","postalCode":"2004","active":true},{"name":"El Marsa","postalCode":"2023","active":true},{"name":"Harchoun","postalCode":"2009","active":true},{"name":"Herenfa","postalCode":"2015","active":true},{"name":"Labiod Medjadja","postalCode":"2028","active":true},{"name":"Moussadek","postalCode":"2026","active":true},{"name":"Oued Fodda","postalCode":"2029","active":true},{"name":"Oued Goussine","postalCode":"2016","active":true},{"name":"Oued Sly","postalCode":"2021","active":true},{"name":"Ouled Abbes","postalCode":"2018","active":true},{"name":"Ouled Ben Abdelkader","postalCode":"2030","active":true},{"name":"Ouled Fares","postalCode":"2010","active":true},{"name":"Oum Drou","postalCode":"2033","active":true},{"name":"Sendjas","postalCode":"2019","active":true},{"name":"Sidi Abderrahmane","postalCode":"2025","active":true},{"name":"Sidi Akacha","postalCode":"2011","active":true},{"name":"Sobha","postalCode":"2008","active":true},{"name":"Tadjna","postalCode":"2005","active":true},{"name":"Talassa","postalCode":"2014","active":true},{"name":"Taougrite","postalCode":"2006","active":true},{"name":"Tenes","postalCode":"2002","active":true},{"name":"Zeboudja","postalCode":"2020","active":true}],"03":[{"name":"Aflou","postalCode":"3019","active":true},{"name":"Ain Mahdi","postalCode":"3007","active":true},{"name":"Ain Sidi Ali","postalCode":"3011","active":true},{"name":"Beidha","postalCode":"3012","active":true},{"name":"Benacer Ben Chohra","postalCode":"3003","active":true},{"name":"Brida","postalCode":"3013","active":true},{"name":"El Assafia","postalCode":"3020","active":true},{"name":"El Ghicha","postalCode":"3014","active":true},{"name":"El Haouaita","postalCode":"3023","active":true},{"name":"Gueltat Sidi Saad","postalCode":"3010","active":true},{"name":"Hadj Mechri","postalCode":"3015","active":true},{"name":"Hassi Delaa","postalCode":"3005","active":true},{"name":"Hassi R Mel","postalCode":"3006","active":true},{"name":"Kheneg","postalCode":"3009","active":true},{"name":"Ksar El Hirane","postalCode":"3002","active":true},{"name":"Laghouat","postalCode":"3001","active":true},{"name":"Oued M Zi","postalCode":"3022","active":true},{"name":"Oued Morra","postalCode":"3021","active":true},{"name":"Sebgag","postalCode":"3016","active":true},{"name":"Sidi Bouzid","postalCode":"3024","active":true},{"name":"Sidi Makhlouf","postalCode":"3004","active":true},{"name":"Tadjmout","postalCode":"3008","active":true},{"name":"Tadjrouna","postalCode":"3018","active":true},{"name":"Taouiala","postalCode":"3017","active":true}],"04":[{"name":"Ain Babouche","postalCode":"4008","active":true},{"name":"Ain Beida","postalCode":"4002","active":true},{"name":"Ain Diss","postalCode":"4015","active":true},{"name":"Ain Fekroune","postalCode":"4025","active":true},{"name":"Ain Kercha","postalCode":"4012","active":true},{"name":"Ain Zitoun","postalCode":"4027","active":true},{"name":"Ainmlila","postalCode":"4003","active":true},{"name":"Behir Chergui","postalCode":"4004","active":true},{"name":"Berriche","postalCode":"4009","active":true},{"name":"Bir Chouhada","postalCode":"4021","active":true},{"name":"Dhala","postalCode":"4011","active":true},{"name":"El Amiria","postalCode":"4005","active":true},{"name":"El Belala","postalCode":"4007","active":true},{"name":"El Djazia","postalCode":"4014","active":false},{"name":"El Fedjoudj Boughrar","postalCode":"4019","active":true},{"name":"El Harmilia","postalCode":"4029","active":true},{"name":"Fkirina","postalCode":"4016","active":true},{"name":"Hanchir Toumghani","postalCode":"4013","active":true},{"name":"Ksar Sbahi","postalCode":"4022","active":true},{"name":"Meskiana","postalCode":"4024","active":true},{"name":"Oued Nini","postalCode":"4023","active":true},{"name":"Ouled Gacem","postalCode":"4028","active":true},{"name":"Ouled Hamla","postalCode":"4010","active":true},{"name":"Ouled Zouai","postalCode":"4020","active":true},{"name":"Oum El Bouaghi","postalCode":"4001","active":true},{"name":"Rahia","postalCode":"4026","active":false},{"name":"Sigus","postalCode":"4006","active":true},{"name":"Souk Naamane","postalCode":"4017","active":true},{"name":"Zorg","postalCode":"4018","active":true}],"05":[{"name":"Ain Djasser","postalCode":"5019","active":true},{"name":"Ain Touta","postalCode":"5045","active":true},{"name":"Ain Yagout","postalCode":"5022","active":true},{"name":"Amdoukal","postalCode":"5055","active":true},{"name":"Arris","postalCode":"5016","active":true},{"name":"Barika","postalCode":"5042","active":true},{"name":"Batna","postalCode":"5001","active":true},{"name":"Beni Foudhala El Hakania","postalCode":"5032","active":true},{"name":"Bitam","postalCode":"5014","active":true},{"name":"Boulhilat","postalCode":"5060","active":true},{"name":"Boumagueur","postalCode":"5041","active":true},{"name":"Boumia","postalCode":"5059","active":true},{"name":"Bouzina","postalCode":"5035","active":true},{"name":"Chemora","postalCode":"5036","active":true},{"name":"Chir","postalCode":"5052","active":true},{"name":"Djerma","postalCode":"5013","active":true},{"name":"Djezzar","postalCode":"5043","active":true},{"name":"El Hassi","postalCode":"5057","active":true},{"name":"El Madher","postalCode":"5007","active":true},{"name":"Fesdis","postalCode":"5023","active":true},{"name":"Foum Toub","postalCode":"5031","active":true},{"name":"Ghassira","postalCode":"5002","active":true},{"name":"Gosbat","postalCode":"5039","active":true},{"name":"Guigba","postalCode":"5010","active":true},{"name":"Hidoussa","postalCode":"5046","active":true},{"name":"Ichmoul","postalCode":"5030","active":true},{"name":"Inoughissen","postalCode":"5011","active":true},{"name":"Kimmel","postalCode":"5017","active":true},{"name":"Ksar Belezma","postalCode":"5028","active":true},{"name":"Larbaa","postalCode":"5061","active":true},{"name":"Lazrou","postalCode":"5058","active":true},{"name":"Lemsane","postalCode":"5027","active":true},{"name":"Maafa","postalCode":"5003","active":true},{"name":"Menaa","postalCode":"5006","active":true},{"name":"Merouana","postalCode":"5004","active":true},{"name":"Metkaouak","postalCode":"5015","active":true},{"name":"Ngaous","postalCode":"5009","active":true},{"name":"Oued Chaaba","postalCode":"5037","active":true},{"name":"Oued El Ma","postalCode":"5033","active":true},{"name":"Oued Taga","postalCode":"5048","active":true},{"name":"Ouled Ammar","postalCode":"5056","active":true},{"name":"Ouled Aouf","postalCode":"5040","active":true},{"name":"Ouled Fadel","postalCode":"5049","active":true},{"name":"Ouled Selam","postalCode":"5020","active":true},{"name":"Ouled Si Slimane","postalCode":"5053","active":true},{"name":"Ouyoun El Assafir","postalCode":"5012","active":true},{"name":"Rahbat","postalCode":"5025","active":true},{"name":"Ras El Aioun","postalCode":"5051","active":true},{"name":"Sefiane","postalCode":"5024","active":true},{"name":"Seggana","postalCode":"5029","active":true},{"name":"Seriana","postalCode":"5005","active":true},{"name":"Talkhamt","postalCode":"5034","active":true},{"name":"Taxlent","postalCode":"5038","active":true},{"name":"Tazoult","postalCode":"5008","active":true},{"name":"Teniet El Abed","postalCode":"5047","active":true},{"name":"Tighanimine","postalCode":"5026","active":true},{"name":"Tigherghar","postalCode":"5021","active":true},{"name":"Tilatou","postalCode":"5018","active":true},{"name":"Timgad","postalCode":"5050","active":true},{"name":"Tkout","postalCode":"5044","active":true},{"name":"Zanat El Beida","postalCode":"5054","active":true}],"06":[{"name":"Adekar","postalCode":"6024","active":true},{"name":"Ait Rizine","postalCode":"6028","active":true},{"name":"Ait Smail","postalCode":"6047","active":true},{"name":"Akbou","postalCode":"6025","active":true},{"name":"Akfadou","postalCode":"6042","active":true},{"name":"Amalou","postalCode":"6016","active":true},{"name":"Amizour","postalCode":"6002","active":true},{"name":"Aokas","postalCode":"6022","active":true},{"name":"Barbacha","postalCode":"6034","active":true},{"name":"Bejaia","postalCode":"6001","active":true},{"name":"Beni Djellil","postalCode":"6023","active":true},{"name":"Beni Ksila","postalCode":"6035","active":true},{"name":"Beni Maouch","postalCode":"6050","active":true},{"name":"Beni Melikeche","postalCode":"6038","active":false},{"name":"Boudjellil","postalCode":"6052","active":true},{"name":"Bouhamza","postalCode":"6037","active":false},{"name":"Boukhelifa","postalCode":"6048","active":true},{"name":"Chelata","postalCode":"6005","active":true},{"name":"Chemini","postalCode":"6029","active":true},{"name":"Darguina","postalCode":"6020","active":true},{"name":"Draa Kaid","postalCode":"6045","active":false},{"name":"El Kseur","postalCode":"6040","active":true},{"name":"Ferraoun","postalCode":"6003","active":true},{"name":"Ifelain Ilmathen","postalCode":"6018","active":true},{"name":"Ighil Ali","postalCode":"6017","active":false},{"name":"Ighram","postalCode":"6015","active":true},{"name":"Kendira","postalCode":"6013","active":true},{"name":"Kherrata","postalCode":"6044","active":true},{"name":"Leflaye","postalCode":"6043","active":true},{"name":"Mcisna","postalCode":"6009","active":true},{"name":"Melbou","postalCode":"6041","active":true},{"name":"Oued Ghir","postalCode":"6051","active":true},{"name":"Ouzallaguen","postalCode":"6036","active":true},{"name":"Seddouk","postalCode":"6026","active":true},{"name":"Semaoun","postalCode":"6012","active":true},{"name":"Sidi Aich","postalCode":"6039","active":true},{"name":"Sidi Ayad","postalCode":"6021","active":true},{"name":"Souk El Thenine","postalCode":"6008","active":true},{"name":"Souk Oufella","postalCode":"6030","active":true},{"name":"Tala Hamza","postalCode":"6033","active":true},{"name":"Tamokra","postalCode":"6006","active":false},{"name":"Tamridjet","postalCode":"6046","active":false},{"name":"Taourirt Ighil","postalCode":"6004","active":true},{"name":"Taskriout","postalCode":"6031","active":true},{"name":"Tazmalt","postalCode":"6027","active":true},{"name":"Thinabdher","postalCode":"6010","active":true},{"name":"Tibane","postalCode":"6032","active":true},{"name":"Tichi","postalCode":"6011","active":true},{"name":"Tifra","postalCode":"6014","active":true},{"name":"Timzrit","postalCode":"6007","active":true},{"name":"Tizi Nberber","postalCode":"6049","active":true},{"name":"Toudja","postalCode":"6019","active":true}],"07":[{"name":"Ain Naga","postalCode":"7014","active":true},{"name":"Ain Zaatout","postalCode":"7018","active":false},{"name":"Besbes","postalCode":"7007","active":true},{"name":"Biskra","postalCode":"7001","active":true},{"name":"Bordj Ben Azzouz","postalCode":"7027","active":true},{"name":"Bouchagroun","postalCode":"7029","active":true},{"name":"Branis","postalCode":"7003","active":true},{"name":"Chetma","postalCode":"7004","active":true},{"name":"Djemorah","postalCode":"7020","active":true},{"name":"El Feidh","postalCode":"7016","active":false},{"name":"El Ghrous","postalCode":"7031","active":true},{"name":"El Hadjab","postalCode":"7032","active":true},{"name":"El Haouch","postalCode":"7013","active":false},{"name":"El Kantara","postalCode":"7017","active":true},{"name":"El Outaya","postalCode":"7019","active":true},{"name":"Foughala","postalCode":"7026","active":true},{"name":"Khanguet Sidinadji","postalCode":"7033","active":false},{"name":"Lichana","postalCode":"7023","active":true},{"name":"Lioua","postalCode":"7022","active":true},{"name":"Mchouneche","postalCode":"7012","active":true},{"name":"Mekhadma","postalCode":"7030","active":true},{"name":"Meziraa","postalCode":"7028","active":true},{"name":"Mlili","postalCode":"7025","active":true},{"name":"Oumache","postalCode":"7002","active":true},{"name":"Ourlal","postalCode":"7024","active":true},{"name":"Sidi Okba","postalCode":"7011","active":true},{"name":"Tolga","postalCode":"7021","active":true},{"name":"Zeribet El Oued","postalCode":"7015","active":true}],"08":[{"name":"Abadla","postalCode":"8017","active":true},{"name":"Bechar","postalCode":"8001","active":true},{"name":"Beni Ounif","postalCode":"8021","active":true},{"name":"Boukais","postalCode":"8015","active":true},{"name":"Erg Ferradj","postalCode":"8002","active":true},{"name":"Kenedsa","postalCode":"8010","active":true},{"name":"Lahmar","postalCode":"8006","active":true},{"name":"Mechraa Houari B","postalCode":"8009","active":true},{"name":"Meridja","postalCode":"8004","active":true},{"name":"Mogheul","postalCode":"8016","active":true},{"name":"Tabalbala","postalCode":"8012","active":false},{"name":"Taghit","postalCode":"8013","active":true}],"09":[{"name":"Ain Romana","postalCode":"9028","active":true},{"name":"Ben Khlil","postalCode":"9013","active":true},{"name":"Beni Mered","postalCode":"9025","active":true},{"name":"Beni Tamou","postalCode":"9023","active":true},{"name":"Blida","postalCode":"9001","active":true},{"name":"Bouarfa","postalCode":"9024","active":true},{"name":"Boufarik","postalCode":"9020","active":true},{"name":"Bougara","postalCode":"9026","active":true},{"name":"Bouinan","postalCode":"9003","active":true},{"name":"Chebli","postalCode":"9002","active":true},{"name":"Chiffa","postalCode":"9011","active":true},{"name":"Chrea","postalCode":"9008","active":true},{"name":"Djebabra","postalCode":"9029","active":true},{"name":"El Affroun","postalCode":"9010","active":true},{"name":"Guerrouaou","postalCode":"9027","active":true},{"name":"Hammam Melouane","postalCode":"9012","active":true},{"name":"Larbaa","postalCode":"9021","active":true},{"name":"Meftah","postalCode":"9018","active":true},{"name":"Mouzaia","postalCode":"9016","active":true},{"name":"Oued Djer","postalCode":"9022","active":true},{"name":"Oued El Alleug","postalCode":"9004","active":true},{"name":"Ouled Selama","postalCode":"9019","active":true},{"name":"Ouled Yaich","postalCode":"9007","active":true},{"name":"Souhane","postalCode":"9017","active":true},{"name":"Soumaa","postalCode":"9014","active":true}]},
-  bureaux: {"10":[{"code":"10A","name":"Bouira","commune":"Bouira","address":"Villa hamzaoui, ammar khodja , bouira"},{"code":"10B","name":"Bouira - Lakhdaria","commune":"Lakhdaria","address":"Route national n°05 projet 55 logts social participatif BT A -lakhdaria – bouira (monté tizi elbir à coté de dépôt de vente Semoule MAMA)."}],"11":[{"code":"11A","name":"Tamanrasset","commune":"Tamanghasset","address":""}],"12":[{"code":"12A","name":"Tébessa","commune":"Tébessa","address":"a cote du 2eme commissariat de police et du magasin de meubles REDEL, Tébessa"}],"13":[{"code":"13A","name":"Tlemcen","commune":"Tlemcen","address":"Les Dhalias 426 El kiffane, tlemcen (La station sera ouverte de 08h30 jusqu'à 18h00.)"},{"code":"13B","name":"Tlemcen - Maghnia","commune":"Maghnia","address":"Ouled ben saber, À côté restaurant Rais"}],"14":[{"code":"14A","name":"Tiaret","commune":"Tiaret","address":"Cité 180 logements CNT local 01 N° 63 – Tiaret"},{"code":"14B","name":"Tiaret - Frenda","commune":"Frenda","address":"Cité 60 logements D121 GP 82 - Frenda"}],"15":[{"code":"15A","name":"Tizi Ouzou","commune":"Tizi Ouzou","address":"Cité 450 Logements, Nouvelle Ville enface la salle des fetes lilya"},{"code":"15B","name":"Tizi Ouzou - Azazga","commune":"Azazga","address":"Route nationale N= 12 taddart"},{"code":"15C","name":"Tizi Ouzou - Draa Ben Khedda","commune":"Draa Ben Khedd","address":"cooperative -EL WOOROUD, EN FACE A.D.E et ANEM de draa-ben khedda"}],"16":[{"code":"16B","name":"Bab Ezzouar","commune":"Bab Azzoua","address":"Devant clinique médicale, En face Ecole Hilal School"},{"code":"16F","name":"Baba Hassen","commune":"Baba Hassen","address":"Cité Cherchali Boualam, À côté de croissant rouge, Baba Hassen"},{"code":"16G","name":"Baraki","commune":"Baraki","address":"Baraki, route de Larbaâ, entre la mosquée El Bachir El Ibrahimi et le commissariat de la circonscription administrative."},{"code":"16Y","name":"Bir khadem [ E-com ]","commune":"Bir khadem","address":"Rue des Rosiers, El Malha Birkhadem"},{"code":"16A","name":"Bir mourad Rais","commune":"Bir Mourad Rais","address":"02, Lotissement Beau Séjour, Bir Mourad Raïs"},{"code":"16H","name":"Bordj el bahri","commune":"Bordj El Bahri\"","address":"Cité Galoul, lotissement coopératif immobilier, n° 428 (A coté de la crèche IBN BAZ - ???? ?????? ??????? ??????? )"},{"code":"16E","name":"Centre - Sacré-Cœur","commune":"Alger Centre","address":"22 Rue Hocine BELADJEL, Sacré-Cœur, Alger Centre, (En face la banque BADR)"},{"code":"16X","name":"Chéraga [ E-com ]","commune":"Chéraga","address":"PETIT STAOUALI ROUTE INSTETUE PASTEUR"},{"code":"16W","name":"Meftah","commune":"Meftah","address":"Cite Souakria, Meftah"},{"code":"16Z","name":"Oued smar [ E-com ]","commune":"oued smar","address":"Rue France monic chalis N°01 dar el beida."},{"code":"16D","name":"Reghaia","commune":"Reghaia","address":"822 Logmts LPP Amirouche Batiment A7 N°04 rez-de-chaussée ,Reghaia"},{"code":"16I","name":"Zeralda","commune":"Zeralda","address":"Local N, Cité 62 local LPP BTN 5C, 02 03 RDC, Zéralda"}],"17":[{"code":"17A","name":"Djelfa","commune":"Djelfa","address":"Centre-ville, en face de la Caisse Nationale des Retraites (C.N.R), Quartier Ben Djerma"},{"code":"17B","name":"Djelfa - Ain Ouassara","commune":"Ain Oussera","address":"Quartier Mohamed Boudiaf, Section 23, Local n° 30 Bisi, Commune de Ain Oussera."}],"18":[{"code":"18A","name":"Jijel","commune":"Jijel","address":"rue26, Avenue Kaoula Mokhtar, cita sans intérdit , Hay IDARI"}],"19":[{"code":"19B","name":"El eulma","commune":"El Eulma","address":"Tassahoumi, a coté de transport hamouda et hôtel Rato rue Touaher el khayer et à côté de transport el ikhlas, el eulma, Sétif (La station sera ouverte de 08h30 jusqu’à 18h00.)"},{"code":"19A","name":"Sétif","commune":"Setif","address":"Cité Mesoudi Edhouadi 1014-614 Logement (En face la gare Didouche Mourad)"},{"code":"19C","name":"Sétif - Ain Oulmene","commune":"Ain Oulmane","address":"En face CEM Douhil Abdul Hamid,"}],"20":[{"code":"20A","name":"Saïda","commune":"Saida","address":"Cité Riad en face Maison de l'Environnement"}],"21":[{"code":"21A","name":"Skikda","commune":"Skikda","address":"Rue du Chahid Meziane Salah (Route Bouyali, Immeuble Guerza)"},{"code":"21B","name":"Skikda - Azzaba","commune":"Azzaba","address":"Cite mefrouche dahmane"}],"22":[{"code":"22A","name":"Sidi bel abbès","commune":"Sidi Bel Abbes","address":"Rue CPR , En face Masjid El Ansar"}],"23":[{"code":"23A","name":"Annaba","commune":"Annaba","address":"Rue Djemila, Saint Claud (À côté de la mosqué Badr)"},{"code":"23B","name":"Annaba - EL BOUNI","commune":"El Bouni","address":"Fractionnement de la Bouni 2, zone urbaine n° 43, rez-de-chaussée, section 40, groupe de propriété 02, Bouni"}],"24":[{"code":"24A","name":"Guelma","commune":"Guelma","address":"Cité 19 Juin - Numéro 02, en face marché Elbaraka"}],"25":[{"code":"25C","name":"Constantine","commune":"Constantine","address":"Avenue Kaddour Boumedous (Ciloc) a coté de la direction régionale d’Air Algérie."},{"code":"25B","name":"Constantine - Ali Mendjeli","commune":"El Khroub","address":"En face de Sarl Natura pro Algérie/entre deux salles des fêtés el baraka et méga"},{"code":"25A","name":"Constantine - Zouaghi","commune":"Hamma Bouziane","address":"Cité Tlemcen Zouaghi (En face de la gendarmerie)"}],"26":[{"code":"26A","name":"Médéa","commune":"Medea","address":"Cité Ennasr (Près du pôle universitaire et Sonelgaz)"}],"27":[{"code":"27A","name":"Mostaganem","commune":"Mostaganem","address":"La pépinière en face la glacière juste à côté de la libraire BENALIOUA ( cité AKID AMIROUCHE boulevard NAFOUSSI OTHMAN)"},{"code":"27B","name":"Mostaganem - Sidi lakhder","commune":"Sidi Lakhdar","address":"rue si abdelah 01 novembre devant la poste sidi lakhder"}],"28":[{"code":"28A","name":"M'sila","commune":"Msila","address":"Rue Ichbilia (En face l'université de M'Sila)"},{"code":"28B","name":"M'sila - Bousaada","commune":"Bou Saada","address":"Cité El Bader (ESTTIH) a coté de L'annexe de L'APC ,Bousaada"}],"29":[{"code":"29A","name":"Mascara - Mohammadia","commune":"Mohammadia","address":"Rue Larbi Ben M'hidi, a coté de l'agence de Barigou,"},{"code":"29B","name":"Mascara - Ville","commune":"Mascara","address":"Rue d'oran , colonel Amirouche , lot 112 N° 07 local 06 ,a coté de hadj Grrifa"}],"30":[{"code":"30A","name":"Ouargla","commune":"Ouargla","address":"Sidi Abdelkader, derrière la maison de jeune"},{"code":"30B","name":"Ouargla - Hassi Messaoud","commune":"Hassi Messaoud","address":"Quartier 1850, rue principale du marché hebdomadaire, en face de l’ancienne agence KIA, Hassi Messaoud"}],"31":[{"code":"31Z","name":"Maraval [ E-com ]","commune":"Oran","address":"cite othmania rue ben arbia elhouari N24 loc 09 rdc oran"},{"code":"31D","name":"Oran - Arzew","commune":"Arzew","address":"EN FACE ANCIEN DAIRA D’ARZEW , Rue KADIR ELHABIB N° 04, Oran"},{"code":"31B","name":"Oran - Bir El Djir","commune":"Bir El Djir","address":"Coopérative Immobilière Dar El Amel - N°14 - Local1 RC"},{"code":"31C","name":"Oran - Gambita","commune":"Oran","address":"Gambetta En face arrêt de bus 51 et 11 de (dispensaire cave-gay)"}],"32":[{"code":"32A","name":"El Bayadh","commune":"El Bayadh","address":"Cité jolie vue (Al-Mandhar Al-Jamil), à côté de la Direction de la distribution d'électricité et de gaz"}],"33":[{"code":"33A","name":"Illizi","commune":"Illizi","address":"(À côté de la wilaya / Près de boulangerie Ben Ziar)"}],"34":[{"code":"34A","name":"Bordj Bou Arreridj","commune":"Bordj Bou Arreridj","address":"Rue Tabet Salah Bordj Bou Arreridj (Devant la maison de finance)"}],"35":[{"code":"35A","name":"Boumerdès [ E-com ]","commune":"Boumerdes","address":"Cité mimouza en face la piscine olympique Boumerdes"},{"code":"35C","name":"Boumerdès - Bordj Menaiel","commune":"Bordj Menaiel","address":"Rue Madaoui Ali, LOCAL BOUMZER EN FACE OPHTALMOLOGISTE DOCTEUR BENMOUSSA HOCINE, BORDJ MENAIEL, BOUMERDES (La station sera ouverte de 08h30 jusqu'à 18h00)"},{"code":"35D","name":"Boumerdès - Dellys","commune":"Dellys","address":"La banlieue Est de Dellys, route nationale n° 24, Rez de chaussée bâtiment (B), Local N° B05, DELLYS | Repère : AGENCE IMMOBILLIERE NADJI"},{"code":"35B","name":"Boumerdès - Ouled Moussa","commune":"Ouled Moussa","address":"La zone industrielle d'Ouled Moussa"}],"36":[{"code":"36A","name":"El Taref","commune":"El Tarf","address":"City center ( centre commerciale zaydi 1er étage N°10 )wilaya etEl taref"}],"37":[{"code":"37A","name":"Tindouf","commune":"Tindouf","address":"Magasin N°03 cité Al-Qasabi, Section 14, Groupement Immobilier N° 165, Commune de Tindouf (la station sera ouverte de 08h30 jusqu’à 17h00)"}],"38":[{"code":"38A","name":"Tissemsilt","commune":"Tissemsilt","address":"Résidence kaidi (promotion) ancien arrêt des taxis"}],"39":[{"code":"39A","name":"El Oued","commune":"El Oued","address":"Cité Al-Rimal, Commune El Oued wilaya El Ouadi (la route menant au tribunal)"}],"40":[{"code":"40A","name":"Khenchela","commune":"Khenchela","address":"Rue du poid lourd à coté de la clinique du dialyse Messai -Khenchela-"}],"41":[{"code":"41A","name":"Souk ahres","commune":"Souk Ahras","address":"En face radio souk ahras et l laboratoire des analyses Taghest"}],"42":[{"code":"42B","name":"Tipaza - Koléa","commune":"Kolea","address":"Route d’Alger - Kolea, commune de Kolea, wilaya de Tipaza."},{"code":"42Z","name":"Tipaza [ E-com ]","commune":"Tipaza","address":"cite AADL"}],"43":[{"code":"43A","name":"Mila","commune":"Mila","address":"chateau d'eau en face protection civile"},{"code":"43B","name":"Mila - Chelghoum El aid","commune":"Chelghoum Laid","address":"Rue 1er Nouvembre 1954 Chelghoum El aid (hotel Rhumel)"},{"code":"43D","name":"Mila - Ferdjioua","commune":"Ferdjioua","address":"Rue 1 novembre en face la gam assurance"},{"code":"43C","name":"Mila - Tadjenanet","commune":"Tadjenanet","address":"Rue 1 novembre en face cem mohamed abdo"}],"44":[{"code":"44A","name":"Ain Defla","commune":"Ain Defla","address":"City Najem, en face de l'entrée du groupement régional de la Gendarmerie Nationale, L’escadron"},{"code":"44B","name":"Ain Defla - Khemis miliana [ E-com ]","commune":"Khemis Miliana","address":"Cité Ahmed ben Abd Allah commune khemismiliana wilaya de Ain defla"}],"45":[{"code":"45A","name":"Naâma - Mécheria","commune":"Mechria","address":"Route Nationale n°06, à côté de l’hôtel Amine et du centre d’Algérie Télécom"}],"46":[{"code":"46A","name":"Aïn Témouchent","commune":"Ain Temouchent","address":"22A cité des oliviers ain témouchnet 46000(en face du parking de la wilaya)"}],"47":[{"code":"47A","name":"Ghardaïa","commune":"Ghardaïa","address":"Rue principale Hadj Messaoud en face la branche municipale, Haj Masoud"}],"48":[{"code":"48A","name":"Relizane","commune":"Relizane","address":"Cité 31 logmt en face la justice, a coté de la banque societé général algerie"}],"49":[{"code":"49A","name":"Timimoun","commune":"Timimoun","address":"cité MAHDJOUB N° de la porte 16 , Timimoun en face le stade et SAA"}],"51":[{"code":"51A","name":"Ouled Djellal","commune":"Ouled Djellal","address":"Rez-de-chaussée de l'hôtel Transit, à côté de la protection civile d'Ouled Djellal."}],"52":[{"code":"52A","name":"BENI ABBES","commune":"Beni Abbes","address":"A coté la wilaya BENI ABBES , en face LAPIWI"}],"53":[{"code":"53A","name":"In Salah","commune":"Ain Salah","address":"Près de la Direction des travaux publics, en face de l'entrée du radar d'Algérie Télécom"}],"55":[{"code":"55A","name":"Touggourt","commune":"Touggourt","address":"Cité Sidi Abdeslam (Prés de la banque BEA), Touggourt"}],"56":[{"code":"56A","name":"Djanet","commune":"Djanet","address":"Centre-ville Tine Khatema, à côté du dentiste, Djanet"}],"58":[{"code":"58A","name":"El Meniaa","commune":"El Meniaa","address":"Rue de l'unite African (À côté de la boulangerie Boussaid) Il se trouve à 20 mètres de la mosquée saad beno abi elouas"}],"01":[{"code":"1A","name":"Adrar","commune":"Adrar","address":"Cité les palmier en face l'hopital"}],"02":[{"code":"2A","name":"Chlef","commune":"Chlef","address":"Rue Lac des Forêts (À côté du CNRC)"},{"code":"2B","name":"Chlef - Tenes","commune":"Tenes","address":"Rue de Cherchell en face l’école primaire les frères Menad Ténès"}],"03":[{"code":"3A","name":"Laghouat","commune":"Laghouat","address":"Cité Al Ouiam (En face la mosquée Hammani )"},{"code":"3B","name":"Laghouat - Aflou","commune":"Aflou","address":"Rue Al-Gaada, à côté de la boulangerie Belkhair"}],"04":[{"code":"4B","name":"Oum El Bouaghi","commune":"Oum El Bouaghi","address":"Cité 176 logements LSP Batiment 13 – Oum El Bouaghi"},{"code":"4C","name":"Oum El Bouaghi - Aïn El Béïda","commune":"Ain Beida","address":"Aïn Béïda en face C.N.A.S a coté de Pharmacie Belambri"},{"code":"4A","name":"Oum El Bouaghi - Ain Mlila","commune":"Ainmlila","address":"Cité El Hanaa, route du Lycée Messas"}],"05":[{"code":"5A","name":"Batna","commune":"Batna","address":"Cité meddour kchida en face les batiments 500"},{"code":"5C","name":"Batna","commune":"Tazoult","address":"Cité 1200 logements oulmi en face la nouvelle poste et station pétro baraka"},{"code":"5B","name":"Batna - Barika","commune":"Barika","address":"Quartier CHAABANI , en face notaire Bachir Farhani, a coté Algerie Telecom"}],"06":[{"code":"6A","name":"Bejaïa","commune":"Bejaia","address":"rue des frères Tabet ,a 20 mètres de l'hôtel Golden H en face la nouvelle promotion nid d'abeille."},{"code":"6B","name":"Bejaïa - Akbou","commune":"Akbou","address":"Rue hibouche – arafou En face de djurdjura cars et alliance assurance"},{"code":"6C","name":"Bejaïa - El-Kseur","commune":"El Kseur","address":"Rue hamaoui hamid commune El-Kseur, bejaia | Repère: local en face la sempac el-kseur"}],"07":[{"code":"7A","name":"Biskra","commune":"Biskra","address":"N° 05, cité elboustène,(Hai ELmodjahidine) en face du Centre de formation et de d'intervention rapide de la police"}],"08":[{"code":"8A","name":"Béchar","commune":"Bechar","address":"Cité 622 Logement Al Badr N°02 - Bloc 52 (derière la radio EL SAOURA / En face la protection civile)"}],"09":[{"code":"9Z","name":"Beni Mered [ E-com ]","commune":"Beni Mered","address":"Beni Mered.pas loin du Commissariat de police."},{"code":"9A","name":"Blida","commune":"Blida","address":"El ramoule à côté de la nouvelle gare routière"},{"code":"9B","name":"Blida - Boufarik","commune":"Boufarik","address":"La résidence Belkbir en face la salle des fetes Layalina"}]}
+  provider: "TR Delivery (EcoTrack)",
+  apiDomain: "https://trdelivery.ecotrack.dz",
+  lastUpdated: "2026-09-27T10:30:59.689Z",
+  wilayas: [
+  {
+    "id": 1,
+    "code": "01",
+    "nameFr": "Adrar",
+    "nameAr": "أدرار"
+  },
+  {
+    "id": 2,
+    "code": "02",
+    "nameFr": "Chlef",
+    "nameAr": "الشلف"
+  },
+  {
+    "id": 3,
+    "code": "03",
+    "nameFr": "Laghouat",
+    "nameAr": "الأغواط"
+  },
+  {
+    "id": 4,
+    "code": "04",
+    "nameFr": "Oum El Bouaghi",
+    "nameAr": "أم البواقي"
+  },
+  {
+    "id": 5,
+    "code": "05",
+    "nameFr": "Batna",
+    "nameAr": "باتنة"
+  },
+  {
+    "id": 6,
+    "code": "06",
+    "nameFr": "Béjaïa",
+    "nameAr": "بجاية"
+  },
+  {
+    "id": 7,
+    "code": "07",
+    "nameFr": "Biskra",
+    "nameAr": "بسكرة"
+  },
+  {
+    "id": 8,
+    "code": "08",
+    "nameFr": "Béchar",
+    "nameAr": "بشار"
+  },
+  {
+    "id": 9,
+    "code": "09",
+    "nameFr": "Blida",
+    "nameAr": "البليدة"
+  },
+  {
+    "id": 10,
+    "code": "10",
+    "nameFr": "Bouira",
+    "nameAr": "البويرة"
+  },
+  {
+    "id": 11,
+    "code": "11",
+    "nameFr": "Tamanrasset",
+    "nameAr": "تمنراست"
+  },
+  {
+    "id": 12,
+    "code": "12",
+    "nameFr": "Tébessa",
+    "nameAr": "تبسة"
+  },
+  {
+    "id": 13,
+    "code": "13",
+    "nameFr": "Tlemcen",
+    "nameAr": "تلمسان"
+  },
+  {
+    "id": 14,
+    "code": "14",
+    "nameFr": "Tiaret",
+    "nameAr": "تيارت"
+  },
+  {
+    "id": 15,
+    "code": "15",
+    "nameFr": "Tizi Ouzou",
+    "nameAr": "تيزي وزو"
+  },
+  {
+    "id": 16,
+    "code": "16",
+    "nameFr": "Alger",
+    "nameAr": "الجزائر"
+  },
+  {
+    "id": 17,
+    "code": "17",
+    "nameFr": "Djelfa",
+    "nameAr": "الجلفة"
+  },
+  {
+    "id": 18,
+    "code": "18",
+    "nameFr": "Jijel",
+    "nameAr": "جيجل"
+  },
+  {
+    "id": 19,
+    "code": "19",
+    "nameFr": "Sétif",
+    "nameAr": "سطيف"
+  },
+  {
+    "id": 20,
+    "code": "20",
+    "nameFr": "Saïda",
+    "nameAr": "سعيدة"
+  },
+  {
+    "id": 21,
+    "code": "21",
+    "nameFr": "Skikda",
+    "nameAr": "سكيكدة"
+  },
+  {
+    "id": 22,
+    "code": "22",
+    "nameFr": "Sidi Bel Abbès",
+    "nameAr": "سيدي بلعباس"
+  },
+  {
+    "id": 23,
+    "code": "23",
+    "nameFr": "Annaba",
+    "nameAr": "عنابة"
+  },
+  {
+    "id": 24,
+    "code": "24",
+    "nameFr": "Guelma",
+    "nameAr": "قالمة"
+  },
+  {
+    "id": 25,
+    "code": "25",
+    "nameFr": "Constantine",
+    "nameAr": "قسنطينة"
+  },
+  {
+    "id": 26,
+    "code": "26",
+    "nameFr": "Médéa",
+    "nameAr": "المدية"
+  },
+  {
+    "id": 27,
+    "code": "27",
+    "nameFr": "Mostaganem",
+    "nameAr": "مستغانم"
+  },
+  {
+    "id": 28,
+    "code": "28",
+    "nameFr": "M'Sila",
+    "nameAr": "المسيلة"
+  },
+  {
+    "id": 29,
+    "code": "29",
+    "nameFr": "Mascara",
+    "nameAr": "معسكر"
+  },
+  {
+    "id": 30,
+    "code": "30",
+    "nameFr": "Ouargla",
+    "nameAr": "ورقلة"
+  },
+  {
+    "id": 31,
+    "code": "31",
+    "nameFr": "Oran",
+    "nameAr": "وهران"
+  },
+  {
+    "id": 32,
+    "code": "32",
+    "nameFr": "El Bayadh",
+    "nameAr": "البيض"
+  },
+  {
+    "id": 33,
+    "code": "33",
+    "nameFr": "Illizi",
+    "nameAr": "إليزي"
+  },
+  {
+    "id": 34,
+    "code": "34",
+    "nameFr": "Bordj Bou Arreridj",
+    "nameAr": "برج بوعريريج"
+  },
+  {
+    "id": 35,
+    "code": "35",
+    "nameFr": "Boumerdès",
+    "nameAr": "بومرداس"
+  },
+  {
+    "id": 36,
+    "code": "36",
+    "nameFr": "El Tarf",
+    "nameAr": "الطارف"
+  },
+  {
+    "id": 37,
+    "code": "37",
+    "nameFr": "Tindouf",
+    "nameAr": "تندوف"
+  },
+  {
+    "id": 38,
+    "code": "38",
+    "nameFr": "Tissemsilt",
+    "nameAr": "تيسمسيلت"
+  },
+  {
+    "id": 39,
+    "code": "39",
+    "nameFr": "El Oued",
+    "nameAr": "الوادي"
+  },
+  {
+    "id": 40,
+    "code": "40",
+    "nameFr": "Khenchela",
+    "nameAr": "خنشلة"
+  },
+  {
+    "id": 41,
+    "code": "41",
+    "nameFr": "Souk Ahras",
+    "nameAr": "سوق أهراس"
+  },
+  {
+    "id": 42,
+    "code": "42",
+    "nameFr": "Tipaza",
+    "nameAr": "تيبازة"
+  },
+  {
+    "id": 43,
+    "code": "43",
+    "nameFr": "Mila",
+    "nameAr": "ميلة"
+  },
+  {
+    "id": 44,
+    "code": "44",
+    "nameFr": "Aïn Defla",
+    "nameAr": "عين الدفلى"
+  },
+  {
+    "id": 45,
+    "code": "45",
+    "nameFr": "Naâma",
+    "nameAr": "النعامة"
+  },
+  {
+    "id": 46,
+    "code": "46",
+    "nameFr": "Aïn Témouchent",
+    "nameAr": "عين تموشنت"
+  },
+  {
+    "id": 47,
+    "code": "47",
+    "nameFr": "Ghardaïa",
+    "nameAr": "غرداية"
+  },
+  {
+    "id": 48,
+    "code": "48",
+    "nameFr": "Relizane",
+    "nameAr": "غليزان"
+  },
+  {
+    "id": 49,
+    "code": "49",
+    "nameFr": "Timimoun",
+    "nameAr": "تيميمون"
+  },
+  {
+    "id": 51,
+    "code": "51",
+    "nameFr": "Ouled Djellal",
+    "nameAr": "أولاد جلال"
+  },
+  {
+    "id": 52,
+    "code": "52",
+    "nameFr": "Beni Abbes",
+    "nameAr": "بني عباس"
+  },
+  {
+    "id": 53,
+    "code": "53",
+    "nameFr": "In Salah",
+    "nameAr": "عين صالح"
+  },
+  {
+    "id": 55,
+    "code": "55",
+    "nameFr": "Touggourt",
+    "nameAr": "توقرت"
+  },
+  {
+    "id": 57,
+    "code": "57",
+    "nameFr": "El M'Ghair",
+    "nameAr": "المغير"
+  },
+  {
+    "id": 58,
+    "code": "58",
+    "nameFr": "El Meniaa",
+    "nameAr": "المنيعة"
+  }
+],
+  deliveryPrices: {
+  "10": {
+    "home": 650,
+    "office": 400
+  },
+  "11": {
+    "home": 1300,
+    "office": 800
+  },
+  "12": {
+    "home": 800,
+    "office": 500
+  },
+  "13": {
+    "home": 800,
+    "office": 400
+  },
+  "14": {
+    "home": 800,
+    "office": 400
+  },
+  "15": {
+    "home": 700,
+    "office": 400
+  },
+  "16": {
+    "home": 400,
+    "office": 250
+  },
+  "17": {
+    "home": 900,
+    "office": 500
+  },
+  "18": {
+    "home": 700,
+    "office": 400
+  },
+  "19": {
+    "home": 700,
+    "office": 400
+  },
+  "20": {
+    "home": 800,
+    "office": 400
+  },
+  "21": {
+    "home": 700,
+    "office": 400
+  },
+  "22": {
+    "home": 700,
+    "office": 400
+  },
+  "23": {
+    "home": 700,
+    "office": 400
+  },
+  "24": {
+    "home": 800,
+    "office": 400
+  },
+  "25": {
+    "home": 700,
+    "office": 400
+  },
+  "26": {
+    "home": 600,
+    "office": 400
+  },
+  "27": {
+    "home": 700,
+    "office": 400
+  },
+  "28": {
+    "home": 700,
+    "office": 500
+  },
+  "29": {
+    "home": 700,
+    "office": 400
+  },
+  "30": {
+    "home": 1000,
+    "office": 500
+  },
+  "31": {
+    "home": 700,
+    "office": 400
+  },
+  "32": {
+    "home": 1000,
+    "office": 500
+  },
+  "33": {
+    "home": 1300,
+    "office": 600
+  },
+  "34": {
+    "home": 700,
+    "office": 400
+  },
+  "35": {
+    "home": 600,
+    "office": 400
+  },
+  "36": {
+    "home": 800,
+    "office": 400
+  },
+  "37": {
+    "home": 1300,
+    "office": 600
+  },
+  "38": {
+    "home": 800,
+    "office": 400
+  },
+  "39": {
+    "home": 900,
+    "office": 500
+  },
+  "40": {
+    "home": 800,
+    "office": 500
+  },
+  "41": {
+    "home": 800,
+    "office": 500
+  },
+  "42": {
+    "home": 600,
+    "office": 350
+  },
+  "43": {
+    "home": 700,
+    "office": 400
+  },
+  "44": {
+    "home": 600,
+    "office": 400
+  },
+  "45": {
+    "home": 1000,
+    "office": 500
+  },
+  "46": {
+    "home": 700,
+    "office": 400
+  },
+  "47": {
+    "home": 1000,
+    "office": 500
+  },
+  "48": {
+    "home": 700,
+    "office": 400
+  },
+  "49": {
+    "home": 1300,
+    "office": 600
+  },
+  "51": {
+    "home": 900,
+    "office": 500
+  },
+  "52": {
+    "home": 1300,
+    "office": 0
+  },
+  "53": {
+    "home": 1300,
+    "office": 600
+  },
+  "55": {
+    "home": 900,
+    "office": 600
+  },
+  "57": {
+    "home": 900,
+    "office": 600
+  },
+  "58": {
+    "home": 1000,
+    "office": 500
+  },
+  "01": {
+    "home": 1100,
+    "office": 600
+  },
+  "02": {
+    "home": 700,
+    "office": 400
+  },
+  "03": {
+    "home": 900,
+    "office": 500
+  },
+  "04": {
+    "home": 800,
+    "office": 400
+  },
+  "05": {
+    "home": 800,
+    "office": 400
+  },
+  "06": {
+    "home": 700,
+    "office": 400
+  },
+  "07": {
+    "home": 900,
+    "office": 500
+  },
+  "08": {
+    "home": 1100,
+    "office": 600
+  },
+  "09": {
+    "home": 500,
+    "office": 250
+  }
+},
+  communes: {
+  "10": [
+    {
+      "id": 10,
+      "name": "Aghbalou",
+      "postalCode": "1027",
+      "hasStopDesk": false
+    },
+    {
+      "id": 14,
+      "name": "Ahl El Ksar",
+      "postalCode": "1022",
+      "hasStopDesk": false
+    },
+    {
+      "id": 32,
+      "name": "Ain Bessem",
+      "postalCode": "1035",
+      "hasStopDesk": false
+    },
+    {
+      "id": 49,
+      "name": "Ain El Hadjar",
+      "postalCode": "1025",
+      "hasStopDesk": false
+    },
+    {
+      "id": 78,
+      "name": "Ain Laloui",
+      "postalCode": "1041",
+      "hasStopDesk": false
+    },
+    {
+      "id": 123,
+      "name": "Ain Turk",
+      "postalCode": "1029",
+      "hasStopDesk": false
+    },
+    {
+      "id": 140,
+      "name": "Ait Laaziz",
+      "postalCode": "1008",
+      "hasStopDesk": false
+    },
+    {
+      "id": 169,
+      "name": "Aomar",
+      "postalCode": "1016",
+      "hasStopDesk": false
+    },
+    {
+      "id": 209,
+      "name": "Bechloul",
+      "postalCode": "1033",
+      "hasStopDesk": false
+    },
+    {
+      "id": 315,
+      "name": "Bir Ghbalou",
+      "postalCode": "1036",
+      "hasStopDesk": false
+    },
+    {
+      "id": 342,
+      "name": "Bordj Okhriss",
+      "postalCode": "1018",
+      "hasStopDesk": false
+    },
+    {
+      "id": 365,
+      "name": "Bouderbala",
+      "postalCode": "1023",
+      "hasStopDesk": false
+    },
+    {
+      "id": 390,
+      "name": "Bouira",
+      "postalCode": "1001",
+      "hasStopDesk": true
+    },
+    {
+      "id": 397,
+      "name": "Boukram",
+      "postalCode": "1034",
+      "hasStopDesk": false
+    },
+    {
+      "id": 470,
+      "name": "Chorfa",
+      "postalCode": "1017",
+      "hasStopDesk": false
+    },
+    {
+      "id": 489,
+      "name": "Dechmia",
+      "postalCode": "1031",
+      "hasStopDesk": false
+    },
+    {
+      "id": 503,
+      "name": "Dirah",
+      "postalCode": "1007",
+      "hasStopDesk": false
+    },
+    {
+      "id": 509,
+      "name": "Djebahia",
+      "postalCode": "1026",
+      "hasStopDesk": false
+    },
+    {
+      "id": 551,
+      "name": "El Adjiba",
+      "postalCode": "1019",
+      "hasStopDesk": false
+    },
+    {
+      "id": 565,
+      "name": "El Asnam",
+      "postalCode": "1002",
+      "hasStopDesk": false
+    },
+    {
+      "id": 600,
+      "name": "El Hachimia",
+      "postalCode": "1015",
+      "hasStopDesk": false
+    },
+    {
+      "id": 606,
+      "name": "El Hakimia",
+      "postalCode": "1020",
+      "hasStopDesk": false
+    },
+    {
+      "id": 627,
+      "name": "El Khabouzia",
+      "postalCode": "1021",
+      "hasStopDesk": false
+    },
+    {
+      "id": 657,
+      "name": "El Mokrani",
+      "postalCode": "1044",
+      "hasStopDesk": false
+    },
+    {
+      "id": 725,
+      "name": "Guerrouma",
+      "postalCode": "1003",
+      "hasStopDesk": false
+    },
+    {
+      "id": 737,
+      "name": "Hadjera Zerga",
+      "postalCode": "1042",
+      "hasStopDesk": false
+    },
+    {
+      "id": 740,
+      "name": "Haizer",
+      "postalCode": "1012",
+      "hasStopDesk": false
+    },
+    {
+      "id": 762,
+      "name": "Hanif",
+      "postalCode": "1006",
+      "hasStopDesk": false
+    },
+    {
+      "id": 823,
+      "name": "Kadiria",
+      "postalCode": "1005",
+      "hasStopDesk": false
+    },
+    {
+      "id": 876,
+      "name": "Lakhdaria",
+      "postalCode": "1013",
+      "hasStopDesk": false
+    },
+    {
+      "id": 895,
+      "name": "M Chedallah",
+      "postalCode": "1037",
+      "hasStopDesk": false
+    },
+    {
+      "id": 912,
+      "name": "Maala",
+      "postalCode": "1014",
+      "hasStopDesk": false
+    },
+    {
+      "id": 929,
+      "name": "Mamora",
+      "postalCode": "1039",
+      "hasStopDesk": false
+    },
+    {
+      "id": 986,
+      "name": "Mezdour",
+      "postalCode": "1011",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1051,
+      "name": "Oued El Berdi",
+      "postalCode": "1045",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1129,
+      "name": "Ouled Rached",
+      "postalCode": "1040",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1175,
+      "name": "Raouraoua",
+      "postalCode": "1010",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1191,
+      "name": "Ridane",
+      "postalCode": "1032",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1204,
+      "name": "Saharidj",
+      "postalCode": "1030",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1352,
+      "name": "Souk El Khemis",
+      "postalCode": "1004",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1360,
+      "name": "Sour El Ghozlane",
+      "postalCode": "1038",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1383,
+      "name": "Taghzout",
+      "postalCode": "1009",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1386,
+      "name": "Taguedite",
+      "postalCode": "1028",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1414,
+      "name": "Taourirt",
+      "postalCode": "1043",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1511,
+      "name": "Z'barbar",
+      "postalCode": "1024",
+      "hasStopDesk": false
+    }
+  ],
+  "11": [
+    {
+      "id": 1,
+      "name": "Abalessa",
+      "postalCode": "1102",
+      "hasStopDesk": false
+    },
+    {
+      "id": 20,
+      "name": "Ain Amguel",
+      "postalCode": "1109",
+      "hasStopDesk": false
+    },
+    {
+      "id": 803,
+      "name": "Idles",
+      "postalCode": "1105",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1397,
+      "name": "Tamanrasset",
+      "postalCode": "1101",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1426,
+      "name": "Tazrouk",
+      "postalCode": "1106",
+      "hasStopDesk": false
+    }
+  ],
+  "12": [
+    {
+      "id": 131,
+      "name": "Ain Zerga",
+      "postalCode": "1223",
+      "hasStopDesk": false
+    },
+    {
+      "id": 210,
+      "name": "Bedjene",
+      "postalCode": "1226",
+      "hasStopDesk": false
+    },
+    {
+      "id": 215,
+      "name": "Bekkaria",
+      "postalCode": "1217",
+      "hasStopDesk": false
+    },
+    {
+      "id": 309,
+      "name": "Bir Dheheb",
+      "postalCode": "1214",
+      "hasStopDesk": false
+    },
+    {
+      "id": 311,
+      "name": "Bir El Ater",
+      "postalCode": "1202",
+      "hasStopDesk": false
+    },
+    {
+      "id": 318,
+      "name": "Bir Mokkadem",
+      "postalCode": "1210",
+      "hasStopDesk": false
+    },
+    {
+      "id": 394,
+      "name": "Boukhadra",
+      "postalCode": "1218",
+      "hasStopDesk": false
+    },
+    {
+      "id": 398,
+      "name": "Boulhaf Dyr",
+      "postalCode": "1225",
+      "hasStopDesk": false
+    },
+    {
+      "id": 458,
+      "name": "Cheria",
+      "postalCode": "1203",
+      "hasStopDesk": false
+    },
+    {
+      "id": 562,
+      "name": "El Aouinet",
+      "postalCode": "1205",
+      "hasStopDesk": false
+    },
+    {
+      "id": 619,
+      "name": "El Houidjbet",
+      "postalCode": "1206",
+      "hasStopDesk": false
+    },
+    {
+      "id": 632,
+      "name": "El Kouif",
+      "postalCode": "1211",
+      "hasStopDesk": false
+    },
+    {
+      "id": 642,
+      "name": "El Malabiod",
+      "postalCode": "1220",
+      "hasStopDesk": false
+    },
+    {
+      "id": 652,
+      "name": "El Meridj",
+      "postalCode": "1224",
+      "hasStopDesk": false
+    },
+    {
+      "id": 655,
+      "name": "El Mezeraa",
+      "postalCode": "1227",
+      "hasStopDesk": false
+    },
+    {
+      "id": 659,
+      "name": "El Ogla",
+      "postalCode": "1213",
+      "hasStopDesk": false
+    },
+    {
+      "id": 661,
+      "name": "El Ogla El Malha",
+      "postalCode": "1215",
+      "hasStopDesk": false
+    },
+    {
+      "id": 689,
+      "name": "Ferkane",
+      "postalCode": "1228",
+      "hasStopDesk": false
+    },
+    {
+      "id": 730,
+      "name": "Guorriguer",
+      "postalCode": "1216",
+      "hasStopDesk": false
+    },
+    {
+      "id": 756,
+      "name": "Hammamet",
+      "postalCode": "1208",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1004,
+      "name": "Morssot",
+      "postalCode": "1212",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1024,
+      "name": "Negrine",
+      "postalCode": "1209",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1082,
+      "name": "Ouenza",
+      "postalCode": "1219",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1149,
+      "name": "Oum Ali",
+      "postalCode": "1221",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1201,
+      "name": "Saf Saf El Ouesra",
+      "postalCode": "1207",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1361,
+      "name": "Stah Guentis",
+      "postalCode": "1204",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1428,
+      "name": "Tebessa",
+      "postalCode": "1201",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1432,
+      "name": "Telidjen",
+      "postalCode": "1222",
+      "hasStopDesk": false
+    }
+  ],
+  "13": [
+    {
+      "id": 63,
+      "name": "Ain Fettah",
+      "postalCode": "1331",
+      "hasStopDesk": false
+    },
+    {
+      "id": 64,
+      "name": "Ain Fezza",
+      "postalCode": "1312",
+      "hasStopDesk": false
+    },
+    {
+      "id": 66,
+      "name": "Ain Ghoraba",
+      "postalCode": "1349",
+      "hasStopDesk": false
+    },
+    {
+      "id": 69,
+      "name": "Ain Kebira",
+      "postalCode": "1353",
+      "hasStopDesk": false
+    },
+    {
+      "id": 89,
+      "name": "Ain Nehala",
+      "postalCode": "1325",
+      "hasStopDesk": false
+    },
+    {
+      "id": 110,
+      "name": "Ain Tallout",
+      "postalCode": "1303",
+      "hasStopDesk": false
+    },
+    {
+      "id": 126,
+      "name": "Ain Youcef",
+      "postalCode": "1315",
+      "hasStopDesk": false
+    },
+    {
+      "id": 159,
+      "name": "Amieur",
+      "postalCode": "1314",
+      "hasStopDesk": false
+    },
+    {
+      "id": 182,
+      "name": "Azails",
+      "postalCode": "1321",
+      "hasStopDesk": false
+    },
+    {
+      "id": 189,
+      "name": "Bab El Assa",
+      "postalCode": "1318",
+      "hasStopDesk": false
+    },
+    {
+      "id": 248,
+      "name": "Beni Bahdel",
+      "postalCode": "1342",
+      "hasStopDesk": false
+    },
+    {
+      "id": 251,
+      "name": "Beni Boussaid",
+      "postalCode": "1338",
+      "hasStopDesk": false
+    },
+    {
+      "id": 264,
+      "name": "Beni Khaled",
+      "postalCode": "1348",
+      "hasStopDesk": false
+    },
+    {
+      "id": 269,
+      "name": "Beni Mester",
+      "postalCode": "1302",
+      "hasStopDesk": false
+    },
+    {
+      "id": 273,
+      "name": "Beni Ouarsous",
+      "postalCode": "1336",
+      "hasStopDesk": false
+    },
+    {
+      "id": 281,
+      "name": "Beni Smiel",
+      "postalCode": "1352",
+      "hasStopDesk": false
+    },
+    {
+      "id": 282,
+      "name": "Beni Snous",
+      "postalCode": "1317",
+      "hasStopDesk": false
+    },
+    {
+      "id": 292,
+      "name": "Bensekrane",
+      "postalCode": "1324",
+      "hasStopDesk": false
+    },
+    {
+      "id": 386,
+      "name": "Bouhlou",
+      "postalCode": "1347",
+      "hasStopDesk": false
+    },
+    {
+      "id": 388,
+      "name": "Bouihi",
+      "postalCode": "1343",
+      "hasStopDesk": false
+    },
+    {
+      "id": 461,
+      "name": "Chetouane",
+      "postalCode": "1350",
+      "hasStopDesk": false
+    },
+    {
+      "id": 485,
+      "name": "Dar Yaghmouracene",
+      "postalCode": "1319",
+      "hasStopDesk": false
+    },
+    {
+      "id": 510,
+      "name": "Djebala",
+      "postalCode": "1309",
+      "hasStopDesk": false
+    },
+    {
+      "id": 563,
+      "name": "El Aricha",
+      "postalCode": "1332",
+      "hasStopDesk": false
+    },
+    {
+      "id": 584,
+      "name": "El Fehoul",
+      "postalCode": "1305",
+      "hasStopDesk": false
+    },
+    {
+      "id": 591,
+      "name": "El Gor",
+      "postalCode": "1310",
+      "hasStopDesk": false
+    },
+    {
+      "id": 684,
+      "name": "Fellaoucene",
+      "postalCode": "1320",
+      "hasStopDesk": false
+    },
+    {
+      "id": 708,
+      "name": "Ghazaouet",
+      "postalCode": "1307",
+      "hasStopDesk": false
+    },
+    {
+      "id": 749,
+      "name": "Hammam Boughrara",
+      "postalCode": "1328",
+      "hasStopDesk": false
+    },
+    {
+      "id": 790,
+      "name": "Hennaya",
+      "postalCode": "1326",
+      "hasStopDesk": false
+    },
+    {
+      "id": 795,
+      "name": "Honaine",
+      "postalCode": "1344",
+      "hasStopDesk": false
+    },
+    {
+      "id": 920,
+      "name": "Maghnia",
+      "postalCode": "1327",
+      "hasStopDesk": true
+    },
+    {
+      "id": 932,
+      "name": "Mansourah",
+      "postalCode": "1351",
+      "hasStopDesk": false
+    },
+    {
+      "id": 937,
+      "name": "Marsa Ben M'hidi",
+      "postalCode": "1339",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1013,
+      "name": "Msirda Fouaga",
+      "postalCode": "1330",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1023,
+      "name": "Nedroma",
+      "postalCode": "1340",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1043,
+      "name": "Oued Chouly",
+      "postalCode": "1311",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1125,
+      "name": "Ouled Mimoun",
+      "postalCode": "1313",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1132,
+      "name": "Ouled Riyah",
+      "postalCode": "1346",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1189,
+      "name": "Remchi",
+      "postalCode": "1304",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1200,
+      "name": "Sabra",
+      "postalCode": "1306",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1213,
+      "name": "Sebbaa Chioukh",
+      "postalCode": "1322",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1214,
+      "name": "Sebdou",
+      "postalCode": "1335",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1247,
+      "name": "Sidi Abdelli",
+      "postalCode": "1334",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1285,
+      "name": "Sidi Djilali",
+      "postalCode": "1341",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1311,
+      "name": "Sidi Medjahed",
+      "postalCode": "1337",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1341,
+      "name": "Souahlia",
+      "postalCode": "1329",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1344,
+      "name": "Souani",
+      "postalCode": "1308",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1357,
+      "name": "Souk Tleta",
+      "postalCode": "1333",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1441,
+      "name": "Terny Beni Hediel",
+      "postalCode": "1323",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1451,
+      "name": "Tianet",
+      "postalCode": "1345",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1493,
+      "name": "Tlemcen",
+      "postalCode": "1301",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1528,
+      "name": "Zenata",
+      "postalCode": "1316",
+      "hasStopDesk": false
+    }
+  ],
+  "14": [
+    {
+      "id": 34,
+      "name": "Ain Bouchekif",
+      "postalCode": "1403",
+      "hasStopDesk": false
+    },
+    {
+      "id": 42,
+      "name": "Ain Deheb",
+      "postalCode": "1406",
+      "hasStopDesk": false
+    },
+    {
+      "id": 48,
+      "name": "Ain El Hadid",
+      "postalCode": "1418",
+      "hasStopDesk": false
+    },
+    {
+      "id": 74,
+      "name": "Ain Kermes",
+      "postalCode": "1428",
+      "hasStopDesk": false
+    },
+    {
+      "id": 130,
+      "name": "Ain Zarit",
+      "postalCode": "1405",
+      "hasStopDesk": false
+    },
+    {
+      "id": 376,
+      "name": "Bougara",
+      "postalCode": "1440",
+      "hasStopDesk": false
+    },
+    {
+      "id": 442,
+      "name": "Chehaima",
+      "postalCode": "1436",
+      "hasStopDesk": false
+    },
+    {
+      "id": 477,
+      "name": "Dahmouni",
+      "postalCode": "1413",
+      "hasStopDesk": false
+    },
+    {
+      "id": 514,
+      "name": "Djebilet Rosfa",
+      "postalCode": "1419",
+      "hasStopDesk": false
+    },
+    {
+      "id": 528,
+      "name": "Djillali Ben Amar",
+      "postalCode": "1424",
+      "hasStopDesk": false
+    },
+    {
+      "id": 683,
+      "name": "Faidja",
+      "postalCode": "1441",
+      "hasStopDesk": false
+    },
+    {
+      "id": 700,
+      "name": "Frenda",
+      "postalCode": "1427",
+      "hasStopDesk": false
+    },
+    {
+      "id": 726,
+      "name": "Guertoufa",
+      "postalCode": "1422",
+      "hasStopDesk": false
+    },
+    {
+      "id": 742,
+      "name": "Hamadia",
+      "postalCode": "1435",
+      "hasStopDesk": false
+    },
+    {
+      "id": 864,
+      "name": "Ksar Chellala",
+      "postalCode": "1429",
+      "hasStopDesk": true
+    },
+    {
+      "id": 919,
+      "name": "Madna",
+      "postalCode": "1410",
+      "hasStopDesk": false
+    },
+    {
+      "id": 924,
+      "name": "Mahdia",
+      "postalCode": "1415",
+      "hasStopDesk": false
+    },
+    {
+      "id": 945,
+      "name": "Mechraa Safa",
+      "postalCode": "1434",
+      "hasStopDesk": false
+    },
+    {
+      "id": 954,
+      "name": "Medrissa",
+      "postalCode": "1408",
+      "hasStopDesk": false
+    },
+    {
+      "id": 955,
+      "name": "Medroussa",
+      "postalCode": "1402",
+      "hasStopDesk": false
+    },
+    {
+      "id": 959,
+      "name": "Meghila",
+      "postalCode": "1421",
+      "hasStopDesk": false
+    },
+    {
+      "id": 965,
+      "name": "Mellakou",
+      "postalCode": "1412",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1019,
+      "name": "Nadorah",
+      "postalCode": "1431",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1020,
+      "name": "Naima",
+      "postalCode": "1420",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1064,
+      "name": "Oued Lilli",
+      "postalCode": "1433",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1170,
+      "name": "Rahouia",
+      "postalCode": "1414",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1183,
+      "name": "Rechaiga",
+      "postalCode": "1430",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1212,
+      "name": "Sebaine",
+      "postalCode": "1425",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1217,
+      "name": "Sebt",
+      "postalCode": "1411",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1235,
+      "name": "Serghine",
+      "postalCode": "1439",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1242,
+      "name": "Si Abdelghani",
+      "postalCode": "1417",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1250,
+      "name": "Sidi Abderrahmane",
+      "postalCode": "1438",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1259,
+      "name": "Sidi Ali Mellal",
+      "postalCode": "1404",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1269,
+      "name": "Sidi Bakhti",
+      "postalCode": "1407",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1291,
+      "name": "Sidi Hosni",
+      "postalCode": "1423",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1346,
+      "name": "Sougueur",
+      "postalCode": "1416",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1381,
+      "name": "Tagdemt",
+      "postalCode": "1432",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1389,
+      "name": "Takhemaret",
+      "postalCode": "1437",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1452,
+      "name": "Tiaret",
+      "postalCode": "1401",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1457,
+      "name": "Tidda",
+      "postalCode": "1442",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1500,
+      "name": "Tousnina",
+      "postalCode": "1426",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1538,
+      "name": "Zmalet El Emir Abdelkade",
+      "postalCode": "1409",
+      "hasStopDesk": false
+    }
+  ],
+  "15": [
+    {
+      "id": 2,
+      "name": "Abi Youcef",
+      "postalCode": "1531",
+      "hasStopDesk": false
+    },
+    {
+      "id": 12,
+      "name": "Aghribs",
+      "postalCode": "1553",
+      "hasStopDesk": false
+    },
+    {
+      "id": 13,
+      "name": "Agouni Gueghrane",
+      "postalCode": "1561",
+      "hasStopDesk": false
+    },
+    {
+      "id": 52,
+      "name": "Ain El Hammam",
+      "postalCode": "1502",
+      "hasStopDesk": false
+    },
+    {
+      "id": 129,
+      "name": "Ain Zaouia",
+      "postalCode": "1525",
+      "hasStopDesk": false
+    },
+    {
+      "id": 135,
+      "name": "Ait Aggouacha",
+      "postalCode": "1535",
+      "hasStopDesk": false
+    },
+    {
+      "id": 136,
+      "name": "Ait Bouaddou",
+      "postalCode": "1565",
+      "hasStopDesk": false
+    },
+    {
+      "id": 137,
+      "name": "Ait Boumehdi",
+      "postalCode": "1530",
+      "hasStopDesk": false
+    },
+    {
+      "id": 138,
+      "name": "Ait Chafaa",
+      "postalCode": "1513",
+      "hasStopDesk": false
+    },
+    {
+      "id": 139,
+      "name": "Ait Khellili",
+      "postalCode": "1558",
+      "hasStopDesk": false
+    },
+    {
+      "id": 141,
+      "name": "Ait Mahmoud",
+      "postalCode": "1528",
+      "hasStopDesk": false
+    },
+    {
+      "id": 143,
+      "name": "Ait Oumalou",
+      "postalCode": "1542",
+      "hasStopDesk": false
+    },
+    {
+      "id": 147,
+      "name": "Ait Toudert",
+      "postalCode": "1567",
+      "hasStopDesk": false
+    },
+    {
+      "id": 148,
+      "name": "Ait Yahia",
+      "postalCode": "1527",
+      "hasStopDesk": false
+    },
+    {
+      "id": 149,
+      "name": "Ait Yahia Moussa",
+      "postalCode": "1556",
+      "hasStopDesk": false
+    },
+    {
+      "id": 151,
+      "name": "Akbil",
+      "postalCode": "1503",
+      "hasStopDesk": false
+    },
+    {
+      "id": 153,
+      "name": "Akerrou",
+      "postalCode": "1544",
+      "hasStopDesk": false
+    },
+    {
+      "id": 180,
+      "name": "Assi Youcef",
+      "postalCode": "1566",
+      "hasStopDesk": false
+    },
+    {
+      "id": 183,
+      "name": "Azazga",
+      "postalCode": "1518",
+      "hasStopDesk": false
+    },
+    {
+      "id": 184,
+      "name": "Azeffoun",
+      "postalCode": "1537",
+      "hasStopDesk": false
+    },
+    {
+      "id": 245,
+      "name": "Beni Aissi",
+      "postalCode": "1515",
+      "hasStopDesk": false
+    },
+    {
+      "id": 256,
+      "name": "Beni Douala",
+      "postalCode": "1532",
+      "hasStopDesk": false
+    },
+    {
+      "id": 284,
+      "name": "Beni Yenni",
+      "postalCode": "1552",
+      "hasStopDesk": false
+    },
+    {
+      "id": 287,
+      "name": "Beni Zikki",
+      "postalCode": "1546",
+      "hasStopDesk": false
+    },
+    {
+      "id": 288,
+      "name": "Beni Zmenzer",
+      "postalCode": "1516",
+      "hasStopDesk": false
+    },
+    {
+      "id": 329,
+      "name": "Boghni",
+      "postalCode": "1540",
+      "hasStopDesk": false
+    },
+    {
+      "id": 368,
+      "name": "Boudjima",
+      "postalCode": "1555",
+      "hasStopDesk": false
+    },
+    {
+      "id": 404,
+      "name": "Bounouh",
+      "postalCode": "1512",
+      "hasStopDesk": false
+    },
+    {
+      "id": 422,
+      "name": "Bouzeguene",
+      "postalCode": "1534",
+      "hasStopDesk": false
+    },
+    {
+      "id": 512,
+      "name": "Djebel Aissa Mimoun",
+      "postalCode": "1539",
+      "hasStopDesk": false
+    },
+    {
+      "id": 539,
+      "name": "Draa Ben Khedda",
+      "postalCode": "1547",
+      "hasStopDesk": false
+    },
+    {
+      "id": 540,
+      "name": "Draa El Mizan",
+      "postalCode": "1510",
+      "hasStopDesk": false
+    },
+    {
+      "id": 699,
+      "name": "Freha",
+      "postalCode": "1504",
+      "hasStopDesk": false
+    },
+    {
+      "id": 701,
+      "name": "Frikat",
+      "postalCode": "1514",
+      "hasStopDesk": false
+    },
+    {
+      "id": 800,
+      "name": "Iboudrarene",
+      "postalCode": "1560",
+      "hasStopDesk": false
+    },
+    {
+      "id": 802,
+      "name": "Idjeur",
+      "postalCode": "1549",
+      "hasStopDesk": false
+    },
+    {
+      "id": 804,
+      "name": "Iferhounene",
+      "postalCode": "1517",
+      "hasStopDesk": false
+    },
+    {
+      "id": 805,
+      "name": "Ifigha",
+      "postalCode": "1541",
+      "hasStopDesk": false
+    },
+    {
+      "id": 806,
+      "name": "Iflissen",
+      "postalCode": "1554",
+      "hasStopDesk": false
+    },
+    {
+      "id": 810,
+      "name": "Illilten",
+      "postalCode": "1533",
+      "hasStopDesk": false
+    },
+    {
+      "id": 812,
+      "name": "Illoula Oumalou",
+      "postalCode": "1519",
+      "hasStopDesk": false
+    },
+    {
+      "id": 813,
+      "name": "Imsouhal",
+      "postalCode": "1563",
+      "hasStopDesk": false
+    },
+    {
+      "id": 820,
+      "name": "Irdjen",
+      "postalCode": "1507",
+      "hasStopDesk": false
+    },
+    {
+      "id": 878,
+      "name": "Larba Nath Irathen",
+      "postalCode": "1521",
+      "hasStopDesk": false
+    },
+    {
+      "id": 882,
+      "name": "Larbaa Nath Irathen",
+      "postalCode": "1568",
+      "hasStopDesk": false
+    },
+    {
+      "id": 903,
+      "name": "M'kira",
+      "postalCode": "1526",
+      "hasStopDesk": false
+    },
+    {
+      "id": 917,
+      "name": "Maatkas",
+      "postalCode": "1529",
+      "hasStopDesk": false
+    },
+    {
+      "id": 928,
+      "name": "Makouda",
+      "postalCode": "1509",
+      "hasStopDesk": false
+    },
+    {
+      "id": 946,
+      "name": "Mechtras",
+      "postalCode": "1506",
+      "hasStopDesk": false
+    },
+    {
+      "id": 962,
+      "name": "Mekla",
+      "postalCode": "1550",
+      "hasStopDesk": false
+    },
+    {
+      "id": 995,
+      "name": "Mizrana",
+      "postalCode": "1562",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1030,
+      "name": "Ouacif",
+      "postalCode": "1548",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1031,
+      "name": "Ouadhias",
+      "postalCode": "1536",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1032,
+      "name": "Ouaguenoune",
+      "postalCode": "1524",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1315,
+      "name": "Sidi Naamane",
+      "postalCode": "1559",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1342,
+      "name": "Souamaa",
+      "postalCode": "1505",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1354,
+      "name": "Souk El Thenine",
+      "postalCode": "1557",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1375,
+      "name": "Tadmait",
+      "postalCode": "1564",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1464,
+      "name": "Tigzirt",
+      "postalCode": "1538",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1473,
+      "name": "Timizart",
+      "postalCode": "1508",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1482,
+      "name": "Tirmitine",
+      "postalCode": "1543",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1487,
+      "name": "Tizi Ghenif",
+      "postalCode": "1511",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1490,
+      "name": "Tizi N'tleta",
+      "postalCode": "1551",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1491,
+      "name": "Tizi Ouzou",
+      "postalCode": "1501",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1492,
+      "name": "Tizi Rached",
+      "postalCode": "1522",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1506,
+      "name": "Yakourene",
+      "postalCode": "1520",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1507,
+      "name": "Yatafene",
+      "postalCode": "1545",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1523,
+      "name": "Zekri",
+      "postalCode": "1523",
+      "hasStopDesk": false
+    }
+  ],
+  "16": [
+    {
+      "id": 29,
+      "name": "Ain Benian",
+      "postalCode": "1657",
+      "hasStopDesk": false
+    },
+    {
+      "id": 112,
+      "name": "Ain Taya",
+      "postalCode": "1641",
+      "hasStopDesk": false
+    },
+    {
+      "id": 156,
+      "name": "Alger Centre",
+      "postalCode": "1601",
+      "hasStopDesk": false
+    },
+    {
+      "id": 190,
+      "name": "Bab El Oued",
+      "postalCode": "1605",
+      "hasStopDesk": true
+    },
+    {
+      "id": 191,
+      "name": "Bab Ezzouar",
+      "postalCode": "1621",
+      "hasStopDesk": true
+    },
+    {
+      "id": 192,
+      "name": "Baba Hesen",
+      "postalCode": "1647",
+      "hasStopDesk": false
+    },
+    {
+      "id": 195,
+      "name": "Bachedjerah",
+      "postalCode": "1619",
+      "hasStopDesk": false
+    },
+    {
+      "id": 199,
+      "name": "Bains Romains",
+      "postalCode": "1624",
+      "hasStopDesk": false
+    },
+    {
+      "id": 200,
+      "name": "Baraki",
+      "postalCode": "1614",
+      "hasStopDesk": false
+    },
+    {
+      "id": 224,
+      "name": "Ben Aknoun",
+      "postalCode": "1622",
+      "hasStopDesk": false
+    },
+    {
+      "id": 268,
+      "name": "Beni Messous",
+      "postalCode": "1632",
+      "hasStopDesk": false
+    },
+    {
+      "id": 319,
+      "name": "Bir Mourad Rais",
+      "postalCode": "1609",
+      "hasStopDesk": false
+    },
+    {
+      "id": 321,
+      "name": "Bir Touta",
+      "postalCode": "1636",
+      "hasStopDesk": true
+    },
+    {
+      "id": 323,
+      "name": "Birkhadem",
+      "postalCode": "1612",
+      "hasStopDesk": true
+    },
+    {
+      "id": 330,
+      "name": "Bologhine Ibnou Ziri",
+      "postalCode": "1606",
+      "hasStopDesk": false
+    },
+    {
+      "id": 335,
+      "name": "Bordj El Bahri",
+      "postalCode": "1642",
+      "hasStopDesk": false
+    },
+    {
+      "id": 338,
+      "name": "Bordj El Kiffan",
+      "postalCode": "1630",
+      "hasStopDesk": false
+    },
+    {
+      "id": 409,
+      "name": "Bourouba",
+      "postalCode": "1616",
+      "hasStopDesk": false
+    },
+    {
+      "id": 419,
+      "name": "Bouzareah",
+      "postalCode": "1611",
+      "hasStopDesk": false
+    },
+    {
+      "id": 429,
+      "name": "Casbah",
+      "postalCode": "1607",
+      "hasStopDesk": false
+    },
+    {
+      "id": 454,
+      "name": "Cheraga",
+      "postalCode": "1652",
+      "hasStopDesk": true
+    },
+    {
+      "id": 484,
+      "name": "Dar El Beida",
+      "postalCode": "1620",
+      "hasStopDesk": false
+    },
+    {
+      "id": 495,
+      "name": "Dely Ibrahim",
+      "postalCode": "1623",
+      "hasStopDesk": false
+    },
+    {
+      "id": 507,
+      "name": "Djasr Kasentina",
+      "postalCode": "1626",
+      "hasStopDesk": true
+    },
+    {
+      "id": 536,
+      "name": "Douira",
+      "postalCode": "1648",
+      "hasStopDesk": false
+    },
+    {
+      "id": 543,
+      "name": "Draria",
+      "postalCode": "1649",
+      "hasStopDesk": true
+    },
+    {
+      "id": 550,
+      "name": "El Achour",
+      "postalCode": "1654",
+      "hasStopDesk": false
+    },
+    {
+      "id": 572,
+      "name": "El Biar",
+      "postalCode": "1610",
+      "hasStopDesk": false
+    },
+    {
+      "id": 614,
+      "name": "El Harrach",
+      "postalCode": "1613",
+      "hasStopDesk": false
+    },
+    {
+      "id": 636,
+      "name": "El Madania",
+      "postalCode": "1603",
+      "hasStopDesk": false
+    },
+    {
+      "id": 638,
+      "name": "El Magharia",
+      "postalCode": "1631",
+      "hasStopDesk": false
+    },
+    {
+      "id": 653,
+      "name": "El Merssa",
+      "postalCode": "1643",
+      "hasStopDesk": false
+    },
+    {
+      "id": 658,
+      "name": "El Mouradia",
+      "postalCode": "1627",
+      "hasStopDesk": false
+    },
+    {
+      "id": 792,
+      "name": "Herraoua",
+      "postalCode": "1639",
+      "hasStopDesk": false
+    },
+    {
+      "id": 797,
+      "name": "Hussein Dey",
+      "postalCode": "1617",
+      "hasStopDesk": false
+    },
+    {
+      "id": 798,
+      "name": "Hydra",
+      "postalCode": "1628",
+      "hasStopDesk": false
+    },
+    {
+      "id": 849,
+      "name": "Kheraisia",
+      "postalCode": "1656",
+      "hasStopDesk": false
+    },
+    {
+      "id": 859,
+      "name": "Kouba",
+      "postalCode": "1618",
+      "hasStopDesk": true
+    },
+    {
+      "id": 892,
+      "name": "Les Eucalyptus",
+      "postalCode": "1633",
+      "hasStopDesk": true
+    },
+    {
+      "id": 913,
+      "name": "Maalma",
+      "postalCode": "1646",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1000,
+      "name": "Mohamed Belouzdad",
+      "postalCode": "1604",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1002,
+      "name": "Mohammadia",
+      "postalCode": "1629",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1063,
+      "name": "Oued Koriche",
+      "postalCode": "1608",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1074,
+      "name": "Oued Smar",
+      "postalCode": "1615",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1103,
+      "name": "Ouled Chebel",
+      "postalCode": "1635",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1111,
+      "name": "Ouled Fayet",
+      "postalCode": "1651",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1169,
+      "name": "Rahmania",
+      "postalCode": "1650",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1171,
+      "name": "Rais Hamidou",
+      "postalCode": "1625",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1186,
+      "name": "Reghaia",
+      "postalCode": "1640",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1197,
+      "name": "Rouiba",
+      "postalCode": "1638",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1228,
+      "name": "Sehaoula",
+      "postalCode": "1645",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1237,
+      "name": "Setaouali",
+      "postalCode": "1653",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1305,
+      "name": "Sidi M'hamed",
+      "postalCode": "1602",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1314,
+      "name": "Sidi Moussa",
+      "postalCode": "1637",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1348,
+      "name": "Souidania",
+      "postalCode": "1655",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1447,
+      "name": "Tessala El Merdja",
+      "postalCode": "1634",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1529,
+      "name": "Zeralda",
+      "postalCode": "1644",
+      "hasStopDesk": false
+    }
+  ],
+  "17": [
+    {
+      "id": 40,
+      "name": "Ain Chouhada",
+      "postalCode": "1723",
+      "hasStopDesk": false
+    },
+    {
+      "id": 53,
+      "name": "Ain El Ibel",
+      "postalCode": "1730",
+      "hasStopDesk": false
+    },
+    {
+      "id": 60,
+      "name": "Ain Fekka",
+      "postalCode": "1735",
+      "hasStopDesk": false
+    },
+    {
+      "id": 83,
+      "name": "Ain Maabed",
+      "postalCode": "1705",
+      "hasStopDesk": false
+    },
+    {
+      "id": 93,
+      "name": "Ain Oussera",
+      "postalCode": "1731",
+      "hasStopDesk": true
+    },
+    {
+      "id": 166,
+      "name": "Amourah",
+      "postalCode": "1734",
+      "hasStopDesk": false
+    },
+    {
+      "id": 243,
+      "name": "Benhar",
+      "postalCode": "1732",
+      "hasStopDesk": false
+    },
+    {
+      "id": 293,
+      "name": "Benyagoub",
+      "postalCode": "1727",
+      "hasStopDesk": false
+    },
+    {
+      "id": 322,
+      "name": "Birine",
+      "postalCode": "1708",
+      "hasStopDesk": false
+    },
+    {
+      "id": 391,
+      "name": "Bouira Lahdab",
+      "postalCode": "1709",
+      "hasStopDesk": false
+    },
+    {
+      "id": 436,
+      "name": "Charef",
+      "postalCode": "1726",
+      "hasStopDesk": false
+    },
+    {
+      "id": 483,
+      "name": "Dar Chioukh",
+      "postalCode": "1725",
+      "hasStopDesk": false
+    },
+    {
+      "id": 492,
+      "name": "Deldoul",
+      "postalCode": "1729",
+      "hasStopDesk": false
+    },
+    {
+      "id": 515,
+      "name": "Djelfa",
+      "postalCode": "1701",
+      "hasStopDesk": true
+    },
+    {
+      "id": 537,
+      "name": "Douis",
+      "postalCode": "1715",
+      "hasStopDesk": false
+    },
+    {
+      "id": 592,
+      "name": "El Guedid",
+      "postalCode": "1703",
+      "hasStopDesk": false
+    },
+    {
+      "id": 620,
+      "name": "El Idrissia",
+      "postalCode": "1714",
+      "hasStopDesk": false
+    },
+    {
+      "id": 630,
+      "name": "El Khemis",
+      "postalCode": "1711",
+      "hasStopDesk": false
+    },
+    {
+      "id": 682,
+      "name": "Faidh El Botma",
+      "postalCode": "1707",
+      "hasStopDesk": false
+    },
+    {
+      "id": 723,
+      "name": "Guernini",
+      "postalCode": "1721",
+      "hasStopDesk": false
+    },
+    {
+      "id": 727,
+      "name": "Guettara",
+      "postalCode": "1718",
+      "hasStopDesk": false
+    },
+    {
+      "id": 733,
+      "name": "Had Sahary",
+      "postalCode": "1720",
+      "hasStopDesk": false
+    },
+    {
+      "id": 771,
+      "name": "Hassi Bahbah",
+      "postalCode": "1704",
+      "hasStopDesk": false
+    },
+    {
+      "id": 777,
+      "name": "Hassi El Euch",
+      "postalCode": "1716",
+      "hasStopDesk": false
+    },
+    {
+      "id": 779,
+      "name": "Hassi Fedoul",
+      "postalCode": "1733",
+      "hasStopDesk": false
+    },
+    {
+      "id": 897,
+      "name": "M Liliha",
+      "postalCode": "1713",
+      "hasStopDesk": false
+    },
+    {
+      "id": 979,
+      "name": "Messaad",
+      "postalCode": "1717",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1007,
+      "name": "Moudjebara",
+      "postalCode": "1702",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1155,
+      "name": "Oum Laadham",
+      "postalCode": "1724",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1218,
+      "name": "Sed Rahal",
+      "postalCode": "1706",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1231,
+      "name": "Selmana",
+      "postalCode": "1722",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1268,
+      "name": "Sidi Baizid",
+      "postalCode": "1712",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1299,
+      "name": "Sidi Ladjel",
+      "postalCode": "1719",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1376,
+      "name": "Tadmit",
+      "postalCode": "1736",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1512,
+      "name": "Zaafrane",
+      "postalCode": "1728",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1514,
+      "name": "Zaccar",
+      "postalCode": "1710",
+      "hasStopDesk": false
+    }
+  ],
+  "18": [
+    {
+      "id": 345,
+      "name": "Bordj Tahar",
+      "postalCode": "1826",
+      "hasStopDesk": false
+    },
+    {
+      "id": 371,
+      "name": "Boudria Beniyadjis",
+      "postalCode": "1822",
+      "hasStopDesk": false
+    },
+    {
+      "id": 407,
+      "name": "Bouraoui Belhadef",
+      "postalCode": "1816",
+      "hasStopDesk": false
+    },
+    {
+      "id": 414,
+      "name": "Boussif Ouled Askeur",
+      "postalCode": "1819",
+      "hasStopDesk": false
+    },
+    {
+      "id": 433,
+      "name": "Chahna",
+      "postalCode": "1808",
+      "hasStopDesk": false
+    },
+    {
+      "id": 443,
+      "name": "Chekfa",
+      "postalCode": "1807",
+      "hasStopDesk": false
+    },
+    {
+      "id": 518,
+      "name": "Djemaa Beni Habibi",
+      "postalCode": "1825",
+      "hasStopDesk": false
+    },
+    {
+      "id": 529,
+      "name": "Djimla",
+      "postalCode": "1817",
+      "hasStopDesk": false
+    },
+    {
+      "id": 559,
+      "name": "El Ancer",
+      "postalCode": "1812",
+      "hasStopDesk": false
+    },
+    {
+      "id": 561,
+      "name": "El Aouana",
+      "postalCode": "1803",
+      "hasStopDesk": false
+    },
+    {
+      "id": 624,
+      "name": "El Kennar Nouchfi",
+      "postalCode": "1820",
+      "hasStopDesk": false
+    },
+    {
+      "id": 656,
+      "name": "El Milia",
+      "postalCode": "1809",
+      "hasStopDesk": false
+    },
+    {
+      "id": 673,
+      "name": "Emir Abdelkader",
+      "postalCode": "1806",
+      "hasStopDesk": false
+    },
+    {
+      "id": 678,
+      "name": "Erraguene",
+      "postalCode": "1802",
+      "hasStopDesk": false
+    },
+    {
+      "id": 709,
+      "name": "Ghebala",
+      "postalCode": "1815",
+      "hasStopDesk": false
+    },
+    {
+      "id": 822,
+      "name": "Jijel",
+      "postalCode": "1801",
+      "hasStopDesk": true
+    },
+    {
+      "id": 854,
+      "name": "Khiri Oued Adjoul",
+      "postalCode": "1823",
+      "hasStopDesk": false
+    },
+    {
+      "id": 858,
+      "name": "Kouas",
+      "postalCode": "1814",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1037,
+      "name": "Oudjana",
+      "postalCode": "1828",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1128,
+      "name": "Ouled Rabah",
+      "postalCode": "1827",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1144,
+      "name": "Ouled Yahia Khadrouch",
+      "postalCode": "1821",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1230,
+      "name": "Selma Benziada",
+      "postalCode": "1818",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1239,
+      "name": "Settara",
+      "postalCode": "1811",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1245,
+      "name": "Sidi Abdelaziz",
+      "postalCode": "1813",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1310,
+      "name": "Sidi Marouf",
+      "postalCode": "1810",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1387,
+      "name": "Taher",
+      "postalCode": "1805",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1448,
+      "name": "Texena",
+      "postalCode": "1824",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1534,
+      "name": "Ziama Mansouria",
+      "postalCode": "1804",
+      "hasStopDesk": false
+    }
+  ],
+  "19": [
+    {
+      "id": 17,
+      "name": "Ain Abessa",
+      "postalCode": "1914",
+      "hasStopDesk": false
+    },
+    {
+      "id": 21,
+      "name": "Ain Arnat",
+      "postalCode": "1926",
+      "hasStopDesk": false
+    },
+    {
+      "id": 22,
+      "name": "Ain Azel",
+      "postalCode": "1940",
+      "hasStopDesk": false
+    },
+    {
+      "id": 54,
+      "name": "Ain El Kebira",
+      "postalCode": "1902",
+      "hasStopDesk": false
+    },
+    {
+      "id": 77,
+      "name": "Ain Lahdjar",
+      "postalCode": "1918",
+      "hasStopDesk": false
+    },
+    {
+      "id": 81,
+      "name": "Ain Legradj",
+      "postalCode": "1913",
+      "hasStopDesk": false
+    },
+    {
+      "id": 92,
+      "name": "Ain Oulmane",
+      "postalCode": "1928",
+      "hasStopDesk": false
+    },
+    {
+      "id": 98,
+      "name": "Ain Roua",
+      "postalCode": "1906",
+      "hasStopDesk": false
+    },
+    {
+      "id": 100,
+      "name": "Ain Sebt",
+      "postalCode": "1949",
+      "hasStopDesk": false
+    },
+    {
+      "id": 142,
+      "name": "Ait Naoual Mezada",
+      "postalCode": "1951",
+      "hasStopDesk": false
+    },
+    {
+      "id": 146,
+      "name": "Ait Tizi",
+      "postalCode": "1954",
+      "hasStopDesk": false
+    },
+    {
+      "id": 165,
+      "name": "Amoucha",
+      "postalCode": "1927",
+      "hasStopDesk": false
+    },
+    {
+      "id": 194,
+      "name": "Babor",
+      "postalCode": "1916",
+      "hasStopDesk": false
+    },
+    {
+      "id": 207,
+      "name": "Bazer Sakra",
+      "postalCode": "1931",
+      "hasStopDesk": false
+    },
+    {
+      "id": 213,
+      "name": "Beidha Bordj",
+      "postalCode": "1929",
+      "hasStopDesk": false
+    },
+    {
+      "id": 223,
+      "name": "Bellaa",
+      "postalCode": "1925",
+      "hasStopDesk": false
+    },
+    {
+      "id": 247,
+      "name": "Beni Aziz",
+      "postalCode": "1903",
+      "hasStopDesk": false
+    },
+    {
+      "id": 253,
+      "name": "Beni Chebana",
+      "postalCode": "1909",
+      "hasStopDesk": false
+    },
+    {
+      "id": 257,
+      "name": "Beni Fouda",
+      "postalCode": "1944",
+      "hasStopDesk": false
+    },
+    {
+      "id": 272,
+      "name": "Beni Mouhli",
+      "postalCode": "1946",
+      "hasStopDesk": false
+    },
+    {
+      "id": 274,
+      "name": "Beni Ouartilane",
+      "postalCode": "1922",
+      "hasStopDesk": false
+    },
+    {
+      "id": 277,
+      "name": "Beni Oussine",
+      "postalCode": "1953",
+      "hasStopDesk": false
+    },
+    {
+      "id": 310,
+      "name": "Bir El Arch",
+      "postalCode": "1908",
+      "hasStopDesk": false
+    },
+    {
+      "id": 316,
+      "name": "Bir Haddada",
+      "postalCode": "1934",
+      "hasStopDesk": false
+    },
+    {
+      "id": 357,
+      "name": "Bouandas",
+      "postalCode": "1930",
+      "hasStopDesk": false
+    },
+    {
+      "id": 374,
+      "name": "Bougaa",
+      "postalCode": "1943",
+      "hasStopDesk": false
+    },
+    {
+      "id": 412,
+      "name": "Bousselam",
+      "postalCode": "1919",
+      "hasStopDesk": false
+    },
+    {
+      "id": 415,
+      "name": "Boutaleb",
+      "postalCode": "1905",
+      "hasStopDesk": false
+    },
+    {
+      "id": 491,
+      "name": "Dehamcha",
+      "postalCode": "1915",
+      "hasStopDesk": false
+    },
+    {
+      "id": 520,
+      "name": "Djemila",
+      "postalCode": "1921",
+      "hasStopDesk": false
+    },
+    {
+      "id": 542,
+      "name": "Draa Kebila",
+      "postalCode": "1907",
+      "hasStopDesk": false
+    },
+    {
+      "id": 581,
+      "name": "El Eulma",
+      "postalCode": "1920",
+      "hasStopDesk": true
+    },
+    {
+      "id": 667,
+      "name": "El Ouldja",
+      "postalCode": "1959",
+      "hasStopDesk": false
+    },
+    {
+      "id": 669,
+      "name": "El Ouricia",
+      "postalCode": "1937",
+      "hasStopDesk": false
+    },
+    {
+      "id": 716,
+      "name": "Guellal",
+      "postalCode": "1948",
+      "hasStopDesk": false
+    },
+    {
+      "id": 718,
+      "name": "Guelta Zerka",
+      "postalCode": "1956",
+      "hasStopDesk": false
+    },
+    {
+      "id": 721,
+      "name": "Guenzet",
+      "postalCode": "1941",
+      "hasStopDesk": false
+    },
+    {
+      "id": 728,
+      "name": "Guidjel",
+      "postalCode": "1917",
+      "hasStopDesk": false
+    },
+    {
+      "id": 745,
+      "name": "Hamam Soukhna",
+      "postalCode": "1932",
+      "hasStopDesk": false
+    },
+    {
+      "id": 746,
+      "name": "Hamma",
+      "postalCode": "1911",
+      "hasStopDesk": false
+    },
+    {
+      "id": 752,
+      "name": "Hammam Guergour",
+      "postalCode": "1950",
+      "hasStopDesk": false
+    },
+    {
+      "id": 765,
+      "name": "Harbil",
+      "postalCode": "1936",
+      "hasStopDesk": false
+    },
+    {
+      "id": 865,
+      "name": "Ksar El Abtal",
+      "postalCode": "1952",
+      "hasStopDesk": false
+    },
+    {
+      "id": 915,
+      "name": "Maaouia",
+      "postalCode": "1912",
+      "hasStopDesk": false
+    },
+    {
+      "id": 934,
+      "name": "Maouaklane",
+      "postalCode": "1955",
+      "hasStopDesk": false
+    },
+    {
+      "id": 989,
+      "name": "Mezloug",
+      "postalCode": "1933",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1050,
+      "name": "Oued El Barad",
+      "postalCode": "1957",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1086,
+      "name": "Ouled Addouane",
+      "postalCode": "1924",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1133,
+      "name": "Ouled Sabor",
+      "postalCode": "1947",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1136,
+      "name": "Ouled Si Ahmed",
+      "postalCode": "1904",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1143,
+      "name": "Ouled Tebben",
+      "postalCode": "1910",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1195,
+      "name": "Rosfa",
+      "postalCode": "1923",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1206,
+      "name": "Salah Bey",
+      "postalCode": "1939",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1234,
+      "name": "Serdj El Ghoul",
+      "postalCode": "1935",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1238,
+      "name": "Setif",
+      "postalCode": "1901",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1370,
+      "name": "Tachouda",
+      "postalCode": "1945",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1391,
+      "name": "Tala Ifacene",
+      "postalCode": "1942",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1422,
+      "name": "Taya",
+      "postalCode": "1958",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1433,
+      "name": "Tella",
+      "postalCode": "1960",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1488,
+      "name": "Tizi N'bechar",
+      "postalCode": "1938",
+      "hasStopDesk": false
+    }
+  ],
+  "20": [
+    {
+      "id": 50,
+      "name": "Ain El Hadjar",
+      "postalCode": "2003",
+      "hasStopDesk": false
+    },
+    {
+      "id": 101,
+      "name": "Ain Sekhouna",
+      "postalCode": "2013",
+      "hasStopDesk": false
+    },
+    {
+      "id": 105,
+      "name": "Ain Soltane",
+      "postalCode": "2016",
+      "hasStopDesk": false
+    },
+    {
+      "id": 535,
+      "name": "Doui Thabet",
+      "postalCode": "2002",
+      "hasStopDesk": false
+    },
+    {
+      "id": 615,
+      "name": "El Hassasna",
+      "postalCode": "2010",
+      "hasStopDesk": false
+    },
+    {
+      "id": 796,
+      "name": "Hounet",
+      "postalCode": "2007",
+      "hasStopDesk": false
+    },
+    {
+      "id": 914,
+      "name": "Maamora",
+      "postalCode": "2011",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1008,
+      "name": "Moulay Larbi",
+      "postalCode": "2005",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1101,
+      "name": "Ouled Brahim",
+      "postalCode": "2014",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1117,
+      "name": "Ouled Khaled",
+      "postalCode": "2004",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1205,
+      "name": "Saida",
+      "postalCode": "2001",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1252,
+      "name": "Sidi Ahmed",
+      "postalCode": "2012",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1260,
+      "name": "Sidi Amar",
+      "postalCode": "2008",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1274,
+      "name": "Sidi Boubekeur",
+      "postalCode": "2009",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1481,
+      "name": "Tircine",
+      "postalCode": "2015",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1509,
+      "name": "Youb",
+      "postalCode": "2006",
+      "hasStopDesk": false
+    }
+  ],
+  "21": [
+    {
+      "id": 38,
+      "name": "Ain Bouziane",
+      "postalCode": "2122",
+      "hasStopDesk": false
+    },
+    {
+      "id": 39,
+      "name": "Ain Charchar",
+      "postalCode": "2106",
+      "hasStopDesk": false
+    },
+    {
+      "id": 70,
+      "name": "Ain Kechera",
+      "postalCode": "2127",
+      "hasStopDesk": false
+    },
+    {
+      "id": 133,
+      "name": "Ain Zouit",
+      "postalCode": "2102",
+      "hasStopDesk": false
+    },
+    {
+      "id": 187,
+      "name": "Azzaba",
+      "postalCode": "2104",
+      "hasStopDesk": false
+    },
+    {
+      "id": 216,
+      "name": "Bekkouche Lakhdar",
+      "postalCode": "2107",
+      "hasStopDesk": false
+    },
+    {
+      "id": 226,
+      "name": "Ben Azzouz",
+      "postalCode": "2108",
+      "hasStopDesk": false
+    },
+    {
+      "id": 249,
+      "name": "Beni Bechir",
+      "postalCode": "2124",
+      "hasStopDesk": false
+    },
+    {
+      "id": 275,
+      "name": "Beni Oulbane",
+      "postalCode": "2121",
+      "hasStopDesk": false
+    },
+    {
+      "id": 286,
+      "name": "Beni Zid",
+      "postalCode": "2111",
+      "hasStopDesk": false
+    },
+    {
+      "id": 305,
+      "name": "Bin El Ouiden",
+      "postalCode": "2129",
+      "hasStopDesk": false
+    },
+    {
+      "id": 362,
+      "name": "Bouchetata",
+      "postalCode": "2134",
+      "hasStopDesk": false
+    },
+    {
+      "id": 455,
+      "name": "Cheraia",
+      "postalCode": "2131",
+      "hasStopDesk": false
+    },
+    {
+      "id": 474,
+      "name": "Collo",
+      "postalCode": "2110",
+      "hasStopDesk": false
+    },
+    {
+      "id": 523,
+      "name": "Djendel Saadi Mohamed",
+      "postalCode": "2105",
+      "hasStopDesk": false
+    },
+    {
+      "id": 564,
+      "name": "El Arrouch",
+      "postalCode": "2116",
+      "hasStopDesk": true
+    },
+    {
+      "id": 587,
+      "name": "El Ghedir",
+      "postalCode": "2133",
+      "hasStopDesk": false
+    },
+    {
+      "id": 601,
+      "name": "El Hadaiek",
+      "postalCode": "2103",
+      "hasStopDesk": false
+    },
+    {
+      "id": 646,
+      "name": "El Marsa",
+      "postalCode": "2138",
+      "hasStopDesk": false
+    },
+    {
+      "id": 675,
+      "name": "Emjez Edchich",
+      "postalCode": "2120",
+      "hasStopDesk": false
+    },
+    {
+      "id": 679,
+      "name": "Es Sebt",
+      "postalCode": "2109",
+      "hasStopDesk": false
+    },
+    {
+      "id": 692,
+      "name": "Filfila",
+      "postalCode": "2130",
+      "hasStopDesk": false
+    },
+    {
+      "id": 741,
+      "name": "Hamadi Krouma",
+      "postalCode": "2137",
+      "hasStopDesk": false
+    },
+    {
+      "id": 826,
+      "name": "Kanoua",
+      "postalCode": "2132",
+      "hasStopDesk": false
+    },
+    {
+      "id": 832,
+      "name": "Kerkera",
+      "postalCode": "2112",
+      "hasStopDesk": false
+    },
+    {
+      "id": 845,
+      "name": "Khenag Mayoum",
+      "postalCode": "2136",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1080,
+      "name": "Oued Zhour",
+      "postalCode": "2114",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1083,
+      "name": "Ouldja Boulbalout",
+      "postalCode": "2135",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1094,
+      "name": "Ouled Attia",
+      "postalCode": "2113",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1113,
+      "name": "Ouled Habbeba",
+      "postalCode": "2118",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1156,
+      "name": "Oum Toub",
+      "postalCode": "2128",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1172,
+      "name": "Ramdane Djamel",
+      "postalCode": "2123",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1207,
+      "name": "Salah Bouchaour",
+      "postalCode": "2125",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1313,
+      "name": "Sidi Mezghiche",
+      "postalCode": "2119",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1335,
+      "name": "Skikda",
+      "postalCode": "2101",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1396,
+      "name": "Tamalous",
+      "postalCode": "2126",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1530,
+      "name": "Zerdezas",
+      "postalCode": "2117",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1536,
+      "name": "Zitouna",
+      "postalCode": "2115",
+      "hasStopDesk": false
+    }
+  ],
+  "22": [
+    {
+      "id": 19,
+      "name": "Ain Adden",
+      "postalCode": "2230",
+      "hasStopDesk": false
+    },
+    {
+      "id": 47,
+      "name": "Ain El Berd",
+      "postalCode": "2228",
+      "hasStopDesk": false
+    },
+    {
+      "id": 68,
+      "name": "Ain Kada",
+      "postalCode": "2225",
+      "hasStopDesk": false
+    },
+    {
+      "id": 116,
+      "name": "Ain Thrid",
+      "postalCode": "2215",
+      "hasStopDesk": false
+    },
+    {
+      "id": 117,
+      "name": "Ain Tindamine",
+      "postalCode": "2224",
+      "hasStopDesk": false
+    },
+    {
+      "id": 158,
+      "name": "Amarnas",
+      "postalCode": "2212",
+      "hasStopDesk": false
+    },
+    {
+      "id": 196,
+      "name": "Badredine El Mokrani",
+      "postalCode": "2209",
+      "hasStopDesk": false
+    },
+    {
+      "id": 220,
+      "name": "Belarbi",
+      "postalCode": "2242",
+      "hasStopDesk": false
+    },
+    {
+      "id": 227,
+      "name": "Ben Badis",
+      "postalCode": "2245",
+      "hasStopDesk": false
+    },
+    {
+      "id": 240,
+      "name": "Benachiba Chelia",
+      "postalCode": "2251",
+      "hasStopDesk": false
+    },
+    {
+      "id": 313,
+      "name": "Bir El Hammam",
+      "postalCode": "2248",
+      "hasStopDesk": false
+    },
+    {
+      "id": 366,
+      "name": "Boudjebaa El Bordj",
+      "postalCode": "2238",
+      "hasStopDesk": false
+    },
+    {
+      "id": 395,
+      "name": "Boukhanafis",
+      "postalCode": "2207",
+      "hasStopDesk": false
+    },
+    {
+      "id": 462,
+      "name": "Chetouane Belaila",
+      "postalCode": "2247",
+      "hasStopDesk": false
+    },
+    {
+      "id": 500,
+      "name": "Dhaya",
+      "postalCode": "2232",
+      "hasStopDesk": false
+    },
+    {
+      "id": 598,
+      "name": "El Hacaiba",
+      "postalCode": "2219",
+      "hasStopDesk": false
+    },
+    {
+      "id": 775,
+      "name": "Hassi Dahou",
+      "postalCode": "2252",
+      "hasStopDesk": false
+    },
+    {
+      "id": 787,
+      "name": "Hassi Zahana",
+      "postalCode": "2220",
+      "hasStopDesk": false
+    },
+    {
+      "id": 877,
+      "name": "Lamtar",
+      "postalCode": "2234",
+      "hasStopDesk": false
+    },
+    {
+      "id": 899,
+      "name": "M'cid",
+      "postalCode": "2226",
+      "hasStopDesk": false
+    },
+    {
+      "id": 925,
+      "name": "Makedra",
+      "postalCode": "2216",
+      "hasStopDesk": false
+    },
+    {
+      "id": 936,
+      "name": "Marhoum",
+      "postalCode": "2210",
+      "hasStopDesk": false
+    },
+    {
+      "id": 974,
+      "name": "Merine",
+      "postalCode": "2222",
+      "hasStopDesk": false
+    },
+    {
+      "id": 985,
+      "name": "Mezaourou",
+      "postalCode": "2206",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1006,
+      "name": "Mostefa Ben Brahim",
+      "postalCode": "2204",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1009,
+      "name": "Moulay Slissen",
+      "postalCode": "2218",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1069,
+      "name": "Oued Sebaa",
+      "postalCode": "2237",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1071,
+      "name": "Oued Sefioun",
+      "postalCode": "2243",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1076,
+      "name": "Oued Taourira",
+      "postalCode": "2231",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1179,
+      "name": "Ras El Ma",
+      "postalCode": "2223",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1184,
+      "name": "Redjem Demouche",
+      "postalCode": "2250",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1227,
+      "name": "Sehala Thaoura",
+      "postalCode": "2239",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1240,
+      "name": "Sfissef",
+      "postalCode": "2229",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1257,
+      "name": "Sidi Ali Benyoub",
+      "postalCode": "2246",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1258,
+      "name": "Sidi Ali Boussidi",
+      "postalCode": "2208",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1270,
+      "name": "Sidi Bel Abbes",
+      "postalCode": "2201",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1279,
+      "name": "Sidi Brahim",
+      "postalCode": "2203",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1280,
+      "name": "Sidi Chaib",
+      "postalCode": "2235",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1282,
+      "name": "Sidi Dahou Zairs",
+      "postalCode": "2236",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1290,
+      "name": "Sidi Hamadouche",
+      "postalCode": "2241",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1293,
+      "name": "Sidi Khaled",
+      "postalCode": "2227",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1300,
+      "name": "Sidi Lahcene",
+      "postalCode": "2214",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1329,
+      "name": "Sidi Yacoub",
+      "postalCode": "2240",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1367,
+      "name": "Tabia",
+      "postalCode": "2221",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1377,
+      "name": "Tafissour",
+      "postalCode": "2211",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1409,
+      "name": "Taoudmout",
+      "postalCode": "2249",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1429,
+      "name": "Teghalimet",
+      "postalCode": "2244",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1430,
+      "name": "Telagh",
+      "postalCode": "2205",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1439,
+      "name": "Tenira",
+      "postalCode": "2217",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1445,
+      "name": "Tessala",
+      "postalCode": "2202",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1466,
+      "name": "Tilmouni",
+      "postalCode": "2213",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1533,
+      "name": "Zerouala",
+      "postalCode": "2233",
+      "hasStopDesk": false
+    }
+  ],
+  "23": [
+    {
+      "id": 31,
+      "name": "Ain Berda",
+      "postalCode": "2309",
+      "hasStopDesk": false
+    },
+    {
+      "id": 167,
+      "name": "Annaba",
+      "postalCode": "2301",
+      "hasStopDesk": true
+    },
+    {
+      "id": 297,
+      "name": "Berrahel",
+      "postalCode": "2302",
+      "hasStopDesk": false
+    },
+    {
+      "id": 459,
+      "name": "Chetaibi",
+      "postalCode": "2310",
+      "hasStopDesk": false
+    },
+    {
+      "id": 464,
+      "name": "Cheurfa",
+      "postalCode": "2307",
+      "hasStopDesk": false
+    },
+    {
+      "id": 578,
+      "name": "El Bouni",
+      "postalCode": "2305",
+      "hasStopDesk": true
+    },
+    {
+      "id": 604,
+      "name": "El Hadjar",
+      "postalCode": "2303",
+      "hasStopDesk": false
+    },
+    {
+      "id": 681,
+      "name": "Eulma",
+      "postalCode": "2304",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1049,
+      "name": "Oued El Aneb",
+      "postalCode": "2306",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1233,
+      "name": "Seraidi",
+      "postalCode": "2308",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1261,
+      "name": "Sidi Amar",
+      "postalCode": "2311",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1501,
+      "name": "Treat",
+      "postalCode": "2312",
+      "hasStopDesk": false
+    }
+  ],
+  "24": [
+    {
+      "id": 27,
+      "name": "Ain Ben Beida",
+      "postalCode": "2414",
+      "hasStopDesk": false
+    },
+    {
+      "id": 67,
+      "name": "Ain Hessania",
+      "postalCode": "2427",
+      "hasStopDesk": false
+    },
+    {
+      "id": 79,
+      "name": "Ain Larbi",
+      "postalCode": "2423",
+      "hasStopDesk": false
+    },
+    {
+      "id": 85,
+      "name": "Ain Makhlouf",
+      "postalCode": "2413",
+      "hasStopDesk": false
+    },
+    {
+      "id": 95,
+      "name": "Ain Reggada",
+      "postalCode": "2432",
+      "hasStopDesk": false
+    },
+    {
+      "id": 222,
+      "name": "Belkheir",
+      "postalCode": "2410",
+      "hasStopDesk": false
+    },
+    {
+      "id": 232,
+      "name": "Ben Djarah",
+      "postalCode": "2411",
+      "hasStopDesk": false
+    },
+    {
+      "id": 270,
+      "name": "Beni Mezline",
+      "postalCode": "2416",
+      "hasStopDesk": false
+    },
+    {
+      "id": 344,
+      "name": "Bordj Sabat",
+      "postalCode": "2421",
+      "hasStopDesk": false
+    },
+    {
+      "id": 348,
+      "name": "Bou Hachana",
+      "postalCode": "2417",
+      "hasStopDesk": false
+    },
+    {
+      "id": 349,
+      "name": "Bou Hamdane",
+      "postalCode": "2412",
+      "hasStopDesk": false
+    },
+    {
+      "id": 359,
+      "name": "Bouati Mahmoud",
+      "postalCode": "2403",
+      "hasStopDesk": false
+    },
+    {
+      "id": 361,
+      "name": "Bouchegouf",
+      "postalCode": "2425",
+      "hasStopDesk": false
+    },
+    {
+      "id": 382,
+      "name": "Bouhamra Ahmed",
+      "postalCode": "2431",
+      "hasStopDesk": false
+    },
+    {
+      "id": 478,
+      "name": "Dahouara",
+      "postalCode": "2409",
+      "hasStopDesk": false
+    },
+    {
+      "id": 511,
+      "name": "Djeballah Khemissi",
+      "postalCode": "2434",
+      "hasStopDesk": false
+    },
+    {
+      "id": 582,
+      "name": "El Fedjoudj",
+      "postalCode": "2420",
+      "hasStopDesk": false
+    },
+    {
+      "id": 715,
+      "name": "Guelaat Bou Sbaa",
+      "postalCode": "2418",
+      "hasStopDesk": false
+    },
+    {
+      "id": 717,
+      "name": "Guelma",
+      "postalCode": "2401",
+      "hasStopDesk": true
+    },
+    {
+      "id": 744,
+      "name": "Hamam Debagh",
+      "postalCode": "2419",
+      "hasStopDesk": false
+    },
+    {
+      "id": 754,
+      "name": "Hammam N'bail",
+      "postalCode": "2422",
+      "hasStopDesk": false
+    },
+    {
+      "id": 789,
+      "name": "Heliopolis",
+      "postalCode": "2426",
+      "hasStopDesk": false
+    },
+    {
+      "id": 852,
+      "name": "Khezara",
+      "postalCode": "2415",
+      "hasStopDesk": false
+    },
+    {
+      "id": 952,
+      "name": "Medjez Amar",
+      "postalCode": "2424",
+      "hasStopDesk": false
+    },
+    {
+      "id": 953,
+      "name": "Medjez Sfa",
+      "postalCode": "2430",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1022,
+      "name": "Nechmaya",
+      "postalCode": "2402",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1041,
+      "name": "Oued Cheham",
+      "postalCode": "2433",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1058,
+      "name": "Oued Fragha",
+      "postalCode": "2406",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1079,
+      "name": "Oued Zenati",
+      "postalCode": "2404",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1176,
+      "name": "Ras El Agba",
+      "postalCode": "2408",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1194,
+      "name": "Roknia",
+      "postalCode": "2428",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1229,
+      "name": "Sellaoua Announa",
+      "postalCode": "2429",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1323,
+      "name": "Sidi Sandel",
+      "postalCode": "2407",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1402,
+      "name": "Tamlouka",
+      "postalCode": "2405",
+      "hasStopDesk": false
+    }
+  ],
+  "25": [
+    {
+      "id": 18,
+      "name": "Ain Abid",
+      "postalCode": "2507",
+      "hasStopDesk": false
+    },
+    {
+      "id": 104,
+      "name": "Ain Smara",
+      "postalCode": "2510",
+      "hasStopDesk": false
+    },
+    {
+      "id": 228,
+      "name": "Ben Badis",
+      "postalCode": "2503",
+      "hasStopDesk": false
+    },
+    {
+      "id": 259,
+      "name": "Beni Hamidene",
+      "postalCode": "2508",
+      "hasStopDesk": false
+    },
+    {
+      "id": 475,
+      "name": "Constantine",
+      "postalCode": "2501",
+      "hasStopDesk": true
+    },
+    {
+      "id": 502,
+      "name": "Didouche Mourad",
+      "postalCode": "2505",
+      "hasStopDesk": false
+    },
+    {
+      "id": 631,
+      "name": "El Khroub",
+      "postalCode": "2506",
+      "hasStopDesk": true
+    },
+    {
+      "id": 747,
+      "name": "Hamma Bouziane",
+      "postalCode": "2502",
+      "hasStopDesk": false
+    },
+    {
+      "id": 799,
+      "name": "Ibn Ziad",
+      "postalCode": "2512",
+      "hasStopDesk": false
+    },
+    {
+      "id": 980,
+      "name": "Messaoud Boujeriou",
+      "postalCode": "2511",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1130,
+      "name": "Ouled Rahmouni",
+      "postalCode": "2509",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1535,
+      "name": "Zighoud Youcef",
+      "postalCode": "2504",
+      "hasStopDesk": false
+    }
+  ],
+  "26": [
+    {
+      "id": 35,
+      "name": "Ain Boucif",
+      "postalCode": "2604",
+      "hasStopDesk": false
+    },
+    {
+      "id": 91,
+      "name": "Ain Ouksir",
+      "postalCode": "2641",
+      "hasStopDesk": false
+    },
+    {
+      "id": 134,
+      "name": "Aissaouia",
+      "postalCode": "2605",
+      "hasStopDesk": false
+    },
+    {
+      "id": 186,
+      "name": "Aziz",
+      "postalCode": "2632",
+      "hasStopDesk": false
+    },
+    {
+      "id": 188,
+      "name": "Baata",
+      "postalCode": "2624",
+      "hasStopDesk": false
+    },
+    {
+      "id": 229,
+      "name": "Ben Chicao",
+      "postalCode": "2630",
+      "hasStopDesk": false
+    },
+    {
+      "id": 280,
+      "name": "Beni Slimane",
+      "postalCode": "2646",
+      "hasStopDesk": false
+    },
+    {
+      "id": 301,
+      "name": "Berrouaghia",
+      "postalCode": "2647",
+      "hasStopDesk": false
+    },
+    {
+      "id": 306,
+      "name": "Bir Ben Laabed",
+      "postalCode": "2656",
+      "hasStopDesk": false
+    },
+    {
+      "id": 328,
+      "name": "Boghar",
+      "postalCode": "2625",
+      "hasStopDesk": false
+    },
+    {
+      "id": 354,
+      "name": "Bouaiche",
+      "postalCode": "2610",
+      "hasStopDesk": false
+    },
+    {
+      "id": 355,
+      "name": "Bouaichoune",
+      "postalCode": "2659",
+      "hasStopDesk": false
+    },
+    {
+      "id": 363,
+      "name": "Bouchrahil",
+      "postalCode": "2621",
+      "hasStopDesk": false
+    },
+    {
+      "id": 377,
+      "name": "Boughzoul",
+      "postalCode": "2651",
+      "hasStopDesk": false
+    },
+    {
+      "id": 411,
+      "name": "Bouskene",
+      "postalCode": "2619",
+      "hasStopDesk": false
+    },
+    {
+      "id": 432,
+      "name": "Chabounia",
+      "postalCode": "2638",
+      "hasStopDesk": false
+    },
+    {
+      "id": 444,
+      "name": "Chelalet El Adhaoura",
+      "postalCode": "2618",
+      "hasStopDesk": false
+    },
+    {
+      "id": 452,
+      "name": "Cheniguel",
+      "postalCode": "2640",
+      "hasStopDesk": false
+    },
+    {
+      "id": 480,
+      "name": "Damiat",
+      "postalCode": "2613",
+      "hasStopDesk": false
+    },
+    {
+      "id": 496,
+      "name": "Derrag",
+      "postalCode": "2608",
+      "hasStopDesk": false
+    },
+    {
+      "id": 498,
+      "name": "Deux Bassins",
+      "postalCode": "2653",
+      "hasStopDesk": false
+    },
+    {
+      "id": 531,
+      "name": "Djouab",
+      "postalCode": "2637",
+      "hasStopDesk": false
+    },
+    {
+      "id": 541,
+      "name": "Draa Essamar",
+      "postalCode": "2654",
+      "hasStopDesk": false
+    },
+    {
+      "id": 569,
+      "name": "El Azizia",
+      "postalCode": "2636",
+      "hasStopDesk": false
+    },
+    {
+      "id": 594,
+      "name": "El Guelbelkebir",
+      "postalCode": "2609",
+      "hasStopDesk": false
+    },
+    {
+      "id": 608,
+      "name": "El Hamdania",
+      "postalCode": "2616",
+      "hasStopDesk": false
+    },
+    {
+      "id": 662,
+      "name": "El Omaria",
+      "postalCode": "2607",
+      "hasStopDesk": false
+    },
+    {
+      "id": 666,
+      "name": "El Ouinet",
+      "postalCode": "2657",
+      "hasStopDesk": false
+    },
+    {
+      "id": 763,
+      "name": "Hannacha",
+      "postalCode": "2660",
+      "hasStopDesk": false
+    },
+    {
+      "id": 829,
+      "name": "Kef Lakhdar",
+      "postalCode": "2617",
+      "hasStopDesk": false
+    },
+    {
+      "id": 836,
+      "name": "Khams Djouamaa",
+      "postalCode": "2663",
+      "hasStopDesk": false
+    },
+    {
+      "id": 866,
+      "name": "Ksar El Boukhari",
+      "postalCode": "2635",
+      "hasStopDesk": false
+    },
+    {
+      "id": 921,
+      "name": "Maghraoua",
+      "postalCode": "2639",
+      "hasStopDesk": false
+    },
+    {
+      "id": 947,
+      "name": "Medea",
+      "postalCode": "2601",
+      "hasStopDesk": true
+    },
+    {
+      "id": 950,
+      "name": "Medjebar",
+      "postalCode": "2662",
+      "hasStopDesk": false
+    },
+    {
+      "id": 957,
+      "name": "Meftaha",
+      "postalCode": "2649",
+      "hasStopDesk": false
+    },
+    {
+      "id": 987,
+      "name": "Mezerana",
+      "postalCode": "2611",
+      "hasStopDesk": false
+    },
+    {
+      "id": 991,
+      "name": "Mihoub",
+      "postalCode": "2650",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1033,
+      "name": "Ouamri",
+      "postalCode": "2643",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1061,
+      "name": "Oued Harbil",
+      "postalCode": "2629",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1092,
+      "name": "Ouled Antar",
+      "postalCode": "2658",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1097,
+      "name": "Ouled Bouachra",
+      "postalCode": "2627",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1102,
+      "name": "Ouled Brahim",
+      "postalCode": "2612",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1105,
+      "name": "Ouled Deid",
+      "postalCode": "2606",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1116,
+      "name": "Ouled Hellal",
+      "postalCode": "2622",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1122,
+      "name": "Ouled Maaref",
+      "postalCode": "2603",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1154,
+      "name": "Oum El Djellil",
+      "postalCode": "2642",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1163,
+      "name": "Ouzera",
+      "postalCode": "2602",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1182,
+      "name": "Rebaia",
+      "postalCode": "2620",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1209,
+      "name": "Saneg",
+      "postalCode": "2664",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1222,
+      "name": "Sedraya",
+      "postalCode": "2661",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1225,
+      "name": "Seghouane",
+      "postalCode": "2648",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1243,
+      "name": "Si Mahdjoub",
+      "postalCode": "2644",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1284,
+      "name": "Sidi Demed",
+      "postalCode": "2631",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1316,
+      "name": "Sidi Naamane",
+      "postalCode": "2626",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1319,
+      "name": "Sidi Rabie",
+      "postalCode": "2655",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1330,
+      "name": "Sidi Zahar",
+      "postalCode": "2628",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1331,
+      "name": "Sidi Ziane",
+      "postalCode": "2614",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1340,
+      "name": "Souagui",
+      "postalCode": "2633",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1368,
+      "name": "Tablat",
+      "postalCode": "2652",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1379,
+      "name": "Tafraout",
+      "postalCode": "2623",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1400,
+      "name": "Tamesguida",
+      "postalCode": "2615",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1494,
+      "name": "Tletat Ed Douair",
+      "postalCode": "2645",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1541,
+      "name": "Zoubiria",
+      "postalCode": "2634",
+      "hasStopDesk": false
+    }
+  ],
+  "27": [
+    {
+      "id": 4,
+      "name": "Achaacha",
+      "postalCode": "2717",
+      "hasStopDesk": false
+    },
+    {
+      "id": 36,
+      "name": "Ain Boudinar",
+      "postalCode": "2728",
+      "hasStopDesk": false
+    },
+    {
+      "id": 90,
+      "name": "Ain Nouissy",
+      "postalCode": "2705",
+      "hasStopDesk": false
+    },
+    {
+      "id": 103,
+      "name": "Ain Sidi Cherif",
+      "postalCode": "2721",
+      "hasStopDesk": false
+    },
+    {
+      "id": 113,
+      "name": "Ain Tedles",
+      "postalCode": "2707",
+      "hasStopDesk": false
+    },
+    {
+      "id": 237,
+      "name": "Benabdelmalek Ramdane",
+      "postalCode": "2713",
+      "hasStopDesk": false
+    },
+    {
+      "id": 380,
+      "name": "Bouguirat",
+      "postalCode": "2719",
+      "hasStopDesk": false
+    },
+    {
+      "id": 695,
+      "name": "Fornaka",
+      "postalCode": "2703",
+      "hasStopDesk": false
+    },
+    {
+      "id": 736,
+      "name": "Hadjadj",
+      "postalCode": "2714",
+      "hasStopDesk": false
+    },
+    {
+      "id": 783,
+      "name": "Hassi Mameche",
+      "postalCode": "2706",
+      "hasStopDesk": false
+    },
+    {
+      "id": 788,
+      "name": "Hassiane",
+      "postalCode": "2732",
+      "hasStopDesk": false
+    },
+    {
+      "id": 834,
+      "name": "Khadra",
+      "postalCode": "2718",
+      "hasStopDesk": false
+    },
+    {
+      "id": 838,
+      "name": "Kheir Eddine",
+      "postalCode": "2711",
+      "hasStopDesk": false
+    },
+    {
+      "id": 933,
+      "name": "Mansourah",
+      "postalCode": "2723",
+      "hasStopDesk": false
+    },
+    {
+      "id": 941,
+      "name": "Mazagran",
+      "postalCode": "2727",
+      "hasStopDesk": true
+    },
+    {
+      "id": 978,
+      "name": "Mesra",
+      "postalCode": "2722",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1005,
+      "name": "Mostaganem",
+      "postalCode": "2701",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1025,
+      "name": "Nekmaria",
+      "postalCode": "2715",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1053,
+      "name": "Oued El Kheir",
+      "postalCode": "2709",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1099,
+      "name": "Ouled Boughalem",
+      "postalCode": "2725",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1121,
+      "name": "Ouled Maalah",
+      "postalCode": "2726",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1203,
+      "name": "Safsaf",
+      "postalCode": "2730",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1210,
+      "name": "Sayada",
+      "postalCode": "2702",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1256,
+      "name": "Sidi Ali",
+      "postalCode": "2712",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1271,
+      "name": "Sidi Belaattar",
+      "postalCode": "2710",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1301,
+      "name": "Sidi Lakhdar",
+      "postalCode": "2716",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1334,
+      "name": "Sirat",
+      "postalCode": "2720",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1339,
+      "name": "Souaflia",
+      "postalCode": "2724",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1359,
+      "name": "Sour",
+      "postalCode": "2708",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1362,
+      "name": "Stidia",
+      "postalCode": "2704",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1423,
+      "name": "Tazgait",
+      "postalCode": "2729",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1496,
+      "name": "Touahria",
+      "postalCode": "2731",
+      "hasStopDesk": false
+    }
+  ],
+  "28": [
+    {
+      "id": 51,
+      "name": "Ain El Hadjel",
+      "postalCode": "2817",
+      "hasStopDesk": false
+    },
+    {
+      "id": 55,
+      "name": "Ain El Melh",
+      "postalCode": "2841",
+      "hasStopDesk": false
+    },
+    {
+      "id": 57,
+      "name": "Ain Fares",
+      "postalCode": "2837",
+      "hasStopDesk": false
+    },
+    {
+      "id": 75,
+      "name": "Ain Khadra",
+      "postalCode": "2813",
+      "hasStopDesk": false
+    },
+    {
+      "id": 96,
+      "name": "Ain Rich",
+      "postalCode": "2844",
+      "hasStopDesk": false
+    },
+    {
+      "id": 219,
+      "name": "Belaiba",
+      "postalCode": "2815",
+      "hasStopDesk": false
+    },
+    {
+      "id": 236,
+      "name": "Ben Srour",
+      "postalCode": "2824",
+      "hasStopDesk": false
+    },
+    {
+      "id": 262,
+      "name": "Beni Ilmane",
+      "postalCode": "2845",
+      "hasStopDesk": false
+    },
+    {
+      "id": 295,
+      "name": "Benzouh",
+      "postalCode": "2835",
+      "hasStopDesk": false
+    },
+    {
+      "id": 296,
+      "name": "Berhoum",
+      "postalCode": "2812",
+      "hasStopDesk": false
+    },
+    {
+      "id": 314,
+      "name": "Bir Foda",
+      "postalCode": "2836",
+      "hasStopDesk": false
+    },
+    {
+      "id": 353,
+      "name": "Bou Saada",
+      "postalCode": "2820",
+      "hasStopDesk": true
+    },
+    {
+      "id": 417,
+      "name": "Bouti Sayeh",
+      "postalCode": "2831",
+      "hasStopDesk": false
+    },
+    {
+      "id": 447,
+      "name": "Chellal",
+      "postalCode": "2809",
+      "hasStopDesk": false
+    },
+    {
+      "id": 490,
+      "name": "Dehahna",
+      "postalCode": "2830",
+      "hasStopDesk": false
+    },
+    {
+      "id": 513,
+      "name": "Djebel Messaad",
+      "postalCode": "2847",
+      "hasStopDesk": false
+    },
+    {
+      "id": 609,
+      "name": "El Hamel",
+      "postalCode": "2827",
+      "hasStopDesk": false
+    },
+    {
+      "id": 618,
+      "name": "El Houamed",
+      "postalCode": "2826",
+      "hasStopDesk": false
+    },
+    {
+      "id": 751,
+      "name": "Hammam Dalaa",
+      "postalCode": "2803",
+      "hasStopDesk": false
+    },
+    {
+      "id": 851,
+      "name": "Khettouti Sed El Jir",
+      "postalCode": "2832",
+      "hasStopDesk": false
+    },
+    {
+      "id": 855,
+      "name": "Khoubana",
+      "postalCode": "2807",
+      "hasStopDesk": false
+    },
+    {
+      "id": 900,
+      "name": "M'cif",
+      "postalCode": "2808",
+      "hasStopDesk": false
+    },
+    {
+      "id": 906,
+      "name": "M'sila",
+      "postalCode": "2801",
+      "hasStopDesk": true
+    },
+    {
+      "id": 907,
+      "name": "M'tarfa",
+      "postalCode": "2806",
+      "hasStopDesk": false
+    },
+    {
+      "id": 910,
+      "name": "Maadid",
+      "postalCode": "2802",
+      "hasStopDesk": false
+    },
+    {
+      "id": 916,
+      "name": "Maarif",
+      "postalCode": "2829",
+      "hasStopDesk": false
+    },
+    {
+      "id": 922,
+      "name": "Magra",
+      "postalCode": "2811",
+      "hasStopDesk": false
+    },
+    {
+      "id": 951,
+      "name": "Medjedel",
+      "postalCode": "2842",
+      "hasStopDesk": false
+    },
+    {
+      "id": 967,
+      "name": "Menaa",
+      "postalCode": "2839",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1001,
+      "name": "Mohamed Boudiaf",
+      "postalCode": "2834",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1034,
+      "name": "Ouanougha",
+      "postalCode": "2819",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1085,
+      "name": "Ouled Addi Guebala",
+      "postalCode": "2814",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1106,
+      "name": "Ouled Derradj",
+      "postalCode": "2804",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1123,
+      "name": "Ouled Madhi",
+      "postalCode": "2810",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1124,
+      "name": "Ouled Mansour",
+      "postalCode": "2828",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1138,
+      "name": "Ouled Sidi Brahim",
+      "postalCode": "2821",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1142,
+      "name": "Ouled Slimane",
+      "postalCode": "2825",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1148,
+      "name": "Oulteme",
+      "postalCode": "2846",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1254,
+      "name": "Sidi Aissa",
+      "postalCode": "2816",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1263,
+      "name": "Sidi Ameur",
+      "postalCode": "2822",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1289,
+      "name": "Sidi Hadjeres",
+      "postalCode": "2818",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1306,
+      "name": "Sidi M'hamed",
+      "postalCode": "2838",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1336,
+      "name": "Slim",
+      "postalCode": "2843",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1343,
+      "name": "Souamaa",
+      "postalCode": "2840",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1405,
+      "name": "Tamsa",
+      "postalCode": "2823",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1418,
+      "name": "Tarmount",
+      "postalCode": "2805",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1519,
+      "name": "Zarzour",
+      "postalCode": "2833",
+      "hasStopDesk": false
+    }
+  ],
+  "29": [
+    {
+      "id": 58,
+      "name": "Ain Fares",
+      "postalCode": "2924",
+      "hasStopDesk": false
+    },
+    {
+      "id": 59,
+      "name": "Ain Fekan",
+      "postalCode": "2918",
+      "hasStopDesk": false
+    },
+    {
+      "id": 62,
+      "name": "Ain Ferah",
+      "postalCode": "2911",
+      "hasStopDesk": false
+    },
+    {
+      "id": 65,
+      "name": "Ain Frass",
+      "postalCode": "2925",
+      "hasStopDesk": false
+    },
+    {
+      "id": 155,
+      "name": "Alaimia",
+      "postalCode": "2928",
+      "hasStopDesk": false
+    },
+    {
+      "id": 171,
+      "name": "Aouf",
+      "postalCode": "2923",
+      "hasStopDesk": false
+    },
+    {
+      "id": 289,
+      "name": "Benian",
+      "postalCode": "2919",
+      "hasStopDesk": false
+    },
+    {
+      "id": 351,
+      "name": "Bou Henni",
+      "postalCode": "2937",
+      "hasStopDesk": false
+    },
+    {
+      "id": 384,
+      "name": "Bouhanifia",
+      "postalCode": "2902",
+      "hasStopDesk": false
+    },
+    {
+      "id": 471,
+      "name": "Chorfa",
+      "postalCode": "2943",
+      "hasStopDesk": false
+    },
+    {
+      "id": 576,
+      "name": "El Bordj",
+      "postalCode": "2917",
+      "hasStopDesk": false
+    },
+    {
+      "id": 586,
+      "name": "El Gaada",
+      "postalCode": "2929",
+      "hasStopDesk": false
+    },
+    {
+      "id": 589,
+      "name": "El Ghomri",
+      "postalCode": "2934",
+      "hasStopDesk": false
+    },
+    {
+      "id": 593,
+      "name": "El Gueitena",
+      "postalCode": "2938",
+      "hasStopDesk": false
+    },
+    {
+      "id": 599,
+      "name": "El Hachem",
+      "postalCode": "2907",
+      "hasStopDesk": false
+    },
+    {
+      "id": 626,
+      "name": "El Keurt",
+      "postalCode": "2940",
+      "hasStopDesk": false
+    },
+    {
+      "id": 644,
+      "name": "El Mamounia",
+      "postalCode": "2939",
+      "hasStopDesk": false
+    },
+    {
+      "id": 650,
+      "name": "El Menaouer",
+      "postalCode": "2921",
+      "hasStopDesk": false
+    },
+    {
+      "id": 690,
+      "name": "Ferraguig",
+      "postalCode": "2933",
+      "hasStopDesk": false
+    },
+    {
+      "id": 702,
+      "name": "Froha",
+      "postalCode": "2913",
+      "hasStopDesk": false
+    },
+    {
+      "id": 705,
+      "name": "Gharrous",
+      "postalCode": "2941",
+      "hasStopDesk": false
+    },
+    {
+      "id": 711,
+      "name": "Ghriss",
+      "postalCode": "2912",
+      "hasStopDesk": false
+    },
+    {
+      "id": 722,
+      "name": "Guerdjoum",
+      "postalCode": "2942",
+      "hasStopDesk": false
+    },
+    {
+      "id": 731,
+      "name": "Hacine",
+      "postalCode": "2904",
+      "hasStopDesk": false
+    },
+    {
+      "id": 835,
+      "name": "Khalouia",
+      "postalCode": "2920",
+      "hasStopDesk": false
+    },
+    {
+      "id": 926,
+      "name": "Makhda",
+      "postalCode": "2915",
+      "hasStopDesk": false
+    },
+    {
+      "id": 935,
+      "name": "Maoussa",
+      "postalCode": "2905",
+      "hasStopDesk": false
+    },
+    {
+      "id": 939,
+      "name": "Mascara",
+      "postalCode": "2901",
+      "hasStopDesk": true
+    },
+    {
+      "id": 940,
+      "name": "Matemore",
+      "postalCode": "2914",
+      "hasStopDesk": false
+    },
+    {
+      "id": 997,
+      "name": "Mocta Douz",
+      "postalCode": "2936",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1003,
+      "name": "Mohammadia",
+      "postalCode": "2931",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1026,
+      "name": "Nesmot",
+      "postalCode": "2945",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1028,
+      "name": "Oggaz",
+      "postalCode": "2927",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1046,
+      "name": "Oued El Abtal",
+      "postalCode": "2910",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1077,
+      "name": "Oued Taria",
+      "postalCode": "2922",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1177,
+      "name": "Ras El Ain Amirouche",
+      "postalCode": "2944",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1220,
+      "name": "Sedjerara",
+      "postalCode": "2935",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1226,
+      "name": "Sehailia",
+      "postalCode": "2947",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1246,
+      "name": "Sidi Abdeldjebar",
+      "postalCode": "2946",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1248,
+      "name": "Sidi Abdelmoumene",
+      "postalCode": "2932",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1276,
+      "name": "Sidi Boussaid",
+      "postalCode": "2916",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1292,
+      "name": "Sidi Kada",
+      "postalCode": "2908",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1332,
+      "name": "Sig",
+      "postalCode": "2926",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1463,
+      "name": "Tighennif",
+      "postalCode": "2906",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1486,
+      "name": "Tizi",
+      "postalCode": "2903",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1515,
+      "name": "Zahana",
+      "postalCode": "2930",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1524,
+      "name": "Zelamta",
+      "postalCode": "2909",
+      "hasStopDesk": false
+    }
+  ],
+  "30": [
+    {
+      "id": 25,
+      "name": "Ain Beida",
+      "postalCode": "3002",
+      "hasStopDesk": false
+    },
+    {
+      "id": 577,
+      "name": "El Borma",
+      "postalCode": "3021",
+      "hasStopDesk": false
+    },
+    {
+      "id": 772,
+      "name": "Hassi Ben Abdellah",
+      "postalCode": "3012",
+      "hasStopDesk": false
+    },
+    {
+      "id": 785,
+      "name": "Hassi Messaoud",
+      "postalCode": "3004",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1015,
+      "name": "N'goussa",
+      "postalCode": "3003",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1035,
+      "name": "Ouargla",
+      "postalCode": "3001",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1199,
+      "name": "Rouissat",
+      "postalCode": "3005",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1298,
+      "name": "Sidi Khouiled",
+      "postalCode": "3011",
+      "hasStopDesk": false
+    }
+  ],
+  "31": [
+    {
+      "id": 33,
+      "name": "Ain Biya",
+      "postalCode": "3126",
+      "hasStopDesk": false
+    },
+    {
+      "id": 72,
+      "name": "Ain Kerma",
+      "postalCode": "3125",
+      "hasStopDesk": false
+    },
+    {
+      "id": 124,
+      "name": "Ain Turk",
+      "postalCode": "3109",
+      "hasStopDesk": false
+    },
+    {
+      "id": 177,
+      "name": "Arzew",
+      "postalCode": "3106",
+      "hasStopDesk": false
+    },
+    {
+      "id": 233,
+      "name": "Ben Freha",
+      "postalCode": "3120",
+      "hasStopDesk": false
+    },
+    {
+      "id": 304,
+      "name": "Bethioua",
+      "postalCode": "3107",
+      "hasStopDesk": false
+    },
+    {
+      "id": 312,
+      "name": "Bir El Djir",
+      "postalCode": "3103",
+      "hasStopDesk": true
+    },
+    {
+      "id": 373,
+      "name": "Boufatis",
+      "postalCode": "3114",
+      "hasStopDesk": false
+    },
+    {
+      "id": 410,
+      "name": "Bousfer",
+      "postalCode": "3116",
+      "hasStopDesk": false
+    },
+    {
+      "id": 418,
+      "name": "Boutlelis",
+      "postalCode": "3124",
+      "hasStopDesk": false
+    },
+    {
+      "id": 558,
+      "name": "El Ancar",
+      "postalCode": "3110",
+      "hasStopDesk": false
+    },
+    {
+      "id": 579,
+      "name": "El Braya",
+      "postalCode": "3118",
+      "hasStopDesk": false
+    },
+    {
+      "id": 625,
+      "name": "El Kerma",
+      "postalCode": "3117",
+      "hasStopDesk": false
+    },
+    {
+      "id": 680,
+      "name": "Es Senia",
+      "postalCode": "3105",
+      "hasStopDesk": false
+    },
+    {
+      "id": 703,
+      "name": "Gdyel",
+      "postalCode": "3102",
+      "hasStopDesk": false
+    },
+    {
+      "id": 773,
+      "name": "Hassi Ben Okba",
+      "postalCode": "3119",
+      "hasStopDesk": false
+    },
+    {
+      "id": 774,
+      "name": "Hassi Bounif",
+      "postalCode": "3104",
+      "hasStopDesk": false
+    },
+    {
+      "id": 784,
+      "name": "Hassi Mefsoukh",
+      "postalCode": "3121",
+      "hasStopDesk": false
+    },
+    {
+      "id": 938,
+      "name": "Marsat El Hadjadj",
+      "postalCode": "3108",
+      "hasStopDesk": false
+    },
+    {
+      "id": 976,
+      "name": "Mers El Kebir",
+      "postalCode": "3115",
+      "hasStopDesk": false
+    },
+    {
+      "id": 982,
+      "name": "Messerghin",
+      "postalCode": "3123",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1029,
+      "name": "Oran",
+      "postalCode": "3101",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1078,
+      "name": "Oued Tlelat",
+      "postalCode": "3111",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1273,
+      "name": "Sidi Ben Yebka",
+      "postalCode": "3122",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1281,
+      "name": "Sidi Chami",
+      "postalCode": "3113",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1378,
+      "name": "Tafraoui",
+      "postalCode": "3112",
+      "hasStopDesk": false
+    }
+  ],
+  "32": [
+    {
+      "id": 56,
+      "name": "Ain El Orak",
+      "postalCode": "3208",
+      "hasStopDesk": false
+    },
+    {
+      "id": 174,
+      "name": "Arbaouat",
+      "postalCode": "3209",
+      "hasStopDesk": false
+    },
+    {
+      "id": 356,
+      "name": "Boualem",
+      "postalCode": "3206",
+      "hasStopDesk": false
+    },
+    {
+      "id": 379,
+      "name": "Bougtoub",
+      "postalCode": "3210",
+      "hasStopDesk": false
+    },
+    {
+      "id": 413,
+      "name": "Boussemghoun",
+      "postalCode": "3213",
+      "hasStopDesk": false
+    },
+    {
+      "id": 427,
+      "name": "Brezina",
+      "postalCode": "3204",
+      "hasStopDesk": false
+    },
+    {
+      "id": 441,
+      "name": "Cheguig",
+      "postalCode": "3217",
+      "hasStopDesk": false
+    },
+    {
+      "id": 448,
+      "name": "Chellala",
+      "postalCode": "3214",
+      "hasStopDesk": false
+    },
+    {
+      "id": 570,
+      "name": "El Bayadh",
+      "postalCode": "3201",
+      "hasStopDesk": true
+    },
+    {
+      "id": 574,
+      "name": "El Biodh Sidi Cheikh",
+      "postalCode": "3207",
+      "hasStopDesk": false
+    },
+    {
+      "id": 575,
+      "name": "El Bnoud",
+      "postalCode": "3216",
+      "hasStopDesk": false
+    },
+    {
+      "id": 629,
+      "name": "El Kheither",
+      "postalCode": "3211",
+      "hasStopDesk": false
+    },
+    {
+      "id": 649,
+      "name": "El Mehara",
+      "postalCode": "3219",
+      "hasStopDesk": false
+    },
+    {
+      "id": 707,
+      "name": "Ghassoul",
+      "postalCode": "3205",
+      "hasStopDesk": false
+    },
+    {
+      "id": 828,
+      "name": "Kef El Ahmar",
+      "postalCode": "3212",
+      "hasStopDesk": false
+    },
+    {
+      "id": 861,
+      "name": "Krakda",
+      "postalCode": "3215",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1193,
+      "name": "Rogassa",
+      "postalCode": "3202",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1264,
+      "name": "Sidi Ameur",
+      "postalCode": "3218",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1325,
+      "name": "Sidi Slimane",
+      "postalCode": "3221",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1328,
+      "name": "Sidi Tifour",
+      "postalCode": "3222",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1364,
+      "name": "Stitten",
+      "postalCode": "3203",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1499,
+      "name": "Tousmouline",
+      "postalCode": "3220",
+      "hasStopDesk": false
+    }
+  ],
+  "33": [
+    {
+      "id": 343,
+      "name": "Bordj Omar Driss",
+      "postalCode": "3304",
+      "hasStopDesk": false
+    },
+    {
+      "id": 487,
+      "name": "Debdeb",
+      "postalCode": "3303",
+      "hasStopDesk": false
+    },
+    {
+      "id": 811,
+      "name": "Illizi",
+      "postalCode": "3301",
+      "hasStopDesk": true
+    },
+    {
+      "id": 814,
+      "name": "In Amenas",
+      "postalCode": "3306",
+      "hasStopDesk": false
+    }
+  ],
+  "34": [
+    {
+      "id": 108,
+      "name": "Ain Taghrout",
+      "postalCode": "3408",
+      "hasStopDesk": false
+    },
+    {
+      "id": 115,
+      "name": "Ain Tesra",
+      "postalCode": "3430",
+      "hasStopDesk": false
+    },
+    {
+      "id": 221,
+      "name": "Belimour",
+      "postalCode": "3412",
+      "hasStopDesk": false
+    },
+    {
+      "id": 231,
+      "name": "Ben Daoud",
+      "postalCode": "3406",
+      "hasStopDesk": false
+    },
+    {
+      "id": 317,
+      "name": "Bir Kasdali",
+      "postalCode": "3431",
+      "hasStopDesk": false
+    },
+    {
+      "id": 333,
+      "name": "Bordj Bou Arreridj",
+      "postalCode": "3401",
+      "hasStopDesk": true
+    },
+    {
+      "id": 340,
+      "name": "Bordj Ghdir",
+      "postalCode": "3409",
+      "hasStopDesk": false
+    },
+    {
+      "id": 346,
+      "name": "Bordj Zemora",
+      "postalCode": "3403",
+      "hasStopDesk": false
+    },
+    {
+      "id": 473,
+      "name": "Colla",
+      "postalCode": "3425",
+      "hasStopDesk": false
+    },
+    {
+      "id": 504,
+      "name": "Djaafra",
+      "postalCode": "3415",
+      "hasStopDesk": false
+    },
+    {
+      "id": 548,
+      "name": "El Ach",
+      "postalCode": "3427",
+      "hasStopDesk": false
+    },
+    {
+      "id": 549,
+      "name": "El Achir",
+      "postalCode": "3407",
+      "hasStopDesk": false
+    },
+    {
+      "id": 560,
+      "name": "El Anseur",
+      "postalCode": "3428",
+      "hasStopDesk": false
+    },
+    {
+      "id": 607,
+      "name": "El Hamadia",
+      "postalCode": "3411",
+      "hasStopDesk": false
+    },
+    {
+      "id": 635,
+      "name": "El M'hir",
+      "postalCode": "3405",
+      "hasStopDesk": false
+    },
+    {
+      "id": 640,
+      "name": "El Main",
+      "postalCode": "3416",
+      "hasStopDesk": false
+    },
+    {
+      "id": 710,
+      "name": "Ghilassa",
+      "postalCode": "3432",
+      "hasStopDesk": false
+    },
+    {
+      "id": 764,
+      "name": "Haraza",
+      "postalCode": "3434",
+      "hasStopDesk": false
+    },
+    {
+      "id": 767,
+      "name": "Hasnaoua",
+      "postalCode": "3419",
+      "hasStopDesk": false
+    },
+    {
+      "id": 839,
+      "name": "Khelil",
+      "postalCode": "3420",
+      "hasStopDesk": false
+    },
+    {
+      "id": 870,
+      "name": "Ksour",
+      "postalCode": "3422",
+      "hasStopDesk": false
+    },
+    {
+      "id": 930,
+      "name": "Mansoura",
+      "postalCode": "3404",
+      "hasStopDesk": false
+    },
+    {
+      "id": 949,
+      "name": "Medjana",
+      "postalCode": "3413",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1100,
+      "name": "Ouled Brahem",
+      "postalCode": "3417",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1104,
+      "name": "Ouled Dahmane",
+      "postalCode": "3418",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1139,
+      "name": "Ouled Sidi Brahim",
+      "postalCode": "3423",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1165,
+      "name": "Rabta",
+      "postalCode": "3433",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1181,
+      "name": "Ras El Oued",
+      "postalCode": "3402",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1286,
+      "name": "Sidi Embarek",
+      "postalCode": "3410",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1380,
+      "name": "Tafreg",
+      "postalCode": "3424",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1385,
+      "name": "Taglait",
+      "postalCode": "3421",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1438,
+      "name": "Teniet En Nasr",
+      "postalCode": "3414",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1444,
+      "name": "Tesmart",
+      "postalCode": "3429",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1485,
+      "name": "Tixter",
+      "postalCode": "3426",
+      "hasStopDesk": false
+    }
+  ],
+  "35": [
+    {
+      "id": 7,
+      "name": "Afir",
+      "postalCode": "3503",
+      "hasStopDesk": false
+    },
+    {
+      "id": 162,
+      "name": "Ammal",
+      "postalCode": "3524",
+      "hasStopDesk": false
+    },
+    {
+      "id": 198,
+      "name": "Baghlia",
+      "postalCode": "3505",
+      "hasStopDesk": false
+    },
+    {
+      "id": 230,
+      "name": "Ben Choud",
+      "postalCode": "3522",
+      "hasStopDesk": false
+    },
+    {
+      "id": 246,
+      "name": "Beni Amrane",
+      "postalCode": "3525",
+      "hasStopDesk": false
+    },
+    {
+      "id": 341,
+      "name": "Bordj Menaiel",
+      "postalCode": "3504",
+      "hasStopDesk": true
+    },
+    {
+      "id": 369,
+      "name": "Boudouaou",
+      "postalCode": "3502",
+      "hasStopDesk": false
+    },
+    {
+      "id": 370,
+      "name": "Boudouaou El Bahri",
+      "postalCode": "3527",
+      "hasStopDesk": false
+    },
+    {
+      "id": 402,
+      "name": "Boumerdes",
+      "postalCode": "3501",
+      "hasStopDesk": true
+    },
+    {
+      "id": 423,
+      "name": "Bouzegza Keddara",
+      "postalCode": "3519",
+      "hasStopDesk": false
+    },
+    {
+      "id": 431,
+      "name": "Chabet El Ameur",
+      "postalCode": "3513",
+      "hasStopDesk": false
+    },
+    {
+      "id": 476,
+      "name": "Corso",
+      "postalCode": "3516",
+      "hasStopDesk": false
+    },
+    {
+      "id": 494,
+      "name": "Dellys",
+      "postalCode": "3523",
+      "hasStopDesk": false
+    },
+    {
+      "id": 530,
+      "name": "Djinet",
+      "postalCode": "3508",
+      "hasStopDesk": false
+    },
+    {
+      "id": 628,
+      "name": "El Kharrouba",
+      "postalCode": "3532",
+      "hasStopDesk": false
+    },
+    {
+      "id": 757,
+      "name": "Hammedi",
+      "postalCode": "3530",
+      "hasStopDesk": false
+    },
+    {
+      "id": 821,
+      "name": "Isser",
+      "postalCode": "3509",
+      "hasStopDesk": false
+    },
+    {
+      "id": 840,
+      "name": "Khemis El Khechna",
+      "postalCode": "3531",
+      "hasStopDesk": false
+    },
+    {
+      "id": 883,
+      "name": "Larbatache",
+      "postalCode": "3518",
+      "hasStopDesk": false
+    },
+    {
+      "id": 890,
+      "name": "Leghata",
+      "postalCode": "3529",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1017,
+      "name": "Naciria",
+      "postalCode": "3507",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1089,
+      "name": "Ouled Aissa",
+      "postalCode": "3521",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1115,
+      "name": "Ouled Hedadj",
+      "postalCode": "3528",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1127,
+      "name": "Ouled Moussa",
+      "postalCode": "3517",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1244,
+      "name": "Si Mustapha",
+      "postalCode": "3511",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1283,
+      "name": "Sidi Daoud",
+      "postalCode": "3506",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1350,
+      "name": "Souk El Haad",
+      "postalCode": "3526",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1413,
+      "name": "Taourga",
+      "postalCode": "3520",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1449,
+      "name": "Thenia",
+      "postalCode": "3514",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1458,
+      "name": "Tidjelabine",
+      "postalCode": "3512",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1469,
+      "name": "Timezrit",
+      "postalCode": "3515",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1527,
+      "name": "Zemmouri",
+      "postalCode": "3510",
+      "hasStopDesk": false
+    }
+  ],
+  "36": [
+    {
+      "id": 46,
+      "name": "Ain El Assel",
+      "postalCode": "3606",
+      "hasStopDesk": false
+    },
+    {
+      "id": 73,
+      "name": "Ain Kerma",
+      "postalCode": "3621",
+      "hasStopDesk": false
+    },
+    {
+      "id": 178,
+      "name": "Asfour",
+      "postalCode": "3617",
+      "hasStopDesk": false
+    },
+    {
+      "id": 235,
+      "name": "Ben M Hidi",
+      "postalCode": "3603",
+      "hasStopDesk": false
+    },
+    {
+      "id": 300,
+      "name": "Berrihane",
+      "postalCode": "3610",
+      "hasStopDesk": false
+    },
+    {
+      "id": 302,
+      "name": "Besbes",
+      "postalCode": "3616",
+      "hasStopDesk": false
+    },
+    {
+      "id": 378,
+      "name": "Bougous",
+      "postalCode": "3604",
+      "hasStopDesk": false
+    },
+    {
+      "id": 381,
+      "name": "Bouhadjar",
+      "postalCode": "3602",
+      "hasStopDesk": false
+    },
+    {
+      "id": 416,
+      "name": "Bouteldja",
+      "postalCode": "3608",
+      "hasStopDesk": false
+    },
+    {
+      "id": 438,
+      "name": "Chebaita Mokhtar",
+      "postalCode": "3615",
+      "hasStopDesk": false
+    },
+    {
+      "id": 440,
+      "name": "Chefia",
+      "postalCode": "3612",
+      "hasStopDesk": false
+    },
+    {
+      "id": 467,
+      "name": "Chihani",
+      "postalCode": "3614",
+      "hasStopDesk": false
+    },
+    {
+      "id": 545,
+      "name": "Drean",
+      "postalCode": "3613",
+      "hasStopDesk": false
+    },
+    {
+      "id": 546,
+      "name": "Echatt",
+      "postalCode": "3618",
+      "hasStopDesk": false
+    },
+    {
+      "id": 553,
+      "name": "El Aioun",
+      "postalCode": "3607",
+      "hasStopDesk": false
+    },
+    {
+      "id": 621,
+      "name": "El Kala",
+      "postalCode": "3605",
+      "hasStopDesk": false
+    },
+    {
+      "id": 671,
+      "name": "El Tarf",
+      "postalCode": "3601",
+      "hasStopDesk": true
+    },
+    {
+      "id": 748,
+      "name": "Hammam Beni Salah",
+      "postalCode": "3623",
+      "hasStopDesk": false
+    },
+    {
+      "id": 872,
+      "name": "Lac Des Oiseaux",
+      "postalCode": "3611",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1081,
+      "name": "Oued Zitoun",
+      "postalCode": "3622",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1174,
+      "name": "Raml Souk",
+      "postalCode": "3624",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1345,
+      "name": "Souarekh",
+      "postalCode": "3609",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1532,
+      "name": "Zerizer",
+      "postalCode": "3619",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1537,
+      "name": "Zitouna",
+      "postalCode": "3620",
+      "hasStopDesk": false
+    }
+  ],
+  "37": [
+    {
+      "id": 1152,
+      "name": "Oum El Assel",
+      "postalCode": "3702",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1476,
+      "name": "Tindouf",
+      "postalCode": "3701",
+      "hasStopDesk": true
+    }
+  ],
+  "38": [
+    {
+      "id": 163,
+      "name": "Ammari",
+      "postalCode": "3813",
+      "hasStopDesk": false
+    },
+    {
+      "id": 252,
+      "name": "Beni Chaib",
+      "postalCode": "3805",
+      "hasStopDesk": false
+    },
+    {
+      "id": 265,
+      "name": "Beni Lahcene",
+      "postalCode": "3822",
+      "hasStopDesk": false
+    },
+    {
+      "id": 334,
+      "name": "Bordj Bounaama",
+      "postalCode": "3802",
+      "hasStopDesk": false
+    },
+    {
+      "id": 336,
+      "name": "Bordj El Emir Abdelkader",
+      "postalCode": "3809",
+      "hasStopDesk": false
+    },
+    {
+      "id": 347,
+      "name": "Bou Caid",
+      "postalCode": "3821",
+      "hasStopDesk": false
+    },
+    {
+      "id": 843,
+      "name": "Khemisti",
+      "postalCode": "3811",
+      "hasStopDesk": false
+    },
+    {
+      "id": 881,
+      "name": "Larbaa",
+      "postalCode": "3816",
+      "hasStopDesk": false
+    },
+    {
+      "id": 884,
+      "name": "Lardjem",
+      "postalCode": "3806",
+      "hasStopDesk": false
+    },
+    {
+      "id": 886,
+      "name": "Layoune",
+      "postalCode": "3810",
+      "hasStopDesk": false
+    },
+    {
+      "id": 887,
+      "name": "Lazharia",
+      "postalCode": "3804",
+      "hasStopDesk": false
+    },
+    {
+      "id": 909,
+      "name": "Maacem",
+      "postalCode": "3817",
+      "hasStopDesk": false
+    },
+    {
+      "id": 963,
+      "name": "Melaab",
+      "postalCode": "3807",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1096,
+      "name": "Ouled Bessem",
+      "postalCode": "3812",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1251,
+      "name": "Sidi Abed",
+      "postalCode": "3818",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1277,
+      "name": "Sidi Boutouchent",
+      "postalCode": "3815",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1303,
+      "name": "Sidi Lantri",
+      "postalCode": "3808",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1326,
+      "name": "Sidi Slimane",
+      "postalCode": "3820",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1399,
+      "name": "Tamellalet",
+      "postalCode": "3819",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1450,
+      "name": "Theniet El Had",
+      "postalCode": "3803",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1483,
+      "name": "Tissemsilt",
+      "postalCode": "3801",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1510,
+      "name": "Youssoufia",
+      "postalCode": "3814",
+      "hasStopDesk": false
+    }
+  ],
+  "39": [
+    {
+      "id": 206,
+      "name": "Bayadha",
+      "postalCode": "3904",
+      "hasStopDesk": false
+    },
+    {
+      "id": 234,
+      "name": "Ben Guecha",
+      "postalCode": "3919",
+      "hasStopDesk": false
+    },
+    {
+      "id": 488,
+      "name": "Debila",
+      "postalCode": "3911",
+      "hasStopDesk": false
+    },
+    {
+      "id": 533,
+      "name": "Douar El Maa",
+      "postalCode": "3915",
+      "hasStopDesk": false
+    },
+    {
+      "id": 660,
+      "name": "El Ogla",
+      "postalCode": "3925",
+      "hasStopDesk": false
+    },
+    {
+      "id": 664,
+      "name": "El Oued",
+      "postalCode": "3901",
+      "hasStopDesk": true
+    },
+    {
+      "id": 720,
+      "name": "Guemar",
+      "postalCode": "3906",
+      "hasStopDesk": false
+    },
+    {
+      "id": 758,
+      "name": "Hamraia",
+      "postalCode": "3909",
+      "hasStopDesk": false
+    },
+    {
+      "id": 768,
+      "name": "Hassani Abdelkrim",
+      "postalCode": "3912",
+      "hasStopDesk": false
+    },
+    {
+      "id": 782,
+      "name": "Hassi Khalifa",
+      "postalCode": "3913",
+      "hasStopDesk": false
+    },
+    {
+      "id": 860,
+      "name": "Kouinine",
+      "postalCode": "3907",
+      "hasStopDesk": false
+    },
+    {
+      "id": 923,
+      "name": "Magrane",
+      "postalCode": "3918",
+      "hasStopDesk": false
+    },
+    {
+      "id": 990,
+      "name": "Mih Ouansa",
+      "postalCode": "3926",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1021,
+      "name": "Nakhla",
+      "postalCode": "3905",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1047,
+      "name": "Oued El Alenda",
+      "postalCode": "3903",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1160,
+      "name": "Ourmes",
+      "postalCode": "3920",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1187,
+      "name": "Reguiba",
+      "postalCode": "3908",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1192,
+      "name": "Robbah",
+      "postalCode": "3902",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1266,
+      "name": "Sidi Aoun",
+      "postalCode": "3916",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1384,
+      "name": "Taghzout",
+      "postalCode": "3910",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1393,
+      "name": "Taleb Larbi",
+      "postalCode": "3914",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1502,
+      "name": "Trifaoui",
+      "postalCode": "3917",
+      "hasStopDesk": false
+    }
+  ],
+  "40": [
+    {
+      "id": 121,
+      "name": "Ain Touila",
+      "postalCode": "4006",
+      "hasStopDesk": false
+    },
+    {
+      "id": 193,
+      "name": "Babar",
+      "postalCode": "4013",
+      "hasStopDesk": false
+    },
+    {
+      "id": 197,
+      "name": "Baghai",
+      "postalCode": "4004",
+      "hasStopDesk": false
+    },
+    {
+      "id": 387,
+      "name": "Bouhmama",
+      "postalCode": "4008",
+      "hasStopDesk": false
+    },
+    {
+      "id": 446,
+      "name": "Chelia",
+      "postalCode": "4021",
+      "hasStopDesk": false
+    },
+    {
+      "id": 456,
+      "name": "Cherchar",
+      "postalCode": "4011",
+      "hasStopDesk": false
+    },
+    {
+      "id": 517,
+      "name": "Djellal",
+      "postalCode": "4012",
+      "hasStopDesk": false
+    },
+    {
+      "id": 610,
+      "name": "El Hamma",
+      "postalCode": "4005",
+      "hasStopDesk": false
+    },
+    {
+      "id": 639,
+      "name": "El Mahmal",
+      "postalCode": "4017",
+      "hasStopDesk": false
+    },
+    {
+      "id": 665,
+      "name": "El Oueldja",
+      "postalCode": "4009",
+      "hasStopDesk": false
+    },
+    {
+      "id": 676,
+      "name": "Ensigha",
+      "postalCode": "4015",
+      "hasStopDesk": false
+    },
+    {
+      "id": 824,
+      "name": "Kais",
+      "postalCode": "4003",
+      "hasStopDesk": false
+    },
+    {
+      "id": 846,
+      "name": "Khenchela",
+      "postalCode": "4001",
+      "hasStopDesk": true
+    },
+    {
+      "id": 853,
+      "name": "Khirane",
+      "postalCode": "4020",
+      "hasStopDesk": false
+    },
+    {
+      "id": 905,
+      "name": "M'sara",
+      "postalCode": "4018",
+      "hasStopDesk": false
+    },
+    {
+      "id": 908,
+      "name": "M'toussa",
+      "postalCode": "4002",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1131,
+      "name": "Ouled Rechache",
+      "postalCode": "4016",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1190,
+      "name": "Remila",
+      "postalCode": "4010",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1407,
+      "name": "Tamza",
+      "postalCode": "4014",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1416,
+      "name": "Taouzianat",
+      "postalCode": "4007",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1504,
+      "name": "Yabous",
+      "postalCode": "4019",
+      "hasStopDesk": false
+    }
+  ],
+  "41": [
+    {
+      "id": 106,
+      "name": "Ain Soltane",
+      "postalCode": "4118",
+      "hasStopDesk": false
+    },
+    {
+      "id": 128,
+      "name": "Ain Zana",
+      "postalCode": "4117",
+      "hasStopDesk": false
+    },
+    {
+      "id": 307,
+      "name": "Bir Bouhouche",
+      "postalCode": "4114",
+      "hasStopDesk": false
+    },
+    {
+      "id": 544,
+      "name": "Drea",
+      "postalCode": "4109",
+      "hasStopDesk": false
+    },
+    {
+      "id": 734,
+      "name": "Haddada",
+      "postalCode": "4110",
+      "hasStopDesk": false
+    },
+    {
+      "id": 761,
+      "name": "Hanencha",
+      "postalCode": "4103",
+      "hasStopDesk": false
+    },
+    {
+      "id": 837,
+      "name": "Khedara",
+      "postalCode": "4111",
+      "hasStopDesk": false
+    },
+    {
+      "id": 842,
+      "name": "Khemissa",
+      "postalCode": "4123",
+      "hasStopDesk": false
+    },
+    {
+      "id": 902,
+      "name": "M'daourouche",
+      "postalCode": "4115",
+      "hasStopDesk": false
+    },
+    {
+      "id": 918,
+      "name": "Machroha",
+      "postalCode": "4104",
+      "hasStopDesk": false
+    },
+    {
+      "id": 971,
+      "name": "Merahna",
+      "postalCode": "4112",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1062,
+      "name": "Oued Kebrit",
+      "postalCode": "4124",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1108,
+      "name": "Ouled Driss",
+      "postalCode": "4105",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1126,
+      "name": "Ouled Moumen",
+      "postalCode": "4113",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1151,
+      "name": "Oum El Adhaim",
+      "postalCode": "4116",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1164,
+      "name": "Quillen",
+      "postalCode": "4119",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1166,
+      "name": "Ragouba",
+      "postalCode": "4122",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1202,
+      "name": "Safel El Ouiden",
+      "postalCode": "4121",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1221,
+      "name": "Sedrata",
+      "postalCode": "4102",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1287,
+      "name": "Sidi Fredj",
+      "postalCode": "4120",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1349,
+      "name": "Souk Ahras",
+      "postalCode": "4101",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1412,
+      "name": "Taoura",
+      "postalCode": "4108",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1442,
+      "name": "Terraguelt",
+      "postalCode": "4125",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1459,
+      "name": "Tiffech",
+      "postalCode": "4106",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1513,
+      "name": "Zaarouria",
+      "postalCode": "4107",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1540,
+      "name": "Zouabi",
+      "postalCode": "4126",
+      "hasStopDesk": false
+    }
+  ],
+  "42": [
+    {
+      "id": 9,
+      "name": "Aghbal",
+      "postalCode": "4207",
+      "hasStopDesk": false
+    },
+    {
+      "id": 16,
+      "name": "Ahmer El Ain",
+      "postalCode": "4219",
+      "hasStopDesk": false
+    },
+    {
+      "id": 109,
+      "name": "Ain Tagourait",
+      "postalCode": "4213",
+      "hasStopDesk": false
+    },
+    {
+      "id": 181,
+      "name": "Attatba",
+      "postalCode": "4225",
+      "hasStopDesk": false
+    },
+    {
+      "id": 271,
+      "name": "Beni Mileuk",
+      "postalCode": "4227",
+      "hasStopDesk": false
+    },
+    {
+      "id": 350,
+      "name": "Bou Haroun",
+      "postalCode": "4220",
+      "hasStopDesk": false
+    },
+    {
+      "id": 352,
+      "name": "Bou Ismail",
+      "postalCode": "4218",
+      "hasStopDesk": false
+    },
+    {
+      "id": 408,
+      "name": "Bourkika",
+      "postalCode": "4205",
+      "hasStopDesk": false
+    },
+    {
+      "id": 434,
+      "name": "Chaiba",
+      "postalCode": "4212",
+      "hasStopDesk": false
+    },
+    {
+      "id": 457,
+      "name": "Cherchell",
+      "postalCode": "4214",
+      "hasStopDesk": false
+    },
+    {
+      "id": 481,
+      "name": "Damous",
+      "postalCode": "4215",
+      "hasStopDesk": false
+    },
+    {
+      "id": 532,
+      "name": "Douaouda",
+      "postalCode": "4204",
+      "hasStopDesk": false
+    },
+    {
+      "id": 697,
+      "name": "Fouka",
+      "postalCode": "4217",
+      "hasStopDesk": false
+    },
+    {
+      "id": 713,
+      "name": "Gouraya",
+      "postalCode": "4210",
+      "hasStopDesk": false
+    },
+    {
+      "id": 738,
+      "name": "Hadjout",
+      "postalCode": "4208",
+      "hasStopDesk": false
+    },
+    {
+      "id": 739,
+      "name": "Hadjret Ennous",
+      "postalCode": "4228",
+      "hasStopDesk": false
+    },
+    {
+      "id": 844,
+      "name": "Khemisti",
+      "postalCode": "4206",
+      "hasStopDesk": false
+    },
+    {
+      "id": 857,
+      "name": "Kolea",
+      "postalCode": "4224",
+      "hasStopDesk": true
+    },
+    {
+      "id": 885,
+      "name": "Larhat",
+      "postalCode": "4203",
+      "hasStopDesk": false
+    },
+    {
+      "id": 968,
+      "name": "Menaceur",
+      "postalCode": "4202",
+      "hasStopDesk": false
+    },
+    {
+      "id": 970,
+      "name": "Merad",
+      "postalCode": "4216",
+      "hasStopDesk": false
+    },
+    {
+      "id": 981,
+      "name": "Messelmoun",
+      "postalCode": "4222",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1018,
+      "name": "Nador",
+      "postalCode": "4211",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1262,
+      "name": "Sidi Amar",
+      "postalCode": "4209",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1288,
+      "name": "Sidi Ghiles",
+      "postalCode": "4221",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1320,
+      "name": "Sidi Rached",
+      "postalCode": "4223",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1324,
+      "name": "Sidi Semiane",
+      "postalCode": "4226",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1480,
+      "name": "Tipaza",
+      "postalCode": "4201",
+      "hasStopDesk": true
+    }
+  ],
+  "43": [
+    {
+      "id": 15,
+      "name": "Ahmed Rachedi",
+      "postalCode": "4311",
+      "hasStopDesk": false
+    },
+    {
+      "id": 26,
+      "name": "Ain Beida Harriche",
+      "postalCode": "4330",
+      "hasStopDesk": false
+    },
+    {
+      "id": 86,
+      "name": "Ain Mellouk",
+      "postalCode": "4305",
+      "hasStopDesk": false
+    },
+    {
+      "id": 118,
+      "name": "Ain Tine",
+      "postalCode": "4325",
+      "hasStopDesk": false
+    },
+    {
+      "id": 160,
+      "name": "Amira Arres",
+      "postalCode": "4322",
+      "hasStopDesk": false
+    },
+    {
+      "id": 294,
+      "name": "Benyahia Abderrahmane",
+      "postalCode": "4309",
+      "hasStopDesk": false
+    },
+    {
+      "id": 385,
+      "name": "Bouhatem",
+      "postalCode": "4314",
+      "hasStopDesk": false
+    },
+    {
+      "id": 445,
+      "name": "Chelghoum Laid",
+      "postalCode": "4303",
+      "hasStopDesk": false
+    },
+    {
+      "id": 466,
+      "name": "Chigara",
+      "postalCode": "4332",
+      "hasStopDesk": false
+    },
+    {
+      "id": 497,
+      "name": "Derrahi Bousselah",
+      "postalCode": "4320",
+      "hasStopDesk": false
+    },
+    {
+      "id": 648,
+      "name": "El Mechira",
+      "postalCode": "4326",
+      "hasStopDesk": false
+    },
+    {
+      "id": 672,
+      "name": "Elayadi Barbes",
+      "postalCode": "4329",
+      "hasStopDesk": false
+    },
+    {
+      "id": 688,
+      "name": "Ferdjioua",
+      "postalCode": "4302",
+      "hasStopDesk": false
+    },
+    {
+      "id": 714,
+      "name": "Grarem Gouga",
+      "postalCode": "4317",
+      "hasStopDesk": false
+    },
+    {
+      "id": 743,
+      "name": "Hamala",
+      "postalCode": "4324",
+      "hasStopDesk": false
+    },
+    {
+      "id": 992,
+      "name": "Mila",
+      "postalCode": "4301",
+      "hasStopDesk": true
+    },
+    {
+      "id": 994,
+      "name": "Minar Zarza",
+      "postalCode": "4321",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1038,
+      "name": "Oued Athmenia",
+      "postalCode": "4304",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1055,
+      "name": "Oued Endja",
+      "postalCode": "4310",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1072,
+      "name": "Oued Seguen",
+      "postalCode": "4307",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1118,
+      "name": "Ouled Khalouf",
+      "postalCode": "4312",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1196,
+      "name": "Rouached",
+      "postalCode": "4315",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1295,
+      "name": "Sidi Khelifa",
+      "postalCode": "4327",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1312,
+      "name": "Sidi Merouane",
+      "postalCode": "4318",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1373,
+      "name": "Tadjenanet",
+      "postalCode": "4308",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1420,
+      "name": "Tassadane Haddada",
+      "postalCode": "4319",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1431,
+      "name": "Teleghma",
+      "postalCode": "4306",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1443,
+      "name": "Terrai Bainem",
+      "postalCode": "4323",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1446,
+      "name": "Tessala",
+      "postalCode": "4316",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1454,
+      "name": "Tiberguent",
+      "postalCode": "4313",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1505,
+      "name": "Yahia Beniguecha",
+      "postalCode": "4331",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1522,
+      "name": "Zeghaia",
+      "postalCode": "4328",
+      "hasStopDesk": false
+    }
+  ],
+  "44": [
+    {
+      "id": 30,
+      "name": "Ain Benian",
+      "postalCode": "4426",
+      "hasStopDesk": false
+    },
+    {
+      "id": 37,
+      "name": "Ain Bouyahia",
+      "postalCode": "4433",
+      "hasStopDesk": false
+    },
+    {
+      "id": 41,
+      "name": "Ain Defla",
+      "postalCode": "4401",
+      "hasStopDesk": true
+    },
+    {
+      "id": 80,
+      "name": "Ain Lechiakh",
+      "postalCode": "4414",
+      "hasStopDesk": false
+    },
+    {
+      "id": 107,
+      "name": "Ain Soltane",
+      "postalCode": "4420",
+      "hasStopDesk": false
+    },
+    {
+      "id": 120,
+      "name": "Ain Tork",
+      "postalCode": "4423",
+      "hasStopDesk": false
+    },
+    {
+      "id": 175,
+      "name": "Arib",
+      "postalCode": "4406",
+      "hasStopDesk": false
+    },
+    {
+      "id": 202,
+      "name": "Barbouche",
+      "postalCode": "4428",
+      "hasStopDesk": false
+    },
+    {
+      "id": 204,
+      "name": "Bathia",
+      "postalCode": "4431",
+      "hasStopDesk": false
+    },
+    {
+      "id": 217,
+      "name": "Belaas",
+      "postalCode": "4436",
+      "hasStopDesk": false
+    },
+    {
+      "id": 225,
+      "name": "Ben Allal",
+      "postalCode": "4425",
+      "hasStopDesk": false
+    },
+    {
+      "id": 320,
+      "name": "Bir Ould Khelifa",
+      "postalCode": "4419",
+      "hasStopDesk": false
+    },
+    {
+      "id": 339,
+      "name": "Bordj Emir Khaled",
+      "postalCode": "4422",
+      "hasStopDesk": false
+    },
+    {
+      "id": 401,
+      "name": "Boumedfaa",
+      "postalCode": "4403",
+      "hasStopDesk": false
+    },
+    {
+      "id": 406,
+      "name": "Bourached",
+      "postalCode": "4409",
+      "hasStopDesk": false
+    },
+    {
+      "id": 516,
+      "name": "Djelida",
+      "postalCode": "4407",
+      "hasStopDesk": false
+    },
+    {
+      "id": 519,
+      "name": "Djemaa Ouled Cheikh",
+      "postalCode": "4429",
+      "hasStopDesk": false
+    },
+    {
+      "id": 522,
+      "name": "Djendel",
+      "postalCode": "4412",
+      "hasStopDesk": false
+    },
+    {
+      "id": 547,
+      "name": "El Abadia",
+      "postalCode": "4411",
+      "hasStopDesk": false
+    },
+    {
+      "id": 556,
+      "name": "El Amra",
+      "postalCode": "4408",
+      "hasStopDesk": false
+    },
+    {
+      "id": 567,
+      "name": "El Attaf",
+      "postalCode": "4410",
+      "hasStopDesk": true
+    },
+    {
+      "id": 641,
+      "name": "El Maine",
+      "postalCode": "4434",
+      "hasStopDesk": false
+    },
+    {
+      "id": 755,
+      "name": "Hammam Righa",
+      "postalCode": "4405",
+      "hasStopDesk": false
+    },
+    {
+      "id": 769,
+      "name": "Hassania",
+      "postalCode": "4418",
+      "hasStopDesk": false
+    },
+    {
+      "id": 794,
+      "name": "Hoceinia",
+      "postalCode": "4427",
+      "hasStopDesk": false
+    },
+    {
+      "id": 841,
+      "name": "Khemis Miliana",
+      "postalCode": "4404",
+      "hasStopDesk": true
+    },
+    {
+      "id": 961,
+      "name": "Mekhatria",
+      "postalCode": "4430",
+      "hasStopDesk": false
+    },
+    {
+      "id": 993,
+      "name": "Miliana",
+      "postalCode": "4402",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1042,
+      "name": "Oued Chorfa",
+      "postalCode": "4413",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1044,
+      "name": "Oued Djemaa",
+      "postalCode": "4415",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1198,
+      "name": "Rouina",
+      "postalCode": "4416",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1302,
+      "name": "Sidi Lakhdar",
+      "postalCode": "4424",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1369,
+      "name": "Tacheta Zegagha",
+      "postalCode": "4432",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1417,
+      "name": "Tarik Ibn Ziad",
+      "postalCode": "4421",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1455,
+      "name": "Tiberkanine",
+      "postalCode": "4435",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1521,
+      "name": "Zeddine",
+      "postalCode": "4417",
+      "hasStopDesk": false
+    }
+  ],
+  "45": [
+    {
+      "id": 28,
+      "name": "Ain Ben Khelil",
+      "postalCode": "4509",
+      "hasStopDesk": false
+    },
+    {
+      "id": 99,
+      "name": "Ain Safra",
+      "postalCode": "4503",
+      "hasStopDesk": false
+    },
+    {
+      "id": 179,
+      "name": "Assela",
+      "postalCode": "4507",
+      "hasStopDesk": false
+    },
+    {
+      "id": 524,
+      "name": "Djeniane Bourzeg",
+      "postalCode": "4508",
+      "hasStopDesk": false
+    },
+    {
+      "id": 573,
+      "name": "El Biod",
+      "postalCode": "4512",
+      "hasStopDesk": false
+    },
+    {
+      "id": 827,
+      "name": "Kasdir",
+      "postalCode": "4511",
+      "hasStopDesk": false
+    },
+    {
+      "id": 927,
+      "name": "Makman Ben Amer",
+      "postalCode": "4510",
+      "hasStopDesk": false
+    },
+    {
+      "id": 943,
+      "name": "Mecheria",
+      "postalCode": "4502",
+      "hasStopDesk": true
+    },
+    {
+      "id": 999,
+      "name": "Moghrar",
+      "postalCode": "4506",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1016,
+      "name": "Naama",
+      "postalCode": "4501",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1241,
+      "name": "Sfissifa",
+      "postalCode": "4505",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1479,
+      "name": "Tiout",
+      "postalCode": "4504",
+      "hasStopDesk": false
+    }
+  ],
+  "46": [
+    {
+      "id": 11,
+      "name": "Aghlal",
+      "postalCode": "4607",
+      "hasStopDesk": false
+    },
+    {
+      "id": 45,
+      "name": "Ain El Arbaa",
+      "postalCode": "4609",
+      "hasStopDesk": false
+    },
+    {
+      "id": 76,
+      "name": "Ain Kihal",
+      "postalCode": "4603",
+      "hasStopDesk": false
+    },
+    {
+      "id": 114,
+      "name": "Ain Temouchent",
+      "postalCode": "4601",
+      "hasStopDesk": true
+    },
+    {
+      "id": 119,
+      "name": "Ain Tolba",
+      "postalCode": "4618",
+      "hasStopDesk": false
+    },
+    {
+      "id": 170,
+      "name": "Aoubellil",
+      "postalCode": "4613",
+      "hasStopDesk": false
+    },
+    {
+      "id": 279,
+      "name": "Beni Saf",
+      "postalCode": "4623",
+      "hasStopDesk": false
+    },
+    {
+      "id": 420,
+      "name": "Bouzedjar",
+      "postalCode": "4605",
+      "hasStopDesk": false
+    },
+    {
+      "id": 430,
+      "name": "Chaabat El Ham",
+      "postalCode": "4602",
+      "hasStopDesk": false
+    },
+    {
+      "id": 453,
+      "name": "Chentouf",
+      "postalCode": "4611",
+      "hasStopDesk": false
+    },
+    {
+      "id": 557,
+      "name": "El Amria",
+      "postalCode": "4619",
+      "hasStopDesk": false
+    },
+    {
+      "id": 643,
+      "name": "El Malah",
+      "postalCode": "4614",
+      "hasStopDesk": false
+    },
+    {
+      "id": 654,
+      "name": "El Messaid",
+      "postalCode": "4628",
+      "hasStopDesk": false
+    },
+    {
+      "id": 674,
+      "name": "Emir Abdelkader",
+      "postalCode": "4627",
+      "hasStopDesk": false
+    },
+    {
+      "id": 750,
+      "name": "Hammam Bouhadjar",
+      "postalCode": "4604",
+      "hasStopDesk": false
+    },
+    {
+      "id": 770,
+      "name": "Hassasna",
+      "postalCode": "4621",
+      "hasStopDesk": false
+    },
+    {
+      "id": 778,
+      "name": "Hassi El Ghella",
+      "postalCode": "4620",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1039,
+      "name": "Oued Berkeche",
+      "postalCode": "4606",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1070,
+      "name": "Oued Sebbah",
+      "postalCode": "4616",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1098,
+      "name": "Ouled Boudjemaa",
+      "postalCode": "4617",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1120,
+      "name": "Ouled Kihal",
+      "postalCode": "4622",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1147,
+      "name": "Oulhaca El Gheraba",
+      "postalCode": "4625",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1272,
+      "name": "Sidi Ben Adda",
+      "postalCode": "4612",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1275,
+      "name": "Sidi Boumediene",
+      "postalCode": "4615",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1318,
+      "name": "Sidi Ouriache",
+      "postalCode": "4626",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1322,
+      "name": "Sidi Safi",
+      "postalCode": "4624",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1408,
+      "name": "Tamzoura",
+      "postalCode": "4610",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1440,
+      "name": "Terga",
+      "postalCode": "4608",
+      "hasStopDesk": false
+    }
+  ],
+  "47": [
+    {
+      "id": 298,
+      "name": "Berriane",
+      "postalCode": "4704",
+      "hasStopDesk": false
+    },
+    {
+      "id": 405,
+      "name": "Bounoura",
+      "postalCode": "4710",
+      "hasStopDesk": false
+    },
+    {
+      "id": 501,
+      "name": "Dhayet Bendhahoua",
+      "postalCode": "4703",
+      "hasStopDesk": false
+    },
+    {
+      "id": 568,
+      "name": "El Atteuf",
+      "postalCode": "4707",
+      "hasStopDesk": false
+    },
+    {
+      "id": 595,
+      "name": "El Guerrara",
+      "postalCode": "4706",
+      "hasStopDesk": false
+    },
+    {
+      "id": 704,
+      "name": "Ghardaia",
+      "postalCode": "4701",
+      "hasStopDesk": true
+    },
+    {
+      "id": 931,
+      "name": "Mansoura",
+      "postalCode": "4713",
+      "hasStopDesk": false
+    },
+    {
+      "id": 984,
+      "name": "Metlili",
+      "postalCode": "4705",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1216,
+      "name": "Sebseb",
+      "postalCode": "4709",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1525,
+      "name": "Zelfana",
+      "postalCode": "4708",
+      "hasStopDesk": false
+    }
+  ],
+  "48": [
+    {
+      "id": 94,
+      "name": "Ain Rahma",
+      "postalCode": "4824",
+      "hasStopDesk": false
+    },
+    {
+      "id": 111,
+      "name": "Ain Tarek",
+      "postalCode": "4819",
+      "hasStopDesk": false
+    },
+    {
+      "id": 164,
+      "name": "Ammi Moussa",
+      "postalCode": "4811",
+      "hasStopDesk": false
+    },
+    {
+      "id": 218,
+      "name": "Belaassel Bouzagza",
+      "postalCode": "4803",
+      "hasStopDesk": false
+    },
+    {
+      "id": 242,
+      "name": "Bendaoud",
+      "postalCode": "4835",
+      "hasStopDesk": false
+    },
+    {
+      "id": 255,
+      "name": "Beni Dergoun",
+      "postalCode": "4813",
+      "hasStopDesk": false
+    },
+    {
+      "id": 285,
+      "name": "Beni Zentis",
+      "postalCode": "4830",
+      "hasStopDesk": false
+    },
+    {
+      "id": 482,
+      "name": "Dar Ben Abdelah",
+      "postalCode": "4832",
+      "hasStopDesk": false
+    },
+    {
+      "id": 527,
+      "name": "Djidiouia",
+      "postalCode": "4814",
+      "hasStopDesk": false
+    },
+    {
+      "id": 596,
+      "name": "El Guettar",
+      "postalCode": "4815",
+      "hasStopDesk": false
+    },
+    {
+      "id": 597,
+      "name": "El H'madna",
+      "postalCode": "4807",
+      "hasStopDesk": false
+    },
+    {
+      "id": 617,
+      "name": "El Hassi",
+      "postalCode": "4833",
+      "hasStopDesk": false
+    },
+    {
+      "id": 647,
+      "name": "El Matmar",
+      "postalCode": "4817",
+      "hasStopDesk": false
+    },
+    {
+      "id": 668,
+      "name": "El Ouldja",
+      "postalCode": "4836",
+      "hasStopDesk": false
+    },
+    {
+      "id": 732,
+      "name": "Had Echkalla",
+      "postalCode": "4834",
+      "hasStopDesk": false
+    },
+    {
+      "id": 759,
+      "name": "Hamri",
+      "postalCode": "4816",
+      "hasStopDesk": false
+    },
+    {
+      "id": 825,
+      "name": "Kalaa",
+      "postalCode": "4823",
+      "hasStopDesk": false
+    },
+    {
+      "id": 874,
+      "name": "Lahlef",
+      "postalCode": "4829",
+      "hasStopDesk": false
+    },
+    {
+      "id": 942,
+      "name": "Mazouna",
+      "postalCode": "4822",
+      "hasStopDesk": false
+    },
+    {
+      "id": 948,
+      "name": "Mediouna",
+      "postalCode": "4809",
+      "hasStopDesk": false
+    },
+    {
+      "id": 969,
+      "name": "Mendes",
+      "postalCode": "4828",
+      "hasStopDesk": false
+    },
+    {
+      "id": 972,
+      "name": "Merdja Sidi Abed",
+      "postalCode": "4837",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1036,
+      "name": "Ouarizane",
+      "postalCode": "4821",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1052,
+      "name": "Oued El Djemaa",
+      "postalCode": "4826",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1056,
+      "name": "Oued Essalem",
+      "postalCode": "4820",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1068,
+      "name": "Oued Rhiou",
+      "postalCode": "4802",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1088,
+      "name": "Ouled Aiche",
+      "postalCode": "4805",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1140,
+      "name": "Ouled Sidi Mihoub",
+      "postalCode": "4838",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1173,
+      "name": "Ramka",
+      "postalCode": "4827",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1188,
+      "name": "Relizane",
+      "postalCode": "4801",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1297,
+      "name": "Sidi Khettab",
+      "postalCode": "4810",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1304,
+      "name": "Sidi Lazreg",
+      "postalCode": "4806",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1307,
+      "name": "Sidi M'hamed Benali",
+      "postalCode": "4808",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1308,
+      "name": "Sidi M'hamed Benaouda",
+      "postalCode": "4818",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1321,
+      "name": "Sidi Saada",
+      "postalCode": "4804",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1351,
+      "name": "Souk El Had",
+      "postalCode": "4831",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1508,
+      "name": "Yellel",
+      "postalCode": "4825",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1526,
+      "name": "Zemmoura",
+      "postalCode": "4812",
+      "hasStopDesk": false
+    }
+  ],
+  "49": [
+    {
+      "id": 172,
+      "name": "Aougrout",
+      "postalCode": "4908",
+      "hasStopDesk": false
+    },
+    {
+      "id": 437,
+      "name": "Charouine",
+      "postalCode": "4902",
+      "hasStopDesk": false
+    },
+    {
+      "id": 493,
+      "name": "Deldoul",
+      "postalCode": "4906",
+      "hasStopDesk": false
+    },
+    {
+      "id": 868,
+      "name": "Ksar Kaddour",
+      "postalCode": "4903",
+      "hasStopDesk": false
+    },
+    {
+      "id": 983,
+      "name": "Metarfa",
+      "postalCode": "4907",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1090,
+      "name": "Ouled Aissa",
+      "postalCode": "4910",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1134,
+      "name": "Ouled Said",
+      "postalCode": "4904",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1395,
+      "name": "Talmine",
+      "postalCode": "4909",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1472,
+      "name": "Timimoun",
+      "postalCode": "4901",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1478,
+      "name": "Tinerkouk",
+      "postalCode": "4905",
+      "hasStopDesk": false
+    }
+  ],
+  "50": [
+    {
+      "id": 331,
+      "name": "Bordj Badji Mokhtar",
+      "postalCode": "5001",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1471,
+      "name": "Timiaouine",
+      "postalCode": "5002",
+      "hasStopDesk": false
+    }
+  ],
+  "51": [
+    {
+      "id": 303,
+      "name": "Besbes",
+      "postalCode": "5103",
+      "hasStopDesk": false
+    },
+    {
+      "id": 435,
+      "name": "Chaiba",
+      "postalCode": "5106",
+      "hasStopDesk": false
+    },
+    {
+      "id": 534,
+      "name": "Doucen",
+      "postalCode": "5105",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1107,
+      "name": "Ouled Djellal",
+      "postalCode": "5101",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1180,
+      "name": "Ras El Miad",
+      "postalCode": "5102",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1294,
+      "name": "Sidi Khaled",
+      "postalCode": "5104",
+      "hasStopDesk": false
+    }
+  ],
+  "52": [
+    {
+      "id": 244,
+      "name": "Beni Abbes",
+      "postalCode": "5201",
+      "hasStopDesk": false
+    },
+    {
+      "id": 261,
+      "name": "Beni Ikhlef",
+      "postalCode": "5204",
+      "hasStopDesk": false
+    },
+    {
+      "id": 663,
+      "name": "El Ouata",
+      "postalCode": "5207",
+      "hasStopDesk": false
+    },
+    {
+      "id": 809,
+      "name": "Igli",
+      "postalCode": "5205",
+      "hasStopDesk": false
+    },
+    {
+      "id": 833,
+      "name": "Kerzaz",
+      "postalCode": "5208",
+      "hasStopDesk": false
+    },
+    {
+      "id": 862,
+      "name": "Ksabi",
+      "postalCode": "5209",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1119,
+      "name": "Ouled Khoudir",
+      "postalCode": "5202",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1366,
+      "name": "Tabelbala",
+      "postalCode": "5206",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1406,
+      "name": "Tamtert",
+      "postalCode": "5210",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1474,
+      "name": "Timoudi",
+      "postalCode": "5203",
+      "hasStopDesk": false
+    }
+  ],
+  "53": [
+    {
+      "id": 694,
+      "name": "Foggaret Azzaouia",
+      "postalCode": "5303",
+      "hasStopDesk": false
+    },
+    {
+      "id": 815,
+      "name": "In Ghar",
+      "postalCode": "5302",
+      "hasStopDesk": false
+    },
+    {
+      "id": 817,
+      "name": "In Salah",
+      "postalCode": "5301",
+      "hasStopDesk": true
+    }
+  ],
+  "54": [
+    {
+      "id": 816,
+      "name": "In Guezzam",
+      "postalCode": "5401",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1475,
+      "name": "Tin Zouatine",
+      "postalCode": "5402",
+      "hasStopDesk": true
+    }
+  ],
+  "55": [
+    {
+      "id": 239,
+      "name": "Benaceur",
+      "postalCode": "5510",
+      "hasStopDesk": false
+    },
+    {
+      "id": 327,
+      "name": "Blidet Amor",
+      "postalCode": "5502",
+      "hasStopDesk": false
+    },
+    {
+      "id": 554,
+      "name": "El Alia",
+      "postalCode": "5513",
+      "hasStopDesk": false
+    },
+    {
+      "id": 605,
+      "name": "El Hadjira",
+      "postalCode": "5507",
+      "hasStopDesk": false
+    },
+    {
+      "id": 958,
+      "name": "Megarine",
+      "postalCode": "5512",
+      "hasStopDesk": false
+    },
+    {
+      "id": 996,
+      "name": "Mnaguer",
+      "postalCode": "5511",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1027,
+      "name": "Nezla",
+      "postalCode": "5504",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1327,
+      "name": "Sidi Slimane",
+      "postalCode": "5506",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1388,
+      "name": "Taibet",
+      "postalCode": "5508",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1427,
+      "name": "Tebesbest",
+      "postalCode": "5503",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1434,
+      "name": "Temacine",
+      "postalCode": "5509",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1498,
+      "name": "Touggourt",
+      "postalCode": "5501",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1517,
+      "name": "Zaouia El Abidia",
+      "postalCode": "5505",
+      "hasStopDesk": false
+    }
+  ],
+  "56": [
+    {
+      "id": 337,
+      "name": "Bordj El Haouasse",
+      "postalCode": "5602",
+      "hasStopDesk": true
+    },
+    {
+      "id": 506,
+      "name": "Djanet",
+      "postalCode": "5601",
+      "hasStopDesk": true
+    }
+  ],
+  "57": [
+    {
+      "id": 505,
+      "name": "Djamaa",
+      "postalCode": "5706",
+      "hasStopDesk": false
+    },
+    {
+      "id": 634,
+      "name": "El M'ghair",
+      "postalCode": "5701",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1012,
+      "name": "Mrara",
+      "postalCode": "5703",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1157,
+      "name": "Oum Touyour",
+      "postalCode": "5707",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1265,
+      "name": "Sidi Amrane",
+      "postalCode": "5708",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1296,
+      "name": "Sidi Khelil",
+      "postalCode": "5704",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1363,
+      "name": "Still",
+      "postalCode": "5702",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1435,
+      "name": "Tenedla",
+      "postalCode": "5705",
+      "hasStopDesk": false
+    }
+  ],
+  "58": [
+    {
+      "id": 651,
+      "name": "El Meniaa",
+      "postalCode": "5801",
+      "hasStopDesk": true
+    },
+    {
+      "id": 780,
+      "name": "Hassi Fehal",
+      "postalCode": "5802",
+      "hasStopDesk": false
+    },
+    {
+      "id": 781,
+      "name": "Hassi Gara",
+      "postalCode": "5803",
+      "hasStopDesk": false
+    }
+  ],
+  "08": [
+    {
+      "id": 0,
+      "name": "Abadla",
+      "postalCode": "817",
+      "hasStopDesk": false
+    },
+    {
+      "id": 208,
+      "name": "Bechar",
+      "postalCode": "801",
+      "hasStopDesk": true
+    },
+    {
+      "id": 276,
+      "name": "Beni Ounif",
+      "postalCode": "821",
+      "hasStopDesk": false
+    },
+    {
+      "id": 393,
+      "name": "Boukais",
+      "postalCode": "815",
+      "hasStopDesk": false
+    },
+    {
+      "id": 677,
+      "name": "Erg Ferradj",
+      "postalCode": "802",
+      "hasStopDesk": false
+    },
+    {
+      "id": 830,
+      "name": "Kenadsa",
+      "postalCode": "810",
+      "hasStopDesk": false
+    },
+    {
+      "id": 875,
+      "name": "Lahmar",
+      "postalCode": "806",
+      "hasStopDesk": false
+    },
+    {
+      "id": 944,
+      "name": "Mechraa H.boumediene",
+      "postalCode": "809",
+      "hasStopDesk": false
+    },
+    {
+      "id": 973,
+      "name": "Meridja",
+      "postalCode": "804",
+      "hasStopDesk": false
+    },
+    {
+      "id": 998,
+      "name": "Mogheul",
+      "postalCode": "816",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1382,
+      "name": "Taghit",
+      "postalCode": "813",
+      "hasStopDesk": false
+    }
+  ],
+  "02": [
+    {
+      "id": 3,
+      "name": "Abou El Hassan",
+      "postalCode": "222",
+      "hasStopDesk": false
+    },
+    {
+      "id": 87,
+      "name": "Ain Merane",
+      "postalCode": "232",
+      "hasStopDesk": false
+    },
+    {
+      "id": 241,
+      "name": "Benairia",
+      "postalCode": "203",
+      "hasStopDesk": false
+    },
+    {
+      "id": 250,
+      "name": "Beni Bouattab",
+      "postalCode": "235",
+      "hasStopDesk": false
+    },
+    {
+      "id": 260,
+      "name": "Beni Haoua",
+      "postalCode": "207",
+      "hasStopDesk": false
+    },
+    {
+      "id": 278,
+      "name": "Beni Rached",
+      "postalCode": "213",
+      "hasStopDesk": false
+    },
+    {
+      "id": 392,
+      "name": "Boukadir",
+      "postalCode": "212",
+      "hasStopDesk": false
+    },
+    {
+      "id": 421,
+      "name": "Bouzeghaia",
+      "postalCode": "231",
+      "hasStopDesk": false
+    },
+    {
+      "id": 426,
+      "name": "Breira",
+      "postalCode": "234",
+      "hasStopDesk": false
+    },
+    {
+      "id": 463,
+      "name": "Chettia",
+      "postalCode": "224",
+      "hasStopDesk": false
+    },
+    {
+      "id": 469,
+      "name": "Chlef",
+      "postalCode": "201",
+      "hasStopDesk": true
+    },
+    {
+      "id": 479,
+      "name": "Dahra",
+      "postalCode": "217",
+      "hasStopDesk": false
+    },
+    {
+      "id": 603,
+      "name": "El Hadjadj",
+      "postalCode": "227",
+      "hasStopDesk": false
+    },
+    {
+      "id": 623,
+      "name": "El Karimia",
+      "postalCode": "204",
+      "hasStopDesk": false
+    },
+    {
+      "id": 645,
+      "name": "El Marsa",
+      "postalCode": "223",
+      "hasStopDesk": false
+    },
+    {
+      "id": 766,
+      "name": "Harchoun",
+      "postalCode": "209",
+      "hasStopDesk": false
+    },
+    {
+      "id": 791,
+      "name": "Herenfa",
+      "postalCode": "215",
+      "hasStopDesk": false
+    },
+    {
+      "id": 871,
+      "name": "Labiod Medjadja",
+      "postalCode": "228",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1010,
+      "name": "Moussadek",
+      "postalCode": "226",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1057,
+      "name": "Oued Fodda",
+      "postalCode": "229",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1060,
+      "name": "Oued Goussine",
+      "postalCode": "216",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1073,
+      "name": "Oued Sly",
+      "postalCode": "221",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1084,
+      "name": "Ouled Abbes",
+      "postalCode": "218",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1095,
+      "name": "Ouled Ben Abdelkader",
+      "postalCode": "230",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1110,
+      "name": "Ouled Fares",
+      "postalCode": "210",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1150,
+      "name": "Oum Drou",
+      "postalCode": "233",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1232,
+      "name": "Sendjas",
+      "postalCode": "219",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1249,
+      "name": "Sidi Abderrahmane",
+      "postalCode": "225",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1255,
+      "name": "Sidi Akkacha",
+      "postalCode": "211",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1338,
+      "name": "Sobha",
+      "postalCode": "208",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1372,
+      "name": "Tadjena",
+      "postalCode": "205",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1392,
+      "name": "Talassa",
+      "postalCode": "214",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1410,
+      "name": "Taougrite",
+      "postalCode": "206",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1436,
+      "name": "Tenes",
+      "postalCode": "202",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1520,
+      "name": "Zeboudja",
+      "postalCode": "220",
+      "hasStopDesk": false
+    }
+  ],
+  "06": [
+    {
+      "id": 5,
+      "name": "Adekar",
+      "postalCode": "624",
+      "hasStopDesk": false
+    },
+    {
+      "id": 144,
+      "name": "Ait R'zine",
+      "postalCode": "628",
+      "hasStopDesk": false
+    },
+    {
+      "id": 145,
+      "name": "Ait Smail",
+      "postalCode": "647",
+      "hasStopDesk": false
+    },
+    {
+      "id": 152,
+      "name": "Akbou",
+      "postalCode": "625",
+      "hasStopDesk": true
+    },
+    {
+      "id": 154,
+      "name": "Akfadou",
+      "postalCode": "642",
+      "hasStopDesk": false
+    },
+    {
+      "id": 157,
+      "name": "Amalou",
+      "postalCode": "616",
+      "hasStopDesk": false
+    },
+    {
+      "id": 161,
+      "name": "Amizour",
+      "postalCode": "602",
+      "hasStopDesk": false
+    },
+    {
+      "id": 168,
+      "name": "Aokas",
+      "postalCode": "622",
+      "hasStopDesk": false
+    },
+    {
+      "id": 201,
+      "name": "Barbacha",
+      "postalCode": "634",
+      "hasStopDesk": false
+    },
+    {
+      "id": 214,
+      "name": "Bejaia",
+      "postalCode": "601",
+      "hasStopDesk": true
+    },
+    {
+      "id": 254,
+      "name": "Beni Dejllil",
+      "postalCode": "623",
+      "hasStopDesk": false
+    },
+    {
+      "id": 263,
+      "name": "Beni K'sila",
+      "postalCode": "635",
+      "hasStopDesk": false
+    },
+    {
+      "id": 266,
+      "name": "Beni Mallikeche",
+      "postalCode": "638",
+      "hasStopDesk": false
+    },
+    {
+      "id": 290,
+      "name": "Benimaouche",
+      "postalCode": "650",
+      "hasStopDesk": false
+    },
+    {
+      "id": 367,
+      "name": "Boudjellil",
+      "postalCode": "652",
+      "hasStopDesk": false
+    },
+    {
+      "id": 383,
+      "name": "Bouhamza",
+      "postalCode": "637",
+      "hasStopDesk": false
+    },
+    {
+      "id": 396,
+      "name": "Boukhelifa",
+      "postalCode": "648",
+      "hasStopDesk": false
+    },
+    {
+      "id": 449,
+      "name": "Chellata",
+      "postalCode": "605",
+      "hasStopDesk": false
+    },
+    {
+      "id": 450,
+      "name": "Chemini",
+      "postalCode": "629",
+      "hasStopDesk": false
+    },
+    {
+      "id": 486,
+      "name": "Darghina",
+      "postalCode": "620",
+      "hasStopDesk": false
+    },
+    {
+      "id": 538,
+      "name": "Dra El Caid",
+      "postalCode": "645",
+      "hasStopDesk": false
+    },
+    {
+      "id": 633,
+      "name": "El Kseur",
+      "postalCode": "640",
+      "hasStopDesk": false
+    },
+    {
+      "id": 685,
+      "name": "Fenaia Il Maten",
+      "postalCode": "618",
+      "hasStopDesk": false
+    },
+    {
+      "id": 687,
+      "name": "Feraoun",
+      "postalCode": "603",
+      "hasStopDesk": false
+    },
+    {
+      "id": 807,
+      "name": "Ighil Ali",
+      "postalCode": "617",
+      "hasStopDesk": false
+    },
+    {
+      "id": 808,
+      "name": "Ighram",
+      "postalCode": "615",
+      "hasStopDesk": false
+    },
+    {
+      "id": 831,
+      "name": "Kendira",
+      "postalCode": "613",
+      "hasStopDesk": false
+    },
+    {
+      "id": 850,
+      "name": "Kherrata",
+      "postalCode": "644",
+      "hasStopDesk": true
+    },
+    {
+      "id": 889,
+      "name": "Leflaye",
+      "postalCode": "643",
+      "hasStopDesk": false
+    },
+    {
+      "id": 901,
+      "name": "M'cisna",
+      "postalCode": "609",
+      "hasStopDesk": false
+    },
+    {
+      "id": 964,
+      "name": "Melbou",
+      "postalCode": "641",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1059,
+      "name": "Oued Ghir",
+      "postalCode": "651",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1162,
+      "name": "Ouzellaguene",
+      "postalCode": "636",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1219,
+      "name": "Seddouk",
+      "postalCode": "626",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1253,
+      "name": "Sidi Aich",
+      "postalCode": "639",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1267,
+      "name": "Sidi Ayad",
+      "postalCode": "621",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1337,
+      "name": "Smaoun",
+      "postalCode": "612",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1353,
+      "name": "Souk El Tenine",
+      "postalCode": "608",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1356,
+      "name": "Souk Oufella",
+      "postalCode": "630",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1390,
+      "name": "Tala Hamza",
+      "postalCode": "633",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1403,
+      "name": "Tamokra",
+      "postalCode": "606",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1404,
+      "name": "Tamridjet",
+      "postalCode": "646",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1415,
+      "name": "Taourit Ighil",
+      "postalCode": "604",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1419,
+      "name": "Taskriout",
+      "postalCode": "631",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1424,
+      "name": "Tazmalt",
+      "postalCode": "627",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1453,
+      "name": "Tibane",
+      "postalCode": "632",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1456,
+      "name": "Tichy",
+      "postalCode": "611",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1460,
+      "name": "Tifra",
+      "postalCode": "614",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1468,
+      "name": "Timezrit",
+      "postalCode": "607",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1477,
+      "name": "Tinebdar",
+      "postalCode": "610",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1489,
+      "name": "Tizi N'berber",
+      "postalCode": "649",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1497,
+      "name": "Toudja",
+      "postalCode": "619",
+      "hasStopDesk": false
+    }
+  ],
+  "01": [
+    {
+      "id": 6,
+      "name": "Adrar",
+      "postalCode": "101",
+      "hasStopDesk": true
+    },
+    {
+      "id": 150,
+      "name": "Akabli",
+      "postalCode": "119",
+      "hasStopDesk": false
+    },
+    {
+      "id": 173,
+      "name": "Aoulef",
+      "postalCode": "112",
+      "hasStopDesk": false
+    },
+    {
+      "id": 364,
+      "name": "Bouda",
+      "postalCode": "122",
+      "hasStopDesk": false
+    },
+    {
+      "id": 686,
+      "name": "Fenoughil",
+      "postalCode": "115",
+      "hasStopDesk": false
+    },
+    {
+      "id": 818,
+      "name": "In Zghmir",
+      "postalCode": "105",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1087,
+      "name": "Ouled Ahmed Timmi",
+      "postalCode": "121",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1185,
+      "name": "Reggane",
+      "postalCode": "104",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1208,
+      "name": "Sali",
+      "postalCode": "118",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1211,
+      "name": "Sebaa",
+      "postalCode": "126",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1398,
+      "name": "Tamantit",
+      "postalCode": "114",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1401,
+      "name": "Tamest",
+      "postalCode": "102",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1467,
+      "name": "Timekten",
+      "postalCode": "113",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1484,
+      "name": "Tit",
+      "postalCode": "106",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1503,
+      "name": "Tsabit",
+      "postalCode": "108",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1518,
+      "name": "Zaouiet Kounta",
+      "postalCode": "111",
+      "hasStopDesk": false
+    }
+  ],
+  "03": [
+    {
+      "id": 8,
+      "name": "Aflou",
+      "postalCode": "319",
+      "hasStopDesk": false
+    },
+    {
+      "id": 84,
+      "name": "Ain Madhi",
+      "postalCode": "307",
+      "hasStopDesk": false
+    },
+    {
+      "id": 102,
+      "name": "Ain Sidi Ali",
+      "postalCode": "311",
+      "hasStopDesk": false
+    },
+    {
+      "id": 212,
+      "name": "Beidha",
+      "postalCode": "312",
+      "hasStopDesk": false
+    },
+    {
+      "id": 238,
+      "name": "Benacer Benchohra",
+      "postalCode": "303",
+      "hasStopDesk": false
+    },
+    {
+      "id": 428,
+      "name": "Brida",
+      "postalCode": "313",
+      "hasStopDesk": false
+    },
+    {
+      "id": 566,
+      "name": "El Assafia",
+      "postalCode": "320",
+      "hasStopDesk": false
+    },
+    {
+      "id": 588,
+      "name": "El Ghicha",
+      "postalCode": "314",
+      "hasStopDesk": false
+    },
+    {
+      "id": 611,
+      "name": "El Haouaita",
+      "postalCode": "323",
+      "hasStopDesk": false
+    },
+    {
+      "id": 719,
+      "name": "Gueltat Sidi Saad",
+      "postalCode": "310",
+      "hasStopDesk": false
+    },
+    {
+      "id": 735,
+      "name": "Hadj Mechri",
+      "postalCode": "315",
+      "hasStopDesk": false
+    },
+    {
+      "id": 776,
+      "name": "Hassi Delaa",
+      "postalCode": "305",
+      "hasStopDesk": false
+    },
+    {
+      "id": 786,
+      "name": "Hassi R'mel",
+      "postalCode": "306",
+      "hasStopDesk": false
+    },
+    {
+      "id": 847,
+      "name": "Kheneg",
+      "postalCode": "309",
+      "hasStopDesk": false
+    },
+    {
+      "id": 867,
+      "name": "Ksar El Hirane",
+      "postalCode": "302",
+      "hasStopDesk": false
+    },
+    {
+      "id": 873,
+      "name": "Laghouat",
+      "postalCode": "301",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1065,
+      "name": "Oued M'zi",
+      "postalCode": "322",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1066,
+      "name": "Oued Morra",
+      "postalCode": "321",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1215,
+      "name": "Sebgag",
+      "postalCode": "316",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1278,
+      "name": "Sidi Bouzid",
+      "postalCode": "324",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1309,
+      "name": "Sidi Makhlouf",
+      "postalCode": "304",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1371,
+      "name": "Tadjemout",
+      "postalCode": "308",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1374,
+      "name": "Tadjrouna",
+      "postalCode": "318",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1411,
+      "name": "Taouiala",
+      "postalCode": "317",
+      "hasStopDesk": false
+    }
+  ],
+  "04": [
+    {
+      "id": 23,
+      "name": "Ain Babouche",
+      "postalCode": "408",
+      "hasStopDesk": false
+    },
+    {
+      "id": 24,
+      "name": "Ain Beida",
+      "postalCode": "402",
+      "hasStopDesk": false
+    },
+    {
+      "id": 43,
+      "name": "Ain Diss",
+      "postalCode": "415",
+      "hasStopDesk": false
+    },
+    {
+      "id": 61,
+      "name": "Ain Fekroune",
+      "postalCode": "425",
+      "hasStopDesk": true
+    },
+    {
+      "id": 71,
+      "name": "Ain Kercha",
+      "postalCode": "412",
+      "hasStopDesk": false
+    },
+    {
+      "id": 82,
+      "name": "Ain M'lila",
+      "postalCode": "403",
+      "hasStopDesk": false
+    },
+    {
+      "id": 132,
+      "name": "Ain Zitoun",
+      "postalCode": "427",
+      "hasStopDesk": false
+    },
+    {
+      "id": 211,
+      "name": "Behir Chergui",
+      "postalCode": "404",
+      "hasStopDesk": false
+    },
+    {
+      "id": 299,
+      "name": "Berriche",
+      "postalCode": "409",
+      "hasStopDesk": false
+    },
+    {
+      "id": 308,
+      "name": "Bir Chouhada",
+      "postalCode": "421",
+      "hasStopDesk": false
+    },
+    {
+      "id": 499,
+      "name": "Dhala",
+      "postalCode": "411",
+      "hasStopDesk": false
+    },
+    {
+      "id": 555,
+      "name": "El Amiria",
+      "postalCode": "405",
+      "hasStopDesk": false
+    },
+    {
+      "id": 571,
+      "name": "El Belala",
+      "postalCode": "407",
+      "hasStopDesk": false
+    },
+    {
+      "id": 580,
+      "name": "El Djazia",
+      "postalCode": "414",
+      "hasStopDesk": false
+    },
+    {
+      "id": 583,
+      "name": "El Fedjoudj Boughrara Sa",
+      "postalCode": "419",
+      "hasStopDesk": false
+    },
+    {
+      "id": 613,
+      "name": "El Harmilia",
+      "postalCode": "429",
+      "hasStopDesk": false
+    },
+    {
+      "id": 693,
+      "name": "Fkirina",
+      "postalCode": "416",
+      "hasStopDesk": false
+    },
+    {
+      "id": 760,
+      "name": "Hanchir Toumghani",
+      "postalCode": "413",
+      "hasStopDesk": false
+    },
+    {
+      "id": 869,
+      "name": "Ksar Sbahi",
+      "postalCode": "422",
+      "hasStopDesk": false
+    },
+    {
+      "id": 977,
+      "name": "Meskiana",
+      "postalCode": "424",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1067,
+      "name": "Oued Nini",
+      "postalCode": "423",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1112,
+      "name": "Ouled Gacem",
+      "postalCode": "428",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1114,
+      "name": "Ouled Hamla",
+      "postalCode": "410",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1146,
+      "name": "Ouled Zouai",
+      "postalCode": "420",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1153,
+      "name": "Oum El Bouaghi",
+      "postalCode": "401",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1168,
+      "name": "Rahia",
+      "postalCode": "426",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1333,
+      "name": "Sigus",
+      "postalCode": "406",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1355,
+      "name": "Souk Naamane",
+      "postalCode": "417",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1539,
+      "name": "Zorg",
+      "postalCode": "418",
+      "hasStopDesk": false
+    }
+  ],
+  "05": [
+    {
+      "id": 44,
+      "name": "Ain Djasser",
+      "postalCode": "519",
+      "hasStopDesk": false
+    },
+    {
+      "id": 122,
+      "name": "Ain Touta",
+      "postalCode": "545",
+      "hasStopDesk": false
+    },
+    {
+      "id": 125,
+      "name": "Ain Yagout",
+      "postalCode": "522",
+      "hasStopDesk": false
+    },
+    {
+      "id": 176,
+      "name": "Arris",
+      "postalCode": "516",
+      "hasStopDesk": false
+    },
+    {
+      "id": 185,
+      "name": "Azil Abedelkader",
+      "postalCode": "515",
+      "hasStopDesk": false
+    },
+    {
+      "id": 203,
+      "name": "Barika",
+      "postalCode": "542",
+      "hasStopDesk": true
+    },
+    {
+      "id": 205,
+      "name": "Batna",
+      "postalCode": "501",
+      "hasStopDesk": true
+    },
+    {
+      "id": 258,
+      "name": "Beni Foudhala El Hakania",
+      "postalCode": "532",
+      "hasStopDesk": false
+    },
+    {
+      "id": 325,
+      "name": "Bitam",
+      "postalCode": "514",
+      "hasStopDesk": false
+    },
+    {
+      "id": 399,
+      "name": "Boulhilat",
+      "postalCode": "560",
+      "hasStopDesk": false
+    },
+    {
+      "id": 400,
+      "name": "Boumagueur",
+      "postalCode": "541",
+      "hasStopDesk": false
+    },
+    {
+      "id": 403,
+      "name": "Boumia",
+      "postalCode": "559",
+      "hasStopDesk": false
+    },
+    {
+      "id": 424,
+      "name": "Bouzina",
+      "postalCode": "535",
+      "hasStopDesk": false
+    },
+    {
+      "id": 451,
+      "name": "Chemora",
+      "postalCode": "536",
+      "hasStopDesk": false
+    },
+    {
+      "id": 468,
+      "name": "Chir",
+      "postalCode": "552",
+      "hasStopDesk": false
+    },
+    {
+      "id": 525,
+      "name": "Djerma",
+      "postalCode": "513",
+      "hasStopDesk": false
+    },
+    {
+      "id": 526,
+      "name": "Djezzar",
+      "postalCode": "543",
+      "hasStopDesk": false
+    },
+    {
+      "id": 616,
+      "name": "El Hassi",
+      "postalCode": "557",
+      "hasStopDesk": false
+    },
+    {
+      "id": 637,
+      "name": "El Madher",
+      "postalCode": "507",
+      "hasStopDesk": false
+    },
+    {
+      "id": 691,
+      "name": "Fesdis",
+      "postalCode": "523",
+      "hasStopDesk": false
+    },
+    {
+      "id": 698,
+      "name": "Foum Toub",
+      "postalCode": "531",
+      "hasStopDesk": false
+    },
+    {
+      "id": 706,
+      "name": "Ghassira",
+      "postalCode": "502",
+      "hasStopDesk": false
+    },
+    {
+      "id": 712,
+      "name": "Gosbat",
+      "postalCode": "539",
+      "hasStopDesk": false
+    },
+    {
+      "id": 729,
+      "name": "Guigba",
+      "postalCode": "510",
+      "hasStopDesk": false
+    },
+    {
+      "id": 793,
+      "name": "Hidoussa",
+      "postalCode": "546",
+      "hasStopDesk": false
+    },
+    {
+      "id": 801,
+      "name": "Ichmoul",
+      "postalCode": "530",
+      "hasStopDesk": false
+    },
+    {
+      "id": 819,
+      "name": "Inoughissen",
+      "postalCode": "511",
+      "hasStopDesk": false
+    },
+    {
+      "id": 856,
+      "name": "Kimmel",
+      "postalCode": "517",
+      "hasStopDesk": false
+    },
+    {
+      "id": 863,
+      "name": "Ksar Bellezma",
+      "postalCode": "528",
+      "hasStopDesk": false
+    },
+    {
+      "id": 879,
+      "name": "Larbaa",
+      "postalCode": "561",
+      "hasStopDesk": false
+    },
+    {
+      "id": 888,
+      "name": "Lazrou",
+      "postalCode": "558",
+      "hasStopDesk": false
+    },
+    {
+      "id": 891,
+      "name": "Lemsane",
+      "postalCode": "527",
+      "hasStopDesk": false
+    },
+    {
+      "id": 896,
+      "name": "M Doukal",
+      "postalCode": "555",
+      "hasStopDesk": false
+    },
+    {
+      "id": 911,
+      "name": "Maafa",
+      "postalCode": "503",
+      "hasStopDesk": false
+    },
+    {
+      "id": 966,
+      "name": "Menaa",
+      "postalCode": "506",
+      "hasStopDesk": false
+    },
+    {
+      "id": 975,
+      "name": "Merouana",
+      "postalCode": "504",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1014,
+      "name": "N Gaous",
+      "postalCode": "509",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1040,
+      "name": "Oued Chaaba",
+      "postalCode": "537",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1054,
+      "name": "Oued El Ma",
+      "postalCode": "533",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1075,
+      "name": "Oued Taga",
+      "postalCode": "548",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1091,
+      "name": "Ouled Ammar",
+      "postalCode": "556",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1093,
+      "name": "Ouled Aouf",
+      "postalCode": "540",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1109,
+      "name": "Ouled Fadel",
+      "postalCode": "549",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1135,
+      "name": "Ouled Sellem",
+      "postalCode": "520",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1137,
+      "name": "Ouled Si Slimane",
+      "postalCode": "553",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1161,
+      "name": "Ouyoun El Assafir",
+      "postalCode": "512",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1167,
+      "name": "Rahbat",
+      "postalCode": "525",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1178,
+      "name": "Ras El Aioun",
+      "postalCode": "551",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1223,
+      "name": "Sefiane",
+      "postalCode": "524",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1224,
+      "name": "Seggana",
+      "postalCode": "529",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1236,
+      "name": "Seriana",
+      "postalCode": "505",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1365,
+      "name": "T Kout",
+      "postalCode": "544",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1394,
+      "name": "Talkhamt",
+      "postalCode": "534",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1421,
+      "name": "Taxlent",
+      "postalCode": "538",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1425,
+      "name": "Tazoult",
+      "postalCode": "508",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1437,
+      "name": "Teniet El Abed",
+      "postalCode": "547",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1461,
+      "name": "Tighanimine",
+      "postalCode": "526",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1462,
+      "name": "Tigharghar",
+      "postalCode": "521",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1465,
+      "name": "Tilatou",
+      "postalCode": "518",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1470,
+      "name": "Timgad",
+      "postalCode": "550",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1516,
+      "name": "Zanet El Beida",
+      "postalCode": "554",
+      "hasStopDesk": false
+    }
+  ],
+  "07": [
+    {
+      "id": 88,
+      "name": "Ain Naga",
+      "postalCode": "714",
+      "hasStopDesk": false
+    },
+    {
+      "id": 127,
+      "name": "Ain Zaatout",
+      "postalCode": "718",
+      "hasStopDesk": false
+    },
+    {
+      "id": 324,
+      "name": "Biskra",
+      "postalCode": "701",
+      "hasStopDesk": true
+    },
+    {
+      "id": 332,
+      "name": "Bordj Ben Azzouz",
+      "postalCode": "727",
+      "hasStopDesk": false
+    },
+    {
+      "id": 360,
+      "name": "Bouchagroun",
+      "postalCode": "729",
+      "hasStopDesk": false
+    },
+    {
+      "id": 425,
+      "name": "Branis",
+      "postalCode": "703",
+      "hasStopDesk": false
+    },
+    {
+      "id": 460,
+      "name": "Chetma",
+      "postalCode": "704",
+      "hasStopDesk": false
+    },
+    {
+      "id": 521,
+      "name": "Djemorah",
+      "postalCode": "720",
+      "hasStopDesk": false
+    },
+    {
+      "id": 585,
+      "name": "El Feidh",
+      "postalCode": "716",
+      "hasStopDesk": false
+    },
+    {
+      "id": 590,
+      "name": "El Ghrous",
+      "postalCode": "731",
+      "hasStopDesk": false
+    },
+    {
+      "id": 602,
+      "name": "El Hadjab",
+      "postalCode": "732",
+      "hasStopDesk": false
+    },
+    {
+      "id": 612,
+      "name": "El Haouch",
+      "postalCode": "713",
+      "hasStopDesk": false
+    },
+    {
+      "id": 622,
+      "name": "El Kantara",
+      "postalCode": "717",
+      "hasStopDesk": false
+    },
+    {
+      "id": 670,
+      "name": "El Outaya",
+      "postalCode": "719",
+      "hasStopDesk": false
+    },
+    {
+      "id": 696,
+      "name": "Foughala",
+      "postalCode": "726",
+      "hasStopDesk": false
+    },
+    {
+      "id": 848,
+      "name": "Khenguet Sidi Nadji",
+      "postalCode": "733",
+      "hasStopDesk": false
+    },
+    {
+      "id": 893,
+      "name": "Lichana",
+      "postalCode": "723",
+      "hasStopDesk": false
+    },
+    {
+      "id": 894,
+      "name": "Lioua",
+      "postalCode": "722",
+      "hasStopDesk": false
+    },
+    {
+      "id": 898,
+      "name": "M'chouneche",
+      "postalCode": "712",
+      "hasStopDesk": false
+    },
+    {
+      "id": 904,
+      "name": "M'lili",
+      "postalCode": "725",
+      "hasStopDesk": false
+    },
+    {
+      "id": 960,
+      "name": "Mekhadma",
+      "postalCode": "730",
+      "hasStopDesk": false
+    },
+    {
+      "id": 988,
+      "name": "Meziraa",
+      "postalCode": "728",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1158,
+      "name": "Oumache",
+      "postalCode": "702",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1159,
+      "name": "Ourlal",
+      "postalCode": "724",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1317,
+      "name": "Sidi Okba",
+      "postalCode": "711",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1495,
+      "name": "Tolga",
+      "postalCode": "721",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1531,
+      "name": "Zeribet El Oued",
+      "postalCode": "715",
+      "hasStopDesk": false
+    }
+  ],
+  "09": [
+    {
+      "id": 97,
+      "name": "Ain Romana",
+      "postalCode": "924",
+      "hasStopDesk": false
+    },
+    {
+      "id": 267,
+      "name": "Beni Mered",
+      "postalCode": "921",
+      "hasStopDesk": true
+    },
+    {
+      "id": 283,
+      "name": "Beni Tamou",
+      "postalCode": "919",
+      "hasStopDesk": false
+    },
+    {
+      "id": 291,
+      "name": "Benkhelil",
+      "postalCode": "910",
+      "hasStopDesk": false
+    },
+    {
+      "id": 326,
+      "name": "Blida",
+      "postalCode": "901",
+      "hasStopDesk": true
+    },
+    {
+      "id": 358,
+      "name": "Bouarfa",
+      "postalCode": "920",
+      "hasStopDesk": false
+    },
+    {
+      "id": 372,
+      "name": "Boufarik",
+      "postalCode": "916",
+      "hasStopDesk": true
+    },
+    {
+      "id": 375,
+      "name": "Bougara",
+      "postalCode": "922",
+      "hasStopDesk": false
+    },
+    {
+      "id": 389,
+      "name": "Bouinan",
+      "postalCode": "903",
+      "hasStopDesk": true
+    },
+    {
+      "id": 439,
+      "name": "Chebli",
+      "postalCode": "902",
+      "hasStopDesk": false
+    },
+    {
+      "id": 465,
+      "name": "Chiffa",
+      "postalCode": "908",
+      "hasStopDesk": false
+    },
+    {
+      "id": 472,
+      "name": "Chrea",
+      "postalCode": "906",
+      "hasStopDesk": false
+    },
+    {
+      "id": 508,
+      "name": "Djebabra",
+      "postalCode": "925",
+      "hasStopDesk": false
+    },
+    {
+      "id": 552,
+      "name": "El Affroun",
+      "postalCode": "907",
+      "hasStopDesk": false
+    },
+    {
+      "id": 724,
+      "name": "Guerrouaou",
+      "postalCode": "923",
+      "hasStopDesk": false
+    },
+    {
+      "id": 753,
+      "name": "Hammam Melouane",
+      "postalCode": "909",
+      "hasStopDesk": false
+    },
+    {
+      "id": 880,
+      "name": "Larbaa",
+      "postalCode": "917",
+      "hasStopDesk": false
+    },
+    {
+      "id": 956,
+      "name": "Meftah",
+      "postalCode": "914",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1011,
+      "name": "Mouzaia",
+      "postalCode": "912",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1045,
+      "name": "Oued Djer",
+      "postalCode": "918",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1048,
+      "name": "Oued El Alleug",
+      "postalCode": "904",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1141,
+      "name": "Ouled Slama",
+      "postalCode": "915",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1145,
+      "name": "Ouled Yaich",
+      "postalCode": "905",
+      "hasStopDesk": true
+    },
+    {
+      "id": 1347,
+      "name": "Souhane",
+      "postalCode": "913",
+      "hasStopDesk": false
+    },
+    {
+      "id": 1358,
+      "name": "Souma",
+      "postalCode": "911",
+      "hasStopDesk": false
+    }
+  ]
+},
+  bureaux: {
+  "10": [
+    {
+      "id": 390,
+      "name": "Bouira",
+      "address": "مكتب Stop Desk - Bouira",
+      "postalCode": "1001"
+    }
+  ],
+  "11": [
+    {
+      "id": 1397,
+      "name": "Tamanrasset",
+      "address": "مكتب Stop Desk - Tamanrasset",
+      "postalCode": "1101"
+    }
+  ],
+  "12": [
+    {
+      "id": 1428,
+      "name": "Tebessa",
+      "address": "مكتب Stop Desk - Tebessa",
+      "postalCode": "1201"
+    }
+  ],
+  "13": [
+    {
+      "id": 920,
+      "name": "Maghnia",
+      "address": "مكتب Stop Desk - Maghnia",
+      "postalCode": "1327"
+    },
+    {
+      "id": 1214,
+      "name": "Sebdou",
+      "address": "مكتب Stop Desk - Sebdou",
+      "postalCode": "1335"
+    },
+    {
+      "id": 1493,
+      "name": "Tlemcen",
+      "address": "مكتب Stop Desk - Tlemcen",
+      "postalCode": "1301"
+    }
+  ],
+  "14": [
+    {
+      "id": 864,
+      "name": "Ksar Chellala",
+      "address": "مكتب Stop Desk - Ksar Chellala",
+      "postalCode": "1429"
+    },
+    {
+      "id": 1452,
+      "name": "Tiaret",
+      "address": "مكتب Stop Desk - Tiaret",
+      "postalCode": "1401"
+    }
+  ],
+  "15": [
+    {
+      "id": 1491,
+      "name": "Tizi Ouzou",
+      "address": "مكتب Stop Desk - Tizi Ouzou",
+      "postalCode": "1501"
+    }
+  ],
+  "16": [
+    {
+      "id": 190,
+      "name": "Bab El Oued",
+      "address": "مكتب Stop Desk - Bab El Oued",
+      "postalCode": "1605"
+    },
+    {
+      "id": 191,
+      "name": "Bab Ezzouar",
+      "address": "مكتب Stop Desk - Bab Ezzouar",
+      "postalCode": "1621"
+    },
+    {
+      "id": 321,
+      "name": "Bir Touta",
+      "address": "مكتب Stop Desk - Bir Touta",
+      "postalCode": "1636"
+    },
+    {
+      "id": 323,
+      "name": "Birkhadem",
+      "address": "مكتب Stop Desk - Birkhadem",
+      "postalCode": "1612"
+    },
+    {
+      "id": 454,
+      "name": "Cheraga",
+      "address": "مكتب Stop Desk - Cheraga",
+      "postalCode": "1652"
+    },
+    {
+      "id": 507,
+      "name": "Djasr Kasentina",
+      "address": "مكتب Stop Desk - Djasr Kasentina",
+      "postalCode": "1626"
+    },
+    {
+      "id": 543,
+      "name": "Draria",
+      "address": "مكتب Stop Desk - Draria",
+      "postalCode": "1649"
+    },
+    {
+      "id": 859,
+      "name": "Kouba",
+      "address": "مكتب Stop Desk - Kouba",
+      "postalCode": "1618"
+    },
+    {
+      "id": 892,
+      "name": "Les Eucalyptus",
+      "address": "مكتب Stop Desk - Les Eucalyptus",
+      "postalCode": "1633"
+    },
+    {
+      "id": 1186,
+      "name": "Reghaia",
+      "address": "مكتب Stop Desk - Reghaia",
+      "postalCode": "1640"
+    }
+  ],
+  "17": [
+    {
+      "id": 93,
+      "name": "Ain Oussera",
+      "address": "مكتب Stop Desk - Ain Oussera",
+      "postalCode": "1731"
+    },
+    {
+      "id": 515,
+      "name": "Djelfa",
+      "address": "مكتب Stop Desk - Djelfa",
+      "postalCode": "1701"
+    }
+  ],
+  "18": [
+    {
+      "id": 822,
+      "name": "Jijel",
+      "address": "مكتب Stop Desk - Jijel",
+      "postalCode": "1801"
+    }
+  ],
+  "19": [
+    {
+      "id": 581,
+      "name": "El Eulma",
+      "address": "مكتب Stop Desk - El Eulma",
+      "postalCode": "1920"
+    },
+    {
+      "id": 1238,
+      "name": "Setif",
+      "address": "مكتب Stop Desk - Setif",
+      "postalCode": "1901"
+    }
+  ],
+  "20": [
+    {
+      "id": 1205,
+      "name": "Saida",
+      "address": "مكتب Stop Desk - Saida",
+      "postalCode": "2001"
+    }
+  ],
+  "21": [
+    {
+      "id": 564,
+      "name": "El Arrouch",
+      "address": "مكتب Stop Desk - El Arrouch",
+      "postalCode": "2116"
+    },
+    {
+      "id": 1335,
+      "name": "Skikda",
+      "address": "مكتب Stop Desk - Skikda",
+      "postalCode": "2101"
+    }
+  ],
+  "22": [
+    {
+      "id": 1270,
+      "name": "Sidi Bel Abbes",
+      "address": "مكتب Stop Desk - Sidi Bel Abbes",
+      "postalCode": "2201"
+    }
+  ],
+  "23": [
+    {
+      "id": 167,
+      "name": "Annaba",
+      "address": "مكتب Stop Desk - Annaba",
+      "postalCode": "2301"
+    },
+    {
+      "id": 578,
+      "name": "El Bouni",
+      "address": "مكتب Stop Desk - El Bouni",
+      "postalCode": "2305"
+    }
+  ],
+  "24": [
+    {
+      "id": 717,
+      "name": "Guelma",
+      "address": "مكتب Stop Desk - Guelma",
+      "postalCode": "2401"
+    }
+  ],
+  "25": [
+    {
+      "id": 475,
+      "name": "Constantine",
+      "address": "مكتب Stop Desk - Constantine",
+      "postalCode": "2501"
+    },
+    {
+      "id": 631,
+      "name": "El Khroub",
+      "address": "مكتب Stop Desk - El Khroub",
+      "postalCode": "2506"
+    }
+  ],
+  "26": [
+    {
+      "id": 947,
+      "name": "Medea",
+      "address": "مكتب Stop Desk - Medea",
+      "postalCode": "2601"
+    }
+  ],
+  "27": [
+    {
+      "id": 941,
+      "name": "Mazagran",
+      "address": "مكتب Stop Desk - Mazagran",
+      "postalCode": "2727"
+    },
+    {
+      "id": 1005,
+      "name": "Mostaganem",
+      "address": "مكتب Stop Desk - Mostaganem",
+      "postalCode": "2701"
+    }
+  ],
+  "28": [
+    {
+      "id": 353,
+      "name": "Bou Saada",
+      "address": "مكتب Stop Desk - Bou Saada",
+      "postalCode": "2820"
+    },
+    {
+      "id": 906,
+      "name": "M'sila",
+      "address": "مكتب Stop Desk - M'sila",
+      "postalCode": "2801"
+    }
+  ],
+  "29": [
+    {
+      "id": 939,
+      "name": "Mascara",
+      "address": "مكتب Stop Desk - Mascara",
+      "postalCode": "2901"
+    },
+    {
+      "id": 1332,
+      "name": "Sig",
+      "address": "مكتب Stop Desk - Sig",
+      "postalCode": "2926"
+    }
+  ],
+  "30": [
+    {
+      "id": 1035,
+      "name": "Ouargla",
+      "address": "مكتب Stop Desk - Ouargla",
+      "postalCode": "3001"
+    }
+  ],
+  "31": [
+    {
+      "id": 312,
+      "name": "Bir El Djir",
+      "address": "مكتب Stop Desk - Bir El Djir",
+      "postalCode": "3103"
+    },
+    {
+      "id": 1029,
+      "name": "Oran",
+      "address": "مكتب Stop Desk - Oran",
+      "postalCode": "3101"
+    },
+    {
+      "id": 1281,
+      "name": "Sidi Chami",
+      "address": "مكتب Stop Desk - Sidi Chami",
+      "postalCode": "3113"
+    }
+  ],
+  "32": [
+    {
+      "id": 570,
+      "name": "El Bayadh",
+      "address": "مكتب Stop Desk - El Bayadh",
+      "postalCode": "3201"
+    }
+  ],
+  "33": [
+    {
+      "id": 811,
+      "name": "Illizi",
+      "address": "مكتب Stop Desk - Illizi",
+      "postalCode": "3301"
+    }
+  ],
+  "34": [
+    {
+      "id": 333,
+      "name": "Bordj Bou Arreridj",
+      "address": "مكتب Stop Desk - Bordj Bou Arreridj",
+      "postalCode": "3401"
+    }
+  ],
+  "35": [
+    {
+      "id": 341,
+      "name": "Bordj Menaiel",
+      "address": "مكتب Stop Desk - Bordj Menaiel",
+      "postalCode": "3504"
+    },
+    {
+      "id": 402,
+      "name": "Boumerdes",
+      "address": "مكتب Stop Desk - Boumerdes",
+      "postalCode": "3501"
+    }
+  ],
+  "36": [
+    {
+      "id": 671,
+      "name": "El Tarf",
+      "address": "مكتب Stop Desk - El Tarf",
+      "postalCode": "3601"
+    }
+  ],
+  "37": [
+    {
+      "id": 1476,
+      "name": "Tindouf",
+      "address": "مكتب Stop Desk - Tindouf",
+      "postalCode": "3701"
+    }
+  ],
+  "38": [
+    {
+      "id": 1483,
+      "name": "Tissemsilt",
+      "address": "مكتب Stop Desk - Tissemsilt",
+      "postalCode": "3801"
+    }
+  ],
+  "39": [
+    {
+      "id": 664,
+      "name": "El Oued",
+      "address": "مكتب Stop Desk - El Oued",
+      "postalCode": "3901"
+    }
+  ],
+  "40": [
+    {
+      "id": 846,
+      "name": "Khenchela",
+      "address": "مكتب Stop Desk - Khenchela",
+      "postalCode": "4001"
+    }
+  ],
+  "41": [
+    {
+      "id": 1349,
+      "name": "Souk Ahras",
+      "address": "مكتب Stop Desk - Souk Ahras",
+      "postalCode": "4101"
+    }
+  ],
+  "42": [
+    {
+      "id": 857,
+      "name": "Kolea",
+      "address": "مكتب Stop Desk - Kolea",
+      "postalCode": "4224"
+    },
+    {
+      "id": 1480,
+      "name": "Tipaza",
+      "address": "مكتب Stop Desk - Tipaza",
+      "postalCode": "4201"
+    }
+  ],
+  "43": [
+    {
+      "id": 992,
+      "name": "Mila",
+      "address": "مكتب Stop Desk - Mila",
+      "postalCode": "4301"
+    }
+  ],
+  "44": [
+    {
+      "id": 41,
+      "name": "Ain Defla",
+      "address": "مكتب Stop Desk - Ain Defla",
+      "postalCode": "4401"
+    },
+    {
+      "id": 567,
+      "name": "El Attaf",
+      "address": "مكتب Stop Desk - El Attaf",
+      "postalCode": "4410"
+    },
+    {
+      "id": 841,
+      "name": "Khemis Miliana",
+      "address": "مكتب Stop Desk - Khemis Miliana",
+      "postalCode": "4404"
+    }
+  ],
+  "45": [
+    {
+      "id": 943,
+      "name": "Mecheria",
+      "address": "مكتب Stop Desk - Mecheria",
+      "postalCode": "4502"
+    }
+  ],
+  "46": [
+    {
+      "id": 114,
+      "name": "Ain Temouchent",
+      "address": "مكتب Stop Desk - Ain Temouchent",
+      "postalCode": "4601"
+    }
+  ],
+  "47": [
+    {
+      "id": 704,
+      "name": "Ghardaia",
+      "address": "مكتب Stop Desk - Ghardaia",
+      "postalCode": "4701"
+    }
+  ],
+  "48": [
+    {
+      "id": 1188,
+      "name": "Relizane",
+      "address": "مكتب Stop Desk - Relizane",
+      "postalCode": "4801"
+    }
+  ],
+  "49": [
+    {
+      "id": 1472,
+      "name": "Timimoun",
+      "address": "مكتب Stop Desk - Timimoun",
+      "postalCode": "4901"
+    }
+  ],
+  "50": [],
+  "51": [
+    {
+      "id": 1107,
+      "name": "Ouled Djellal",
+      "address": "مكتب Stop Desk - Ouled Djellal",
+      "postalCode": "5101"
+    }
+  ],
+  "52": [],
+  "53": [
+    {
+      "id": 817,
+      "name": "In Salah",
+      "address": "مكتب Stop Desk - In Salah",
+      "postalCode": "5301"
+    }
+  ],
+  "54": [
+    {
+      "id": 816,
+      "name": "In Guezzam",
+      "address": "مكتب Stop Desk - In Guezzam",
+      "postalCode": "5401"
+    },
+    {
+      "id": 1475,
+      "name": "Tin Zouatine",
+      "address": "مكتب Stop Desk - Tin Zouatine",
+      "postalCode": "5402"
+    }
+  ],
+  "55": [
+    {
+      "id": 1498,
+      "name": "Touggourt",
+      "address": "مكتب Stop Desk - Touggourt",
+      "postalCode": "5501"
+    }
+  ],
+  "56": [
+    {
+      "id": 337,
+      "name": "Bordj El Haouasse",
+      "address": "مكتب Stop Desk - Bordj El Haouasse",
+      "postalCode": "5602"
+    },
+    {
+      "id": 506,
+      "name": "Djanet",
+      "address": "مكتب Stop Desk - Djanet",
+      "postalCode": "5601"
+    }
+  ],
+  "57": [],
+  "58": [
+    {
+      "id": 651,
+      "name": "El Meniaa",
+      "address": "مكتب Stop Desk - El Meniaa",
+      "postalCode": "5801"
+    }
+  ],
+  "08": [
+    {
+      "id": 208,
+      "name": "Bechar",
+      "address": "مكتب Stop Desk - Bechar",
+      "postalCode": "801"
+    }
+  ],
+  "02": [
+    {
+      "id": 469,
+      "name": "Chlef",
+      "address": "مكتب Stop Desk - Chlef",
+      "postalCode": "201"
+    },
+    {
+      "id": 1436,
+      "name": "Tenes",
+      "address": "مكتب Stop Desk - Tenes",
+      "postalCode": "202"
+    }
+  ],
+  "06": [
+    {
+      "id": 152,
+      "name": "Akbou",
+      "address": "مكتب Stop Desk - Akbou",
+      "postalCode": "625"
+    },
+    {
+      "id": 214,
+      "name": "Bejaia",
+      "address": "مكتب Stop Desk - Bejaia",
+      "postalCode": "601"
+    },
+    {
+      "id": 850,
+      "name": "Kherrata",
+      "address": "مكتب Stop Desk - Kherrata",
+      "postalCode": "644"
+    }
+  ],
+  "01": [
+    {
+      "id": 6,
+      "name": "Adrar",
+      "address": "مكتب Stop Desk - Adrar",
+      "postalCode": "101"
+    }
+  ],
+  "03": [
+    {
+      "id": 873,
+      "name": "Laghouat",
+      "address": "مكتب Stop Desk - Laghouat",
+      "postalCode": "301"
+    }
+  ],
+  "04": [
+    {
+      "id": 61,
+      "name": "Ain Fekroune",
+      "address": "مكتب Stop Desk - Ain Fekroune",
+      "postalCode": "425"
+    },
+    {
+      "id": 1153,
+      "name": "Oum El Bouaghi",
+      "address": "مكتب Stop Desk - Oum El Bouaghi",
+      "postalCode": "401"
+    }
+  ],
+  "05": [
+    {
+      "id": 203,
+      "name": "Barika",
+      "address": "مكتب Stop Desk - Barika",
+      "postalCode": "542"
+    },
+    {
+      "id": 205,
+      "name": "Batna",
+      "address": "مكتب Stop Desk - Batna",
+      "postalCode": "501"
+    }
+  ],
+  "07": [
+    {
+      "id": 324,
+      "name": "Biskra",
+      "address": "مكتب Stop Desk - Biskra",
+      "postalCode": "701"
+    }
+  ],
+  "09": [
+    {
+      "id": 267,
+      "name": "Beni Mered",
+      "address": "مكتب Stop Desk - Beni Mered",
+      "postalCode": "921"
+    },
+    {
+      "id": 326,
+      "name": "Blida",
+      "address": "مكتب Stop Desk - Blida",
+      "postalCode": "901"
+    },
+    {
+      "id": 372,
+      "name": "Boufarik",
+      "address": "مكتب Stop Desk - Boufarik",
+      "postalCode": "916"
+    },
+    {
+      "id": 389,
+      "name": "Bouinan",
+      "address": "مكتب Stop Desk - Bouinan",
+      "postalCode": "903"
+    },
+    {
+      "id": 1145,
+      "name": "Ouled Yaich",
+      "address": "مكتب Stop Desk - Ouled Yaich",
+      "postalCode": "905"
+    }
+  ]
+}
 };

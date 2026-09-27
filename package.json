@@ -1,0 +1,19 @@
+{
+  "name": "abshop-delivery-bot",
+  "version": "1.0.0",
+  "description": "TR Delivery EcoTrack integration and Telegram Bordereau Bot",
+  "main": "telegram-bot.js",
+  "scripts": {
+    "start": "node telegram-bot.js",
+    "bot": "node telegram-bot.js",
+    "extract": "node extract-ecotrack.js"
+  },
+  "keywords": [
+    "ecotrack",
+    "telegram",
+    "trdelivery",
+    "bordereau"
+  ],
+  "author": "",
+  "license": "ISC"
+}
