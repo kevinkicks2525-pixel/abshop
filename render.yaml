@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: abshop-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node telegram-bot.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18.20.0

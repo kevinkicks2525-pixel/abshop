@@ -75,6 +75,48 @@ const STATUTS = {
   }
 };
 
+const UPSTASH_URL = process.env.UPSTASH_REDIS_REST_URL;
+const UPSTASH_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+
+/**
+ * Synchronise les données depuis le Cloud (Upstash Redis gratuit) au démarrage
+ */
+async function syncFromCloud() {
+  if (!UPSTASH_URL || !UPSTASH_TOKEN) return;
+  try {
+    const res = await fetch(`${UPSTASH_URL}/get/abshop_orders_db`, {
+      headers: { Authorization: `Bearer ${UPSTASH_TOKEN}` }
+    });
+    const json = await res.json();
+    if (json && json.result) {
+      const parsed = typeof json.result === 'string' ? JSON.parse(json.result) : json.result;
+      if (parsed && parsed.orders) {
+        fs.writeFileSync(DB_PATH, JSON.stringify(parsed, null, 2), 'utf-8');
+        console.log(`☁️ [Cloud DB] ${Object.keys(parsed.orders).length} commandes synchronisées depuis Upstash Redis !`);
+      }
+    }
+  } catch (err) {
+    console.warn('⚠️ [Cloud DB] Synchronisation échouée:', err.message);
+  }
+}
+
+/**
+ * Sauvegarde asynchrone dans le Cloud (Upstash Redis)
+ */
+async function syncToCloud(db) {
+  if (!UPSTASH_URL || !UPSTASH_TOKEN) return;
+  try {
+    await fetch(`${UPSTASH_URL}/set/abshop_orders_db`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${UPSTASH_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(db)
+    });
+  } catch (e) { }
+}
+
 /**
  * Initialise ou charge la base de données
  */
@@ -99,6 +141,7 @@ function loadDatabase() {
 function saveDatabase(db) {
   try {
     fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2), 'utf-8');
+    syncToCloud(db);
     return true;
   } catch (err) {
     console.error('[Orders DB] Erreur sauvegarde base:', err.message);
@@ -538,10 +581,12 @@ function getOrderKeyboard(order) {
     ]);
   }
 
-  const publicUrl = process.env.PUBLIC_URL || 'https://3cf2e8b5a4c515.lhr.life';
-  keyboard.push([
-    { text: '📊 Ouvrir Sheet Ecom Pro', web_app: { url: `${publicUrl}/sheet` } }
-  ]);
+  const publicUrl = process.env.RENDER_EXTERNAL_URL || process.env.PUBLIC_URL || '';
+  if (publicUrl) {
+    keyboard.push([
+      { text: '📊 Ouvrir Sheet Ecom Pro', web_app: { url: `${publicUrl}/sheet` } }
+    ]);
+  }
 
   return { inline_keyboard: keyboard };
 }
@@ -550,6 +595,7 @@ module.exports = {
   STATUTS,
   loadDatabase,
   saveDatabase,
+  syncFromCloud,
   upsertOrder,
   updateOrderStatus,
   updateOrderNote,

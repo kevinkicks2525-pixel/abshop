@@ -26,7 +26,7 @@ const ECOTRACK_TOKEN = process.env.ECOTRACK_TOKEN || 'Nzt1PpVCh5YCrSTU6BAo2KOgJI
 const ECOTRACK_URL = process.env.ECOTRACK_URL || 'https://trdelivery.ecotrack.dz';
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8857057256:AAGNk-1KOaDZQLcKOQPL0lObS7uMUBItOnk';
 const HTTP_PORT = process.env.PORT || 3005;
-let PUBLIC_URL = process.env.PUBLIC_URL || 'https://3cf2e8b5a4c515.lhr.life';
+let PUBLIC_URL = process.env.RENDER_EXTERNAL_URL || process.env.PUBLIC_URL || `http://localhost:${HTTP_PORT}`;
 
 // Charger les données de livraison (wilayas, communes, tarifs, bureaux)
 let deliveryData = null;
@@ -445,13 +445,34 @@ async function handleStatusCallback(cq, statusCode, orderId) {
   }
 }
 
-const CF_PATH = 'C:\\Program Files (x86)\\cloudflared\\cloudflared.exe';
+const CF_SYSTEM_PATH = 'C:\\Program Files (x86)\\cloudflared\\cloudflared.exe';
+const CF_LOCAL_PATH = path.join(__dirname, 'cloudflared.exe');
+const CF_PATH = fs.existsSync(CF_SYSTEM_PATH) ? CF_SYSTEM_PATH : (fs.existsSync(CF_LOCAL_PATH) ? CF_LOCAL_PATH : '');
 
 /**
- * Tunnel Cloudflare officiel haute performance & permanent
+ * Tunnel Cloudflare pour environnement local.
+ * Sur Render ou en Cloud, cette fonction est automatiquement désactivée car Render fournit une URL HTTPS permanente.
  */
 function startTunnel() {
-  console.log('🌐 [Cloudflare] Démarrage du Tunnel Cloudflare officiel...');
+  if (process.env.RENDER || process.env.RENDER_EXTERNAL_URL) {
+    PUBLIC_URL = process.env.RENDER_EXTERNAL_URL || PUBLIC_URL;
+    console.log(`🚀 [Render Cloud Actif] Sheet Ecom Pro en ligne 24/7 sur : ${PUBLIC_URL}/sheet`);
+
+    // Auto-ping toutes les 14 minutes pour maintenir le conteneur gratuit éveillé
+    setInterval(async () => {
+      try {
+        await fetch(`${PUBLIC_URL}/healthz`);
+      } catch (e) { }
+    }, 14 * 60 * 1000);
+    return;
+  }
+
+  if (!fs.existsSync(CF_PATH)) {
+    console.log(`🌐 [Mode Serveur Direct] Port ${HTTP_PORT}. PUBLIC_URL: ${PUBLIC_URL}`);
+    return;
+  }
+
+  console.log('🌐 [Cloudflare] Démarrage du Tunnel Cloudflare local...');
   try {
     const proc = spawn(CF_PATH, ['tunnel', '--url', `http://localhost:${HTTP_PORT}`]);
 
@@ -495,6 +516,13 @@ function startHttpServer() {
 
     const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
     const pathname = parsedUrl.pathname;
+
+    // 0. HEALTH CHECK (Pour Render / UptimeRobot / Monitoring)
+    if (pathname === '/healthz' || pathname === '/ping') {
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ status: 'ok', uptime: process.uptime(), time: new Date().toISOString() }));
+      return;
+    }
 
     // 1. DASHBOARD WEB : /sheet ou /
     if (pathname === '/sheet' || pathname === '/') {
@@ -638,6 +666,9 @@ function startHttpServer() {
 async function startBot() {
   console.log('🤖 Démarrage du Bot Telegram Sheet Ecom & TR Delivery...');
   console.log(`Plateforme EcoTrack: ${ECOTRACK_URL}`);
+
+  // Synchronisation avec la base Cloud si configurée
+  await ordersManager.syncFromCloud();
 
   let offset = 0;
 
