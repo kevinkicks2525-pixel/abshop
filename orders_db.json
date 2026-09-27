@@ -1,0 +1,191 @@
+{
+  "orders": {
+    "CMD_0001": {
+      "id": "CMD_0001",
+      "date": "2026-09-27T12:38:29.151Z",
+      "dateStr": "27/09/2026 01:38 PM",
+      "nom_client": "Mebarkia Anouar",
+      "telephone": "0667029105",
+      "code_wilaya": 12,
+      "wilaya_name": "12 - Tébessa",
+      "commune": "Cheria",
+      "adresse": "Cheria Centre",
+      "stop_desk": 0,
+      "mode": "توصيل للمنزل (À Domicile)",
+      "produit": "ميني فلوكون عطر",
+      "montant": 2600,
+      "statut": "EXPEDIE",
+      "confirmateur": "Ayoub",
+      "notes": "",
+      "tracking": "EC3FVS26092627811",
+      "pdf_url": null,
+      "telegram_message_id": null,
+      "telegram_chat_id": null,
+      "history": [
+        {
+          "action": "CREATION",
+          "time": "2026-09-27T12:38:29.151Z",
+          "dateStr": "27/09/2026 01:38 PM",
+          "user": "Site Web",
+          "text": "Commande enregistrée depuis le site"
+        }
+      ]
+    },
+    "CMD_0002": {
+      "id": "CMD_0002",
+      "date": "2026-09-27T12:38:29.177Z",
+      "dateStr": "27/09/2026 01:38 PM",
+      "nom_client": "ايوب",
+      "telephone": "0552742566",
+      "code_wilaya": 4,
+      "wilaya_name": "04 - أم البواقي",
+      "commune": "Ain Fekroune",
+      "adresse": "امام مقر الدرك الوطني",
+      "stop_desk": 0,
+      "mode": "توصيل للمنزل (À Domicile)",
+      "produit": "ميني فلوكون عطر",
+      "montant": 2700,
+      "statut": "EXPEDIE",
+      "confirmateur": "Ayoub",
+      "notes": "",
+      "tracking": "EC3FVS26092627826",
+      "pdf_url": null,
+      "telegram_message_id": null,
+      "telegram_chat_id": null,
+      "history": [
+        {
+          "action": "CREATION",
+          "time": "2026-09-27T12:38:29.177Z",
+          "dateStr": "27/09/2026 01:38 PM",
+          "user": "Site Web",
+          "text": "Commande enregistrée depuis le site"
+        }
+      ]
+    },
+    "CMD_0003": {
+      "id": "CMD_0003",
+      "date": "2026-09-27T12:38:29.180Z",
+      "dateStr": "27/09/2026 01:38 PM",
+      "nom_client": "موحمو مراد",
+      "telephone": "0555284211",
+      "code_wilaya": 16,
+      "wilaya_name": "16 - الجزائر",
+      "commune": "Dely Ibrahim",
+      "adresse": "Bois des cars",
+      "stop_desk": 0,
+      "mode": "توصيل للمنزل (À Domicile)",
+      "produit": "ميني فلوكون عطر",
+      "montant": 2400,
+      "statut": "EXPEDIE",
+      "confirmateur": "Ayoub",
+      "notes": "",
+      "tracking": "EC3FVS26092627827",
+      "pdf_url": null,
+      "telegram_message_id": null,
+      "telegram_chat_id": null,
+      "history": [
+        {
+          "action": "CREATION",
+          "time": "2026-09-27T12:38:29.180Z",
+          "dateStr": "27/09/2026 01:38 PM",
+          "user": "Site Web",
+          "text": "Commande enregistrée depuis le site"
+        }
+      ]
+    },
+    "CMD_0004": {
+      "id": "CMD_0004",
+      "date": "2026-09-27T12:38:29.183Z",
+      "dateStr": "27/09/2026 01:38 PM",
+      "nom_client": "Hamid Hamid",
+      "telephone": "0662403741",
+      "code_wilaya": 3,
+      "wilaya_name": "03 - الأغواط",
+      "commune": "Laghouat",
+      "adresse": "Cité Al Ouiam (En face la mosquée Hammani )",
+      "stop_desk": 1,
+      "mode": "استلام من المكتب (Stop Desk)",
+      "produit": "ميني فلوكون عطر",
+      "montant": 2400,
+      "statut": "EXPEDIE",
+      "confirmateur": "Ayoub",
+      "notes": "",
+      "tracking": "EC3FVS26092627828",
+      "pdf_url": null,
+      "telegram_message_id": null,
+      "telegram_chat_id": null,
+      "history": [
+        {
+          "action": "CREATION",
+          "time": "2026-09-27T12:38:29.183Z",
+          "dateStr": "27/09/2026 01:38 PM",
+          "user": "Site Web",
+          "text": "Commande enregistrée depuis le site"
+        }
+      ]
+    },
+    "CMD_0005": {
+      "id": "CMD_0005",
+      "date": "2026-09-27T12:38:29.186Z",
+      "dateStr": "27/09/2026 01:38 PM",
+      "nom_client": "oussama djebrit",
+      "telephone": "0775283442",
+      "code_wilaya": 58,
+      "wilaya_name": "58 - المنيعة",
+      "commune": "El Meniaa",
+      "adresse": "amir abdelkader",
+      "stop_desk": 0,
+      "mode": "توصيل للمنزل (À Domicile)",
+      "produit": "ميني فلوكون عطر",
+      "montant": 2750,
+      "statut": "EXPEDIE",
+      "confirmateur": "Ayoub",
+      "notes": "",
+      "tracking": "EC3FVS26092728059",
+      "pdf_url": null,
+      "telegram_message_id": null,
+      "telegram_chat_id": null,
+      "history": [
+        {
+          "action": "CREATION",
+          "time": "2026-09-27T12:38:29.186Z",
+          "dateStr": "27/09/2026 01:38 PM",
+          "user": "Site Web",
+          "text": "Commande enregistrée depuis le site"
+        }
+      ]
+    },
+    "CMD_0006": {
+      "id": "CMD_0006",
+      "date": "2026-09-27T12:42:38.238Z",
+      "dateStr": "27/09/2026 01:42 PM",
+      "nom_client": "Karim Brahimi",
+      "telephone": "0550123456",
+      "code_wilaya": 16,
+      "wilaya_name": "16 - Alger",
+      "commune": "Bab Ezzouar",
+      "adresse": "Cité 8 Mai 1945, Batiment 12",
+      "stop_desk": 0,
+      "mode": "توصيل للمنزل (À Domicile)",
+      "produit": "3 قطع (1900 دج) - ماط (Matte)",
+      "montant": 2300,
+      "statut": "NOUVEAU",
+      "confirmateur": null,
+      "notes": "",
+      "tracking": null,
+      "pdf_url": null,
+      "telegram_message_id": 63,
+      "telegram_chat_id": "6419829363",
+      "history": [
+        {
+          "action": "CREATION",
+          "time": "2026-09-27T12:42:38.238Z",
+          "dateStr": "27/09/2026 01:42 PM",
+          "user": "Site Web",
+          "text": "Commande enregistrée depuis le site"
+        }
+      ]
+    }
+  },
+  "counter": 1
+}

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheet Ecom Pro — Suivi des Confirmations COD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --purple: #8b5cf6;
+      --cyan: #06b6d4;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .title-group h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .title-group p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+
+    .badge-live {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .badge-live::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--success);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid var(--card-border);
+    }
+    .btn-secondary:hover {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    /* KPI CARDS */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--card-accent, var(--primary));
+    }
+
+    .kpi-card.kpi-confirmed { --card-accent: var(--success); }
+    .kpi-card.kpi-nrp { --card-accent: var(--warning); }
+    .kpi-card.kpi-cancelled { --card-accent: var(--danger); }
+    .kpi-card.kpi-ca { --card-accent: var(--purple); }
+
+    .kpi-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+
+    .kpi-value {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .kpi-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* TOOLBAR & FILTERS */
+    .toolbar {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tab-btn.active {
+      background: #1e293b;
+      color: white;
+      border-color: #334155;
+    }
+
+    .search-input {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: white;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      min-width: 260px;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    /* TABLE */
+    .table-wrapper {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow-x: auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    th {
+      background: #0f172a;
+      padding: 14px 16px;
+      color: var(--text-muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--card-border);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: middle;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .client-name {
+      font-weight: 700;
+      color: white;
+      display: block;
+    }
+
+    .client-phone {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .status-select {
+      background: #0f172a;
+      border: 1px solid var(--card-border);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .status-select:focus {
+      border-color: var(--primary);
+    }
+
+    .actions-cell {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .icon-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #1e293b;
+      color: var(--text);
+      text-decoration: none;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .icon-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .btn-wa {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+    .btn-wa:hover {
+      background: #10b981;
+      color: white;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="title-group">
+        <h1>📊 Sheet Ecom Pro <span class="badge-live">Live Sync</span></h1>
+        <p>Gestion & Suivi des Confirmations COD — TR Delivery EcoTrack</p>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-secondary" id="refresh-btn" onclick="fetchOrders()">
+          🔄 Actualiser
+        </button>
+        <a class="btn btn-primary" href="/api/export-csv" download="Sheet_Ecom_TR_Delivery.csv">
+          📥 Exporter Excel (CSV)
+        </a>
+      </div>
+    </header>
+
+    <!-- KPI CARDS -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Commandes</div>
+        <div class="kpi-value" id="kpi-total">0</div>
+        <div class="kpi-sub"><span id="kpi-nouveaux">0</span> nouvelles à traiter</div>
+      </div>
+      <div class="kpi-card kpi-confirmed">
+        <div class="kpi-label">Confirmées</div>
+        <div class="kpi-value" id="kpi-confirmes">0</div>
+        <div class="kpi-sub">Taux : <b id="kpi-tx-conf">0%</b></div>
+      </div>
+      <div class="kpi-card kpi-nrp">
+        <div class="kpi-label">NRP (Ne Répond Pas)</div>
+        <div class="kpi-value" id="kpi-nrp">0</div>
+        <div class="kpi-sub">Taux : <b id="kpi-tx-nrp">0%</b></div>
+      </div>
+      <div class="kpi-card kpi-cancelled">
+        <div class="kpi-label">Annulées</div>
+        <div class="kpi-value" id="kpi-annules">0</div>
+        <div class="kpi-sub">Taux : <b id="kpi-tx-ann">0%</b></div>
+      </div>
+      <div class="kpi-card kpi-ca">
+        <div class="kpi-label">CA Confirmé</div>
+        <div class="kpi-value" id="kpi-ca">0 DA</div>
+        <div class="kpi-sub">Sur un total de <span id="kpi-ca-total">0 DA</span></div>
+      </div>
+    </section>
+
+    <!-- TOOLBAR & FILTERS -->
+    <div class="toolbar">
+      <div class="tabs" id="status-tabs">
+        <button class="tab-btn active" data-filter="ALL">Toutes (<span id="count-all">0</span>)</button>
+        <button class="tab-btn" data-filter="NOUVEAU">🆕 Nouveau (<span id="count-nouveau">0</span>)</button>
+        <button class="tab-btn" data-filter="CONFIRME">🟢 Confirmé (<span id="count-confirme">0</span>)</button>
+        <button class="tab-btn" data-filter="NRP">📞 NRP (<span id="count-nrp">0</span>)</button>
+        <button class="tab-btn" data-filter="EXPEDIE">🚚 Expédié (<span id="count-expedie">0</span>)</button>
+        <button class="tab-btn" data-filter="ANNULE">🔴 Annulé (<span id="count-annule">0</span>)</button>
+      </div>
+      <input type="text" class="search-input" id="search-input" placeholder="🔍 Rechercher client, téléphone, wilaya...">
+    </div>
+
+    <!-- ORDERS TABLE -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Client & Téléphone</th>
+            <th>Wilaya / Commune</th>
+            <th>Mode</th>
+            <th>Offre</th>
+            <th>Montant</th>
+            <th>Statut Confirmation</th>
+            <th>Confirmateur</th>
+            <th>Bordereau TR</th>
+            <th>Actions Rapides</th>
+          </tr>
+        </thead>
+        <tbody id="orders-tbody">
+          <tr>
+            <td colspan="11" class="empty-state">Chargement des commandes...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script>
+    let allOrders = [];
+    let currentFilter = 'ALL';
+    let searchQuery = '';
+
+    const STATUS_MAP = {
+      NOUVEAU: { label: '🆕 Nouveau', bg: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa' },
+      NRP_1: { label: '🟡 NRP 1 (Appel 1)', bg: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24' },
+      NRP_2: { label: '🟠 NRP 2 (Appel 2)', bg: 'rgba(217, 119, 6, 0.2)', color: '#f59e0b' },
+      NRP_3: { label: '🟤 NRP 3 (Dernier)', bg: 'rgba(180, 83, 9, 0.25)', color: '#d97706' },
+      CONFIRME: { label: '🟢 Confirmé', bg: 'rgba(16, 185, 129, 0.15)', color: '#34d399' },
+      REPORTE: { label: '⏰ Reporté', bg: 'rgba(139, 92, 246, 0.15)', color: '#a78bfa' },
+      ANNULE: { label: '🔴 Annulé', bg: 'rgba(239, 68, 68, 0.15)', color: '#f87171' },
+      EXPEDIE: { label: '🚚 Expédié', bg: 'rgba(6, 182, 212, 0.15)', color: '#22d3ee' }
+    };
+
+    async function fetchOrders() {
+      try {
+        const res = await fetch('/api/orders');
+        const data = await res.json();
+        allOrders = Object.values(data.orders || {}).sort((a, b) => new Date(b.date) - new Date(a.date));
+        renderKpis(data.kpis || {});
+        renderTable();
+      } catch (err) {
+        console.error('Erreur chargement commandes:', err);
+      }
+    }
+
+    function renderKpis(kpis) {
+      document.getElementById('kpi-total').textContent = kpis.total || 0;
+      document.getElementById('kpi-nouveaux').textContent = kpis.nouveaux || 0;
+      document.getElementById('kpi-confirmes').textContent = kpis.confirmes || 0;
+      document.getElementById('kpi-tx-conf').textContent = (kpis.txConfirmation || 0) + '%';
+      document.getElementById('kpi-nrp').textContent = kpis.nrp || 0;
+      document.getElementById('kpi-tx-nrp').textContent = (kpis.txNrp || 0) + '%';
+      document.getElementById('kpi-annules').textContent = kpis.annules || 0;
+      document.getElementById('kpi-tx-ann').textContent = (kpis.txAnnulation || 0) + '%';
+      document.getElementById('kpi-ca').textContent = (kpis.caConfirme || 0).toLocaleString() + ' DA';
+      document.getElementById('kpi-ca-total').textContent = (kpis.caTotal || 0).toLocaleString() + ' DA';
+
+      // Counts for tabs
+      document.getElementById('count-all').textContent = allOrders.length;
+      document.getElementById('count-nouveau').textContent = allOrders.filter(o => o.statut === 'NOUVEAU').length;
+      document.getElementById('count-confirme').textContent = allOrders.filter(o => o.statut === 'CONFIRME').length;
+      document.getElementById('count-nrp').textContent = allOrders.filter(o => o.statut.startsWith('NRP')).length;
+      document.getElementById('count-expedie').textContent = allOrders.filter(o => o.statut === 'EXPEDIE').length;
+      document.getElementById('count-annule').textContent = allOrders.filter(o => o.statut === 'ANNULE').length;
+    }
+
+    async function onStatusChange(orderId, newStatus) {
+      try {
+        await fetch('/api/orders/status', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: orderId, status: newStatus, user: 'Dashboard Web' })
+        });
+        await fetchOrders();
+      } catch (e) {
+        alert('Erreur lors du changement de statut: ' + e.message);
+      }
+    }
+
+    async function onCreateBordereau(orderId) {
+      if (!confirm('Créer le bordereau TR Delivery pour la commande #' + orderId + ' ?')) return;
+      try {
+        const res = await fetch('/api/orders/bordereau', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: orderId })
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('Bordereau créé avec succès ! Tracking: ' + data.tracking);
+          await fetchOrders();
+        } else {
+          alert('Erreur: ' + data.message);
+        }
+      } catch (e) {
+        alert('Erreur: ' + e.message);
+      }
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('orders-tbody');
+      tbody.innerHTML = '';
+
+      let filtered = allOrders.filter(o => {
+        if (currentFilter === 'NOUVEAU' && o.statut !== 'NOUVEAU') return false;
+        if (currentFilter === 'CONFIRME' && o.statut !== 'CONFIRME') return false;
+        if (currentFilter === 'NRP' && !o.statut.startsWith('NRP')) return false;
+        if (currentFilter === 'EXPEDIE' && o.statut !== 'EXPEDIE') return false;
+        if (currentFilter === 'ANNULE' && o.statut !== 'ANNULE') return false;
+
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          const matchName = (o.nom_client || '').toLowerCase().includes(q);
+          const matchPhone = (o.telephone || '').includes(q);
+          const matchWilaya = (o.wilaya_name || '').toLowerCase().includes(q);
+          const matchTracking = (o.tracking || '').toLowerCase().includes(q);
+          const matchId = (o.id || '').toLowerCase().includes(q);
+          return matchName || matchPhone || matchWilaya || matchTracking || matchId;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="11" class="empty-state">Aucune commande trouvée.</td></tr>';
+        return;
+      }
+
+      filtered.forEach(o => {
+        const tr = document.createElement('tr');
+        const sInfo = STATUS_MAP[o.statut] || STATUS_MAP.NOUVEAU;
+
+        const rawPhone = String(o.telephone || '').replace(/[^0-9]/g, '');
+        const dzPhone = rawPhone.startsWith('0') ? '213' + rawPhone.slice(1) : rawPhone;
+
+        tr.innerHTML = `
+          <td><b style="color: var(--primary);">#${o.id}</b></td>
+          <td style="color: var(--text-muted); font-size: 0.8rem;">${o.dateStr}</td>
+          <td>
+            <span class="client-name">${o.nom_client}</span>
+            <span class="client-phone">📞 ${o.telephone}</span>
+          </td>
+          <td>
+            <b>${o.wilaya_name || o.code_wilaya}</b><br>
+            <span style="color: var(--text-muted); font-size: 0.8rem;">${o.commune}</span>
+          </td>
+          <td>
+            <span style="font-size: 0.8rem; font-weight: 700;">${o.stop_desk ? '🏢 Stop Desk' : '🏠 Domicile'}</span>
+          </td>
+          <td style="font-size: 0.82rem;">${o.produit}</td>
+          <td><b style="color: #34d399;">${o.montant} DA</b></td>
+          <td>
+            <select class="status-select" onchange="onStatusChange('${o.id}', this.value)">
+              <option value="NOUVEAU" ${o.statut === 'NOUVEAU' ? 'selected' : ''}>🆕 Nouveau</option>
+              <option value="CONFIRME" ${o.statut === 'CONFIRME' ? 'selected' : ''}>🟢 Confirmé</option>
+              <option value="NRP_1" ${o.statut === 'NRP_1' ? 'selected' : ''}>🟡 NRP 1 (Appel 1)</option>
+              <option value="NRP_2" ${o.statut === 'NRP_2' ? 'selected' : ''}>🟠 NRP 2 (Appel 2)</option>
+              <option value="NRP_3" ${o.statut === 'NRP_3' ? 'selected' : ''}>🟤 NRP 3 (Dernier)</option>
+              <option value="REPORTE" ${o.statut === 'REPORTE' ? 'selected' : ''}>⏰ Reporté</option>
+              <option value="ANNULE" ${o.statut === 'ANNULE' ? 'selected' : ''}>🔴 Annulé</option>
+              <option value="EXPEDIE" ${o.statut === 'EXPEDIE' ? 'selected' : ''}>🚚 Expédié</option>
+            </select>
+          </td>
+          <td style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1;">${o.confirmateur || '—'}</td>
+          <td>
+            ${o.tracking ?
+              `<a href="${o.pdf_url || '#'}" target="_blank" class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.76rem;">🖨️ ${o.tracking}</a>` :
+              (o.statut === 'CONFIRME' ?
+                `<button class="btn btn-primary" style="padding: 4px 8px; font-size: 0.76rem;" onclick="onCreateBordereau('${o.id}')">📄 Créer Bordereau</button>` :
+                `<span style="color: var(--text-muted); font-size: 0.78rem;">Non généré</span>`
+              )
+            }
+          </td>
+          <td>
+            <div class="actions-cell">
+              <a href="tel:${o.telephone}" class="icon-btn" title="Appeler le client">📞</a>
+              <a href="https://wa.me/${dzPhone}" target="_blank" class="icon-btn btn-wa" title="Discuter sur WhatsApp">💬</a>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Tabs filter listeners
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        renderTable();
+      });
+    });
+
+    // Search input listener
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderTable();
+    });
+
+    // Initial fetch & Auto-refresh every 5 seconds
+    fetchOrders();
+    setInterval(fetchOrders, 5000);
+  </script>
+</body>
+</html>

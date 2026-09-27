@@ -545,30 +545,33 @@
       submitBtn.textContent = 'جاري تأكيد الطلب...';
       submitBtn.style.opacity = '0.7';
 
-      // 3. Préparation du message Telegram
+      // 3. Préparation de la commande & message Telegram
       const totalToPay = selectedOfferPrice + currentDeliveryPrice;
       const now = new Date();
       const dateStr = now.toLocaleDateString('fr-DZ') + ' ' + now.toLocaleTimeString('fr-DZ', { hour: '2-digit', minute: '2-digit' });
+      const orderRef = 'CMD_' + Date.now().toString(36).toUpperCase();
 
       const telegramMessage = 
-`🔔 <b>طلب جديد (Nouvelle Commande)</b>
+`🔔 <b>COMMANDE #${orderRef}</b>
 ━━━━━━━━━━━━━━━━━━
-👤 <b>الاسم:</b> ${name}
-📞 <b>الهاتف:</b> <code>${phone}</code>
-📍 <b>الولاية:</b> ${wilayaText}
-🚚 <b>نوع التوصيل:</b> ${deliveryMode}
-🏢 <b>التفاصيل:</b> ${locationDetail}
+👤 <b>الاسم :</b> ${name}
+📞 <b>الهاتف :</b> <code>${phone}</code>
+📍 <b>الولاية :</b> ${wilayaText}
+🚚 <b>نوع التوصيل :</b> ${deliveryMode}
+🏢 <b>التفاصيل :</b> ${locationDetail}
 ━━━━━━━━━━━━━━━━━━
-🎁 <b>العرض:</b> ${selectedOffer} قطع (${selectedOfferPrice} دج)
-✨ <b>المظهر:</b> ${selectedFinish}
-📦 <b>سعر التوصيل:</b> ${currentDeliveryPrice} دج
-💰 <b>المبلغ الإجمالي:</b> <b>${totalToPay} دج</b>
+🎁 <b>العرض :</b> ${selectedOffer} قطع (${selectedOfferPrice} دج) - ${selectedFinish}
+💰 <b>المبلغ الإجمالي :</b> <b>${totalToPay} دج</b>
 ━━━━━━━━━━━━━━━━━━
-📅 <b>التاريخ:</b> ${dateStr}`;
+📊 <b>الحالة (Statut) :</b> 🆕 <b>NOUVEAU</b>
+👤 <b>المسؤول :</b> En attente d'appel
+━━━━━━━━━━━━━━━━━━
+📅 <b>التاريخ :</b> ${dateStr}`;
 
-      // 4. Envoi Telegram avec bouton interactif pour créer le bordereau
+      const waPhone = phone.replace(/^0/, '213');
+
+      // 4. Envoi Telegram avec boutons complets du Sheet Ecom (Confirmation, NRP 1, Bordereau, WhatsApp)
       try {
-        const orderRef = 'CMD_' + Date.now().toString(36).toUpperCase();
         const telegramPromises = TELEGRAM_CHAT_IDS.map(chatId =>
           fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
             method: 'POST',
@@ -580,16 +583,42 @@
               reply_markup: {
                 inline_keyboard: [
                   [
-                    {
-                      text: '📄 Créer le Bordereau TR Delivery',
-                      callback_data: `create_bd_${orderRef}`
-                    }
+                    { text: '✅ Confirmer', callback_data: `st_confirme_${orderRef}` },
+                    { text: '❌ Annuler', callback_data: `st_annule_${orderRef}` }
+                  ],
+                  [
+                    { text: '📞 NRP 1 (1er Appel)', callback_data: `st_nrp1_${orderRef}` },
+                    { text: '⏰ Reporter', callback_data: `st_reporte_${orderRef}` }
+                  ],
+                  [
+                    { text: '📄 Forcer Bordereau', callback_data: `create_bd_${orderRef}` },
+                    { text: '💬 WhatsApp', url: `https://wa.me/${waPhone}` }
                   ]
                 ]
               }
             })
           })
         );
+
+        // Envoi optionnel vers le serveur local Sheet si actif
+        fetch('http://localhost:3005/api/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            id: orderRef,
+            nom_client: name,
+            telephone: phone,
+            code_wilaya: parseInt(currentWilayaCode, 10),
+            wilaya_name: wilayaText,
+            commune: currentDeliveryType === 'home' ? communeSelect.value : bureauSelect.value,
+            adresse: locationDetail,
+            stop_desk: currentDeliveryType === 'office' ? 1 : 0,
+            produit: `${selectedOffer} قطع (${selectedOfferPrice} دج) - ${selectedFinish}`,
+            montant: totalToPay,
+            statut: 'NOUVEAU'
+          }),
+          signal: AbortSignal.timeout(1500)
+        }).catch(() => {});
 
         // Timeout après 3.5 secondes max pour éviter tout blocage réseau
         const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3500));
