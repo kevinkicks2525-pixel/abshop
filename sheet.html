@@ -2,475 +2,866 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sheet Ecom Pro — Suivi des Confirmations COD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Sheet Ecom Pro — Confirmations & TR Delivery</title>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0f19;
+      --bg: #090d16;
       --card-bg: #111827;
-      --card-border: #1f2937;
-      --text: #f3f4f6;
-      --text-muted: #9ca3af;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-      --success: #10b981;
+      --panel-bg: #0f172a;
+      --border: #1e293b;
+      --border-light: rgba(255, 255, 255, 0.08);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --blue: #3b82f6;
       --warning: #f59e0b;
       --danger: #ef4444;
       --purple: #8b5cf6;
       --cyan: #06b6d4;
+      --cell-hover: rgba(255, 255, 255, 0.03);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
       background-color: var(--bg);
       color: var(--text);
       min-height: 100vh;
-      padding: 24px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .container {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    /* HEADER */
-    .header {
+    /* TOP SHEET HEADER (Google Sheets Style) */
+    .sheet-topbar {
+      background: #0f172a;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 24px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--card-border);
-      flex-wrap: wrap;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .title-group h1 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      letter-spacing: -0.5px;
-    }
-
-    .title-group p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-top: 4px;
-    }
-
-    .badge-live {
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--success);
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-
-    .badge-live::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      background: var(--success);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--success);
-    }
-
-    .header-actions {
+    .brand-section {
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+
+    .sheet-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #10b981, #047857);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .sheet-titles h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sheet-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.12);
+      padding: 3px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 16px;
-      border-radius: 10px;
-      font-size: 0.88rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
       font-weight: 700;
       cursor: pointer;
       border: none;
-      transition: all 0.2s;
+      transition: all 0.15s;
       text-decoration: none;
     }
 
-    .btn-primary {
-      background: var(--primary);
-      color: white;
+    .btn-green {
+      background: #10b981;
+      color: #ffffff;
     }
-    .btn-primary:hover {
-      background: var(--primary-hover);
+    .btn-green:hover {
+      background: #059669;
     }
 
-    .btn-secondary {
-      background: var(--card-bg);
-      color: var(--text);
-      border: 1px solid var(--card-border);
-    }
-    .btn-secondary:hover {
+    .btn-outline {
       background: #1e293b;
-      border-color: #334155;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      background: #334155;
     }
 
-    /* KPI CARDS */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .kpi-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 18px 20px;
+    /* MAIN CONTAINER */
+    .sheet-wrapper {
+      padding: 16px 20px;
+      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 16px;
+    }
+
+    /* KPI CARDS RIBBON */
+    .kpi-ribbon {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .kpi-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
       position: relative;
       overflow: hidden;
     }
 
-    .kpi-card::after {
+    .kpi-box::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       height: 3px;
-      background: var(--card-accent, var(--primary));
+      background: var(--kpi-color, #3b82f6);
     }
 
-    .kpi-card.kpi-confirmed { --card-accent: var(--success); }
-    .kpi-card.kpi-nrp { --card-accent: var(--warning); }
-    .kpi-card.kpi-cancelled { --card-accent: var(--danger); }
-    .kpi-card.kpi-ca { --card-accent: var(--purple); }
+    .kpi-box.green { --kpi-color: #10b981; }
+    .kpi-box.amber { --kpi-color: #f59e0b; }
+    .kpi-box.red { --kpi-color: #ef4444; }
+    .kpi-box.purple { --kpi-color: #a855f7; }
 
-    .kpi-label {
-      font-size: 0.8rem;
+    .kpi-title {
+      font-size: 0.75rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
       color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
     }
 
-    .kpi-value {
-      font-size: 1.7rem;
+    .kpi-num {
+      font-size: 1.55rem;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
 
-    .kpi-sub {
-      font-size: 0.8rem;
+    .kpi-subtext {
+      font-size: 0.78rem;
       color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
 
-    /* TOOLBAR & FILTERS */
-    .toolbar {
+    /* CONTROLS BAR (SEARCH & TABS) */
+    .controls-bar {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 14px 18px;
-      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 16px;
     }
 
-    .tabs {
+    .filter-tabs {
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
     }
 
-    .tab-btn {
-      padding: 7px 13px;
-      border-radius: 8px;
-      font-size: 0.82rem;
+    .filter-tab {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
       font-weight: 700;
+      cursor: pointer;
       border: 1px solid transparent;
       background: transparent;
       color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s;
+      white-space: nowrap;
+      transition: all 0.15s;
     }
 
-    .tab-btn:hover {
+    .filter-tab:hover {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.04);
     }
 
-    .tab-btn.active {
+    .filter-tab.active {
       background: #1e293b;
-      color: white;
+      color: #fff;
       border-color: #334155;
     }
 
-    .search-input {
+    .search-box {
+      position: relative;
+      min-width: 250px;
+    }
+
+    .search-box input {
+      width: 100%;
       background: #0f172a;
-      border: 1px solid var(--card-border);
-      color: white;
-      padding: 9px 14px;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      min-width: 260px;
+      border: 1px solid var(--border);
+      color: #fff;
+      padding: 8px 12px 8px 34px;
+      border-radius: 8px;
+      font-size: 0.84rem;
       outline: none;
     }
-    .search-input:focus {
-      border-color: var(--primary);
+    .search-box input:focus {
+      border-color: #10b981;
+    }
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    /* TABLE */
-    .table-wrapper {
+    /* THE SPREADSHEET TABLE */
+    .sheet-table-card {
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      overflow-x: auto;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
-    table {
+    .table-container {
+      overflow-x: auto;
+      max-height: calc(100vh - 350px);
+      min-height: 380px;
+      position: relative;
+    }
+
+    table.ecom-sheet {
       width: 100%;
-      border-collapse: collapse;
+      border-collapse: separate;
+      border-spacing: 0;
       text-align: left;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
     }
 
     th {
       background: #0f172a;
-      padding: 14px 16px;
       color: var(--text-muted);
-      font-size: 0.76rem;
+      padding: 10px 14px;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      border-bottom: 1px solid var(--card-border);
+      border-bottom: 2px solid #1e293b;
+      border-right: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 10;
       white-space: nowrap;
+      user-select: none;
     }
 
     td {
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light);
       vertical-align: middle;
+      white-space: nowrap;
+      transition: background 0.1s;
     }
 
     tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--cell-hover);
     }
 
+    /* Fixed Row Number */
+    .td-num {
+      text-align: center;
+      color: var(--text-muted);
+      font-family: monospace;
+      font-size: 0.78rem;
+      width: 40px;
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    /* Order ID */
+    .order-id-badge {
+      font-family: monospace;
+      font-weight: 700;
+      color: #60a5fa;
+      background: rgba(59, 130, 246, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      cursor: pointer;
+    }
+
+    /* Client Cell */
+    .client-cell {
+      max-width: 220px;
+      white-space: normal;
+    }
     .client-name {
       font-weight: 700;
-      color: white;
+      color: #fff;
       display: block;
     }
-
     .client-phone {
       font-family: monospace;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      margin-top: 2px;
+      gap: 4px;
+      text-decoration: none;
+    }
+    .client-phone:hover {
+      color: #34d399;
     }
 
-    .badge-status {
+    /* Location */
+    .location-cell {
+      max-width: 200px;
+      white-space: normal;
+    }
+    .wilaya-badge {
+      font-weight: 700;
+      color: #cbd5e1;
+    }
+    .commune-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    /* Delivery Type */
+    .mode-tag {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      white-space: nowrap;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+    .mode-tag.home {
+      background: rgba(99, 102, 241, 0.12);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+    .mode-tag.desk {
+      background: rgba(245, 158, 11, 0.12);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.25);
     }
 
+    /* Product / Offer */
+    .product-cell {
+      max-width: 220px;
+      white-space: normal;
+      font-size: 0.78rem;
+      color: #e2e8f0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    /* Price */
+    .price-tag {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: #34d399;
+      font-family: monospace;
+    }
+
+    /* Status Dropdown Cell */
     .status-select {
-      background: #0f172a;
-      border: 1px solid var(--card-border);
-      color: white;
+      border: 1px solid transparent;
       padding: 6px 10px;
       border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 700;
+      font-size: 0.78rem;
+      font-weight: 800;
       cursor: pointer;
       outline: none;
+      transition: all 0.2s;
     }
 
-    .status-select:focus {
-      border-color: var(--primary);
+    .st-NOUVEAU { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border-color: rgba(59, 130, 246, 0.4); }
+    .st-CONFIRME { background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4); }
+    .st-NRP_1 { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: rgba(245, 158, 11, 0.4); }
+    .st-NRP_2 { background: rgba(234, 88, 12, 0.2); color: #fb923c; border-color: rgba(234, 88, 12, 0.4); }
+    .st-NRP_3 { background: rgba(194, 65, 12, 0.25); color: #fdba74; border-color: rgba(194, 65, 12, 0.4); }
+    .st-REPORTE { background: rgba(168, 85, 247, 0.2); color: #c084fc; border-color: rgba(168, 85, 247, 0.4); }
+    .st-ANNULE { background: rgba(239, 68, 68, 0.2); color: #f87171; border-color: rgba(239, 68, 68, 0.4); }
+    .st-EXPEDIE { background: rgba(6, 182, 212, 0.2); color: #22d3ee; border-color: rgba(6, 182, 212, 0.4); }
+
+    /* Editable Note Cell */
+    .note-input {
+      background: transparent;
+      border: 1px dashed transparent;
+      color: #e2e8f0;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      width: 140px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .note-input:hover {
+      border-color: #334155;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .note-input:focus {
+      border-color: #10b981;
+      background: #0f172a;
+      width: 180px;
     }
 
-    .actions-cell {
+    /* Bordereau Action */
+    .btn-create-bd {
+      background: #10b981;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: transform 0.1s;
+    }
+    .btn-create-bd:hover {
+      background: #059669;
+      transform: scale(1.02);
+    }
+
+    .tracking-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #1e293b;
+      color: #38bdf8;
+      text-decoration: none;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .tracking-link:hover {
+      background: #0284c7;
+      color: #fff;
+    }
+
+    /* Action Icon Buttons */
+    .actions-group {
       display: flex;
       align-items: center;
-      gap: 8px;
-      white-space: nowrap;
+      gap: 6px;
     }
 
-    .icon-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
+    .btn-action-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: #1e293b;
       color: var(--text);
       text-decoration: none;
-      border: 1px solid var(--card-border);
+      border: 1px solid var(--border);
       cursor: pointer;
-      transition: all 0.2s;
+      font-size: 0.85rem;
+      transition: all 0.15s;
     }
-    .icon-btn:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
+    .btn-action-icon:hover {
+      background: #334155;
     }
-
-    .btn-wa {
-      background: rgba(16, 185, 129, 0.15);
+    .btn-action-icon.wa {
+      background: rgba(16, 185, 129, 0.12);
       color: #10b981;
       border-color: rgba(16, 185, 129, 0.3);
     }
-    .btn-wa:hover {
+    .btn-action-icon.wa:hover {
       background: #10b981;
       color: white;
     }
 
+    /* Empty state */
     .empty-state {
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
       color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* MODAL TIMELINE HISTORIQUE */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #111827;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 520px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-header h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .modal-body {
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      padding-left: 20px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: #334155;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -20px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      background: #10b981;
+      border-radius: 50%;
+      border: 2px solid #111827;
+    }
+
+    .timeline-time {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+    .timeline-text {
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+    .timeline-user {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    /* FOOTER BAR */
+    .sheet-statusbar {
+      background: #0f172a;
+      border-top: 1px solid var(--border);
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .sheet-topbar {
+        padding: 10px 14px;
+      }
+      .sheet-wrapper {
+        padding: 10px 12px;
+      }
+      .search-box {
+        min-width: 100%;
+      }
+      .kpi-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .table-container {
+        max-height: 60vh;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="title-group">
-        <h1>📊 Sheet Ecom Pro <span class="badge-live">Live Sync</span></h1>
-        <p>Gestion & Suivi des Confirmations COD — TR Delivery EcoTrack</p>
+  <!-- GOOGLE SHEETS / ECOM PRO TOPBAR -->
+  <header class="sheet-topbar">
+    <div class="brand-section">
+      <div class="sheet-icon">📗</div>
+      <div class="sheet-titles">
+        <h1>Sheet Ecom Pro <span class="sheet-status-pill"><span class="pulse-dot"></span> Live Sync</span></h1>
       </div>
-      <div class="header-actions">
-        <button class="btn btn-secondary" id="refresh-btn" onclick="fetchOrders()">
-          🔄 Actualiser
-        </button>
-        <a class="btn btn-primary" href="/api/export-csv" download="Sheet_Ecom_TR_Delivery.csv">
-          📥 Exporter Excel (CSV)
-        </a>
-      </div>
-    </header>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-outline" id="refresh-btn" onclick="fetchOrders()">
+        🔄 <span id="sync-counter">Actualiser</span>
+      </button>
+      <a class="btn btn-green" href="/api/export-csv" download="Sheet_Ecom_TR_Delivery.csv">
+        📥 Exporter Excel (CSV)
+      </a>
+    </div>
+  </header>
 
-    <!-- KPI CARDS -->
-    <section class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-label">Total Commandes</div>
-        <div class="kpi-value" id="kpi-total">0</div>
-        <div class="kpi-sub"><span id="kpi-nouveaux">0</span> nouvelles à traiter</div>
+  <main class="sheet-wrapper">
+
+    <!-- KPI STATS RIBBON -->
+    <section class="kpi-ribbon">
+      <div class="kpi-box">
+        <div class="kpi-title">Total Commandes</div>
+        <div class="kpi-num" id="kpi-total">0</div>
+        <div class="kpi-subtext"><span id="kpi-nouveaux">0</span> à appeler</div>
       </div>
-      <div class="kpi-card kpi-confirmed">
-        <div class="kpi-label">Confirmées</div>
-        <div class="kpi-value" id="kpi-confirmes">0</div>
-        <div class="kpi-sub">Taux : <b id="kpi-tx-conf">0%</b></div>
+      <div class="kpi-box green">
+        <div class="kpi-title">Confirmées</div>
+        <div class="kpi-num" id="kpi-confirmes">0</div>
+        <div class="kpi-subtext">Taux : <b id="kpi-tx-conf">0%</b></div>
       </div>
-      <div class="kpi-card kpi-nrp">
-        <div class="kpi-label">NRP (Ne Répond Pas)</div>
-        <div class="kpi-value" id="kpi-nrp">0</div>
-        <div class="kpi-sub">Taux : <b id="kpi-tx-nrp">0%</b></div>
+      <div class="kpi-box amber">
+        <div class="kpi-title">NRP (Rappels)</div>
+        <div class="kpi-num" id="kpi-nrp">0</div>
+        <div class="kpi-subtext">Taux : <b id="kpi-tx-nrp">0%</b></div>
       </div>
-      <div class="kpi-card kpi-cancelled">
-        <div class="kpi-label">Annulées</div>
-        <div class="kpi-value" id="kpi-annules">0</div>
-        <div class="kpi-sub">Taux : <b id="kpi-tx-ann">0%</b></div>
+      <div class="kpi-box red">
+        <div class="kpi-title">Annulées</div>
+        <div class="kpi-num" id="kpi-annules">0</div>
+        <div class="kpi-subtext">Taux : <b id="kpi-tx-ann">0%</b></div>
       </div>
-      <div class="kpi-card kpi-ca">
-        <div class="kpi-label">CA Confirmé</div>
-        <div class="kpi-value" id="kpi-ca">0 DA</div>
-        <div class="kpi-sub">Sur un total de <span id="kpi-ca-total">0 DA</span></div>
+      <div class="kpi-box purple">
+        <div class="kpi-title">CA Confirmé</div>
+        <div class="kpi-num" id="kpi-ca">0 DA</div>
+        <div class="kpi-subtext">Sur un total de <span id="kpi-ca-total">0 DA</span></div>
       </div>
     </section>
 
-    <!-- TOOLBAR & FILTERS -->
-    <div class="toolbar">
-      <div class="tabs" id="status-tabs">
-        <button class="tab-btn active" data-filter="ALL">Toutes (<span id="count-all">0</span>)</button>
-        <button class="tab-btn" data-filter="NOUVEAU">🆕 Nouveau (<span id="count-nouveau">0</span>)</button>
-        <button class="tab-btn" data-filter="CONFIRME">🟢 Confirmé (<span id="count-confirme">0</span>)</button>
-        <button class="tab-btn" data-filter="NRP">📞 NRP (<span id="count-nrp">0</span>)</button>
-        <button class="tab-btn" data-filter="EXPEDIE">🚚 Expédié (<span id="count-expedie">0</span>)</button>
-        <button class="tab-btn" data-filter="ANNULE">🔴 Annulé (<span id="count-annule">0</span>)</button>
+    <!-- SEARCH & STATUS TABS -->
+    <section class="controls-bar">
+      <div class="filter-tabs" id="status-tabs">
+        <button class="filter-tab active" data-filter="ALL">📋 Tout (<span id="count-all">0</span>)</button>
+        <button class="filter-tab" data-filter="NOUVEAU">🆕 À Traiter (<span id="count-nouveau">0</span>)</button>
+        <button class="filter-tab" data-filter="NRP">📞 NRP Rappels (<span id="count-nrp">0</span>)</button>
+        <button class="filter-tab" data-filter="CONFIRME">🟢 Confirmées (<span id="count-confirme">0</span>)</button>
+        <button class="filter-tab" data-filter="EXPEDIE">🚚 Expédiées (<span id="count-expedie">0</span>)</button>
+        <button class="filter-tab" data-filter="ANNULE">🔴 Annulées (<span id="count-annule">0</span>)</button>
       </div>
-      <input type="text" class="search-input" id="search-input" placeholder="🔍 Rechercher client, téléphone, wilaya...">
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Rechercher client, tel, wilaya, #CMD...">
+      </div>
+    </section>
+
+    <!-- TABLE SPREADSHEET -->
+    <div class="sheet-table-card">
+      <div class="table-container">
+        <table class="ecom-sheet">
+          <thead>
+            <tr>
+              <th class="td-num">#</th>
+              <th>Réf Commande</th>
+              <th>Date & Heure</th>
+              <th>Client & Téléphone</th>
+              <th>Wilaya / Commune</th>
+              <th>Mode</th>
+              <th>Offre & Finition</th>
+              <th>Total (DA)</th>
+              <th>Statut Confirmation</th>
+              <th>Notes / Remarques</th>
+              <th>Confirmateur</th>
+              <th>Bordereau TR Delivery</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="orders-tbody">
+            <tr>
+              <td colspan="13" class="empty-state">Chargement du sheet en temps réel...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <!-- ORDERS TABLE -->
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Client & Téléphone</th>
-            <th>Wilaya / Commune</th>
-            <th>Mode</th>
-            <th>Offre</th>
-            <th>Montant</th>
-            <th>Statut Confirmation</th>
-            <th>Confirmateur</th>
-            <th>Bordereau TR</th>
-            <th>Actions Rapides</th>
-          </tr>
-        </thead>
-        <tbody id="orders-tbody">
-          <tr>
-            <td colspan="11" class="empty-state">Chargement des commandes...</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  </main>
 
+  <!-- STATUSBAR -->
+  <footer class="sheet-statusbar">
+    <div>
+      TR Delivery EcoTrack Integration • Token Actif • Bot @styloayoubot
+    </div>
+    <div id="footer-sync-time">
+      Dernière synchronisation : En attente...
+    </div>
+  </footer>
+
+  <!-- MODAL TIMELINE HISTORIQUE -->
+  <div class="modal-overlay" id="history-modal" onclick="closeModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-order-id">Historique Commande</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);" id="modal-client-name"></span>
+        </div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="timeline" id="modal-timeline">
+          <!-- Timeline items injected dynamically -->
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
+    // Initialisation Telegram WebApp si ouvert depuis Telegram
+    if (window.Telegram && window.Telegram.WebApp) {
+      try {
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+      } catch (e) {
+        console.log('Telegram WebApp notice:', e);
+      }
+    }
+
     let allOrders = [];
     let currentFilter = 'ALL';
     let searchQuery = '';
+    let countdown = 5;
 
     const STATUS_MAP = {
-      NOUVEAU: { label: '🆕 Nouveau', bg: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa' },
-      NRP_1: { label: '🟡 NRP 1 (Appel 1)', bg: 'rgba(245, 158, 11, 0.15)', color: '#fbbf24' },
-      NRP_2: { label: '🟠 NRP 2 (Appel 2)', bg: 'rgba(217, 119, 6, 0.2)', color: '#f59e0b' },
-      NRP_3: { label: '🟤 NRP 3 (Dernier)', bg: 'rgba(180, 83, 9, 0.25)', color: '#d97706' },
-      CONFIRME: { label: '🟢 Confirmé', bg: 'rgba(16, 185, 129, 0.15)', color: '#34d399' },
-      REPORTE: { label: '⏰ Reporté', bg: 'rgba(139, 92, 246, 0.15)', color: '#a78bfa' },
-      ANNULE: { label: '🔴 Annulé', bg: 'rgba(239, 68, 68, 0.15)', color: '#f87171' },
-      EXPEDIE: { label: '🚚 Expédié', bg: 'rgba(6, 182, 212, 0.15)', color: '#22d3ee' }
+      NOUVEAU: { label: '🆕 Nouveau', class: 'st-NOUVEAU' },
+      NRP_1: { label: '🟡 NRP 1 (1er Appel)', class: 'st-NRP_1' },
+      NRP_2: { label: '🟠 NRP 2 (2ème Jour)', class: 'st-NRP_2' },
+      NRP_3: { label: '🟤 NRP 3 (Dernier)', class: 'st-NRP_3' },
+      CONFIRME: { label: '🟢 Confirmé', class: 'st-CONFIRME' },
+      REPORTE: { label: '⏰ Reporté', class: 'st-REPORTE' },
+      ANNULE: { label: '🔴 Annulé', class: 'st-ANNULE' },
+      EXPEDIE: { label: '🚚 Expédié', class: 'st-EXPEDIE' }
     };
 
     async function fetchOrders() {
@@ -480,8 +871,12 @@
         allOrders = Object.values(data.orders || {}).sort((a, b) => new Date(b.date) - new Date(a.date));
         renderKpis(data.kpis || {});
         renderTable();
+        const now = new Date();
+        document.getElementById('footer-sync-time').textContent =
+          'Dernière synchronisation : ' + now.toLocaleTimeString('fr-DZ');
+        countdown = 5;
       } catch (err) {
-        console.error('Erreur chargement commandes:', err);
+        console.error('Erreur chargement:', err);
       }
     }
 
@@ -501,26 +896,44 @@
       document.getElementById('count-all').textContent = allOrders.length;
       document.getElementById('count-nouveau').textContent = allOrders.filter(o => o.statut === 'NOUVEAU').length;
       document.getElementById('count-confirme').textContent = allOrders.filter(o => o.statut === 'CONFIRME').length;
-      document.getElementById('count-nrp').textContent = allOrders.filter(o => o.statut.startsWith('NRP')).length;
+      document.getElementById('count-nrp').textContent = allOrders.filter(o => (o.statut || '').startsWith('NRP')).length;
       document.getElementById('count-expedie').textContent = allOrders.filter(o => o.statut === 'EXPEDIE').length;
       document.getElementById('count-annule').textContent = allOrders.filter(o => o.statut === 'ANNULE').length;
     }
 
     async function onStatusChange(orderId, newStatus) {
       try {
-        await fetch('/api/orders/status', {
+        const res = await fetch('/api/orders/status', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ id: orderId, status: newStatus, user: 'Dashboard Web' })
         });
-        await fetchOrders();
+        const data = await res.json();
+        if (data.success) {
+          await fetchOrders();
+        } else {
+          alert('Erreur: ' + data.message);
+        }
       } catch (e) {
-        alert('Erreur lors du changement de statut: ' + e.message);
+        alert('Erreur réseau: ' + e.message);
+      }
+    }
+
+    async function onNoteBlur(orderId, inputEl) {
+      const newNote = inputEl.value.trim();
+      try {
+        await fetch('/api/orders/note', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: orderId, note: newNote, user: 'Dashboard Web' })
+        });
+      } catch (e) {
+        console.warn('Note save notice:', e);
       }
     }
 
     async function onCreateBordereau(orderId) {
-      if (!confirm('Créer le bordereau TR Delivery pour la commande #' + orderId + ' ?')) return;
+      if (!confirm('Créer le bordereau officiel TR Delivery pour la commande #' + orderId + ' ?')) return;
       try {
         const res = await fetch('/api/orders/bordereau', {
           method: 'POST',
@@ -529,14 +942,49 @@
         });
         const data = await res.json();
         if (data.success) {
-          alert('Bordereau créé avec succès ! Tracking: ' + data.tracking);
+          alert('✅ Bordereau créé avec succès !\nTracking: ' + data.tracking);
           await fetchOrders();
         } else {
-          alert('Erreur: ' + data.message);
+          alert('❌ Erreur: ' + data.message);
         }
       } catch (e) {
         alert('Erreur: ' + e.message);
       }
+    }
+
+    function showOrderHistory(orderId) {
+      const order = allOrders.find(o => o.id === orderId);
+      if (!order) return;
+
+      document.getElementById('modal-order-id').textContent = 'Commande #' + order.id;
+      document.getElementById('modal-client-name').textContent =
+        (order.nom_client || '') + ' • ' + (order.telephone || '') + ' (' + (order.wilaya_name || '') + ')';
+
+      const timelineContainer = document.getElementById('modal-timeline');
+      timelineContainer.innerHTML = '';
+
+      const history = order.history || [];
+      if (history.length === 0) {
+        timelineContainer.innerHTML = '<div style="color: var(--text-muted); font-size: 0.85rem;">Aucun événement enregistré.</div>';
+      } else {
+        history.forEach(h => {
+          const item = document.createElement('div');
+          item.className = 'timeline-item';
+          item.innerHTML = `
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">${h.dateStr || h.time || ''}</div>
+            <div class="timeline-text">${h.text || h.action}</div>
+            <div class="timeline-user">Par : ${h.user || 'Système'}</div>
+          `;
+          timelineContainer.appendChild(item);
+        });
+      }
+
+      document.getElementById('history-modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('history-modal').classList.remove('open');
     }
 
     function renderTable() {
@@ -546,7 +994,7 @@
       let filtered = allOrders.filter(o => {
         if (currentFilter === 'NOUVEAU' && o.statut !== 'NOUVEAU') return false;
         if (currentFilter === 'CONFIRME' && o.statut !== 'CONFIRME') return false;
-        if (currentFilter === 'NRP' && !o.statut.startsWith('NRP')) return false;
+        if (currentFilter === 'NRP' && !(o.statut || '').startsWith('NRP')) return false;
         if (currentFilter === 'EXPEDIE' && o.statut !== 'EXPEDIE') return false;
         if (currentFilter === 'ANNULE' && o.statut !== 'ANNULE') return false;
 
@@ -555,67 +1003,80 @@
           const matchName = (o.nom_client || '').toLowerCase().includes(q);
           const matchPhone = (o.telephone || '').includes(q);
           const matchWilaya = (o.wilaya_name || '').toLowerCase().includes(q);
+          const matchCommune = (o.commune || '').toLowerCase().includes(q);
           const matchTracking = (o.tracking || '').toLowerCase().includes(q);
           const matchId = (o.id || '').toLowerCase().includes(q);
-          return matchName || matchPhone || matchWilaya || matchTracking || matchId;
+          return matchName || matchPhone || matchWilaya || matchCommune || matchTracking || matchId;
         }
         return true;
       });
 
       if (filtered.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="11" class="empty-state">Aucune commande trouvée.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="13" class="empty-state">Aucune commande trouvée.</td></tr>';
         return;
       }
 
-      filtered.forEach(o => {
+      filtered.forEach((o, idx) => {
         const tr = document.createElement('tr');
         const sInfo = STATUS_MAP[o.statut] || STATUS_MAP.NOUVEAU;
 
         const rawPhone = String(o.telephone || '').replace(/[^0-9]/g, '');
         const dzPhone = rawPhone.startsWith('0') ? '213' + rawPhone.slice(1) : rawPhone;
+        const waMsg = encodeURIComponent(`السلام عليكم أخي ${o.nom_client}، نتصل بك بخصوص تأكيد طلبك (${o.produit})، هل تؤكد التوصيل؟`);
 
         tr.innerHTML = `
-          <td><b style="color: var(--primary);">#${o.id}</b></td>
-          <td style="color: var(--text-muted); font-size: 0.8rem;">${o.dateStr}</td>
+          <td class="td-num">${idx + 1}</td>
           <td>
-            <span class="client-name">${o.nom_client}</span>
-            <span class="client-phone">📞 ${o.telephone}</span>
+            <span class="order-id-badge" onclick="showOrderHistory('${o.id}')" title="Cliquer pour voir l'historique">#${o.id}</span>
+          </td>
+          <td style="color: var(--text-muted); font-size: 0.8rem; font-family: monospace;">${o.dateStr || ''}</td>
+          <td class="client-cell">
+            <span class="client-name">${o.nom_client || 'Client'}</span>
+            <a href="tel:${o.telephone}" class="client-phone">📞 ${o.telephone || ''}</a>
+          </td>
+          <td class="location-cell">
+            <span class="wilaya-badge">${o.wilaya_name || o.code_wilaya || '—'}</span>
+            <span class="commune-text">${o.commune || ''}</span>
           </td>
           <td>
-            <b>${o.wilaya_name || o.code_wilaya}</b><br>
-            <span style="color: var(--text-muted); font-size: 0.8rem;">${o.commune}</span>
+            <span class="mode-tag ${o.stop_desk ? 'desk' : 'home'}">
+              ${o.stop_desk ? '🏢 Stop Desk' : '🏠 Domicile'}
+            </span>
           </td>
+          <td class="product-cell">${o.produit || 'ميني فلوكون عطر'}</td>
+          <td><span class="price-tag">${(o.montant || 0).toLocaleString()} DA</span></td>
           <td>
-            <span style="font-size: 0.8rem; font-weight: 700;">${o.stop_desk ? '🏢 Stop Desk' : '🏠 Domicile'}</span>
-          </td>
-          <td style="font-size: 0.82rem;">${o.produit}</td>
-          <td><b style="color: #34d399;">${o.montant} DA</b></td>
-          <td>
-            <select class="status-select" onchange="onStatusChange('${o.id}', this.value)">
+            <select class="status-select ${sInfo.class}" onchange="onStatusChange('${o.id}', this.value)">
               <option value="NOUVEAU" ${o.statut === 'NOUVEAU' ? 'selected' : ''}>🆕 Nouveau</option>
               <option value="CONFIRME" ${o.statut === 'CONFIRME' ? 'selected' : ''}>🟢 Confirmé</option>
-              <option value="NRP_1" ${o.statut === 'NRP_1' ? 'selected' : ''}>🟡 NRP 1 (Appel 1)</option>
-              <option value="NRP_2" ${o.statut === 'NRP_2' ? 'selected' : ''}>🟠 NRP 2 (Appel 2)</option>
+              <option value="NRP_1" ${o.statut === 'NRP_1' ? 'selected' : ''}>🟡 NRP 1 (1er Appel)</option>
+              <option value="NRP_2" ${o.statut === 'NRP_2' ? 'selected' : ''}>🟠 NRP 2 (2ème Jour)</option>
               <option value="NRP_3" ${o.statut === 'NRP_3' ? 'selected' : ''}>🟤 NRP 3 (Dernier)</option>
               <option value="REPORTE" ${o.statut === 'REPORTE' ? 'selected' : ''}>⏰ Reporté</option>
               <option value="ANNULE" ${o.statut === 'ANNULE' ? 'selected' : ''}>🔴 Annulé</option>
               <option value="EXPEDIE" ${o.statut === 'EXPEDIE' ? 'selected' : ''}>🚚 Expédié</option>
             </select>
           </td>
-          <td style="font-size: 0.82rem; font-weight: 700; color: #cbd5e1;">${o.confirmateur || '—'}</td>
+          <td>
+            <input type="text" class="note-input" value="${o.notes || ''}" placeholder="Ajouter note..."
+              onblur="onNoteBlur('${o.id}', this)"
+              onkeydown="if(event.key==='Enter') this.blur();">
+          </td>
+          <td style="font-size: 0.8rem; font-weight: 700; color: #cbd5e1;">${o.confirmateur || '—'}</td>
           <td>
             ${o.tracking ?
-              `<a href="${o.pdf_url || '#'}" target="_blank" class="btn btn-secondary" style="padding: 4px 8px; font-size: 0.76rem;">🖨️ ${o.tracking}</a>` :
+              `<a href="${o.pdf_url || '#'}" target="_blank" class="tracking-link" title="Imprimer le PDF">🖨️ ${o.tracking}</a>` :
               (o.statut === 'CONFIRME' ?
-                `<button class="btn btn-primary" style="padding: 4px 8px; font-size: 0.76rem;" onclick="onCreateBordereau('${o.id}')">📄 Créer Bordereau</button>` :
-                `<span style="color: var(--text-muted); font-size: 0.78rem;">Non généré</span>`
+                `<button class="btn-create-bd" onclick="onCreateBordereau('${o.id}')">📄 Créer Bordereau</button>` :
+                `<span style="color: var(--text-muted); font-size: 0.76rem;">Non généré</span>`
               )
             }
           </td>
           <td>
-            <div class="actions-cell">
-              <a href="tel:${o.telephone}" class="icon-btn" title="Appeler le client">📞</a>
-              <a href="https://wa.me/${dzPhone}" target="_blank" class="icon-btn btn-wa" title="Discuter sur WhatsApp">💬</a>
+            <div class="actions-group">
+              <a href="tel:${o.telephone}" class="btn-action-icon" title="Appeler le client">📞</a>
+              <a href="https://wa.me/${dzPhone}?text=${waMsg}" target="_blank" class="btn-action-icon wa" title="WhatsApp Direct">💬</a>
+              <button class="btn-action-icon" onclick="showOrderHistory('${o.id}')" title="Historique complet">📜</button>
             </div>
           </td>
         `;
@@ -624,9 +1085,9 @@
     }
 
     // Tabs filter listeners
-    document.querySelectorAll('.tab-btn').forEach(btn => {
+    document.querySelectorAll('.filter-tab').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         currentFilter = btn.getAttribute('data-filter');
         renderTable();
@@ -639,7 +1100,15 @@
       renderTable();
     });
 
-    // Initial fetch & Auto-refresh every 5 seconds
+    // Check if URL has ?id= to open specific order
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetId = urlParams.get('id');
+    if (targetId) {
+      searchQuery = targetId;
+      document.getElementById('search-input').value = targetId;
+    }
+
+    // Fetch initial & Auto-refresh every 5s
     fetchOrders();
     setInterval(fetchOrders, 5000);
   </script>

@@ -227,6 +227,34 @@ function attachBordereau(id, tracking, pdfUrl, user = 'Bot') {
 }
 
 /**
+ * Met à jour la note / remarque d'une commande
+ */
+function updateOrderNote(id, note, user = 'Confirmateur') {
+  const db = loadDatabase();
+  const order = db.orders[id];
+  if (!order) return null;
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('fr-DZ') + ' ' + now.toLocaleTimeString('fr-DZ', { hour: '2-digit', minute: '2-digit' });
+
+  order.notes = note;
+  order.last_updated = now.toISOString();
+
+  if (!order.history) order.history = [];
+  order.history.push({
+    action: 'NOTE',
+    time: now.toISOString(),
+    dateStr: dateStr,
+    user: user,
+    text: `Note mise à jour: ${note}`
+  });
+
+  db.orders[id] = order;
+  saveDatabase(db);
+  return order;
+}
+
+/**
  * Récupère une commande par ID ou par recherche (téléphone, tracking, nom)
  */
 function findOrder(query) {
@@ -487,6 +515,11 @@ function getOrderKeyboard(order) {
     ]);
   }
 
+  const publicUrl = process.env.PUBLIC_URL || 'https://3cf2e8b5a4c515.lhr.life';
+  keyboard.push([
+    { text: '📊 Ouvrir Sheet Ecom Pro', web_app: { url: `${publicUrl}/sheet` } }
+  ]);
+
   return { inline_keyboard: keyboard };
 }
 
@@ -496,6 +529,7 @@ module.exports = {
   saveDatabase,
   upsertOrder,
   updateOrderStatus,
+  updateOrderNote,
   attachBordereau,
   findOrder,
   getKpis,

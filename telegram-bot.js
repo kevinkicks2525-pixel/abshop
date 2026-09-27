@@ -17,6 +17,7 @@
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
+const { spawn } = require('child_process');
 
 const ordersManager = require('./orders-manager.js');
 
@@ -25,6 +26,7 @@ const ECOTRACK_TOKEN = process.env.ECOTRACK_TOKEN || 'Nzt1PpVCh5YCrSTU6BAo2KOgJI
 const ECOTRACK_URL = process.env.ECOTRACK_URL || 'https://trdelivery.ecotrack.dz';
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '8857057256:AAGNk-1KOaDZQLcKOQPL0lObS7uMUBItOnk';
 const HTTP_PORT = process.env.PORT || 3005;
+let PUBLIC_URL = process.env.PUBLIC_URL || 'https://3cf2e8b5a4c515.lhr.life';
 
 // Charger les données de livraison (wilayas, communes, tarifs, bureaux)
 let deliveryData = null;
@@ -92,6 +94,7 @@ function normalizeCommune(rawCommune, wilayaId, isStopDesk) {
  * Parse un message de commande Telegram
  */
 function parseOrderMessage(text) {
+  if (!text) return null;
   const clean = text.replace(/<[^>]+>/g, '');
 
   const idMatch = clean.match(/(?:COMMANDE|ORDRE|CMD)\s*#?([A-Za-z0-9_]+)/i);
@@ -102,11 +105,12 @@ function parseOrderMessage(text) {
   const communeMatch = clean.match(/(?:البلدية|Commune)\s*:\s*([^\n\r]+)/i);
   const addressMatch = clean.match(/(?:العنوان|Adresse)\s*:\s*([^\n\r]+)/i);
   const bureauMatch = clean.match(/(?:المكتب|Bureau)\s*:\s*([^\n\r]+)/i);
+  const detailsMatch = clean.match(/(?:التفاصيل|Détails)\s*:\s*([^\n\r]+)/i);
   const offerMatch = clean.match(/(?:العرض|Offre)\s*:\s*([^\n\r]+)/i);
   const finishMatch = clean.match(/(?:المظهر|Finition)\s*:\s*([^\n\r]+)/i);
   const totalMatch = clean.match(/(?:المبلغ الإجمالي|Total)\s*:\s*([0-9\s]+)/i);
 
-  const isStopDesk = (typeMatch && /مكتب|stop\s*desk/i.test(typeMatch[1])) || !!bureauMatch;
+  const isStopDesk = (typeMatch && /مكتب|stop\s*desk/i.test(typeMatch[1])) || !!bureauMatch || (detailsMatch && /مكتب|stop\s*desk/i.test(detailsMatch[1]));
 
   let wilayaId = null;
   let wilayaName = '';
@@ -137,21 +141,30 @@ function parseOrderMessage(text) {
     montant = parseInt(totalMatch[1].replace(/[\s\D]/g, ''), 10) || 0;
   }
 
-  const rawCommune = communeMatch ? communeMatch[1].trim() : (bureauMatch ? bureauMatch[1].trim() : '');
+  let rawCommune = communeMatch ? communeMatch[1].trim() : (bureauMatch ? bureauMatch[1].trim() : '');
+  if (!rawCommune && detailsMatch) {
+    const det = detailsMatch[1].trim();
+    const subCommune = det.match(/(?:البلدية|Commune)\s*:\s*([^\n\r]+)/i);
+    const subBureau = det.match(/(?:المكتب|Bureau)\s*:\s*([^\n\r]+)/i);
+    if (subCommune) rawCommune = subCommune[1].trim();
+    else if (subBureau) rawCommune = subBureau[1].trim();
+    else rawCommune = det;
+  }
+
   const exactCommune = normalizeCommune(rawCommune, wilayaId, isStopDesk);
 
   let adresse = '';
   if (isStopDesk) {
     adresse = bureauMatch ? `Bureau Stop Desk ${bureauMatch[1].trim()}` : `Bureau Stop Desk ${exactCommune}`;
   } else {
-    adresse = addressMatch ? addressMatch[1].trim() : exactCommune;
+    adresse = addressMatch ? addressMatch[1].trim() : (detailsMatch ? detailsMatch[1].trim() : exactCommune);
   }
 
   const produit = offerMatch ? `${offerMatch[1].trim()} ${finishMatch ? finishMatch[1].trim() : ''}`.trim() : 'ميني فلوكون عطر';
 
   return {
     id: idMatch ? idMatch[1].trim() : null,
-    nom_client: nameMatch ? nameMatch[1].trim() : '',
+    nom_client: nameMatch ? nameMatch[1].trim() : 'Client',
     telephone: phone,
     code_wilaya: wilayaId,
     wilaya_name: wilayaName,
@@ -268,10 +281,29 @@ async function answerCallbackQuery(callbackQueryId, text, showAlert = false) {
 }
 
 /**
+ * Récupère ou reconstitue la commande depuis la base ou depuis le message Telegram
+ */
+function getOrReconstituteOrder(orderId, msg) {
+  let order = ordersManager.findOrder(orderId);
+  if (!order && msg && (msg.text || msg.caption)) {
+    const rawText = msg.text || msg.caption;
+    const parsed = parseOrderMessage(rawText);
+    if (parsed) {
+      parsed.id = orderId;
+      parsed.telegram_chat_id = msg.chat ? msg.chat.id : null;
+      parsed.telegram_message_id = msg.message_id;
+      order = ordersManager.upsertOrder(parsed);
+      console.log(`[Auto-Recover] Commande #${orderId} (${parsed.nom_client}) enregistrée depuis le message Telegram !`);
+    }
+  }
+  return order;
+}
+
+/**
  * Traite la création d'un bordereau depuis Telegram ou le Web
  */
-async function handleCreateBordereau(orderId, chatId = null, messageId = null, user = 'Confirmateur') {
-  let order = ordersManager.findOrder(orderId);
+async function handleCreateBordereau(orderId, chatId = null, messageId = null, user = 'Confirmateur', msg = null) {
+  let order = getOrReconstituteOrder(orderId, msg);
 
   if (!order) {
     if (chatId) {
@@ -372,12 +404,16 @@ async function handleCreateBordereau(orderId, chatId = null, messageId = null, u
  */
 async function handleStatusCallback(cq, statusCode, orderId) {
   const user = cq.from ? (cq.from.first_name + (cq.from.last_name ? ' ' + cq.from.last_name : '')) : 'Confirmateur';
-  const order = ordersManager.updateOrderStatus(orderId, statusCode, user);
+  
+  // Reconstitue la commande si absente de la base locale
+  let order = getOrReconstituteOrder(orderId, cq.message);
 
   if (!order) {
     await answerCallbackQuery(cq.id, '❌ Commande introuvable', true);
     return;
   }
+
+  order = ordersManager.updateOrderStatus(orderId, statusCode, user);
 
   const statusInfo = ordersManager.STATUTS[statusCode] || {};
   await answerCallbackQuery(cq.id, `✅ Statut mis à jour : ${statusInfo.labelFr} par ${user}`);
@@ -394,6 +430,42 @@ async function handleStatusCallback(cq, statusCode, orderId) {
       parse_mode: 'HTML',
       reply_markup: updatedKb
     }).catch(err => console.warn('Edit msg notice:', err.message));
+  }
+}
+
+/**
+ * Tunnel SSH auto-reconnectant pour un accès HTTPS public permanent
+ */
+function startTunnel() {
+  console.log('🌐 [Tunnel] Démarrage du tunnel SSH avec reconnexion automatique...');
+  try {
+    const proc = spawn('ssh', [
+      '-R', `80:localhost:${HTTP_PORT}`,
+      '-o', 'StrictHostKeyChecking=no',
+      '-o', 'ServerAliveInterval=15',
+      '-o', 'ServerAliveCountMax=4',
+      'nokey@localhost.run'
+    ]);
+
+    proc.stdout.on('data', data => {
+      const text = data.toString();
+      const match = text.match(/https:\/\/[a-z0-9\-\.]+\.lhr\.life/);
+      if (match) {
+        PUBLIC_URL = match[0];
+        process.env.PUBLIC_URL = PUBLIC_URL;
+        console.log(`🚀 [Tunnel Actif] Sheet Ecom Pro disponible sur : ${PUBLIC_URL}/sheet`);
+      }
+    });
+
+    proc.stderr.on('data', () => {});
+
+    proc.on('close', code => {
+      console.log(`⚠️ [Tunnel] Déconnecté (code ${code}). Reconnexion automatique dans 3s...`);
+      setTimeout(startTunnel, 3000);
+    });
+  } catch (err) {
+    console.error('❌ [Tunnel Error]:', err.message);
+    setTimeout(startTunnel, 5000);
   }
 }
 
@@ -462,6 +534,29 @@ function startHttpServer() {
             }).catch(() => {});
           }
 
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true, order: updated }));
+        } catch (e) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: false, error: e.message }));
+        }
+      });
+      return;
+    }
+
+    // 3b. API NOTE : POST /api/orders/note
+    if (pathname === '/api/orders/note' && req.method === 'POST') {
+      let body = '';
+      req.on('data', chunk => body += chunk);
+      req.on('end', () => {
+        try {
+          const { id, note, user } = JSON.parse(body);
+          const updated = ordersManager.updateOrderNote(id, note, user || 'Web Dashboard');
+          if (!updated) {
+            res.writeHead(404, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: false, message: 'Commande introuvable' }));
+            return;
+          }
           res.writeHead(200, { 'Content-Type': 'application/json' });
           res.end(JSON.stringify({ success: true, order: updated }));
         } catch (e) {
@@ -543,8 +638,9 @@ async function startBot() {
 
   await telegramApi('deleteWebhook', { drop_pending_updates: false });
 
-  // Démarrage du serveur web local
+  // Démarrage du serveur web local et du tunnel public auto-reconnectant
   startHttpServer();
+  startTunnel();
 
   while (true) {
     try {
@@ -584,7 +680,7 @@ async function startBot() {
                   order = ordersManager.upsertOrder(parsed);
                 }
 
-                await handleCreateBordereau(orderId, chatId, msg ? msg.message_id : null, cq.from.first_name);
+                await handleCreateBordereau(orderId, chatId, msg ? msg.message_id : null, cq.from.first_name, msg);
               }
 
               // B. Changements de statut confirmation
@@ -677,12 +773,18 @@ async function startBot() {
                         `• Répondez à une commande avec <code>/bordereau</code>\n` +
                         `• <code>/suivi &lt;tracking&gt;</code> : Suivi du colis TR Delivery\n` +
                         `• <code>/tarifs &lt;wilaya&gt;</code> : Prix exacts domicile & stop desk\n\n` +
-                        `🌐 <b>Dashboard Web :</b> <a href="http://localhost:${HTTP_PORT}/sheet">Ouvrir Sheet Ecom Pro</a>`,
+                        `🌐 <b>Dashboard Web :</b> <a href="${PUBLIC_URL}/sheet">Ouvrir Sheet Ecom Pro</a>`,
                   parse_mode: 'HTML',
                   reply_markup: {
                     inline_keyboard: [
                       [
-                        { text: '📥 Exporter Excel CSV', callback_data: 'export_csv_action' },
+                        { text: '📊 Ouvrir Sheet Ecom Pro', web_app: { url: `${PUBLIC_URL}/sheet` } }
+                      ],
+                      [
+                        { text: '🌐 Ouvrir dans Navigateur', url: `${PUBLIC_URL}/sheet` },
+                        { text: '📥 Exporter Excel CSV', callback_data: 'export_csv_action' }
+                      ],
+                      [
                         { text: 'ℹ️ Statut Bot', callback_data: 'bot_status' }
                       ]
                     ]
@@ -710,7 +812,14 @@ async function startBot() {
                   await telegramApi('sendMessage', {
                     chat_id: chatId,
                     text: `ℹ️ Aucune commande trouvée pour le filtre <b>${subFilter || 'Tous'}</b>.`,
-                    parse_mode: 'HTML'
+                    parse_mode: 'HTML',
+                    reply_markup: {
+                      inline_keyboard: [
+                        [
+                          { text: '📊 Ouvrir Sheet Ecom Pro', web_app: { url: `${PUBLIC_URL}/sheet` } }
+                        ]
+                      ]
+                    }
                   });
                 } else {
                   const slice = orders.slice(0, 10);
@@ -735,6 +844,10 @@ async function startBot() {
                     reply_markup: {
                       inline_keyboard: [
                         [
+                          { text: '📊 Ouvrir Sheet Ecom Pro', web_app: { url: `${PUBLIC_URL}/sheet` } }
+                        ],
+                        [
+                          { text: '🌐 Ouvrir dans Navigateur', url: `${PUBLIC_URL}/sheet` },
                           { text: '📥 Exporter CSV (Excel)', callback_data: 'export_csv_action' }
                         ]
                       ]

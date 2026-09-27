@@ -611,23 +611,32 @@
           })
         );
 
-        // Envoi optionnel vers le serveur local Sheet si actif
+        const orderPayload = JSON.stringify({
+          id: orderRef,
+          nom_client: name,
+          telephone: phone,
+          code_wilaya: parseInt(currentWilayaCode, 10),
+          wilaya_name: wilayaText,
+          commune: currentDeliveryType === 'home' ? communeSelect.value : bureauSelect.value,
+          adresse: locationDetail,
+          stop_desk: currentDeliveryType === 'office' ? 1 : 0,
+          produit: `${selectedOffer} قطع (${selectedOfferPrice} دج) - ${selectedFinish}`,
+          montant: totalToPay,
+          statut: 'NOUVEAU'
+        });
+
+        // Envoi vers le serveur Sheet (Cloud / Public & Local)
+        fetch('https://3cf2e8b5a4c515.lhr.life/api/order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: orderPayload,
+          signal: AbortSignal.timeout(2000)
+        }).catch(() => { });
+
         fetch('http://localhost:3005/api/order', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            id: orderRef,
-            nom_client: name,
-            telephone: phone,
-            code_wilaya: parseInt(currentWilayaCode, 10),
-            wilaya_name: wilayaText,
-            commune: currentDeliveryType === 'home' ? communeSelect.value : bureauSelect.value,
-            adresse: locationDetail,
-            stop_desk: currentDeliveryType === 'office' ? 1 : 0,
-            produit: `${selectedOffer} قطع (${selectedOfferPrice} دج) - ${selectedFinish}`,
-            montant: totalToPay,
-            statut: 'NOUVEAU'
-          }),
+          body: orderPayload,
           signal: AbortSignal.timeout(1500)
         }).catch(() => { });
 
