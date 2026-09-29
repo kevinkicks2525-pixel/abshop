@@ -40,24 +40,29 @@
     <!-- Container -->
     <main class="lp-container">
 
-      <!-- HERO SECTION -->
-      <section class="hero-section">
-        <h1 class="hero-title">
-          عطرك المفضل <span class="highlight">ديما معاك</span><br>
-          وين ما تروح! <span class="subtitle-bold">ميني فلوكون.</span>
-        </h1>
-        <p class="hero-subtitle">
-          خفيف ويدخل في الجيب ولا مع المفاتيح.<br>
-          ديما بريحتك الشابة وبلا ما تكسر راسك.
-        </p>
-
-        <div class="hero-image-wrapper">
-          <img src="hero_pants.jpg" alt="Mini Flacon de Parfum avec clés" class="hero-img">
+      <!-- 1. LANDING PAGE CREATIVE SECTION (EN PREMIER D'ABORD) -->
+      <section class="landing-hero-section" id="landing-hero">
+        <div class="landing-hero-container">
+          <img src="landing_hero_2x.jpg" alt="ميني فلوكون عطر قابل لإعادة التعبئة - صغير في الحجم ديما معاك" class="landing-hero-img" loading="eager" decoding="async">
+          <!-- Clickable Hotspot Buttons linking directly to Order Form -->
+          <a href="#order-form" class="hero-cta-overlay hero-cta-btn-1" aria-label="نطلب الآن" title="نطلب الآن"></a>
+          <a href="#order-form" class="hero-cta-overlay hero-cta-btn-2" aria-label="نطلب الآن" title="نطلب الآن"></a>
         </div>
+      </section>
 
-        <!-- PRIX DE L'OFFRE 3 A 1900 DA DIRECTEMENT SOUS LA PHOTO -->
-        <div class="simple-price-clean" id="hero-price-badge" style="margin-top: 4px; font-size: 1.6rem;">
-          3 قطع بـ <span style="color: var(--primary-blue);">1900 دج</span>
+      <!-- 2. PHOTO DES 5 COULEURS (JUSTE APRES LA LANDING PAGE) -->
+      <section class="pack-showcase-section" id="pack-showcase">
+        <div class="pack-showcase-card">
+          <div class="pack-badge">🎨 تشكيلة حصرية من 5 ألوان</div>
+          <h2 class="pack-title">متوفر بعدة ألوان تناسب كل الأذواق</h2>
+          <div class="pack-img-box">
+            <img src="pack_5_bottles.jpg" alt="تشكيلة ألوان ميني فلوكون" class="pack-img">
+          </div>
+          <p class="pack-tagline">أسود أنيق • فضي لامع • أزرق سماوي • أحمر جذاب • وردي هادئ</p>
+          <!-- PRIX DE L'OFFRE (MIS A JOUR DYNAMIQUEMENT) -->
+          <div class="simple-price-clean" id="hero-price-badge" style="margin-top: 4px; font-size: 1.55rem;">
+            3 قطع بـ <span style="color: var(--primary-blue);">1900 دج</span>
+          </div>
         </div>
       </section>
 
@@ -267,31 +272,47 @@
                 تصميم عملي وأنيق متوفر بعدة ألوان.
               </div>
             </div>
+
+            <div class="benefit-item">
+              <div class="check-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="benefit-text-single">
+                سيستيم تعمار ذكي مانع للتسريب في الجيب.
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Quick CTA back to order form -->
+        <div class="bottom-order-cta-box">
+          <a href="#order-form" class="scroll-to-order-btn">
+            🛒 اطلب الآن قبل نفاد المخزون
+          </a>
         </div>
       </section>
 
-      <!-- PACK SHOWCASE SECTION (EN DESSOUS DU FORMULAIRE) -->
-      <section class="variants-section">
-        <div class="pack-showcase-card">
-          <h3 class="pack-title">
-            متوفر بعدة ألوان مميزة
-          </h3>
-
-          <div class="pack-img-box">
-            <img src="pack_5_bottles.jpg" alt="تشكيلة ألوان القارورات" class="pack-img">
-          </div>
-
-          <!-- SIMPLE PRICE TEXT -->
-          <div class="simple-price-clean">
-            3 قطع بـ 1900 دج | 5 قطع بـ 2850 دج
-          </div>
+      <!-- TRUST BADGES -->
+      <div class="trust-badges-row">
+        <div class="trust-badge-item">
+          <span class="trust-badge-icon">🚚</span>
+          <span class="trust-badge-text">توصيل لـ 58 ولاية</span>
         </div>
-      </section>
+        <div class="trust-badge-item">
+          <span class="trust-badge-icon">💵</span>
+          <span class="trust-badge-text">الدفع عند الاستلام</span>
+        </div>
+        <div class="trust-badge-item">
+          <span class="trust-badge-icon">🛡️</span>
+          <span class="trust-badge-text">معاينة قبل الدفع</span>
+        </div>
+      </div>
 
       <!-- FOOTER -->
       <footer class="lp-footer">
-        <p>جميع الحقوق محفوظة</p>
+        <p>جميع الحقوق محفوظة © 2026</p>
         <p class="footer-sub">الدفع عند الاستلام بعد معاينة السلعة</p>
       </footer>
 
