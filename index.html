@@ -40,29 +40,21 @@
     <!-- Container -->
     <main class="lp-container">
 
-      <!-- 1. LANDING PAGE CREATIVE SECTION (EN PREMIER D'ABORD) -->
+      <!-- 1. PREMIÈRE PHOTO : AVEC LES PRIX (PRIX ET OFFRES) -->
       <section class="landing-hero-section" id="landing-hero">
         <div class="landing-hero-container">
-          <img src="landing_hero_2x.jpg" alt="ميني فلوكون عطر قابل لإعادة التعبئة - صغير في الحجم ديما معاك" class="landing-hero-img" loading="eager" decoding="async">
-          <!-- Clickable Hotspot Buttons linking directly to Order Form -->
-          <a href="#order-form" class="hero-cta-overlay hero-cta-btn-1" aria-label="نطلب الآن" title="نطلب الآن"></a>
-          <a href="#order-form" class="hero-cta-overlay hero-cta-btn-2" aria-label="نطلب الآن" title="نطلب الآن"></a>
+          <img src="pricing_hero.jpg" alt="خلي عطرك ديما قريب منك - صغير أنيق وعملي لكل خروجة" class="landing-hero-img" loading="eager" decoding="async">
+          <!-- Zones cliquables vers le formulaire de commande -->
+          <a href="#order-form" class="hero-cta-overlay hero-cta-btn-order" aria-label="نطلب الآن" title="نطلب الآن"></a>
+          <a href="#order-form" class="hero-cta-overlay hero-offer-btn-3" data-select-offer="3" aria-label="عرض 3 حبات بـ 1900 دج" title="عرض 3 حبات بـ 1900 دج"></a>
+          <a href="#order-form" class="hero-cta-overlay hero-offer-btn-5" data-select-offer="5" aria-label="عرض 5 حبات بـ 2850 دج" title="عرض 5 حبات بـ 2850 دج"></a>
         </div>
       </section>
 
-      <!-- 2. PHOTO DES 5 COULEURS (JUSTE APRES LA LANDING PAGE) -->
-      <section class="pack-showcase-section" id="pack-showcase">
-        <div class="pack-showcase-card">
-          <div class="pack-badge">🎨 تشكيلة حصرية من 5 ألوان</div>
-          <h2 class="pack-title">متوفر بعدة ألوان تناسب كل الأذواق</h2>
-          <div class="pack-img-box">
-            <img src="pack_5_bottles.jpg" alt="تشكيلة ألوان ميني فلوكون" class="pack-img">
-          </div>
-          <p class="pack-tagline">أسود أنيق • فضي لامع • أزرق سماوي • أحمر جذاب • وردي هادئ</p>
-          <!-- PRIX DE L'OFFRE (MIS A JOUR DYNAMIQUEMENT) -->
-          <div class="simple-price-clean" id="hero-price-badge" style="margin-top: 4px; font-size: 1.55rem;">
-            3 قطع بـ <span style="color: var(--primary-blue);">1900 دج</span>
-          </div>
+      <!-- 2. DEUXIÈME PHOTO : COULEURS (CHOIX DE LA COULEUR) -->
+      <section class="colors-hero-section" id="colors-showcase">
+        <div class="colors-hero-container">
+          <img src="colors_showcase.jpg" alt="اختاري اللون اللي يشبهك - ألوان أنيقة باش تختاري ستاليك" class="colors-hero-img" loading="lazy" decoding="async">
         </div>
       </section>
 
@@ -399,6 +391,17 @@
           if (heroPriceBadge) heroPriceBadge.innerHTML = '5 قطع بـ <span style="color: var(--primary-blue);">2850 دج</span>';
         }
         updatePrices();
+      });
+    });
+
+    // Clic sur les badges d'offres directement depuis la première photo
+    document.querySelectorAll('[data-select-offer]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const offerVal = btn.getAttribute('data-select-offer');
+        const targetCard = document.querySelector(`.offer-card[data-value="${offerVal}"]`);
+        if (targetCard) {
+          targetCard.click();
+        }
       });
     });
 

@@ -68,7 +68,29 @@ body {
   display: block;
 }
 
-/* Clickable CTA overlay areas over the two red buttons in the graphic */
+/* 2. COLORS SHOWCASE SECTION */
+.colors-hero-section {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+}
+
+.colors-hero-container {
+  position: relative;
+  width: 100%;
+}
+
+.colors-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clickable Hotspots overlay on the hero image */
 .hero-cta-overlay {
   position: absolute;
   cursor: pointer;
@@ -82,22 +104,40 @@ body {
 
 .hero-cta-overlay:hover,
 .hero-cta-overlay:active {
-  background: rgba(220, 38, 38, 0.12);
+  background: rgba(255, 107, 0, 0.15);
   transform: scale(1.02);
 }
 
-.hero-cta-btn-1 {
-  top: 32%;
-  left: 37.5%;
-  width: 25%;
-  height: 3.6%;
+.hero-cta-btn-order {
+  top: 83.3%;
+  left: 20.3%;
+  width: 57.3%;
+  height: 5.5%;
+  border-radius: 25px;
 }
 
-.hero-cta-btn-2 {
-  top: 89.2%;
-  left: 32.5%;
-  width: 35%;
-  height: 4.2%;
+.hero-offer-btn-3 {
+  top: 68.5%;
+  left: 8.5%;
+  width: 39%;
+  height: 13%;
+  border-radius: 16px;
+}
+
+.hero-offer-btn-5 {
+  top: 68.5%;
+  left: 48.5%;
+  width: 43%;
+  height: 13%;
+  border-radius: 16px;
+}
+
+.hero-offer-btn-3:hover,
+.hero-offer-btn-3:active,
+.hero-offer-btn-5:hover,
+.hero-offer-btn-5:active {
+  background: rgba(225, 29, 72, 0.1);
+  transform: scale(1.01);
 }
 
 /* HERO SECTION (FALLBACK/LEGACY) */
