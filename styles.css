@@ -90,6 +90,100 @@ body {
   display: block;
 }
 
+/* 3. LIFESTYLE DETAILS SECTION (EN BAS DU FORMULAIRE) */
+.lifestyle-hero-section {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+}
+
+.lifestyle-hero-container {
+  position: relative;
+  width: 100%;
+}
+
+.lifestyle-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 4. OFFERS HERO SECTION (EN BAS DU FORMULAIRE) */
+.offers-hero-section {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+}
+
+.offers-hero-container {
+  position: relative;
+  width: 100%;
+}
+
+.offers-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clickable Hotspots overlay on the offers image */
+.offers-cta-overlay {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 20px;
+  text-decoration: none;
+  background: transparent;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.offers-cta-overlay:hover,
+.offers-cta-overlay:active {
+  background: rgba(255, 107, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.offers-cta-btn-order {
+  top: 88.5%;
+  left: 27%;
+  width: 46%;
+  height: 5.6%;
+  border-radius: 25px;
+}
+
+.offers-offer-btn-3 {
+  top: 60%;
+  left: 6.5%;
+  width: 39%;
+  height: 16.5%;
+  border-radius: 16px;
+}
+
+.offers-offer-btn-5 {
+  top: 57.5%;
+  left: 47%;
+  width: 46%;
+  height: 19%;
+  border-radius: 16px;
+}
+
+.offers-offer-btn-3:hover,
+.offers-offer-btn-3:active,
+.offers-offer-btn-5:hover,
+.offers-offer-btn-5:active {
+  background: rgba(225, 29, 72, 0.1);
+  transform: scale(1.01);
+}
+
 /* Clickable Hotspots overlay on the hero image */
 .hero-cta-overlay {
   position: absolute;
