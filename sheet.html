@@ -1491,7 +1491,7 @@
       document.getElementById('search-input').value = targetId;
     }
 
-    // === CONTRÔLEUR TACTILE PRÉCIS SANS GLISSADE NI REBOND BORDER ===
+    // === CONTRÔLEUR TACTILE AVEC GLISSEMENT FLUIDE & MOMENTUM (INERTIE NATURELLE) ===
     const tableContainer = document.querySelector('.table-container');
     let isTouching = false;
     let startTouchX = 0;
@@ -1500,15 +1500,24 @@
     let lastTouchY = 0;
     let isDraggingTable = false;
     let wasDraggingTable = false;
+    let momentumRaf = null;
+    let touchHistory = [];
 
     tableContainer.addEventListener('touchstart', (e) => {
       if (e.touches.length !== 1) return;
+      // Arrête immédiatement tout glissement en cours dès qu'on touche l'écran
+      if (momentumRaf) {
+        cancelAnimationFrame(momentumRaf);
+        momentumRaf = null;
+      }
       isTouching = true;
       startTouchX = e.touches[0].clientX;
       startTouchY = e.touches[0].clientY;
       lastTouchX = startTouchX;
       lastTouchY = startTouchY;
       isDraggingTable = false;
+      const now = performance.now();
+      touchHistory = [{ x: startTouchX, y: startTouchY, t: now }];
     }, { passive: true });
 
     tableContainer.addEventListener('touchmove', (e) => {
@@ -1517,19 +1526,25 @@
       const curY = e.touches[0].clientY;
       const dx = curX - lastTouchX;
       const dy = curY - lastTouchY;
+      const now = performance.now();
+
+      // Historique pour calcul précis de la vitesse de lancer (sur les 120 dernières ms)
+      touchHistory.push({ x: curX, y: curY, t: now });
+      while (touchHistory.length > 1 && now - touchHistory[0].t > 120) {
+        touchHistory.shift();
+      }
 
       if (!isDraggingTable) {
-        if (Math.hypot(curX - startTouchX, curY - startTouchY) > 5) {
+        if (Math.hypot(curX - startTouchX, curY - startTouchY) > 6) {
           isDraggingTable = true;
           wasDraggingTable = true;
         }
       }
 
       if (isDraggingTable) {
-        // Bloque le moteur de scroll natif iOS (qui crée l'effet de glissade/lanceur et le rebond vers le vide)
+        // Bloque le geste natif Telegram/iOS pour garder le plein contrôle
         e.preventDefault();
-        
-        // Déplacement 1:1 direct et verrouillé aux limites exactes du tableau [0, max]
+
         const maxScrollLeft = Math.max(0, tableContainer.scrollWidth - tableContainer.clientWidth);
         const maxScrollTop = Math.max(0, tableContainer.scrollHeight - tableContainer.clientHeight);
 
@@ -1541,9 +1556,77 @@
       }
     }, { passive: false });
 
-    const endTableTouch = () => {
+    const endTableTouch = (e) => {
+      if (!isTouching) return;
       isTouching = false;
       isDraggingTable = false;
+
+      // Calcul de la vitesse au moment où le doigt quitte l'écran (momentum)
+      const now = performance.now();
+      const recentPoints = touchHistory.filter(p => now - p.t < 120);
+
+      if (recentPoints.length >= 2) {
+        const pFirst = recentPoints[0];
+        const pLast = recentPoints[recentPoints.length - 1];
+        const dt = Math.max(10, pLast.t - pFirst.t);
+        let vx = (pLast.x - pFirst.x) / dt; // px/ms
+        let vy = (pLast.y - pFirst.y) / dt; // px/ms
+
+        const speed = Math.hypot(vx, vy);
+        // Si le geste a une impulsion suffisante, on lance le glissement avec inertie
+        if (speed > 0.12) {
+          wasDraggingTable = true;
+          // Facteur d'impulsion pour donner une sensation de glisse ample et légère
+          let velX = vx * 1.35;
+          let velY = vy * 1.35;
+
+          // Vitesse maximale plafonnée pour éviter un départ trop brutal
+          const maxVel = 3.2;
+          velX = Math.max(-maxVel, Math.min(maxVel, velX));
+          velY = Math.max(-maxVel, Math.min(maxVel, velY));
+
+          let lastFrameTime = performance.now();
+          const friction = 0.945; // Amortissement progressif fluide
+
+          const glide = (frameTime) => {
+            const frameDt = Math.min(32, frameTime - lastFrameTime);
+            lastFrameTime = frameTime;
+
+            const maxScrollLeft = Math.max(0, tableContainer.scrollWidth - tableContainer.clientWidth);
+            const maxScrollTop = Math.max(0, tableContainer.scrollHeight - tableContainer.clientHeight);
+
+            const nextLeft = tableContainer.scrollLeft - (velX * frameDt);
+            const nextTop = tableContainer.scrollTop - (velY * frameDt);
+
+            tableContainer.scrollLeft = Math.max(0, Math.min(maxScrollLeft, nextLeft));
+            tableContainer.scrollTop = Math.max(0, Math.min(maxScrollTop, nextTop));
+
+            // Arrêt sur les bords
+            if (tableContainer.scrollLeft <= 0 || tableContainer.scrollLeft >= maxScrollLeft) {
+              velX = 0;
+            }
+            if (tableContainer.scrollTop <= 0 || tableContainer.scrollTop >= maxTop) {
+              velY = 0;
+            }
+
+            // Décélération progressive
+            const decay = Math.pow(friction, frameDt / 16.6);
+            velX *= decay;
+            velY *= decay;
+
+            if (Math.hypot(velX, velY) > 0.02 && !isTouching) {
+              momentumRaf = requestAnimationFrame(glide);
+            } else {
+              momentumRaf = null;
+              setTimeout(() => { wasDraggingTable = false; }, 80);
+            }
+          };
+
+          momentumRaf = requestAnimationFrame(glide);
+          return;
+        }
+      }
+
       setTimeout(() => { wasDraggingTable = false; }, 80);
     };
 
