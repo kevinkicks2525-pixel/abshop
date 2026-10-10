@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/merci", "destination": "/merci.html" }
+    { "source": "/merci", "destination": "/merci.html" },
+    { "source": "/men", "destination": "/men.html" },
+    { "source": "/homme", "destination": "/men.html" }
   ]
 }

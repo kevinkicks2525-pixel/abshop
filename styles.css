@@ -234,6 +234,56 @@ body {
   transform: scale(1.01);
 }
 
+/* Clickable Hotspots overlay on Men's Hero image */
+.men-hero-cta-overlay {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 20px;
+  text-decoration: none;
+  background: transparent;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.men-hero-cta-overlay:hover,
+.men-hero-cta-overlay:active {
+  background: rgba(2, 132, 199, 0.2);
+  transform: scale(1.02);
+}
+
+.men-hero-cta-btn-order {
+  top: 82%;
+  left: 21%;
+  width: 58%;
+  height: 6.8%;
+  border-radius: 30px;
+}
+
+.men-hero-offer-btn-3 {
+  top: 61.5%;
+  left: 8.5%;
+  width: 39%;
+  height: 12%;
+  border-radius: 16px;
+}
+
+.men-hero-offer-btn-5 {
+  top: 61.5%;
+  left: 49.5%;
+  width: 42%;
+  height: 12%;
+  border-radius: 16px;
+}
+
+.men-hero-offer-btn-3:hover,
+.men-hero-offer-btn-3:active,
+.men-hero-offer-btn-5:hover,
+.men-hero-offer-btn-5:active {
+  background: rgba(56, 189, 248, 0.15);
+  transform: scale(1.01);
+}
+
 /* HERO SECTION (FALLBACK/LEGACY) */
 .hero-section {
   text-align: center;
