@@ -34,27 +34,27 @@
   <!-- End Meta Pixel Code -->
 
   <style>
-    /* Hotspots spécifiques pour les images de l'ascenseur */
-    .hotspot-hero-cta {
-      bottom: 4%;
-      left: 10%;
-      right: 10%;
-      height: 9%;
+    /* Hotspots pour les boutons sur les images */
+    .hotspot-pricing-cta {
+      bottom: 2.5%;
+      left: 8%;
+      right: 8%;
+      height: 7.5%;
       position: absolute;
       cursor: pointer;
       z-index: 10;
-      border-radius: 16px;
+      border-radius: 14px;
     }
 
-    .hotspot-pricing-cta {
-      bottom: 3.5%;
-      left: 12%;
-      right: 12%;
-      height: 8.5%;
+    .hotspot-hero-cta {
+      bottom: 6%;
+      left: 8%;
+      right: 8%;
+      height: 7.5%;
       position: absolute;
       cursor: pointer;
       z-index: 10;
-      border-radius: 16px;
+      border-radius: 14px;
     }
   </style>
 </head>
@@ -62,59 +62,68 @@
 <body>
   <div class="page-wrapper">
 
-    <!-- 1. PHOTOS EN PILE CONTINUE : 0 BORDURE BLANCHE, 0 ESPACE -->
+    <!-- 1. PHOTOS EN PILE CONTINUE : FORMAT WEBP HAUTE QUALITÉ ULTRA LÉGER -->
     <div class="seamless-images-stack">
 
-      <!-- PREMIÈRE PHOTO : PRIX & HERO (ascenseur_pricing.png) -->
+      <!-- PREMIÈRE PHOTO : PRIX & HERO (ascenseur_pricing) -->
       <section class="seamless-hero-block" id="landing-hero">
-        <img src="ascenseur_pricing.png" alt="مشروع المصعد الكهربائي للسنة الخامسة ابتدائي - السعر 3,200 دج" class="seamless-img" loading="eager" decoding="async">
-        <a href="#order-form" class="hero-hotspot hotspot-pricing-cta" aria-label="اطلب الآن" title="اطلب الآن"></a>
+        <picture>
+          <source srcset="ascenseur_pricing.webp" type="image/webp">
+          <img src="ascenseur_pricing.jpg" alt="مشروع المصعد الكهربائي للسنة الخامسة ابتدائي - السعر 3,200 دج" class="seamless-img" loading="eager" decoding="async">
+        </picture>
+        <a href="#order-form" class="hero-hotspot hotspot-pricing-cta" aria-label="أطلب الآن" title="أطلب الآن"></a>
       </section>
 
       <!-- DEUXIÈME PHOTO : CONTENU DE LA BOÎTE (UNBOXING) -->
       <section class="seamless-hero-block" id="unboxing-showcase">
-        <img src="ascenseur_unboxing.png" alt="واش تلقى داخل العلبة ؟ كل شيء موجود وجاهز للتركيب" class="seamless-img" loading="lazy" decoding="async">
+        <picture>
+          <source srcset="ascenseur_unboxing.webp" type="image/webp">
+          <img src="ascenseur_unboxing.jpg" alt="واش تلقى داخل العلبة ؟ كل شيء موجود وجاهز للتركيب" class="seamless-img" loading="lazy" decoding="async">
+        </picture>
       </section>
 
-      <!-- TROISIÈME PHOTO : PÈRE ET FILS (ascenseur_hero.png) -->
+      <!-- TROISIÈME PHOTO : PÈRE ET FILS (ascenseur_hero) -->
       <section class="seamless-hero-block" id="family-banner">
-        <img src="ascenseur_hero.png" alt="عاون ولدك يحوّل مشروع المدرسة إلى تجربة يتعلّم منها - مجموعة المصعد الكهربائي" class="seamless-img" loading="lazy" decoding="async">
-        <a href="#order-form" class="hero-hotspot hotspot-hero-cta" aria-label="اطلب الآن" title="اطلب الآن"></a>
+        <picture>
+          <source srcset="ascenseur_hero.webp" type="image/webp">
+          <img src="ascenseur_hero.jpg" alt="عاون ولدك يحوّل مشروع المدرسة إلى تجربة يتعلّم منها - مجموعة المصعد الكهربائي" class="seamless-img" loading="lazy" decoding="async">
+        </picture>
+        <a href="#order-form" class="hero-hotspot hotspot-hero-cta" aria-label="أطلب الآن" title="أطلب الآن"></a>
       </section>
 
     </div>
 
-    <!-- 2. FORMULAIRE DE COMMANDE COMPACT COD -->
+    <!-- 2. FORMULAIRE DE COMMANDE COMPACT (STRUCTURE EXACTE DE INDEX.HTML) -->
     <section class="compact-order-wrapper" id="order-form">
       <div class="compact-order-card">
         
         <!-- TITRE CENTRÉ -->
-        <h3 class="compact-card-title">املأ الاستمارة لتأكيد طلبك</h3>
+        <h3 class="compact-card-title">املأ الاستمارة للطلب</h3>
 
         <form name="ascenseur-order-form" method="POST" action="/merci-ascenseur" data-netlify="true" netlify-honeypot="bot-field" id="checkout-form">
           <input type="hidden" name="form-name" value="ascenseur-order-form">
           <p style="display:none;"><label>Don't fill: <input name="bot-field"></label></p>
 
           <!-- Hidden inputs pour Telegram, Netlify & Calculs -->
-          <input type="hidden" id="hidden-offer" name="Offre" value="علبة واحدة (3200 دج)">
+          <input type="hidden" id="hidden-offer" name="Offre" value="1 علبة (3200 دج)">
           <input type="hidden" id="hidden-product-price" name="Prix_Produit" value="3200 DA">
           <input type="hidden" id="hidden-delivery-cost" name="Frais_Livraison" value="0 DA">
           <input type="hidden" id="hidden-total" name="Total_a_payer" value="3200 DA">
           <input type="hidden" id="hidden-wilaya-name" name="Wilaya_Nom" value="">
-          <input type="hidden" id="hidden-delivery-type" name="Type_Livraison" value="À Domicile">
+          <input type="hidden" id="hidden-delivery-type" name="Type_Livraison" value="توصيل للمنزل">
           <input type="hidden" id="hidden-location" name="Lieu_Livraison" value="">
           <input type="hidden" id="hidden-quantity" name="Quantite" value="1">
 
-          <!-- SÉLECTION DU PACK -->
+          <!-- SÉLECTION DU PACK (TEXTE ÉPURÉ, SANS ÉMOJIS EN TROP) -->
           <div class="compact-variant-section">
             <div class="compact-variant-row" id="offer-pills">
-              <label class="compact-pill-btn active" data-offer="1" data-price="3200">
+              <label class="compact-pill-btn active" data-offer="1">
                 <input type="radio" name="pack-pill" value="1" checked>
-                <span>📦 علبة واحدة (3,200 دج)</span>
+                <span>1 علبة (3200 دج)</span>
               </label>
-              <label class="compact-pill-btn" data-offer="2" data-price="5900">
+              <label class="compact-pill-btn" data-offer="2">
                 <input type="radio" name="pack-pill" value="2">
-                <span>🎁 علبتين (5,900 دج - وفر 500 دج)</span>
+                <span>2 علب (5900 دج)</span>
               </label>
             </div>
           </div>
@@ -163,141 +172,150 @@
             </div>
           </div>
 
-          <!-- LIGNE 3 : TYPE DE LIVRAISON (DOMICILE OU STOP DESK) -->
-          <div class="compact-delivery-section">
-            <div class="delivery-option-cards">
-              <!-- Domicile -->
-              <label class="delivery-card active" id="card-home">
-                <input type="radio" name="delivery-mode" value="home" checked>
-                <div class="card-radio-custom"></div>
-                <div class="card-content-left">
-                  <span class="delivery-title">توصيل للمنزل</span>
-                  <span class="delivery-badge-price" id="home-price-badge">-- دج</span>
+          <!-- LIGNE 3 : CHOIX DU TYPE DE LIVRAISON (نوع التوصيل) -->
+          <div class="delivery-place-section">
+            <div class="delivery-place-title">نوع التوصيل</div>
+            <div class="delivery-radio-list">
+              
+              <!-- Option 1 : للمنزل -->
+              <label class="delivery-radio-item" id="radio-item-home">
+                <div class="delivery-radio-right">
+                  <input type="radio" name="delivery-mode" value="home" checked>
+                  <span class="custom-radio-circle"></span>
+                  <span class="delivery-radio-name">للمنزل</span>
                 </div>
+                <span class="delivery-radio-price" id="home-price-display">-- دج</span>
               </label>
 
-              <!-- Stop Desk -->
-              <label class="delivery-card" id="card-office">
-                <input type="radio" name="delivery-mode" value="office">
-                <div class="card-radio-custom"></div>
-                <div class="card-content-left">
-                  <span class="delivery-title">استلام من المكتب</span>
-                  <span class="delivery-badge-price" id="office-price-badge">-- دج</span>
+              <!-- Option 2 : لمكتب التوصيل -->
+              <label class="delivery-radio-item" id="radio-item-office">
+                <div class="delivery-radio-right">
+                  <input type="radio" name="delivery-mode" value="office">
+                  <span class="custom-radio-circle"></span>
+                  <span class="delivery-radio-name">لمكتب التوصيل</span>
                 </div>
+                <span class="delivery-radio-price" id="office-price-display">-- دج</span>
               </label>
+
             </div>
+          </div>
 
-            <!-- CHAMPS SPÉCIFIQUES DOMICILE (COMMUNE & ADRESSE) -->
-            <div class="delivery-subfields" id="home-fields-container">
-              <div class="compact-grid-row">
-                <div class="input-with-icon select-wrapper">
-                  <select name="Commune_Domicile" id="commune-select" disabled required>
-                    <option value="">اختر البلدية</option>
-                  </select>
-                  <span class="field-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                  </span>
-                  <span class="chevron-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </span>
-                </div>
-                <div class="input-with-icon">
-                  <input type="text" id="cust-address" name="Adresse_Detaillee" placeholder="العنوان أو الحي (اختياري)">
-                  <span class="field-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                      <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                  </span>
-                </div>
+          <!-- LIGNE 4 : COMMUNE & ADRESSE (SI DOMICILE) OU BUREAU (SI BUREAU) -->
+          <div id="home-fields-container">
+            <!-- Choix de la Commune -->
+            <div class="full-width-field" id="commune-wrapper">
+              <div class="input-with-icon select-wrapper">
+                <select name="Commune" id="commune-select" required disabled>
+                  <option value="">اختر البلدية</option>
+                </select>
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                  </svg>
+                </span>
+                <span class="chevron-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
               </div>
             </div>
 
-            <!-- CHAMP SPÉCIFIQUE BUREAU STOP DESK -->
-            <div class="delivery-subfields" id="bureau-wrapper" style="display: none;">
-              <div class="full-width-field">
-                <div class="input-with-icon select-wrapper">
-                  <select name="Bureau_StopDesk" id="bureau-select">
-                    <option value="">اختر مكتب الاستلام</option>
-                  </select>
-                  <span class="field-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-                  </span>
-                  <span class="chevron-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                      <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                  </span>
-                </div>
+            <!-- Adresse détaillée -->
+            <div class="full-width-field" id="address-field-wrap">
+              <div class="input-with-icon">
+                <input type="text" id="cust-address" name="Adresse" placeholder="العنوان بالتفصيل (الحي، الشارع أو رقم المنزل)" required>
+                <span class="field-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
               </div>
             </div>
           </div>
 
-          <!-- LIGNE 4 : RÉCAPITULATIF TOTAL -->
-          <div class="compact-summary-box">
-            <div class="summary-line">
-              <span id="summary-product-label">سعر المنتج (علبة واحدة) :</span>
-              <span class="summary-val" id="summary-product-val">3,200 دج</span>
-            </div>
-            <div class="summary-line">
-              <span>تكلفة التوصيل :</span>
-              <span class="summary-val" id="summary-delivery-val">اختر الولاية</span>
-            </div>
-            <div class="summary-line total-highlight">
-              <span>المجموع الكلي للدفع :</span>
-              <span class="total-price-val" id="summary-total-val">3,200 دج</span>
-            </div>
-          </div>
-
-          <!-- SÉLECTEUR DE QUANTITÉ -->
-          <div class="compact-qty-box">
-            <span class="qty-label-text">الكمية :</span>
-            <div class="qty-pill-control">
-              <button type="button" class="btn-qty" id="qty-minus" aria-label="تقليل الكمية">−</button>
-              <span class="qty-display-num" id="qty-count">1</span>
-              <button type="button" class="btn-qty" id="qty-plus" aria-label="زيادة الكمية">+</button>
+          <!-- Choix du Bureau d'accueil (Si لمكتب التوصيل) -->
+          <div class="full-width-field" id="bureau-wrapper" style="display: none;">
+            <div class="input-with-icon select-wrapper">
+              <select name="Bureau" id="bureau-select" disabled>
+                <option value="">اختر مكتب الاستلام</option>
+              </select>
+              <span class="field-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </span>
+              <span class="chevron-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </span>
             </div>
           </div>
 
-          <!-- BOUTON D'ACTION PRINCIPAL -->
-          <button type="submit" class="compact-submit-btn" id="btn-submit">
-            <span>تأكيد الطلب الآن</span>
-            <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
+          <!-- SÉPARATEUR FIN -->
+          <div class="compact-divider"></div>
+
+          <!-- RÉCAPITULATIF DES PRIX -->
+          <div class="compact-pricing-summary">
+            <div class="price-summary-row">
+              <span>سعر التوصيل</span>
+              <span class="price-val" id="summary-delivery-val">اختر الولاية</span>
+            </div>
+            <div class="price-summary-row">
+              <span id="summary-product-label">سعر المنتج (1 علبة)</span>
+              <span class="price-val" id="summary-product-val">3200 دج</span>
+            </div>
+            <div class="price-summary-row total-row">
+              <span>التكلفة الإجمالية</span>
+              <span class="price-val" id="summary-total-val">3200 دج</span>
+            </div>
+          </div>
+
+          <!-- LIGNE D'ACTION : QUANTITÉ + BOUTON COMMANDER -->
+          <div class="compact-action-row">
+            
+            <!-- Bouton commander noir principal (À droite en RTL) -->
+            <button type="submit" class="compact-submit-btn" id="btn-submit">
+              أطلب الآن
+            </button>
+
+            <!-- Sélecteur de quantité gris arrondi (À gauche en RTL) -->
+            <div class="compact-qty-stepper">
+              <button type="button" class="qty-step-btn" id="qty-plus" aria-label="زيادة">+</button>
+              <span class="qty-number" id="qty-val">1</span>
+              <button type="button" class="qty-step-btn" id="qty-minus" aria-label="إنقاص">-</button>
+            </div>
+
+          </div>
+
         </form>
-
-        <!-- ASSURANCES RAPIDES EN BAS -->
-        <div class="compact-trust-row">
-          <div class="trust-badge-item">
-            <span class="trust-icon">🚚</span>
-            <span>توصيل سريع 58 ولاية</span>
-          </div>
-          <div class="trust-badge-item">
-            <span class="trust-icon">💵</span>
-            <span>الدفع عند الاستلام</span>
-          </div>
-          <div class="trust-badge-item">
-            <span class="trust-icon">✅</span>
-            <span>جاهز وكامل للتركيب</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- FOOTER SIMPLE -->
-    <footer style="text-align: center; padding: 20px 10px; font-size: 0.8rem; color: #94a3b8; background: #fff;">
-      جميع الحقوق محفوظة &copy; 2026 — علامة MAHER (Le plaisir d'innover)
+    <!-- 3. TRUST BADGES (EXACTEMENT COMME INDEX.HTML) -->
+    <div class="trust-badges-grid">
+      <div class="trust-badge-card">
+        <span class="trust-badge-icon">🚚</span>
+        <span class="trust-badge-label">توصيل 58 ولاية</span>
+      </div>
+      <div class="trust-badge-card">
+        <span class="trust-badge-icon">💵</span>
+        <span class="trust-badge-label">الدفع عند الاستلام</span>
+      </div>
+      <div class="trust-badge-card">
+        <span class="trust-badge-icon">🛡️</span>
+        <span class="trust-badge-label">معاينة قبل الدفع</span>
+      </div>
+    </div>
+
+    <!-- 4. FOOTER -->
+    <footer class="page-footer">
+      <p>جميع الحقوق محفوظة © 2026 — علامة MAHER (Le plaisir d'innover)</p>
+      <p>خدمة التوصيل السريع إلى 58 ولاية والدفع بعد استلام ومعاينة الطلب</p>
     </footer>
 
   </div>
@@ -339,10 +357,10 @@
     // Radios
     const radioHome = document.querySelector('input[name="delivery-mode"][value="home"]');
     const radioOffice = document.querySelector('input[name="delivery-mode"][value="office"]');
-    const cardHome = document.getElementById('card-home');
-    const cardOffice = document.getElementById('card-office');
-    const homePriceBadge = document.getElementById('home-price-badge');
-    const officePriceBadge = document.getElementById('office-price-badge');
+    const radioItemHome = document.getElementById('radio-item-home');
+    const radioItemOffice = document.getElementById('radio-item-office');
+    const homePriceDisplay = document.getElementById('home-price-display');
+    const officePriceDisplay = document.getElementById('office-price-display');
 
     // Summary Elements
     const summaryProductLabel = document.getElementById('summary-product-label');
@@ -350,10 +368,10 @@
     const summaryDeliveryVal = document.getElementById('summary-delivery-val');
     const summaryTotalVal = document.getElementById('summary-total-val');
 
-    // Quantity Controls
-    const qtyMinusBtn = document.getElementById('qty-minus');
-    const qtyPlusBtn = document.getElementById('qty-plus');
-    const qtyDisplay = document.getElementById('qty-count');
+    // Stepper
+    const qtyVal = document.getElementById('qty-val');
+    const qtyPlus = document.getElementById('qty-plus');
+    const qtyMinus = document.getElementById('qty-minus');
 
     // Hidden Inputs
     const hiddenOffer = document.getElementById('hidden-offer');
@@ -365,150 +383,159 @@
     const hiddenLocation = document.getElementById('hidden-location');
     const hiddenQuantity = document.getElementById('hidden-quantity');
 
-    // Initialisation des 58 Wilayas
+    // Stepper Handlers
+    qtyPlus.addEventListener('click', () => {
+      currentQuantity++;
+      qtyVal.textContent = currentQuantity;
+      hiddenQuantity.value = currentQuantity;
+      updateCalculations();
+    });
+
+    qtyMinus.addEventListener('click', () => {
+      if (currentQuantity > 1) {
+        currentQuantity--;
+        qtyVal.textContent = currentQuantity;
+        hiddenQuantity.value = currentQuantity;
+        updateCalculations();
+      }
+    });
+
+    // Pack Selection
+    const packPills = document.querySelectorAll('#offer-pills .compact-pill-btn');
+    packPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        packPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        pill.querySelector('input').checked = true;
+        const val = pill.getAttribute('data-offer');
+        setOffer(val);
+      });
+    });
+
+    function setOffer(val) {
+      if (val === '1') {
+        currentOffer = 1;
+        baseOfferPrice = 3200;
+        hiddenOffer.value = '1 علبة (3200 دج)';
+      } else {
+        currentOffer = 2;
+        baseOfferPrice = 5900;
+        hiddenOffer.value = '2 علب (5900 دج)';
+      }
+      updateCalculations();
+    }
+
+    // Populate Wilayas
     if (wilayas && wilayas.length > 0) {
       wilayas.forEach(w => {
         const opt = document.createElement('option');
         opt.value = w.code;
-        opt.textContent = `${w.code} - ${w.nameAr} (${w.nameFr})`;
+        opt.textContent = `${w.code} - ${w.nameAr || w.nameFr}`;
         wilayaSelect.appendChild(opt);
       });
+
+      // Preselect Alger (16) by default
+      if (wilayas.some(w => w.code === '16')) {
+        wilayaSelect.value = '16';
+        currentWilayaCode = '16';
+        const opt = wilayaSelect.options[wilayaSelect.selectedIndex];
+        hiddenWilayaName.value = opt ? opt.textContent : '16 - الجزائر';
+        populateLocations();
+        updateCalculations();
+      }
     }
 
-    // Gestion du sélecteur d'offre
-    const offerPills = document.querySelectorAll('#offer-pills .compact-pill-btn');
-    offerPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        offerPills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        const offerVal = parseInt(pill.dataset.offer, 10);
-        const priceVal = parseInt(pill.dataset.price, 10);
-        currentOffer = offerVal;
-        baseOfferPrice = priceVal;
-        hiddenOffer.value = offerVal === 1 ? 'علبة واحدة (3200 دج)' : 'علبتين (5900 دج)';
-        updatePrices();
-      });
+    wilayaSelect.addEventListener('change', (e) => {
+      currentWilayaCode = e.target.value;
+      const opt = wilayaSelect.options[wilayaSelect.selectedIndex];
+      hiddenWilayaName.value = opt ? opt.textContent : '';
+      populateLocations();
+      updateCalculations();
     });
 
-    // Quantité (+ / -)
-    qtyMinusBtn.addEventListener('click', () => {
-      if (currentQuantity > 1) {
-        currentQuantity--;
-        qtyDisplay.textContent = currentQuantity;
-        hiddenQuantity.value = currentQuantity;
-        updatePrices();
-      }
-    });
-
-    qtyPlusBtn.addEventListener('click', () => {
-      if (currentQuantity < 10) {
-        currentQuantity++;
-        qtyDisplay.textContent = currentQuantity;
-        hiddenQuantity.value = currentQuantity;
-        updatePrices();
-      }
-    });
-
-    // Changement de Wilaya
-    wilayaSelect.addEventListener('change', () => {
-      currentWilayaCode = wilayaSelect.value;
+    function populateLocations() {
       if (!currentWilayaCode) {
-        communeSelect.innerHTML = '<option value="">اختر البلدية</option>';
         communeSelect.disabled = true;
+        communeSelect.innerHTML = '<option value="">اختر البلدية</option>';
+        bureauSelect.disabled = true;
         bureauSelect.innerHTML = '<option value="">اختر مكتب الاستلام</option>';
-        homePriceBadge.textContent = '-- دج';
-        officePriceBadge.textContent = '-- دج';
-        hiddenWilayaName.value = '';
-        updatePrices();
+        homePriceDisplay.textContent = '-- دج';
+        officePriceDisplay.textContent = '-- دج';
         return;
       }
 
-      const selectedOpt = wilayaSelect.options[wilayaSelect.selectedIndex];
-      hiddenWilayaName.value = selectedOpt.textContent;
-
-      const prices = deliveryPrices[currentWilayaCode] || { home: 0, office: 0 };
+      const prices = deliveryPrices[currentWilayaCode] || { home: 600, office: 350 };
       currentHomePrice = prices.home || 0;
       currentOfficePrice = prices.office || 0;
 
-      homePriceBadge.textContent = `${currentHomePrice} دج`;
-      officePriceBadge.textContent = currentOfficePrice > 0 ? `${currentOfficePrice} دج` : 'غير متوفر';
+      homePriceDisplay.textContent = currentHomePrice ? `${currentHomePrice} دج` : 'مجاني';
+      officePriceDisplay.textContent = currentOfficePrice ? `${currentOfficePrice} دج` : 'غير متوفر';
 
-      // Remplir les communes
-      communeSelect.innerHTML = '<option value="">اختر البلدية</option>';
-      const communes = communesData[currentWilayaCode] || [];
-      communes.forEach(c => {
-        const opt = document.createElement('option');
-        opt.value = c.name;
-        opt.textContent = c.name;
-        communeSelect.appendChild(opt);
-      });
+      // Communes
       communeSelect.disabled = false;
+      communeSelect.innerHTML = '<option value="">اختر البلدية</option>';
+      const comms = communesData[currentWilayaCode] || [];
+      comms.forEach(c => {
+        const o = document.createElement('option');
+        o.value = c.name;
+        o.textContent = c.name;
+        communeSelect.appendChild(o);
+      });
 
-      // Remplir les bureaux Stop Desk
+      // Bureaux Stop Desk
+      bureauSelect.disabled = false;
       bureauSelect.innerHTML = '<option value="">اختر مكتب الاستلام</option>';
-      const bureaux = bureauxData[currentWilayaCode] || [];
-      if (bureaux.length > 0) {
-        bureaux.forEach(b => {
-          const opt = document.createElement('option');
-          opt.value = b.name;
-          opt.textContent = `${b.name} - ${b.address || ''}`;
-          bureauSelect.appendChild(opt);
-        });
-        cardOffice.style.opacity = '1';
-        cardOffice.style.pointerEvents = 'auto';
-      } else {
-        cardOffice.style.opacity = '0.5';
-        cardOffice.style.pointerEvents = 'none';
+      const burs = bureauxData[currentWilayaCode] || [];
+
+      if (burs.length === 0 || currentOfficePrice === 0) {
+        radioItemOffice.classList.add('disabled');
+        officePriceDisplay.textContent = 'غير متوفر';
         if (currentDeliveryType === 'office') {
           radioHome.checked = true;
-          setDeliveryMode('home');
+          onDeliveryModeChange('home');
         }
-      }
-
-      updatePrices();
-    });
-
-    // Changement Mode de livraison (Home / Office)
-    function setDeliveryMode(mode) {
-      currentDeliveryType = mode;
-      hiddenDeliveryType.value = mode === 'home' ? 'À Domicile' : 'Stop Desk (Bureau)';
-
-      if (mode === 'home') {
-        cardHome.classList.add('active');
-        cardOffice.classList.remove('active');
-        homeFieldsContainer.style.display = 'block';
-        bureauWrapper.style.display = 'none';
-        communeSelect.required = true;
-        bureauSelect.required = false;
       } else {
-        cardOffice.classList.add('active');
-        cardHome.classList.remove('active');
-        homeFieldsContainer.style.display = 'none';
-        bureauWrapper.style.display = 'block';
-        communeSelect.required = false;
-        bureauSelect.required = true;
+        radioItemOffice.classList.remove('disabled');
+        burs.forEach(b => {
+          const o = document.createElement('option');
+          const bName = typeof b === 'object' ? b.name : b;
+          o.value = bName;
+          o.textContent = `مكتب ${bName}`;
+          bureauSelect.appendChild(o);
+        });
       }
-      updatePrices();
     }
 
-    radioHome.addEventListener('change', () => setDeliveryMode('home'));
-    radioOffice.addEventListener('change', () => setDeliveryMode('office'));
-    cardHome.addEventListener('click', () => { radioHome.checked = true; setDeliveryMode('home'); });
-    cardOffice.addEventListener('click', () => {
-      if (cardOffice.style.pointerEvents !== 'none') {
-        radioOffice.checked = true;
-        setDeliveryMode('office');
+    function onDeliveryModeChange(type) {
+      currentDeliveryType = type;
+      hiddenDeliveryType.value = type === 'home' ? 'توصيل للمنزل' : 'استلام من المكتب';
+
+      if (type === 'home') {
+        homeFieldsContainer.style.display = 'block';
+        communeSelect.required = true;
+        addressInput.required = true;
+        bureauWrapper.style.display = 'none';
+        bureauSelect.required = false;
+      } else {
+        homeFieldsContainer.style.display = 'none';
+        communeSelect.required = false;
+        addressInput.required = false;
+        bureauWrapper.style.display = 'block';
+        bureauSelect.required = true;
       }
-    });
+      updateCalculations();
+    }
 
-    // Mise à jour des totaux
-    function updatePrices() {
-      const activeDeliveryPrice = currentDeliveryType === 'home' ? currentHomePrice : currentOfficePrice;
+    radioHome.addEventListener('change', () => onDeliveryModeChange('home'));
+    radioOffice.addEventListener('change', () => onDeliveryModeChange('office'));
+
+    function updateCalculations() {
+      const activeDeliveryPrice = currentWilayaCode ? (currentDeliveryType === 'home' ? currentHomePrice : currentOfficePrice) : 0;
       const subtotalProducts = baseOfferPrice * currentQuantity;
-      const totalAmount = subtotalProducts + (currentWilayaCode ? activeDeliveryPrice : 0);
+      const totalAmount = subtotalProducts + activeDeliveryPrice;
 
-      const offerText = currentOffer === 1 ? 'علبة واحدة' : 'علبتين';
-      summaryProductLabel.textContent = `سعر المنتج (${offerText}${currentQuantity > 1 ? ' × ' + currentQuantity : ''}) :`;
+      const offerLabel = currentOffer === 1 ? '1 علبة' : '2 علب';
+      summaryProductLabel.textContent = `سعر المنتج (${offerLabel}${currentQuantity > 1 ? ' × ' + currentQuantity : ''})`;
       summaryProductVal.textContent = `${subtotalProducts} دج`;
       
       summaryDeliveryVal.textContent = currentWilayaCode ? `${activeDeliveryPrice} دج` : 'اختر الولاية';
@@ -524,7 +551,7 @@
       phoneInput.classList.remove('input-error');
     });
 
-    // Soumission du Formulaire
+    // Form Submission
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
@@ -541,7 +568,7 @@
       }
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<span>جاري تأكيد طلبكم...</span>';
+      submitBtn.textContent = 'جاري تأكيد طلبكم...';
 
       const wilayaText = hiddenWilayaName.value || wilayaSelect.options[wilayaSelect.selectedIndex]?.textContent || '';
       const deliveryMode = currentDeliveryType === 'home' ? 'توصيل للمنزل' : 'استلام من المكتب';
@@ -561,9 +588,8 @@
       const now = new Date();
       const dateStr = now.toLocaleDateString('fr-DZ') + ' ' + now.toLocaleTimeString('fr-DZ', { hour: '2-digit', minute: '2-digit' });
 
-      const productNameStr = `مشروع المصعد الكهربائي (${currentOffer === 1 ? '1 علبة' : '2 علب'}${currentQuantity > 1 ? ' × ' + currentQuantity : ''})`;
+      const offerTitle = `مشروع المصعد الكهربائي (${currentOffer === 1 ? '1 علبة' : '2 علب'})`;
 
-      // Message Telegram formaté
       const telegramMsg =
 `🔔 <b>COMMANDE #${orderRef}</b>
 ━━━━━━━━━━━━━━━━━━
@@ -573,7 +599,7 @@
 🚚 <b>نوع التوصيل :</b> ${deliveryMode}
 🏢 <b>التفاصيل :</b> ${locationDetail}
 ━━━━━━━━━━━━━━━━━━
-🎁 <b>المنتج :</b> ${productNameStr}
+🎁 <b>العرض :</b> ${offerTitle}
 🔢 <b>الكمية :</b> ${currentQuantity}
 💰 <b>المبلغ الإجمالي :</b> <b>${totalToPay} دج</b>
 ━━━━━━━━━━━━━━━━━━
@@ -613,7 +639,7 @@
           })
         );
 
-        // Sauvegarde Serveur Backend (pour le Sheet et Neon)
+        // Server Backend
         fetch('http://localhost:3005/api/order', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -626,7 +652,7 @@
             commune: currentDeliveryType === 'home' ? communeSelect.value : bureauSelect.value,
             adresse: locationDetail,
             stop_desk: currentDeliveryType === 'office' ? 1 : 0,
-            produit: productNameStr,
+            produit: `${offerTitle} × ${currentQuantity}`,
             montant: totalToPay,
             statut: 'NOUVEAU'
           }),
@@ -638,7 +664,7 @@
         console.warn('Telegram notice:', err);
       }
 
-      // Netlify Form
+      // Netlify form
       try {
         const formData = new FormData(form);
         await fetch('/', {
@@ -648,14 +674,13 @@
         });
       } catch (e) {}
 
-      // Stocker la valeur pour le pixel Facebook Purchase
       try {
         localStorage.setItem('orderValue', totalToPay.toString());
       } catch (e) {}
 
-      // Redirection vers la page de remerciement dédiée
       window.location.href = '/merci-ascenseur';
     });
   </script>
 </body>
+
 </html>
