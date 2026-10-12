@@ -107,7 +107,7 @@ function parseOrderMessage(text) {
   const addressMatch = clean.match(/(?:العنوان|Adresse)\s*:\s*([^\n\r]+)/i);
   const bureauMatch = clean.match(/(?:المكتب|Bureau)\s*:\s*([^\n\r]+)/i);
   const detailsMatch = clean.match(/(?:التفاصيل|Détails)\s*:\s*([^\n\r]+)/i);
-  const offerMatch = clean.match(/(?:العرض|Offre)\s*:\s*([^\n\r]+)/i);
+  const offerMatch = clean.match(/(?:العرض|المنتج|Offre|Produit)\s*:\s*([^\n\r]+)/i);
   const finishMatch = clean.match(/(?:المظهر|Finition)\s*:\s*([^\n\r]+)/i);
   const totalMatch = clean.match(/(?:المبلغ الإجمالي|Total)\s*:\s*([0-9\s]+)/i);
 
