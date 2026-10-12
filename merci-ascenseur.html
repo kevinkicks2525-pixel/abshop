@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تم تأكيد طلبك بنجاح | مشروع المصعد الكهربائي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .thank-you-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f8fafc;
+      padding: 20px 16px;
+    }
+    .thank-you-card {
+      background: #ffffff;
+      max-width: 460px;
+      width: 100%;
+      border-radius: 24px;
+      padding: 36px 22px;
+      text-align: center;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    .success-icon-wrap {
+      width: 76px;
+      height: 76px;
+      background: #dcfce7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .success-title {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+    .success-desc {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .order-note-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 26px;
+      text-align: right;
+    }
+    .order-note-item {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #15803d;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .order-note-item:last-child {
+      margin-bottom: 0;
+    }
+    .back-btn {
+      display: block;
+      width: 100%;
+      background: #0284c7;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: #0369a1;
+    }
+  </style>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>" type="image/svg+xml">
+
+  <!-- Meta Pixel Code Dédié Produit 2 (Ascenseur) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Initialisation du Pixel dédié (1776178313611463)
+    fbq('init', '1776178313611463');
+    fbq('track', 'PageView');
+
+    // Récupération de la vraie valeur d'achat depuis le localStorage
+    var orderValue = 3200;
+    try {
+      var storedVal = parseInt(localStorage.getItem('orderValue'));
+      if (storedVal && !isNaN(storedVal)) {
+        orderValue = storedVal;
+      }
+      localStorage.removeItem('orderValue');
+      localStorage.removeItem('orderOffer');
+    } catch(e) {
+      orderValue = 3200;
+    }
+
+    // Événement d'achat Purchase sur le nouveau Pixel
+    fbq('track', 'Purchase', { currency: 'DZD', value: orderValue });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1776178313611463&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <div class="thank-you-page">
+    <div class="thank-you-card">
+      <div class="success-icon-wrap">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h1 class="success-title">تم استلام طلبكم بنجاح!</h1>
+      <p class="success-desc">
+        شكراً لثقتكم بنا وبمشروع المصعد الكهربائي التعليمي.<br>
+        سيتصل بكم فريقنا هاتفياً لتأكيد العنوان وتوجيه الطرد للتوصيل السريع.
+      </p>
+
+      <div class="order-note-box">
+        <div class="order-note-item">
+          <span>•</span>
+          <span>يرجى إبقاء الهاتف مشغّلاً لتأكيد التوصيل مع الموزع.</span>
+        </div>
+        <div class="order-note-item">
+          <span>•</span>
+          <span>الدفع عند الاستلام بعد فحص العلبة والتأكد من المحتويات.</span>
+        </div>
+        <div class="order-note-item">
+          <span>•</span>
+          <span>دليل التركيب المصوّر وجميع القطع والأدوات موجودة داخل العلبة.</span>
+        </div>
+      </div>
+
+      <a href="/ascenseur" class="back-btn">العودة إلى الصفحة الرئيسية</a>
+    </div>
+  </div>
+</body>
+</html>
